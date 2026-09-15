@@ -1,0 +1,6 @@
+{
+  "name": "Bridge Ethiopia",
+  "description": "Connecting the World with the Heart of Ethiopia - Your trusted local guide for authentic cultural journeys, Hindek Kitchen, coffee packages & ceremonies, community support for schools, health centers & orphanages, and international NGO & government guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
