@@ -12,7 +12,8 @@ import {
   Compass,
   Building,
   TreePine,
-  Search
+  Search,
+  BookOpen
 } from 'lucide-react';
 
 interface ExploreProps {
@@ -141,41 +142,77 @@ export const ExploreEthiopiaSection: React.FC<ExploreProps> = ({
               className="bg-white rounded-3xl overflow-hidden border border-[#E8E1D5] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group img-zoom-parent"
               id={`destination-card-${dest.id}`}
             >
-              {/* Card Image */}
-              <div className="relative h-56 w-full overflow-hidden bg-slate-900">
-                <AuthenticImage
-                  src={dest.heroImage}
-                  alt={dest.name}
-                  subjectName={dest.name}
-                  photoKey={`dest-${dest.id}`}
-                  photoCategory="destination"
-                  className="w-full h-full object-cover img-zoom"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                
-                {/* Region Pill */}
-                <div className="absolute top-3.5 left-3.5">
-                  <span className="px-3 py-1 rounded-full bg-[#1E3A2F]/90 backdrop-blur-xs text-[#E5AC4D] text-[11px] font-bold tracking-wide border border-[#D49A3D]/40">
-                    {dest.regionLabel}
-                  </span>
-                </div>
+              {/* Card Image / Chronicle Header */}
+              {dest.isChronicleOnly ? (
+                <div className="relative min-h-[14rem] w-full p-5 sm:p-6 bg-gradient-to-br from-[#1E3A2F] via-[#162C23] to-[#0F1E18] text-white flex flex-col justify-between border-b border-[#D49A3D]/30">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-[11px] font-bold tracking-wide">
+                      {dest.regionLabel}
+                    </span>
+                    <span className="bg-white/10 text-white/90 border border-white/20 px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] flex items-center gap-1 font-medium">
+                      <BookOpen className="w-3 h-3 text-[#D49A3D]" />
+                      <span>Historical Chronicle</span>
+                    </span>
+                  </div>
 
-                {/* Badge */}
-                <div className="absolute top-3.5 right-3.5 bg-black/60 backdrop-blur-xs text-white px-2.5 py-1 rounded-lg text-[11px] flex items-center gap-1 font-medium">
-                  <Sparkles className="w-3 h-3 text-[#D49A3D]" />
-                  <span>Custom Itinerary</span>
-                </div>
+                  <div className="space-y-1.5 pt-4">
+                    {dest.amharicName && (
+                      <span className="text-[11px] text-[#D49A3D] font-medium tracking-wide block">
+                        {dest.amharicName}
+                      </span>
+                    )}
+                    <h3 className="text-xl font-bold font-serif text-white group-hover:text-[#F4BE5E] transition-colors leading-snug">
+                      {dest.name}
+                    </h3>
+                    <p className="text-xs text-[#E8E1D5]/90 line-clamp-2 italic leading-relaxed">
+                      "{dest.tagline}"
+                    </p>
+                  </div>
 
-                {/* Title Overlay */}
-                <div className="absolute bottom-3.5 left-4 right-4 text-white">
-                  <h3 className="text-xl font-bold font-serif group-hover:text-[#F4BE5E] transition-colors drop-shadow-sm">
-                    {dest.name}
-                  </h3>
-                  <p className="text-xs text-white/80 line-clamp-1 italic">
-                    {dest.tagline}
-                  </p>
+                  <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-[#D49A3D]">
+                    <span className="flex items-center gap-1 font-medium">
+                      <Sparkles className="w-3 h-3" />
+                      In-Depth Written Record
+                    </span>
+                    <span className="text-white/70 text-[10px]">No Photo • Pure History</span>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="relative h-56 w-full overflow-hidden bg-slate-900">
+                  <AuthenticImage
+                    src={dest.heroImage}
+                    alt={dest.name}
+                    subjectName={dest.name}
+                    photoKey={`dest-${dest.id}`}
+                    photoCategory="destination"
+                    className="w-full h-full object-cover img-zoom"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                  
+                  {/* Region Pill */}
+                  <div className="absolute top-3.5 left-3.5">
+                    <span className="px-3 py-1 rounded-full bg-[#1E3A2F]/90 backdrop-blur-xs text-[#E5AC4D] text-[11px] font-bold tracking-wide border border-[#D49A3D]/40">
+                      {dest.regionLabel}
+                    </span>
+                  </div>
+
+                  {/* Badge */}
+                  <div className="absolute top-3.5 right-3.5 bg-black/60 backdrop-blur-xs text-white px-2.5 py-1 rounded-lg text-[11px] flex items-center gap-1 font-medium">
+                    <Sparkles className="w-3 h-3 text-[#D49A3D]" />
+                    <span>Custom Itinerary</span>
+                  </div>
+
+                  {/* Title Overlay */}
+                  <div className="absolute bottom-3.5 left-4 right-4 text-white">
+                    <h3 className="text-xl font-bold font-serif group-hover:text-[#F4BE5E] transition-colors drop-shadow-sm">
+                      {dest.name}
+                    </h3>
+                    <p className="text-xs text-white/80 line-clamp-1 italic">
+                      {dest.tagline}
+                    </p>
+                  </div>
+                </div>
+              )}
 
               {/* Card Body */}
               <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">

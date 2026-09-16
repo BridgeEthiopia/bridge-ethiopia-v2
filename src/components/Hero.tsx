@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({
 
   return (
     <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden" id="hero-section">
-      {/* Background with warm ambient lighting & authentic real image */}
+      {/* Background with warm ambient lighting & authentic imagery */}
       <div className="absolute inset-0 -z-10 bg-[#FAF8F5]">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-multiply"

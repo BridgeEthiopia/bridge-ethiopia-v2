@@ -13,7 +13,8 @@ import {
   Maximize2,
   Compass,
   Mountain,
-  AlertCircle
+  AlertCircle,
+  BookOpen
 } from 'lucide-react';
 
 interface EthiopianMapProps {
@@ -213,19 +214,36 @@ export const EthiopianDestinationsMap: React.FC<EthiopianMapProps> = ({
                   onCloseClick={() => setActiveDestination(null)}
                 >
                   <div className="max-w-[280px] p-1 text-[#2E2822] space-y-2">
-                    <div className="relative h-28 w-full rounded-lg overflow-hidden bg-slate-800">
-                      <AuthenticImage
-                        src={activeDestination.heroImage}
-                        alt={activeDestination.name}
-                        subjectName={activeDestination.name}
-                        photoKey={`map-${activeDestination.id}`}
-                        photoCategory="destination"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-2 left-2 bg-[#1E3A2F]/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full border border-white/20">
-                        {activeDestination.regionLabel}
+                    {activeDestination.isChronicleOnly ? (
+                      <div className="relative min-h-[5.5rem] w-full rounded-lg p-3 bg-gradient-to-br from-[#1E3A2F] via-[#162D24] to-[#0D1A14] text-white flex flex-col justify-between border border-[#D49A3D]/40">
+                        <div className="flex items-center justify-between">
+                          <span className="bg-[#D49A3D] text-[#1E3A2F] text-[9px] font-extrabold px-2 py-0.5 rounded-full">
+                            {activeDestination.regionLabel}
+                          </span>
+                          <span className="text-[#D49A3D] text-[9px] font-semibold flex items-center gap-1">
+                            <BookOpen className="w-2.5 h-2.5" />
+                            Chronicle
+                          </span>
+                        </div>
+                        <p className="text-[10px] text-[#F4BE5E] font-serif italic mt-1 line-clamp-1">
+                          "{activeDestination.tagline}"
+                        </p>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="relative h-28 w-full rounded-lg overflow-hidden bg-slate-800">
+                        <AuthenticImage
+                          src={activeDestination.heroImage}
+                          alt={activeDestination.name}
+                          subjectName={activeDestination.name}
+                          photoKey={`map-${activeDestination.id}`}
+                          photoCategory="destination"
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute top-2 left-2 bg-[#1E3A2F]/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full border border-white/20">
+                          {activeDestination.regionLabel}
+                        </div>
+                      </div>
+                    )}
 
                     <div>
                       <h4 className="font-bold text-sm font-serif text-[#1E3A2F] leading-tight">

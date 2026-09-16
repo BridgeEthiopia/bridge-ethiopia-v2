@@ -9,6 +9,14 @@ export type RegionId =
   | 'kafa-southwest'
   | 'gambella-west';
 
+export interface DestinationChronicle {
+  historicalOrigins: string;
+  architecturalMastery: string;
+  sacredTraditions: string;
+  livingEcosystem: string;
+  travelerAdvisory: string;
+}
+
 export interface Destination {
   id: string;
   name: string;
@@ -35,6 +43,8 @@ export interface Destination {
   nearbyLodging: string[];
   availableTourIds: string[];
   featured?: boolean;
+  isChronicleOnly?: boolean;
+  chronicle?: DestinationChronicle;
 }
 
 export interface Tour {
@@ -65,6 +75,7 @@ export interface Tour {
   rating: number;
   reviewsCount: number;
   featured?: boolean;
+  isChronicleOnly?: boolean;
 }
 
 export interface FoodDish {

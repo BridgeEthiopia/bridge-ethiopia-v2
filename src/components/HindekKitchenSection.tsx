@@ -220,7 +220,7 @@ export const HindekKitchenSection: React.FC<HindekKitchenProps> = ({
           </div>
         </div>
 
-        {/* Featured Host & Real Kitchen Environment */}
+        {/* Featured Host & Authentic Kitchen Environment */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-white p-6 sm:p-10 rounded-3xl border border-[#E8DACB] shadow-sm">
           
           {/* Photo Showcase & Photo Upload */}
@@ -366,7 +366,7 @@ export const HindekKitchenSection: React.FC<HindekKitchenProps> = ({
               Authentic Ethiopian Kitchen Tools You Will Use
             </h3>
             <p className="text-xs sm:text-sm text-[#6B6155]">
-              Practice cooking with real artisanal clayware, handwoven baskets, and hand-carved tools.
+              Practice cooking with traditional artisanal clayware, handwoven baskets, and hand-carved tools.
             </p>
           </div>
 

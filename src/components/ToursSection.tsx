@@ -10,7 +10,8 @@ import {
   ShieldCheck, 
   Sparkles, 
   SlidersHorizontal,
-  Calendar
+  Calendar,
+  BookOpen
 } from 'lucide-react';
 
 interface ToursProps {
@@ -90,41 +91,73 @@ export const ToursSection: React.FC<ToursProps> = ({
             >
               {/* Tour Image */}
               <div>
-                <div className="relative h-56 w-full overflow-hidden bg-slate-900">
-                  <AuthenticImage
-                    src={tour.image}
-                    alt={tour.title}
-                    subjectName={tour.title}
-                    photoKey={`tour-${tour.id}`}
-                    photoCategory="tour"
-                    className="w-full h-full object-cover img-zoom"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                  
-                  {/* Category Pill */}
-                  <div className="absolute top-3.5 left-3.5">
-                    <span className="px-3 py-1 rounded-full bg-[#1E3A2F]/90 backdrop-blur-xs text-[#D49A3D] text-[11px] font-bold">
-                      {tour.category}
-                    </span>
-                  </div>
-
-                  {/* Rating */}
-                  <div className="absolute top-3.5 right-3.5 bg-black/60 backdrop-blur-xs text-white px-2 py-1 rounded-lg text-[11px] flex items-center gap-1 font-semibold">
-                    <Star className="w-3.5 h-3.5 text-[#D49A3D] fill-[#D49A3D]" />
-                    <span>{tour.rating}</span>
-                  </div>
-
-                  {/* Card Bottom Overlay */}
-                  <div className="absolute bottom-3.5 left-4 right-4 text-white flex items-end justify-between">
-                    <div className="flex items-center gap-1.5 text-xs text-[#E5AC4D] font-semibold">
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Private Guided</span>
+                {tour.isChronicleOnly ? (
+                  <div className="relative min-h-[14rem] w-full p-5 sm:p-6 bg-gradient-to-br from-[#1E3A2F] via-[#162C23] to-[#0F1E18] text-white flex flex-col justify-between border-b border-[#D49A3D]/30">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-[11px] font-bold">
+                        {tour.category}
+                      </span>
+                      <div className="bg-black/60 backdrop-blur-xs text-white px-2 py-1 rounded-lg text-[11px] flex items-center gap-1 font-semibold">
+                        <Star className="w-3.5 h-3.5 text-[#D49A3D] fill-[#D49A3D]" />
+                        <span>{tour.rating}</span>
+                      </div>
                     </div>
-                    <div className="text-right text-xs text-white/90 font-medium">
-                      Flexible Itinerary
+
+                    <div className="space-y-1.5 pt-3">
+                      <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-[#D49A3D] text-[10px] font-semibold inline-flex items-center gap-1 border border-white/20">
+                        <BookOpen className="w-3 h-3" />
+                        Historical Chronicle Tour
+                      </span>
+                      <h4 className="text-base font-bold font-serif text-white line-clamp-2 leading-snug">
+                        {tour.title}
+                      </h4>
+                    </div>
+
+                    <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-[#E5AC4D]">
+                      <div className="flex items-center gap-1 font-semibold text-[11px]">
+                        <Sparkles className="w-3.5 h-3.5" />
+                        <span>Private Heritage Pilgrimage</span>
+                      </div>
+                      <span className="text-white/70 text-[10px]">Text Chronicle Mode</span>
                     </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="relative h-56 w-full overflow-hidden bg-slate-900">
+                    <AuthenticImage
+                      src={tour.image}
+                      alt={tour.title}
+                      subjectName={tour.title}
+                      photoKey={`tour-${tour.id}`}
+                      photoCategory="tour"
+                      className="w-full h-full object-cover img-zoom"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                    
+                    {/* Category Pill */}
+                    <div className="absolute top-3.5 left-3.5">
+                      <span className="px-3 py-1 rounded-full bg-[#1E3A2F]/90 backdrop-blur-xs text-[#D49A3D] text-[11px] font-bold">
+                        {tour.category}
+                      </span>
+                    </div>
+
+                    {/* Rating */}
+                    <div className="absolute top-3.5 right-3.5 bg-black/60 backdrop-blur-xs text-white px-2 py-1 rounded-lg text-[11px] flex items-center gap-1 font-semibold">
+                      <Star className="w-3.5 h-3.5 text-[#D49A3D] fill-[#D49A3D]" />
+                      <span>{tour.rating}</span>
+                    </div>
+
+                    {/* Card Bottom Overlay */}
+                    <div className="absolute bottom-3.5 left-4 right-4 text-white flex items-end justify-between">
+                      <div className="flex items-center gap-1.5 text-xs text-[#E5AC4D] font-semibold">
+                        <Sparkles className="w-3.5 h-3.5" />
+                        <span>Private Guided</span>
+                      </div>
+                      <div className="text-right text-xs text-white/90 font-medium">
+                        Flexible Itinerary
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 {/* Tour Info */}
                 <div className="p-5 sm:p-6 space-y-3.5">

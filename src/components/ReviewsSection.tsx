@@ -144,10 +144,10 @@ export const ReviewsSection: React.FC = () => {
           <div className="space-y-1 md:border-l md:border-[#E8DACB] md:pl-6">
             <div className="flex items-center gap-1.5 text-xs font-bold text-[#1E3A2F]">
               <ShieldCheck className="w-4 h-4 text-[#34A853]" />
-              <span>100% Real Community Reviews</span>
+              <span>100% Genuine Community Reviews</span>
             </div>
             <p className="text-xs text-[#6B5E51] leading-relaxed">
-              Every review comes from real visitors. Any traveler can submit their review, rating, and feedback without needing an account.
+              Every review comes from authentic visitors. Any traveler can submit their review, rating, and feedback without needing an account.
             </p>
           </div>
 

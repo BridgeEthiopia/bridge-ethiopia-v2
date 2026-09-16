@@ -102,8 +102,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
       icon: Heart,
     },
     {
-      title: '100% Real Verified Photography',
-      desc: 'Every image is genuine. We strictly reject AI-generated or misleading visuals in favor of authentic Ethiopian reality.',
+      title: 'Authentic Cultural Documentation',
+      desc: 'Every cultural experience is genuine. We celebrate authentic Ethiopian heritage, living traditions, and sacred landscapes with deep local respect.',
       icon: Eye,
     },
     {
@@ -248,7 +248,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 </div>
 
                 <p className="text-xs sm:text-sm text-[#5C5247] leading-relaxed">
-                  Through <strong>Bridge Ethiopia</strong>, Hindek helps tourists and visitors discover real Ethiopia through local knowledge, guidance, culture, food, coffee, destinations, and unforgettable authentic journeys.
+                  Through <strong>Bridge Ethiopia</strong>, Hindek helps tourists and visitors discover authentic Ethiopia through local knowledge, guidance, culture, food, coffee, destinations, and unforgettable journeys.
                 </p>
 
                 {/* Comprehensive List of Services Offered by Hindek */}
@@ -263,7 +263,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                       'Personalized travel assistance',
                       'Cultural guidance & orientation',
                       'Planning local experiences',
-                      'Helping visitors discover real destinations',
+                      'Helping visitors discover authentic destinations',
                       'Food and cultural experiences',
                       'Ethiopian cooking experiences through Hindek Kitchen',
                       'Traditional coffee experiences',
@@ -375,7 +375,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                   <span>Ethical Community Support, Schools, Clinics & Orphanages</span>
                 </div>
                 <p className="text-xs text-[#52483E] leading-relaxed">
-                  Bridge Ethiopia connects travelers and donors with real, verified community needs. Whether bringing a suitcase of school supplies, donating toward clinic water filters, or sponsoring meals for vulnerable children at a local shelter, Hindek guarantees 100% direct handover with photographic confirmation and zero middleman fee.
+                  Bridge Ethiopia connects travelers and donors with verified community needs. Whether bringing a suitcase of school supplies, donating toward clinic water filters, or sponsoring meals for vulnerable children at a local shelter, Hindek guarantees 100% direct handover with direct community confirmation and zero middleman fee.
                 </p>
               </div>
 

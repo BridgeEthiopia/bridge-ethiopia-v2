@@ -12,7 +12,9 @@ import {
   ShieldCheck, 
   MessageCircle, 
   Mountain,
-  ChevronRight
+  ChevronRight,
+  BookOpen,
+  Scroll
 } from 'lucide-react';
 import { FOUNDER_INFO } from '../data/ethiopiaData';
 
@@ -44,50 +46,90 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
           <X className="w-5 h-5" />
         </button>
 
-        {/* Hero Image Banner (Verified Photo) */}
-        <div className="relative h-64 sm:h-80 md:h-96 w-full overflow-hidden bg-slate-900">
-          <AuthenticImage
-            src={destination.heroImage}
-            alt={destination.name}
-            subjectName={destination.name}
-            photoKey={`dest-${destination.id}`}
-            photoCategory="destination"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
-          
-          {/* Region Badge & Titles */}
-          <div className="absolute bottom-6 left-6 right-6 text-white space-y-1.5">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-xs font-bold uppercase tracking-wider">
-                {destination.regionLabel}
-              </span>
-              {destination.oromoName && (
-                <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-white text-xs font-medium backdrop-blur-xs">
-                  {destination.oromoName}
+        {/* Hero Banner: Chronicle-Only vs Authentic Photo */}
+        {destination.isChronicleOnly ? (
+          <div className="relative p-6 sm:p-10 bg-gradient-to-br from-[#1E3A2F] via-[#162D24] to-[#0D1A14] text-white border-b-2 border-[#D49A3D]/40">
+            <div className="space-y-4 max-w-3xl">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-xs font-extrabold uppercase tracking-wider">
+                  {destination.regionLabel}
                 </span>
-              )}
-              {destination.amharicName && (
-                <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-white text-xs font-medium backdrop-blur-xs">
-                  {destination.amharicName}
+                <span className="px-3 py-1 rounded-full bg-white/10 text-white border border-white/20 text-xs font-semibold flex items-center gap-1.5">
+                  <BookOpen className="w-3.5 h-3.5 text-[#D49A3D]" />
+                  <span>Historical Chronicle • Text-First Documentation</span>
                 </span>
-              )}
-              {destination.tigrinyaName && (
-                <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-white text-xs font-medium backdrop-blur-xs">
-                  {destination.tigrinyaName}
-                </span>
-              )}
+                {destination.amharicName && (
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/15 text-white/90 text-xs font-medium">
+                    {destination.amharicName}
+                  </span>
+                )}
+                {destination.tigrinyaName && (
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/15 text-white/90 text-xs font-medium">
+                    {destination.tigrinyaName}
+                  </span>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <h2 className="text-2xl sm:text-4xl font-extrabold font-serif text-white tracking-tight">
+                  {destination.name}
+                </h2>
+                <p className="text-sm sm:text-base text-[#F4BE5E] font-medium italic">
+                  "{destination.tagline}"
+                </p>
+              </div>
+
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-black/30 border border-white/10 text-xs text-[#E8E1D5]">
+                <Sparkles className="w-3.5 h-3.5 text-[#D49A3D]" />
+                <span>Dedicated Historical Chronicle • Comprehensive Narrative Documentation</span>
+              </div>
             </div>
-            
-            <h2 className="text-2xl sm:text-4xl font-extrabold font-serif text-white drop-shadow-md">
-              {destination.name}
-            </h2>
-            
-            <p className="text-sm sm:text-base text-[#F4BE5E] font-medium italic drop-shadow-sm">
-              "{destination.tagline}"
-            </p>
           </div>
-        </div>
+        ) : (
+          <div className="relative h-64 sm:h-80 md:h-96 w-full overflow-hidden bg-slate-900">
+            <AuthenticImage
+              src={destination.heroImage}
+              alt={destination.name}
+              subjectName={destination.name}
+              photoKey={`dest-${destination.id}`}
+              photoCategory="destination"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
+            
+            {/* Region Badge & Titles */}
+            <div className="absolute bottom-6 left-6 right-6 text-white space-y-1.5">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-xs font-bold uppercase tracking-wider">
+                  {destination.regionLabel}
+                </span>
+                {destination.oromoName && (
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-white text-xs font-medium backdrop-blur-xs">
+                    {destination.oromoName}
+                  </span>
+                )}
+                {destination.amharicName && (
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-white text-xs font-medium backdrop-blur-xs">
+                    {destination.amharicName}
+                  </span>
+                )}
+                {destination.tigrinyaName && (
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-white text-xs font-medium backdrop-blur-xs">
+                    {destination.tigrinyaName}
+                  </span>
+                )}
+              </div>
+              
+              <h2 className="text-2xl sm:text-4xl font-extrabold font-serif text-white drop-shadow-md">
+                {destination.name}
+              </h2>
+              
+              <p className="text-sm sm:text-base text-[#F4BE5E] font-medium italic drop-shadow-sm">
+                "{destination.tagline}"
+              </p>
+            </div>
+          </div>
+        )}
 
         {/* Modal Body */}
         <div className="p-6 sm:p-8 space-y-8">
@@ -128,6 +170,88 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
               {destination.description}
             </p>
           </div>
+
+          {/* Deep Comprehensive Historical Chronicle (Text-First Documentation) */}
+          {destination.chronicle && (
+            <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#FAF8F5] to-[#F3EEE5] border-2 border-[#D49A3D]/40 space-y-6 shadow-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#D49A3D]/30">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-[#1E3A2F] text-[#D49A3D] flex items-center justify-center shadow-xs">
+                    <Scroll className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#B85C38] block">
+                      Text-First Cultural Archive
+                    </span>
+                    <h3 className="text-lg sm:text-xl font-bold font-serif text-[#1E3A2F]">
+                      Comprehensive Historical & Cultural Chronicle
+                    </h3>
+                  </div>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1E3A2F]/10 text-[#1E3A2F] text-xs font-semibold self-start sm:self-center">
+                  <BookOpen className="w-3.5 h-3.5 text-[#D49A3D]" />
+                  <span>Curated Narrative Record</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-5">
+                {/* 1. Historical Origins */}
+                <div className="space-y-2 p-4 rounded-2xl bg-white border border-[#E8E1D5]">
+                  <h4 className="text-sm font-bold uppercase tracking-wider text-[#1E3A2F] flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#B85C38]" />
+                    <span>Historical Origins & Civilizational Significance</span>
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#423B33] leading-relaxed">
+                    {destination.chronicle.historicalOrigins}
+                  </p>
+                </div>
+
+                {/* 2. Architectural Mastery */}
+                <div className="space-y-2 p-4 rounded-2xl bg-white border border-[#E8E1D5]">
+                  <h4 className="text-sm font-bold uppercase tracking-wider text-[#1E3A2F] flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#D49A3D]" />
+                    <span>Architectural, Engineering & Environmental Mastery</span>
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#423B33] leading-relaxed">
+                    {destination.chronicle.architecturalMastery}
+                  </p>
+                </div>
+
+                {/* 3. Sacred Traditions & Relics */}
+                <div className="space-y-2 p-4 rounded-2xl bg-white border border-[#E8E1D5]">
+                  <h4 className="text-sm font-bold uppercase tracking-wider text-[#1E3A2F] flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#1E3A2F]" />
+                    <span>Sacred Traditions, Relics & Spiritual Heritage</span>
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#423B33] leading-relaxed">
+                    {destination.chronicle.sacredTraditions}
+                  </p>
+                </div>
+
+                {/* 4. Living Ecosystem & Community */}
+                <div className="space-y-2 p-4 rounded-2xl bg-white border border-[#E8E1D5]">
+                  <h4 className="text-sm font-bold uppercase tracking-wider text-[#1E3A2F] flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#2E7D32]" />
+                    <span>Living Ecosystem, Community Rhythms & Local Life</span>
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#423B33] leading-relaxed">
+                    {destination.chronicle.livingEcosystem}
+                  </p>
+                </div>
+
+                {/* 5. Advisory & Protocol */}
+                <div className="space-y-2 p-4 rounded-2xl bg-[#FFF9F2] border border-[#F3DFC6]">
+                  <h4 className="text-sm font-bold uppercase tracking-wider text-[#B85C38] flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-[#B85C38]" />
+                    <span>Traveler Advisory, Cultural Protocol & Practical Guidance</span>
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#5C5247] leading-relaxed">
+                    {destination.chronicle.advisoryAndProtocol}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Why Visit Section */}
           <div className="space-y-3">
@@ -219,7 +343,7 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
           </div>
 
           {/* Photo Gallery Previews */}
-          {destination.gallery && destination.gallery.length > 0 && (
+          {!destination.isChronicleOnly && destination.gallery && destination.gallery.length > 0 && (
             <div className="space-y-2.5">
               <h3 className="text-sm font-bold uppercase tracking-wider text-[#8C7E6D]">
                 Gallery of {destination.name}
