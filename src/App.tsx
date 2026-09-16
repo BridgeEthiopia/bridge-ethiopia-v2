@@ -230,14 +230,14 @@ function AppContent() {
 
       {/* Persistent Floating Quick Action Buttons */}
       <div className="fixed bottom-6 right-6 z-40 flex flex-col sm:flex-row items-end sm:items-center gap-3">
-        {/* Real Photo Uploader Quick Trigger Button (Founder Admin Only) */}
+        {/* Photo Uploader Quick Trigger Button (Founder Admin Only) */}
         {isAdminMode && (
           <button
             type="button"
             onClick={() => openUploadModal()}
             className="px-4 py-3 bg-[#1E3A2F] hover:bg-[#152B23] text-white rounded-full shadow-2xl flex items-center gap-2 font-bold text-xs sm:text-sm tracking-wide transition-all transform hover:scale-105 border border-[#D49A3D]/40 cursor-pointer group animate-in fade-in slide-in-from-bottom-2"
             id="floating-upload-photos-btn"
-            title="Upload your own real photos for Hindek, places, food, and festivals (Admin Mode)"
+            title="Upload custom photos for Hindek, places, food, and festivals (Admin Mode)"
           >
             <Camera className="w-4 h-4 text-[#D49A3D] group-hover:rotate-12 transition-transform" />
             <span>Photo Manager (Admin)</span>
@@ -260,13 +260,13 @@ function AppContent() {
         </a>
       </div>
 
-      {/* Real Photo Manager Modal */}
+      {/* Photo Manager Modal */}
       <FounderPhotoUploadModal />
 
       {/* Founder PIN Security Authentication Modal */}
       <FounderPinModal />
 
-      {/* Real Photo Authenticity & Upload Guide Modal */}
+      {/* Photo Upload Guide Modal */}
       <PhotoGuideModal
         isOpen={isPhotoGuideOpen}
         onClose={() => setIsPhotoGuideOpen(false)}

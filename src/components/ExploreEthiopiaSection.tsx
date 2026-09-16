@@ -22,7 +22,7 @@ interface ExploreProps {
 
 const REGION_DEFINITIONS: { id: string; label: string }[] = [
   { id: 'all', label: 'All of Ethiopia' },
-  { id: 'tigray', label: 'Tigray & Axum' },
+  { id: 'tigray', label: 'Tigray Heritage' },
   { id: 'northern-ethiopia', label: 'Northern Ethiopia' },
   { id: 'southern-ethiopia', label: 'Southern Ethiopia' },
   { id: 'addis-ababa', label: 'Addis Ababa' },
@@ -141,7 +141,7 @@ export const ExploreEthiopiaSection: React.FC<ExploreProps> = ({
               className="bg-white rounded-3xl overflow-hidden border border-[#E8E1D5] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group img-zoom-parent"
               id={`destination-card-${dest.id}`}
             >
-              {/* Card Real Image */}
+              {/* Card Image */}
               <div className="relative h-56 w-full overflow-hidden bg-slate-900">
                 <AuthenticImage
                   src={dest.heroImage}

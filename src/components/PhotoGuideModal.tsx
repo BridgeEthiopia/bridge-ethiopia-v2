@@ -49,10 +49,10 @@ export const PhotoGuideModal: React.FC<PhotoGuideModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <h2 id="photo-guide-title" className="text-lg sm:text-xl font-bold tracking-tight text-white">
-                  How to Upload Real Photos
+                  How to Upload Photos
                 </h2>
                 <span className="px-2 py-0.5 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-[10px] font-extrabold uppercase">
-                  Authenticity Guide
+                  Photo Guide
                 </span>
               </div>
               <p className="text-xs text-[#E5AC4D]">
@@ -77,10 +77,10 @@ export const PhotoGuideModal: React.FC<PhotoGuideModalProps> = ({
           <div className="p-4 sm:p-5 rounded-2xl bg-[#FAF8F5] border border-[#E8E1D5] space-y-2">
             <div className="flex items-center gap-2 text-[#1E3A2F] font-bold text-sm sm:text-base">
               <Sparkles className="w-4 h-4 text-[#D49A3D]" />
-              <span>Why Real, Authentic Photos Matter</span>
+              <span>Why Authentic Photos Matter</span>
             </div>
             <p className="text-[#5C5247] leading-relaxed">
-              Bridge Ethiopia is built on genuine cultural connections and true local hospitality. We celebrate real moments — from Hindek&apos;s home cooking sessions and traditional coffee ceremonies to vibrant regional festivals and untamed landscapes. High-quality real photos build trust with international travelers.
+              Bridge Ethiopia is built on genuine cultural connections and true local hospitality. We celebrate memorable moments — from Hindek&apos;s home cooking sessions and traditional coffee ceremonies to vibrant regional festivals and untamed landscapes. High-quality photography builds trust with international travelers.
             </p>
           </div>
 

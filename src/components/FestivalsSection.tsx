@@ -35,20 +35,8 @@ export const FestivalsSection: React.FC<FestivalsProps> = ({
   const irreecha = FESTIVALS_DATA.find(f => f.id === 'irreecha') || FESTIVALS_DATA[1];
   const meskel = FESTIVALS_DATA.find(f => f.id === 'meskel') || FESTIVALS_DATA[2];
 
-  // Combined visual gallery highlights for the sacred celebrations
+  // Combined visual gallery highlights for celebrations with authentic photography
   const combinedMoments = [
-    {
-      title: 'Timkat Holy Tabot & Water Blessing',
-      native: 'ጥምቀት - የፋሲለደስ መዋኛ',
-      festival: 'Timkat',
-      category: 'Orthodox Christian',
-      location: 'Fasilides’ Bath, Gondar',
-      desc: 'Priests in golden vestments bless the waters as thousands celebrate renewal and baptism.',
-      photoKey: 'fest-timkat',
-      fallbackImg: timkat.image,
-      tagColor: 'bg-[#D49A3D] text-[#1E3A2F]',
-      badge: '⛪ Epiphany'
-    },
     {
       title: 'Irreecha Thanksgiving at Lake Hora',
       native: 'Irreechaa - Hora Harsadi',
@@ -72,18 +60,6 @@ export const FestivalsSection: React.FC<FestivalsProps> = ({
       fallbackImg: meskel.image,
       tagColor: 'bg-[#B85C38] text-white',
       badge: '🔥 Demera Bonfire'
-    },
-    {
-      title: 'Timkat Sea of White Netelas & Chants',
-      native: 'የካህናት ዝማሬና ጸናጽል',
-      festival: 'Timkat',
-      category: 'Orthodox Christian',
-      location: 'Jan Meda & Meskel Square, Addis Ababa',
-      desc: 'Processions accompanied by silver sistra, resonant drums (Kebero), and royal horse cavalcades.',
-      photoKey: 'fest-timkat',
-      fallbackImg: timkat.image,
-      tagColor: 'bg-[#D49A3D] text-[#1E3A2F]',
-      badge: '✨ Sacred Procession'
     },
     {
       title: 'Irreecha Traditional Outfits & Adey Abeba',
@@ -204,51 +180,39 @@ export const FestivalsSection: React.FC<FestivalsProps> = ({
             {/* TRIPLE SHOWCASE CARDS (3-Grid) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               
-              {/* CARD 1: TIMKAT */}
+              {/* CARD 1: TIMKAT (Text-Only Chronicle, No Photo) */}
               <div className="bg-white rounded-3xl border border-[#E8E1D5] overflow-hidden shadow-lg hover:shadow-xl transition-all flex flex-col justify-between">
                 <div>
-                  {/* Photo Frame */}
-                  <div className="relative h-64 sm:h-72 bg-slate-900 group">
-                    <AuthenticImage
-                      src={timkat.image}
-                      alt={timkat.name}
-                      subjectName={timkat.name}
-                      photoKey="fest-timkat"
-                      photoCategory="festival"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
+                  {/* Spiritual Chronicle Editorial Header (No Photo) */}
+                  <div className="relative p-6 sm:p-7 bg-gradient-to-br from-[#1E3A2F] via-[#162C23] to-[#254236] text-white flex flex-col justify-between min-h-[220px] sm:min-h-[240px] overflow-hidden">
+                    <div className="absolute top-0 right-0 w-36 h-36 bg-[#D49A3D]/10 rounded-full blur-2xl pointer-events-none" />
                     
-                    {/* Top Badges */}
-                    <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
-                      <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-xs font-bold uppercase tracking-wider shadow">
-                        Orthodox Christian
-                      </span>
+                    <div className="relative z-10 space-y-3">
+                      {/* Top Badges */}
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-xs font-bold uppercase tracking-wider shadow">
+                          Orthodox Christian
+                        </span>
+                        <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-[#FAF6EE] text-[11px] font-medium backdrop-blur-sm">
+                          UNESCO Intangible Heritage
+                        </span>
+                      </div>
+
+                      {/* Title & Native Script */}
+                      <div className="space-y-1 pt-1">
+                        <div className="text-xs text-[#E5AC4D] font-bold tracking-wide">ጥምቀት • January 19 (Epiphany)</div>
+                        <h4 className="text-xl sm:text-2xl font-serif font-bold text-white leading-tight">
+                          Timkat (Epiphany)
+                        </h4>
+                        <p className="text-xs text-[#FAF6EE]/85 italic">
+                          Commemoration of the Baptism of Jesus Christ in the River Jordan
+                        </p>
+                      </div>
                     </div>
 
-                    {/* Quick Upload Button (Founder Admin Only) */}
-                    {isAdminMode && (
-                      <button
-                        type="button"
-                        onClick={() => openUploadModal({
-                          key: 'fest-timkat',
-                          title: 'Timkat (Ethiopian Epiphany)',
-                          category: 'festival',
-                          currentSrc: timkat.image
-                        })}
-                        className="absolute top-4 right-4 z-10 px-2.5 py-1.5 rounded-lg bg-black/60 hover:bg-black/80 text-white text-[11px] font-semibold flex items-center gap-1 backdrop-blur-sm transition-all cursor-pointer"
-                      >
-                        <Camera className="w-3 h-3 text-[#D49A3D]" />
-                        <span>Upload Photo</span>
-                      </button>
-                    )}
-
-                    {/* Bottom Title */}
-                    <div className="absolute bottom-4 left-4 right-4 text-white space-y-1 z-10">
-                      <div className="text-xs text-[#E5AC4D] font-bold">ጥምቀት • January 19</div>
-                      <h4 className="text-xl sm:text-2xl font-serif font-bold text-white leading-tight">
-                        Timkat (Epiphany)
-                      </h4>
+                    <div className="relative z-10 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-[#E5AC4D]">
+                      <span className="font-semibold">Spiritual Chronicle</span>
+                      <span className="text-[#FAF6EE]/70 text-[10px]">Written Cultural Record</span>
                     </div>
                   </div>
 
@@ -257,26 +221,34 @@ export const FestivalsSection: React.FC<FestivalsProps> = ({
                     <div className="flex items-center gap-2 text-xs text-[#6B6155]">
                       <MapPin className="w-4 h-4 text-[#B85C38] flex-shrink-0" />
                       <span className="font-semibold text-[#1E3A2F]">Epicenters:</span>
-                      <span>Gondar, Addis Ababa, Lalibela</span>
+                      <span>Gondar (Fasilides’ Bath), Addis Ababa, Lalibela</span>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-[#423B33] leading-relaxed line-clamp-3">
+                    <p className="text-xs sm:text-sm text-[#423B33] leading-relaxed">
                       {timkat.history}
+                    </p>
+
+                    <p className="text-xs sm:text-sm text-[#52483E] leading-relaxed">
+                      {timkat.culturalMeaning}
                     </p>
 
                     <div className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-[#E8E1D5] space-y-1.5">
                       <div className="text-xs font-bold text-[#1E3A2F] flex items-center gap-1.5">
                         <Droplets className="w-3.5 h-3.5 text-[#34A853]" />
-                        <span>Highlights:</span>
+                        <span>Sacred Highlights:</span>
                       </div>
-                      <ul className="space-y-1 text-xs text-[#52483E]">
+                      <ul className="space-y-1.5 text-xs text-[#52483E]">
                         <li className="flex items-start gap-1.5">
                           <span className="text-[#D49A3D] font-bold">•</span>
-                          <span><strong>Tabot Blessing:</strong> Holy ark replicas in golden robes.</span>
+                          <span><strong>Tabot Blessing:</strong> Holy ark replicas in golden robes under fringed umbrellas.</span>
                         </li>
                         <li className="flex items-start gap-1.5">
                           <span className="text-[#D49A3D] font-bold">•</span>
-                          <span><strong>Fasilides Pool:</strong> Consecrated waters in Gondar.</span>
+                          <span><strong>Fasilides Pool:</strong> Consecration of water at dawn with thousands renewing baptismal vows.</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-[#D49A3D] font-bold">•</span>
+                          <span><strong>White Netela Procession:</strong> Ancient Ge’ez chants with sistra and Kebero drums.</span>
                         </li>
                       </ul>
                     </div>
@@ -528,7 +500,7 @@ export const FestivalsSection: React.FC<FestivalsProps> = ({
                 </div>
                 <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#8C7E6D]">
                   <Camera className="w-3.5 h-3.5 text-[#D49A3D]" />
-                  <span>Interactive Real Photo Gallery</span>
+                  <span>Interactive Photo Gallery</span>
                 </div>
               </div>
 
@@ -649,37 +621,87 @@ export const FestivalsSection: React.FC<FestivalsProps> = ({
             {/* Selected Festival Feature Card */}
             <div className="bg-white rounded-3xl overflow-hidden border border-[#E8E1D5] shadow-xl grid grid-cols-1 lg:grid-cols-12">
               
-              {/* Real Photo Banner */}
-              <div className="lg:col-span-6 relative min-h-[340px] lg:min-h-full bg-slate-900 group">
-                <AuthenticImage
-                  src={selectedFestival.image}
-                  alt={selectedFestival.name}
-                  subjectName={selectedFestival.name}
-                  photoKey={`fest-${selectedFestival.id}`}
-                  photoCategory="festival"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
-                
-                <div className="absolute top-5 left-5 z-10 flex items-center gap-2">
-                  <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-xs font-bold uppercase tracking-wider shadow">
-                    {selectedFestival.culture}
-                  </span>
-                </div>
+              {/* Festival Photo Banner or Written Spiritual Chronicle */}
+              {selectedFestival.id === 'timkat' || !selectedFestival.image ? (
+                <div className="lg:col-span-5 bg-gradient-to-br from-[#1E3A2F] via-[#162C23] to-[#254236] p-8 sm:p-10 text-white flex flex-col justify-between relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#D49A3D]/10 rounded-full blur-3xl pointer-events-none" />
+                  
+                  <div className="relative z-10 space-y-6">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-xs font-bold uppercase tracking-wider shadow">
+                        {selectedFestival.culture}
+                      </span>
+                      <span className="px-3 py-1 rounded-full bg-white/10 text-[#FAF6EE] text-xs font-semibold backdrop-blur-sm">
+                        UNESCO Intangible World Heritage
+                      </span>
+                    </div>
 
-                <div className="absolute bottom-6 left-6 right-6 text-white space-y-1.5 z-10">
-                  <h3 className="text-2xl sm:text-3xl font-bold font-serif text-white">
-                    {selectedFestival.name}
-                  </h3>
-                  <p className="text-xs text-[#E5AC4D] font-semibold flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5" />
-                    <span>Next Upcoming: {selectedFestival.nextDate}</span>
-                  </p>
+                    <div className="space-y-2">
+                      <div className="text-sm font-serif text-[#E5AC4D] font-bold">ጥምቀት • Ethiopian Epiphany</div>
+                      <h3 className="text-2xl sm:text-3xl font-bold font-serif text-white leading-tight">
+                        {selectedFestival.name}
+                      </h3>
+                      <p className="text-xs text-[#FAF6EE]/80 flex items-center gap-1.5 pt-1">
+                        <Clock className="w-3.5 h-3.5 text-[#D49A3D]" />
+                        <span>Annual Celebration: {selectedFestival.nextDate}</span>
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 space-y-2 text-xs text-[#FAF6EE]/90 leading-relaxed">
+                      <div className="font-bold text-[#E5AC4D] uppercase text-[11px] tracking-wider flex items-center gap-1.5">
+                        <Sparkles className="w-3.5 h-3.5" />
+                        <span>Spiritual Chronicle & Mystery</span>
+                      </div>
+                      <p>
+                        Timkat commemorates the baptism of Jesus Christ in the River Jordan by John the Baptist. On Ketera eve, holy Tabot replicas of the Ark of the Covenant leave church sanctuaries under velvet canopies to bless the waters.
+                      </p>
+                    </div>
+
+                    <div className="space-y-2 text-xs text-[#FAF6EE]/85">
+                      <div className="font-bold text-white uppercase text-[11px] tracking-wider">The Living Tradition:</div>
+                      <p className="leading-relaxed">
+                        Throughout the night, clergy chant sacred Ge’ez hymns. At dawn, blessed holy water is sprinkled over hundreds of thousands dressed in dazzling white Netelas, renewing their baptismal vows in profound collective spiritual joy.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="relative z-10 pt-6 border-t border-white/15 text-xs text-[#E5AC4D] flex items-center justify-between">
+                    <span>Written Cultural Record</span>
+                    <span className="text-[#FAF6EE]/60 text-[11px]">Bridge Ethiopia Heritage</span>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="lg:col-span-6 relative min-h-[340px] lg:min-h-full bg-slate-900 group">
+                  <AuthenticImage
+                    src={selectedFestival.image}
+                    alt={selectedFestival.name}
+                    subjectName={selectedFestival.name}
+                    photoKey={`fest-${selectedFestival.id}`}
+                    photoCategory="festival"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
+                  
+                  <div className="absolute top-5 left-5 z-10 flex items-center gap-2">
+                    <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-xs font-bold uppercase tracking-wider shadow">
+                      {selectedFestival.culture}
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-6 left-6 right-6 text-white space-y-1.5 z-10">
+                    <h3 className="text-2xl sm:text-3xl font-bold font-serif text-white">
+                      {selectedFestival.name}
+                    </h3>
+                    <p className="text-xs text-[#E5AC4D] font-semibold flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5" />
+                      <span>Next Upcoming: {selectedFestival.nextDate}</span>
+                    </p>
+                  </div>
+                </div>
+              )}
 
               {/* Festival Content Details */}
-              <div className="lg:col-span-6 p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6">
+              <div className={selectedFestival.id === 'timkat' || !selectedFestival.image ? "lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6" : "lg:col-span-6 p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6"}>
                 <div className="space-y-4">
                   
                   {/* Primary Locations */}
@@ -734,7 +756,7 @@ export const FestivalsSection: React.FC<FestivalsProps> = ({
                     <ArrowRight className="w-4 h-4 text-[#D49A3D]" />
                   </button>
 
-                  {isAdminMode && (
+                  {isAdminMode && selectedFestival.id !== 'timkat' && (
                     <button
                       type="button"
                       onClick={() => openUploadModal({
@@ -746,7 +768,7 @@ export const FestivalsSection: React.FC<FestivalsProps> = ({
                       className="px-4 py-3 rounded-xl bg-[#FAF8F5] border border-[#1E3A2F]/20 text-[#1E3A2F] hover:bg-[#E8E1D5] font-bold text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
                     >
                       <Camera className="w-4 h-4 text-[#D49A3D]" />
-                      <span>Upload Real Photo</span>
+                      <span>Upload Photo</span>
                     </button>
                   )}
 

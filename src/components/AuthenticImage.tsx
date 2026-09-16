@@ -75,7 +75,7 @@ export const AuthenticImage: React.FC<AuthenticImageProps> = ({
             className="mt-1 px-3 py-1 rounded-lg bg-[#D49A3D] hover:bg-[#b8822d] text-[#1E3A2F] font-bold text-xs flex items-center gap-1.5 shadow-md transition-all active:scale-95"
           >
             <UploadCloud className="w-3.5 h-3.5" />
-            <span>Upload Real Photo</span>
+            <span>Upload Photo</span>
           </button>
         )}
       </div>
@@ -107,7 +107,7 @@ export const AuthenticImage: React.FC<AuthenticImageProps> = ({
           <button
             type="button"
             onClick={handleUploadClick}
-            title="Upload your own real photo for this item (Admin Only)"
+            title="Upload custom photo for this item (Admin Only)"
             className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/75 hover:bg-[#1E3A2F] text-white text-[11px] font-semibold backdrop-blur-md border border-white/20 shadow-lg transition-all active:scale-95 hover:border-[#D49A3D]"
           >
             <Camera className="w-3.5 h-3.5 text-[#D49A3D]" />
@@ -116,12 +116,12 @@ export const AuthenticImage: React.FC<AuthenticImageProps> = ({
         </div>
       )}
 
-      {/* Badge when custom real photo is active */}
+      {/* Verified badge when custom photo is active */}
       {isCustom && (
         <div className="absolute bottom-3 left-3 z-10 pointer-events-none">
           <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#1E3A2F]/90 backdrop-blur-sm text-[#D49A3D] text-[10px] font-bold border border-[#D49A3D]/40 shadow-sm">
             <Check className="w-3 h-3 text-[#34A853]" />
-            <span>Real Photo</span>
+            <span>Verified Photo</span>
           </span>
         </div>
       )}

@@ -70,11 +70,11 @@ export const FoodGallerySection: React.FC<FoodGalleryProps> = ({
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B85C38]/10 text-[#B85C38] text-xs font-bold uppercase tracking-wider">
             <Utensils className="w-3.5 h-3.5" />
-            <span>Authentic Ethiopian & Oromo Cuisine</span>
+            <span>Authentic Ethiopian Cuisine</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1E3A2F] tracking-tight">
-            Ethiopian & Oromo <span className="text-[#B85C38] font-serif italic">Food Gallery</span>
+            Ethiopian <span className="text-[#B85C38] font-serif italic">Food Gallery</span>
           </h2>
 
           <p className="text-sm sm:text-base text-[#5C5247] leading-relaxed">
@@ -126,7 +126,7 @@ export const FoodGallerySection: React.FC<FoodGalleryProps> = ({
               className="bg-white rounded-3xl overflow-hidden border border-[#E8E1D5] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group img-zoom-parent"
               id={`food-card-${dish.id}`}
             >
-              {/* Individual Real Photo */}
+              {/* Individual Food Photo */}
               <div className="relative h-56 w-full overflow-hidden bg-slate-900">
                 <AuthenticImage
                   src={dish.image}

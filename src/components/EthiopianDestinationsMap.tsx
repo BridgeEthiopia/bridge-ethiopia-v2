@@ -35,7 +35,7 @@ export const EthiopianDestinationsMap: React.FC<EthiopianMapProps> = ({
 
   // Key reading: check environment variable or fallback gracefully
   const apiKey = (import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string) || '';
-  const mapId = (import.meta.env.VITE_GOOGLE_MAPS_MAP_ID as string) || 'DEMO_MAP_ID';
+  const mapId = (import.meta.env.VITE_GOOGLE_MAPS_MAP_ID as string) || undefined;
   const hasValidKey = Boolean(apiKey && apiKey.trim() !== '' && apiKey !== 'YOUR_KEY_HERE');
 
   const destinationsWithCoords = DESTINATIONS_DATA.filter((d) => d.coordinates !== undefined);
@@ -108,7 +108,7 @@ export const EthiopianDestinationsMap: React.FC<EthiopianMapProps> = ({
             </span>
             {[
               { id: 'all', label: 'All Regions' },
-              { id: 'tigray', label: 'Tigray & Axum' },
+              { id: 'tigray', label: 'Tigray Heritage' },
               { id: 'northern-ethiopia', label: 'Northern Highlands' },
               { id: 'addis-ababa', label: 'Addis Ababa' },
               { id: 'oromia', label: 'Oromia' },

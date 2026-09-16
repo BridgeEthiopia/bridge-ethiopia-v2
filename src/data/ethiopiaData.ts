@@ -16,7 +16,6 @@ import marqaaImg from '../assets/images/marqaa_oromo_porridge_1787813823518.jpg'
 import coffeeCeremonyImg from '../assets/images/ethiopian_coffee_ceremony_1787813852379.jpg';
 import irreechaImg from '../assets/images/irreecha_festival_oromo_1787813876028.jpg';
 import enkutatashImg from '../assets/images/enkutatash_new_year_1787813894569.jpg';
-import timkatImg from '../assets/images/timkat_gondar_bath_1787814597486.jpg';
 import meskelImg from '../assets/images/meskel_demera_fire_1787814613769.jpg';
 import kulubiImg from '../assets/images/kulubi_pilgrimage_1787814627497.jpg';
 import arbaMinchImg from '../assets/images/arba_minch_dorze_1787901932452.jpg';
@@ -40,7 +39,6 @@ import tourHararImg from '../assets/images/tour-harar-walled-city-coffee-trail.j
 // Image aliases and fallbacks for gallery and circuit tours
 const gallerySimienImg = simienImg;
 const galleryGondarImg = gondarImg;
-const galleryTimkatImg = timkatImg;
 const tourDanakilImg = danakilImg;
 const tourAxumImg = lalibelaImg; // Majestic northern historic stone heritage
 const destAxumZionImg = lalibelaImg;
@@ -323,8 +321,8 @@ export const DESTINATIONS_DATA: Destination[] = [
   },
   {
     id: 'gondar',
-    name: 'Gondar: Camelot of Africa',
-    amharicName: 'ጎንደር',
+    name: 'Medieval Imperial Castles & Royal Heritage',
+    amharicName: 'የመካከለኛው ዘመን ቤተመንግሥቶች',
     region: 'northern-ethiopia',
     regionLabel: 'Northern Heritage',
     heroImage: gondarImg,
@@ -333,7 +331,7 @@ export const DESTINATIONS_DATA: Destination[] = [
       galleryGondarImg
     ],
     tagline: '17th Century Imperial Castles & The Angelic Ceiling of Debre Berhan Selassie',
-    description: 'The ancient capital of Emperor Fasilides, Gondar is world-renowned for its fortified Fasil Ghebbi royal castle complex, stone bath houses, and the iconic Debre Berhan Selassie Church with its 104 winged angel faces watching over pilgrims.',
+    description: 'The historic imperial capital of Emperor Fasilides, world-renowned for its fortified Fasil Ghebbi royal castle complex, stone bath houses, and the iconic Debre Berhan Selassie Church with its 104 winged angel faces watching over pilgrims.',
     whyVisit: [
       'Tour Emperor Fasilides’ medieval stone castle and Royal Enclosure',
       'Admire the famous ceiling of Debre Berhan Selassie church painted with 104 angelic eyes',
@@ -343,18 +341,18 @@ export const DESTINATIONS_DATA: Destination[] = [
     thingsToDo: [
       'Explore the 6 castles, library, and banqueting halls of Fasil Ghebbi',
       'Walk through the tranquil walled gardens of Fasilides Bath',
-      'Attend the thrilling Gondar Timkat celebrations where thousands plunge into blessed waters',
+      'Attend the thrilling Timkat celebrations where thousands plunge into blessed waters',
       'Visit Kuskuam Palace and Empress Mentewab’s monastery'
     ],
-    keyAttractions: ['Fasil Ghebbi Royal Enclosure', 'Debre Berhan Selassie Church', 'Fasilides’ Bath', 'Kuskuam Palace Complex', 'Gondar Azmari Bet Music Taverns'],
-    cultureAndHeritage: 'Gondar was Ethiopia’s capital from 1636 to 1855, famous for ecclesiastical scholarship, classical Gondarine painting, and the Azmari acoustic music tradition.',
-    localFoodHighlights: ['Gondar Special Sizzling Tibs', 'Traditional Tej with Masinko performance', 'Authentic Shiro Tegamino'],
+    keyAttractions: ['Fasil Ghebbi Royal Enclosure', 'Debre Berhan Selassie Church', 'Fasilides’ Bath', 'Kuskuam Palace Complex', 'Traditional Azmari Bet Music Taverns'],
+    cultureAndHeritage: 'An imperial capital from 1636 to 1855, famous for ecclesiastical scholarship, classical Gondarine painting, and the Azmari acoustic music tradition.',
+    localFoodHighlights: ['Highland Special Sizzling Tibs', 'Traditional Tej with Masinko performance', 'Authentic Shiro Tegamino'],
     bestTimeToVisit: 'October to April; January 18–20 for the grand Timkat festival.',
     scheduleType: 'Customizable Private Itinerary',
     travelTips: ['Do not miss the evening Azmari music bars where bards improvise humorous songs about guests', 'Photography permits are included in royal site tickets'],
     coordinates: { lat: 12.6080, lng: 37.4673 },
     elevation: '2,133 m',
-    nearbyLodging: ['Panoramic Hillside Castle-View Lodges', 'Gondar Heritage Guesthouses', 'Boutique Imperial Stays'],
+    nearbyLodging: ['Panoramic Hillside Castle-View Lodges', 'Regional Heritage Guesthouses', 'Boutique Imperial Stays'],
     availableTourIds: ['northern-ethiopia-grand-circuit', 'timkat-festival-special'],
     featured: false,
   },
@@ -434,8 +432,8 @@ export const DESTINATIONS_DATA: Destination[] = [
   },
   {
     id: 'konso-cultural-landscape',
-    name: 'Konso Cultural Landscape (UNESCO)',
-    amharicName: 'የኮንሶ ባህላዊ መልክዓ ምድር',
+    name: 'Ancient Terraced Hilltop Settlements (UNESCO)',
+    amharicName: 'የጥንታዊ እርከኖች እና መንደሮች መልክዓ ምድር',
     region: 'southern-ethiopia',
     regionLabel: 'Southern Heritage Terraces',
     heroImage: konsoImg,
@@ -443,29 +441,29 @@ export const DESTINATIONS_DATA: Destination[] = [
       konsoImg,
       omoImg
     ],
-    tagline: '21 Generations of Dry-Stone Terracing, Carved Wooden Waka Sculptures & Living Gadaa Councils',
-    description: 'A UNESCO Cultural World Heritage site spanning arid hillsides painstakingly sculpted with dry-stone agricultural terraces for over 400 years. The Konso people are renowned for their fortified hill-top stone settlements (Kanta), sacred generation trees (Olayta), anthropomorphic wooden funerary statues (Waka), and community council houses (Mora).',
+    tagline: '21 Generations of Dry-Stone Terracing, Carved Wooden Sculptures & Living Community Councils',
+    description: 'A UNESCO Cultural World Heritage site spanning arid hillsides painstakingly sculpted with dry-stone agricultural terraces for over 400 years. The region is renowned for fortified hill-top stone settlements (Kanta), sacred generation trees (Olayta), anthropomorphic wooden funerary statues (Waka), and community council houses (Mora).',
     whyVisit: [
       'Walk through 400-year-old stone-walled terraced landscapes recognized by UNESCO',
       'See sacred carved wooden "Waka" statues honoring deceased community heroes and chiefs',
       'Visit traditional walled villages (Kanta) featuring central "Mora" community gathering pavilions',
-      'Explore the natural "New York" eroded sandstone canyon formations of Gesergiyo'
+      'Explore the natural eroded sandstone canyon formations of Gesergiyo'
     ],
     thingsToDo: [
-      'Guided walking tour with a Konso community elder through the walled village of Dokatu or Mecheke',
-      'Visit the Konso Cultural Museum displaying authentic historical Waka sculptures',
+      'Guided walking tour with a local community elder through historic stone-walled hillside villages',
+      'Visit the local cultural heritage museum displaying authentic historical wooden sculptures',
       'Taste traditional locally fermented sorghum beverage (Parsa) and roasted grain snacks',
       'Hike along the ancient stone water-catchment terraces with panoramic hill views'
     ],
-    keyAttractions: ['UNESCO Terraced Stone Walls', 'Dokatu Traditional Fortified Village', 'Konso Cultural Museum & Waka Heritage', 'Mora Council Houses', 'Gesergiyo Sandstone Canyons'],
-    cultureAndHeritage: 'The Konso have maintained an unbroken egalitarian social system with generation age-grades, sacred clan kings (Poqalla), and master engineering that prevents mountain soil erosion.',
-    localFoodHighlights: ['Konso Kurkufa (Steamed Sorghum Balls with Wild Moringa Leaves)', 'Parsa (Refreshing low-alcohol Sorghum brew)', 'Roasted Highland Barley and Legumes'],
+    keyAttractions: ['UNESCO Terraced Stone Walls', 'Traditional Fortified Hilltop Villages', 'Cultural Heritage Museum & Wood Sculptures', 'Mora Council Pavilions', 'Gesergiyo Sandstone Canyons'],
+    cultureAndHeritage: 'Maintains an unbroken egalitarian social system with generation age-grades, sacred clan lineage, and master stone engineering that prevents mountain soil erosion.',
+    localFoodHighlights: ['Steamed Sorghum Balls with Wild Moringa Leaves (Kurkufa)', 'Refreshing Sorghum Beverage (Parsa)', 'Roasted Highland Barley and Legumes'],
     bestTimeToVisit: 'Year-round; best from September to March.',
     scheduleType: 'Customizable Private Itinerary',
-    travelTips: ['Respect local village customs and hire an official Konso community guide', 'Visit the local market on Monday or Thursday for an unforgettable cultural sight'],
+    travelTips: ['Respect local village customs and hire an official community guide', 'Visit the regional weekly market on Monday or Thursday for an unforgettable cultural sight'],
     coordinates: { lat: 5.3333, lng: 37.4833 },
     elevation: '1,400 to 1,750 m',
-    nearbyLodging: ['Konso Hillside Eco-Lodges', 'Community Stone Guesthouses', 'Arba Minch Gateway Lodges'],
+    nearbyLodging: ['Hillside Eco-Lodges', 'Community Stone Guesthouses', 'Arba Minch Gateway Lodges'],
     availableTourIds: ['omo-valley-cultural-odyssey', 'southern-ethiopia-grand-circuit'],
     featured: false,
   },
@@ -578,9 +576,9 @@ export const DESTINATIONS_DATA: Destination[] = [
   },
   {
     id: 'axum-historic',
-    name: 'Axum (Aksum) Ancient Kingdom & Sacred Obelisks',
-    amharicName: 'አክሱም',
-    tigrinyaName: 'ኣኽሱም',
+    name: 'Ancient Northern Kingdom & Sacred Obelisks',
+    amharicName: 'የጥንታዊ መንግሥት እና ቅዱሳን ሐውልቶች',
+    tigrinyaName: 'ጥንታዊ መንግስትን ቅዱሳን ሓወልትን',
     region: 'tigray',
     regionLabel: 'Tigray Ancient Heritage',
     heroImage: tourAxumImg,
@@ -589,49 +587,49 @@ export const DESTINATIONS_DATA: Destination[] = [
       destAxumZionImg
     ],
     tagline: 'Cradle of Ethiopian Civilization & Guardian of the Ark of the Covenant',
-    description: 'The ancient capital of the monumental Aksumite Empire, designated a UNESCO World Heritage site. Axum was hailed alongside Rome, Persia, and China as one of the four great civilizations of antiquity. It features soaring monolithic granite stelae up to 24 meters high, the sacred Church of Our Lady Mary of Zion (where the Ark of the Covenant resides), Queen of Sheba’s palace (Dungur), and 4th-century trilingual royal stone inscriptions.',
+    description: 'The ancient capital of a monumental northern empire, designated a UNESCO World Heritage site. Hailed alongside Rome, Persia, and China as one of the four great civilizations of antiquity. It features soaring monolithic granite stelae up to 24 meters high, the sacred Church of Our Lady Mary of Zion (where the Ark of the Covenant resides), the historic Dungur palace ruins, and 4th-century trilingual royal stone inscriptions.',
     whyVisit: [
-      'Stand in awe before towering 1,700-year-old carved monolithic granite stelae in Northern Stelae Park',
+      'Stand in awe before towering 1,700-year-old carved monolithic granite stelae in the Northern Stelae Park',
       'Visit the holy sanctuary of Our Lady Mary of Zion and the Chapel of the Tablet housing the Ark of the Covenant (Tabote Tsion)',
-      'Explore the archaeological ruins of Queen of Sheba’s Palace (Dungur) and the ancient May Shum reservoir bath',
+      'Explore the archaeological ruins of Dungur Palace and the ancient May Shum reservoir bath',
       'Decipher the famous Ezana Inscription Stone—the trilingual tablet inscribed in Ge’ez, Sabaean, and Ancient Greek',
-      'Descend into the underground royal tombs and catacombs of King Kaleb and Emperor Gebre Meskel'
+      'Descend into the underground royal tombs and catacombs of ancient kings'
     ],
     thingsToDo: [
-      'Guided historical walking tour through the Northern Stelae Field and Axum Archaeological Museum',
+      'Guided historical walking tour through the Northern Stelae Field and Archaeological Museum',
       'Pilgrimage visit to the historic 17th-century Old Church of Mary of Zion and royal crowns museum',
-      'Wander through the stone foundations and courtyards of Queen of Sheba’s Dungur Palace',
+      'Wander through the stone foundations and courtyards of the ancient Dungur Palace',
       'Explore the subterranean granite burial vaults of King Kaleb and Gebre Meskel',
-      'Sample traditional Tigray cuisine including celebratory Tihlo and sweet local honey wine'
+      'Sample traditional highland cuisine including celebratory Tihlo and sweet local honey wine'
     ],
     keyAttractions: [
       'Northern Stelae Park & King Ezana’s Stele (24m)',
       'Church of Our Lady Mary of Zion (Chapel of the Tablet / Ark of the Covenant)',
-      'Queen of Sheba’s Palace (Dungur Ruins)',
-      'May Shum (Queen of Sheba’s Ancient Bath)',
-      'Tombs of Kings Kaleb and Gebre Meskel',
+      'Ancient Royal Palace Ruins (Dungur)',
+      'May Shum (Ancient Queen’s Bath)',
+      'Tombs of Ancient Kings & Granite Catacombs',
       'Ezana Inscription Stone (Ge’ez, Sabaean, Greek)',
-      'Axum Archaeological Museum'
+      'Regional Archaeological Museum'
     ],
-    cultureAndHeritage: 'Inscribed as a UNESCO World Heritage site in 1980. For centuries, Axum served as the economic and spiritual crossroads connecting the Red Sea, Nile, and Arabian Peninsula. In 330 AD, King Ezana embraced Christianity, establishing one of the earliest Christian nations on Earth and minting gold coins inscribed in Ge’ez.',
-    localFoodHighlights: ['Tigray Special Tihlo (Roasted barley spheres dipped in hot spiced lamb stew)', 'Fasting Beyaynetu with Siljo & Gomen', 'Pure Highland White Honey & Tej (Honey Wine)'],
+    cultureAndHeritage: 'Inscribed as a UNESCO World Heritage site in 1980. For centuries, this northern kingdom served as the economic and spiritual crossroads connecting the Red Sea, Nile, and Arabian Peninsula. In 330 AD, Christianity was embraced as the state religion, minting gold coins inscribed in Ge’ez.',
+    localFoodHighlights: ['Regional Special Tihlo (Roasted barley spheres dipped in hot spiced lamb stew)', 'Fasting Beyaynetu with Siljo & Gomen', 'Pure Highland White Honey & Tej (Honey Wine)'],
     bestTimeToVisit: 'October to April (especially November 30 for the sacred Hidar Zion pilgrimage festival).',
     scheduleType: 'Customizable Private Itinerary',
     travelTips: [
       'Modest attire is expected; a white cotton scarf (Netela) is customary when visiting holy sanctuaries',
-      'Direct daily flights operate between Addis Ababa (ADD) and Axum Airport (AXU)',
-      'Combine with Gheralta cliff churches and Lalibela for a complete northern historic journey'
+      'Direct daily flights operate between Addis Ababa (ADD) and the northern regional airport',
+      'Combine with rock-hewn cliff churches and Lalibela for a complete northern historic journey'
     ],
     coordinates: { lat: 14.1278, lng: 38.7167 },
     elevation: '2,131 m (6,991 ft)',
-    nearbyLodging: ['Boutique Heritage Guesthouses in Axum', 'Historic Stelae-View Stays', 'Comfortable Northern Circuit Hotels'],
+    nearbyLodging: ['Boutique Heritage Guesthouses', 'Historic Stelae-View Stays', 'Comfortable Northern Circuit Hotels'],
     availableTourIds: ['axum-ancient-kingdom-pilgrimage', 'gheralta-tigray-cliff-churches-expedition'],
     featured: true,
   },
   {
     id: 'gheralta-mountains',
-    name: 'Gheralta Mountains & Rock-Hewn Cliff Churches',
-    tigrinyaName: 'ክፍሊ ዓዲ ገርዓልታ',
+    name: 'Sacred Sandstone Pinnacles & Rock-Hewn Cliff Churches',
+    tigrinyaName: 'ናይ ከውሒ ኣብያተ ክርስቲያናት',
     region: 'tigray',
     regionLabel: 'Tigray Rock-Hewn Wonders',
     heroImage: tourGheraltaImg,
@@ -640,41 +638,41 @@ export const DESTINATIONS_DATA: Destination[] = [
       destGheraltaTigrayImg
     ],
     tagline: 'Monumental Red Sandstone Pinnacles & Heavenly Cliff Monasteries',
-    description: 'Rising dramatically from the arid plains of Hawzen in eastern Tigray, the Gheralta mountain range is world-renowned for sheer scarlet sandstone pinnacles and over 120 rock-cut medieval monasteries perched high on vertical cliff faces. Highlights include the legendary Abuna Yemata Guh (reached by climbing a sheer vertical cliff face with 5th-century frescoes) and Maryam Korkor.',
+    description: 'Rising dramatically from the arid northern plains, this dramatic mountain range is world-renowned for sheer scarlet sandstone pinnacles and over 120 rock-cut medieval monasteries perched high on vertical cliff faces. Highlights include the legendary cliff sanctuary of Abuna Yemata Guh (reached by scaling sheer vertical rock faces with 5th-century frescoes) and Maryam Korkor.',
     whyVisit: [
       'Climb the sheer cliff face using ancient handholds to reach the miraculous church of Abuna Yemata Guh',
       'Marvel at vivid 5th- and 6th-century Orthodox frescoes painted on solid stone domes high above the clouds',
       'Trek up the panoramic trails to Maryam Korkor and Daniel Korkor commanding 360-degree desert vistas',
-      'Visit Yeha Great Temple—the 2,800-year-old pre-Aksumite stone tower, Ethiopia’s oldest standing monument',
+      'Visit the ancient Great Temple—the 2,800-year-old stone tower, Ethiopia’s oldest standing monument',
       'Explore the historic Al-Nejashi Mosque, revered as the first Muslim sanctuary in Africa'
     ],
     thingsToDo: [
       'Early morning ascent to Abuna Yemata Guh with certified local mountain scouts and safety ropes',
       'Scenic ridge hike to the twin mountain monasteries of Maryam and Daniel Korkor',
-      'Golden hour landscape photography across the dramatic red rock towers of Hawzen valley',
-      'Excursion to the 8th-century BC pre-Aksumite Great Temple of Yeha and museum',
-      'Experience traditional Tigray coffee ceremonies and village hospitality'
+      'Golden hour landscape photography across the dramatic red rock towers and valley',
+      'Excursion to the 8th-century BC pre-historic Great Temple and museum',
+      'Experience traditional highland coffee ceremonies and village hospitality'
     ],
     keyAttractions: [
       'Abuna Yemata Guh Cliff Church',
       'Maryam & Daniel Korkor Mountain Churches',
-      'Yeha Great Temple (800 BC)',
+      'Ancient Pre-Historic Great Temple (800 BC)',
       'Al-Nejashi Historic Mosque (Negash)',
       'Debre Damo Leather Rope Monastery',
-      'Hawzen Red Sandstone Valley'
+      'Dramatic Red Sandstone Valley Vistas'
     ],
-    cultureAndHeritage: 'Founded in the 5th and 6th centuries by the Nine Saints who journeyed from Syria and the Byzantine Empire. These hermit-monks carved churches into the most inaccessible mountain peaks to seek spiritual communion with God, undisturbed contemplation, and shelter.',
-    localFoodHighlights: ['Traditional Tigray Tihlo with spiced lamb wat', 'Warm Ambasha spiced celebratory bread', 'Highland honey and roasted sesame treats'],
+    cultureAndHeritage: 'Founded in the 5th and 6th centuries by holy hermits who journeyed across the Red Sea. These ascetic monks carved churches into the most inaccessible mountain peaks to seek spiritual communion, undisturbed contemplation, and shelter.',
+    localFoodHighlights: ['Traditional Highland Tihlo with spiced lamb wat', 'Warm Ambasha spiced celebratory bread', 'Highland honey and roasted sesame treats'],
     bestTimeToVisit: 'October through April for clear dry skies, firm rock grip, and magnificent sunsets.',
     scheduleType: 'Customizable Private Itinerary',
     travelTips: [
       'Wear sturdy sneakers or hiking boots with strong rubber grip for the cliff climb',
       'Certified local scouts and safety ropes are provided to ensure a secure, guided ascent',
-      'Travelers preferring less vertical climbs can easily explore Maryam Korkor, Yeha, and Negash'
+      'Travelers preferring less vertical climbs can easily explore gentle ridge trails and valley temples'
     ],
     coordinates: { lat: 13.9783, lng: 39.3872 },
     elevation: '2,580 m (8,465 ft)',
-    nearbyLodging: ['Gheralta Mountain Escarpment Eco-Lodges', 'Hawzen Boutique Desert Lodges', 'Traditional Tigray Stone Guesthouses'],
+    nearbyLodging: ['Escarpment Eco-Lodges', 'Boutique Desert Lodges', 'Traditional Stone Guesthouses'],
     availableTourIds: ['gheralta-tigray-cliff-churches-expedition', 'axum-ancient-kingdom-pilgrimage'],
     featured: true,
   }
@@ -1117,7 +1115,7 @@ export const FESTIVALS_DATA: Festival[] = [
     dateOrSeason: 'January 19 (January 20 on leap years)',
     nextDate: 'January 19, 2027',
     primaryLocations: ['Gondar (Fasilides’ Bath)', 'Addis Ababa (Jan Meda)', 'Lalibela'],
-    image: timkatImg,
+    image: '', // Photo removed per user directive; written cultural chronicle only
     history: 'Commemorating the baptism of Jesus Christ in the Jordan River by John the Baptist. Inscribed by UNESCO on the Representative List of the Intangible Cultural Heritage of Humanity in 2019.',
     culturalMeaning: 'Holy replicas of the Ark of the Covenant (Tabots) are carried on the heads of senior priests wrapped in rich velvet and gold embroidery, escorted by processions of deacons, choirs, and hundreds of thousands of pilgrims in pristine white Netela shawls.',
     visitorExperience: [
@@ -1516,7 +1514,7 @@ export const BUSINESSES_DATA: BusinessListing[] = [
     phone: '+251 911 345 678',
     whatsapp: '+251912213888',
     openingHours: 'Mon - Sun: 08:30 AM – 06:30 PM',
-    image: '', // Real photo upload placeholder
+    image: '', // Photo upload placeholder
     packageType: 'Premium Listing',
     status: 'active',
     isVerified: true,
@@ -1606,19 +1604,19 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'gal-5',
-    title: 'Fasil Ghebbi Imperial Castle Complex',
+    title: 'Imperial Stone Castle Complex',
     category: 'Historical Sites',
     imageUrl: galleryGondarImg,
-    location: 'Gondar',
-    caption: 'The 17th-century stone palaces of Emperor Fasilides.'
+    location: 'Northern Historic Circuit',
+    caption: 'The 17th-century stone palaces and castles of Emperor Fasilides.'
   },
   {
     id: 'gal-6',
-    title: 'Timkat Celebration at Fasilides Bath',
+    title: 'Irreecha Cultural Thanksgiving Celebration',
     category: 'Festivals',
-    imageUrl: galleryTimkatImg,
-    location: 'Gondar',
-    caption: 'The dawn blessing of water during Epiphany at Emperor Fasilides’ Bath.'
+    imageUrl: irreechaImg,
+    location: 'Lake Hora & Addis Ababa',
+    caption: 'Gathering with fresh Coqorsa grass and Adey Abeba flowers to give thanks for peace, harvest, and life.'
   },
   {
     id: 'gal-7',
@@ -1646,11 +1644,11 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'gal-10',
-    title: 'Konso Hilltop Terraced Village (UNESCO)',
+    title: 'Ancient Hilltop Terraced Village (UNESCO)',
     category: 'Southern Ethiopia',
     imageUrl: konsoImg,
-    location: 'Konso Cultural Landscape',
-    caption: 'Ancient walled stone settlements (Kanta) and dense thatched huts nestled into green agricultural terraces.'
+    location: 'Southern Terraced Highlands',
+    caption: 'Ancient walled stone settlements and dense thatched huts nestled into green agricultural terraces.'
   },
   {
     id: 'gal-11',

@@ -298,7 +298,7 @@ export const Footer: React.FC<FooterProps> = ({
                   className="mt-1 text-[11px] text-white/90 hover:text-white bg-white/10 hover:bg-white/15 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <Camera className="w-3 h-3 text-[#D49A3D]" />
-                  <span>Upload &amp; Manage Real Photos</span>
+                  <span>Upload &amp; Manage Photos</span>
                 </button>
               )}
             </div>
@@ -337,7 +337,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onNavigate('ethiopian-food-gallery-section')}
                   className="hover:text-white transition-colors text-left"
                 >
-                  Authentic Ethiopian & Oromo Food
+                  Authentic Ethiopian Food Gallery
                 </button>
               </li>
               <li>

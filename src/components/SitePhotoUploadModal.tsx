@@ -500,7 +500,7 @@ export const SitePhotoUploadModal: React.FC = () => {
                       Publish to Live Server (Visible to All Public Visitors)
                     </h4>
                     <p className="text-xs text-[#5C5247]">
-                      Syncs your custom photos directly to the web server so every visitor across the globe sees your real photos.
+                      Syncs your custom photos directly to the web server so every visitor across the globe sees your photos.
                     </p>
                   </div>
                 </div>

@@ -44,7 +44,7 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
           <X className="w-5 h-5" />
         </button>
 
-        {/* Hero Image Banner (Authentic Real Photo) */}
+        {/* Hero Image Banner (Verified Photo) */}
         <div className="relative h-64 sm:h-80 md:h-96 w-full overflow-hidden bg-slate-900">
           <AuthenticImage
             src={destination.heroImage}

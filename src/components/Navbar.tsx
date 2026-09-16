@@ -305,7 +305,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <Utensils className="w-4 h-4 text-[#1E3A2F]" />
                 <div>
                   <div className="font-semibold text-sm">{t('nav_food', 'Food Gallery')}</div>
-                  <div className="text-[11px] text-[#7A7063]">Authentic Ethiopian & Oromo Flavors</div>
+                  <div className="text-[11px] text-[#7A7063]">Authentic Ethiopian Flavors & Heritage</div>
                 </div>
               </button>
               <button
@@ -420,7 +420,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={() => openUploadModal()}
               className="p-2 rounded-xl bg-[#FAF6EE] border border-[#D49A3D]/40 text-[#1E3A2F] hover:bg-[#D49A3D]/20 transition-colors flex items-center gap-1.5 text-xs font-bold cursor-pointer"
-              title="Upload your own real photos (Founder Admin)"
+              title="Upload custom photos (Founder Admin)"
             >
               <Camera className="w-3.5 h-3.5 text-[#B85C38]" />
               <span className="hidden 2xl:inline">{t('btn_upload_photos', 'Upload Photos')}</span>
@@ -555,7 +555,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               }`}
             >
               <Utensils className="w-4 h-4 text-[#1E3A2F]" />
-              {t('nav_food', 'Ethiopian & Oromo Food Gallery')}
+              {t('nav_food', 'Ethiopian Food Gallery')}
             </button>
             <button
               onClick={() => handleNavClick('festivals')}
@@ -642,7 +642,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="w-full py-3 rounded-xl bg-[#FAF6EE] border border-[#D49A3D]/50 text-[#1E3A2F] font-bold text-center text-sm flex items-center justify-center gap-2 shadow-xs cursor-pointer"
               >
                 <Camera className="w-4 h-4 text-[#B85C38]" />
-                <span>{t('btn_upload_photos', 'Upload Real Photos')}</span>
+                <span>{t('btn_upload_photos', 'Upload Photos')}</span>
               </button>
             )}
             <button
