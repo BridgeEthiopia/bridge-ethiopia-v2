@@ -521,10 +521,11 @@ export const Footer: React.FC<FooterProps> = ({
             <button
               type="button"
               onClick={() => {
-                if (!isAdminMode) {
+                if (isAdminMode) {
+                  openUploadModal();
+                } else {
                   toggleAdminMode();
                 }
-                openUploadModal();
               }}
               className={`text-[11px] px-2.5 py-1 rounded-lg border transition-colors flex items-center gap-1.5 cursor-pointer ${
                 isAdminMode

@@ -710,6 +710,72 @@ export const DESTINATIONS_DATA: Destination[] = [
       travelerAdvisory: 'The climb to Abuna Yemata Guh involves a 45-minute steep hike followed by a 5-meter near-vertical section where climbers use rock footholds and handholds, concluding with a traverse across a narrow ledge over a steep drop. While exhilarating, it requires good physical fitness, a steady head for heights, and comfortable clothing. Bridge Ethiopia provides certified local scouts and climbing harnesses with safety ropes for every traveler. Travelers who prefer gentler walking can choose the Maryam Korkor trail or visit the drive-up valley rock churches such as Abreha we Atsbeha and Wukro Chirkos.'
     }
   },
+  {
+    id: 'jimma-abba-jifar',
+    name: 'Jimma & Palace of King Abba Jifar',
+    oromoName: 'Mootummaa Jimmaa - Masaraa Abbaa Jifaar',
+    amharicName: 'ጅማ እና የአባ ጅፋር ቤተ መንግሥት',
+    region: 'oromia',
+    regionLabel: 'Oromia • Jimma Kingdom',
+    heroImage: '',
+    gallery: [],
+    isChronicleOnly: true,
+    tagline: '19th-Century Royal Wooden Palace of King Abba Jifar II, Historic Gibe Kingdom & Specialty Arabica Coffee Heartland',
+    description: 'Jimma is the historic royal capital of the legendary 19th-century Kingdom of Jimma, nestled amid rolling verdant hills, lush indigenous cloud forests, and centuries-old coffee groves in Southwestern Oromia. The city’s crowning cultural treasure is the grand Palace of King Abba Jifar II (Masaraa Abbaa Jifaar), constructed in the 1880s atop the scenic hill of Jiren. Built of indigenous hardwood and stone with master carved timber pillars and expansive balconies overlooking the Gibe Valley, the palace complex preserves the royal throne, traditional weaponry, personal bed, council halls, and historic mosque of one of Ethiopia’s most diplomatic, visionary monarchs.',
+    whyVisit: [
+      'Tour the grand 19th-century Palace of King Abba Jifar II at Jiren, featuring exquisite traditional Oromo woodwork and royal chambers',
+      'Learn about the Kingdom of Jimma (one of the Five Gibe Oromo Kingdoms) and its diplomatic prosperity under King Abba Jifar',
+      'Explore the Jimma Museum, housing royal regalia, ceremonial horns, carved wooden thrones, and rare cultural relics',
+      'Experience the specialty coffee heartland of Jimma and nearby Limmu—celebrated worldwide for balanced, fruity Arabica beans',
+      'Discover traditional Jimma wood carving, famous for the iconic three-legged Oromo stool (Barcuma) hand-carved from single tree trunks',
+      'Enjoy the peaceful highland atmosphere, lush vegetation, and warm Oromo cultural hospitality'
+    ],
+    thingsToDo: [
+      'Guided historical exploration through the King Abba Jifar Palace complex, royal mosque, and audience chambers at Jiren hill',
+      'Visit the Jimma Cultural Museum to study Oromo traditional attire, royal artifacts, and regional musical instruments',
+      'Take a specialty coffee tour through historic plantations and cooperative washing stations in the Jimma/Limmu coffee belt',
+      'Browse the vibrant Jimma Central Market for hand-carved wooden Barcuma chairs, bamboo baskets, and organic forest spices',
+      'Enjoy an authentic Oromo coffee ceremony paired with freshly roasted barley (Kolo) and warm Marqaa (porridge with spiced butter)',
+      'Birdwatching and scenic nature walks around Boye Lake and surrounding lush wetlands'
+    ],
+    keyAttractions: [
+      'Palace of King Abba Jifar II at Jiren (1880s Royal Wooden Palace)',
+      'King Abba Jifar Historic Royal Mosque',
+      'Jimma Cultural & Historical Museum',
+      'Historic Jiren Ridge Panoramic Lookout',
+      'Jimma Coffee Research Center & Heritage Plantations',
+      'Jimma Central Artisan Wood Market (Barcuma Stools)',
+      'Boye Wetland & Bird Sanctuary'
+    ],
+    cultureAndHeritage: 'Capital of the powerful Gibe Oromo Kingdom of Jimma. King Abba Jifar II maintained peaceful diplomacy and regional autonomy, fostering a thriving mercantile civilization renowned for coffee trade, master wood craftsmanship, and rich Oromo cultural traditions.',
+    localFoodHighlights: [
+      'Authentic Marqaa (Rich spiced porridge with spiced butter / Niter Kibbeh)',
+      'Freshly Brewed Specialty Jimma & Limmu Single-Origin Arabica Coffee',
+      'Caccabsaa (Chechebsa / Qita Firfir with Spiced Butter & Berbere)',
+      'Buna Qalaa (Traditional Oromo ceremonial coffee cooked in purified butter)',
+      'Tender Oromo Goat and Beef Tibs with Fresh Forest Korarima'
+    ],
+    bestTimeToVisit: 'October through May for pleasant sunny weather and the vibrant post-harvest coffee season.',
+    suggestedDuration: '2 - 3 Days',
+    scheduleType: 'Customizable Private Itinerary',
+    travelTips: [
+      'Daily scheduled 50-minute flights operate between Addis Ababa (ADD) and Jimma Aba Segud Airport (JIM)',
+      'Pick up an authentic hand-carved Jimma wooden stool (Barcuma) from local artisan cooperatives',
+      'Visit the palace in the morning for crisp light and panoramic valley views from Jiren hill'
+    ],
+    coordinates: { lat: 7.6769, lng: 36.8344 },
+    elevation: '1,780 m (5,840 ft)',
+    nearbyLodging: ['Jimma Central Heritage Hotels', 'Lush Valley Resorts', 'Boutique Coffee Estate Lodges'],
+    availableTourIds: ['jimma-abba-jifar-royal-coffee-trail'],
+    featured: true,
+    chronicle: {
+      historicalOrigins: 'The Kingdom of Jimma was the most powerful and prosperous of the Five Gibe Oromo Kingdoms that flourished in southwestern Ethiopia during the 18th and 19th centuries. Founded around 1790 by Abba Jifar I, the kingdom attained its political and cultural zenith under King Abba Jifar II (who reigned from 1878 to 1932). Known for his remarkable diplomatic wisdom, King Abba Jifar II negotiated a peaceful tributary treaty with Emperor Menelik II in 1884, preserving Jimma’s internal autonomy, laws, Islamic faith, and royal administration for decades. Jimma emerged as the paramount commercial crossroads of southwest Ethiopia, where merchant caravans converged to trade highland coffee, civet musk, mountain spices, beeswax, and master wooden crafts.',
+      architecturalMastery: 'Perched strategically atop Jiren hill overlooking the surrounding plains, the Palace of King Abba Jifar II is a stunning architectural marvel constructed in the 1880s. Built without a single metal nail, the complex was engineered using indigenous hardwoods—notably Podocarpus (Zigba), Juniper (Tid), and Cordia africana (Wanza)—interlocked with traditional mortise-and-tenon joinery and stone foundations. The palace features a grand two-story central residence with wide overhanging eaves, an expansive upper-level covered balcony with carved banisters where the king held court, royal bedchambers, guest pavilions, the administrative council hall (Lafa Safara), and an adjacent historic mosque built for the royal family and court scholars.',
+      sacredTraditions: 'Jimma has long stood as a leading center of Islamic scholarship, peaceful coexistence, and deep Oromo cultural traditions. King Abba Jifar II patronized Islamic learning, establishing schools that attracted students and scholars from across East Africa. At the same time, Oromo social customs, communal solidarity, and the legendary Buna Qalaa ceremony (coffee beans blessed and cooked in fragrant spiced butter, served as an emblem of peace and reconciliation) remained central to community life and royal diplomacy.',
+      livingEcosystem: 'Jimma lies within the fertile southwestern volcanic highlands, surrounded by mist-draped indigenous rainforests, emerald green rolling hills, and rich volcanic loam soils. This region is the genetic homeland of wild Coffea arabica: under the forest canopy, heirloom coffee trees flourish in natural harmony with towering Hagenia abyssinica and fig trees, providing a pristine sanctuary for colobus monkeys, hornbills, and exotic butterflies. The region is also Ethiopia’s premier center for agricultural research and forest conservation.',
+      travelerAdvisory: 'Jimma is easily reached by daily domestic flights into Jimma Aba Segud Airport (JIM) or by a scenic 5 to 6-hour paved highway drive from Addis Ababa through the Gibe River gorge. The Palace of King Abba Jifar at Jiren is located roughly 7 kilometers northeast of Jimma town; local guides at the site provide knowledgeable tours of the royal chambers and artifacts. The weather is comfortably temperate year-round, though rain gear is recommended between June and September. Do not miss tasting single-origin Jimma coffee freshly roasted on-site.'
+    }
+  },
 ];
 
 export const TOURS_DATA: Tour[] = [
@@ -1033,6 +1099,37 @@ export const TOURS_DATA: Tour[] = [
     highlights: ['Abuna Yemata Guh cliff face ascent & 5th-century frescoes', 'Maryam Korkor 360-degree mountain panorama', 'Yeha 2,800-year-old pre-Aksumite Great Temple', 'Al-Nejashi historic mosque in Negash'],
     rating: 4.98,
     reviewsCount: 65,
+    featured: true,
+  },
+  {
+    id: 'jimma-abba-jifar-royal-coffee-trail',
+    title: 'Jimma Kingdom, Abba Jifar Palace & Specialty Coffee Origin Trail',
+    category: 'Historical & UNESCO',
+    region: 'oromia',
+    duration: 'Customizable 2 - 3 Days',
+    scheduleType: 'Flexible Heritage Schedule',
+    groupSize: '1 - 10 Guests (Private / Small Group)',
+    difficulty: 'Easy',
+    priceFromUSD: 340,
+    image: '',
+    isChronicleOnly: true,
+    shortDescription: 'Journey to the historic royal capital of the Jimma Kingdom in Oromia. Explore the 19th-century Palace of King Abba Jifar II at Jiren hill, visit the Jimma Cultural Museum, meet master wood artisans carving traditional Barcuma chairs, and experience the birthplace of specialty Arabica coffee.',
+    itinerarySummary: [
+      'Day 1: Scenic flight from Addis Ababa to Jimma (JIM); private transfer and check-in; afternoon visit to the Jimma Cultural Museum and the vibrant artisan woodcarvers market to observe master craftsmen carving three-legged Barcuma stools',
+      'Day 2: Full guided historical expedition to the Palace of King Abba Jifar II atop Jiren hill; tour the royal reception balcony, historic timber mosque, royal bedchambers, and Council Hall; traditional Oromo lunch with authentic Marqaa and Buna Qalaa ceremony',
+      'Day 3: Specialty coffee origin excursion through historic shade-grown Arabica forest plantations and washing stations; birdwatching at Boye wetland; afternoon flight back to Addis Ababa'
+    ],
+    inclusions: [
+      'Private airport transfers in Jimma with air-conditioned vehicle & fuel',
+      'Certified English-speaking Oromia licensed historical guide',
+      'All entrance fees to King Abba Jifar Palace, museum, and royal grounds',
+      'Boutique hotel / lodge accommodation in Jimma with daily breakfast',
+      'Traditional Oromo coffee ceremony tasting & bottled mineral water'
+    ],
+    exclusions: ['Domestic flights (can be bundled upon request)', 'Lunches and dinners outside specified cultural tastings', 'Personal craft purchases'],
+    highlights: ['1880s Palace of King Abba Jifar II on Jiren hill', 'Jimma Cultural Museum royal regalia', 'Specialty single-origin Arabica coffee trail', 'Traditional Oromo Barcuma hand-carved woodwork'],
+    rating: 4.97,
+    reviewsCount: 52,
     featured: true,
   }
 ];

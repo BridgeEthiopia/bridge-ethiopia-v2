@@ -171,27 +171,25 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>{t('btn_whatsapp_direct', 'WhatsApp Direct')}</span>
             </a>
             {isAdminMode && (
-              <button
-                type="button"
-                onClick={() => openUploadModal()}
-                className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#1E3A2F] hover:text-[#B85C38] bg-[#D49A3D]/20 hover:bg-[#D49A3D]/30 px-3 py-1 rounded-md border border-[#D49A3D]/50 transition-colors cursor-pointer shadow-sm animate-in fade-in"
-                title="Photo Manager (Founder Mode Active)"
-              >
-                <Camera className="w-3.5 h-3.5 text-[#B85C38]" />
-                <span>Manage Photos</span>
-              </button>
+              <>
+                <button
+                  type="button"
+                  onClick={() => openUploadModal()}
+                  className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#1E3A2F] hover:text-[#B85C38] bg-[#D49A3D]/20 hover:bg-[#D49A3D]/30 px-3 py-1 rounded-md border border-[#D49A3D]/50 transition-colors cursor-pointer shadow-sm animate-in fade-in"
+                  title="Photo Manager (Founder Mode Active)"
+                >
+                  <Camera className="w-3.5 h-3.5 text-[#B85C38]" />
+                  <span>Manage Photos</span>
+                </button>
+                <button
+                  onClick={handleAdminClick}
+                  className="text-[11px] px-2 py-0.5 rounded border transition-colors cursor-pointer bg-[#1E3A2F] text-white border-[#1E3A2F] font-semibold"
+                  title="Founder Mode is Active (Click to open manager)"
+                >
+                  👑 Founder Mode
+                </button>
+              </>
             )}
-            <button
-              onClick={handleAdminClick}
-              className={`text-[11px] px-2 py-0.5 rounded border transition-colors cursor-pointer ${
-                isAdminMode 
-                  ? 'bg-[#1E3A2F] text-white border-[#1E3A2F] font-semibold' 
-                  : 'text-[#8C7E6D] hover:text-[#1E3A2F] border-[#D9D0C1]'
-              }`}
-              title={isAdminMode ? 'Founder Mode is Active (Click to open manager)' : 'Founder Sign-in / Photo Manager'}
-            >
-              {isAdminMode ? '👑 Founder Mode' : 'Admin'}
-            </button>
           </div>
         </div>
       </div>
@@ -400,21 +398,23 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="hidden lg:flex items-center gap-2.5">
           <LanguageSwitcher variant="compact" />
 
-          {/* Admin Inbox Trigger with Live Badge */}
-          <button
-            onClick={handleInboxClick}
-            className="p-2 rounded-xl bg-[#FAF6EE] border border-[#D49A3D]/40 text-[#1E3A2F] hover:bg-[#D49A3D]/20 transition-colors flex items-center gap-1.5 text-xs font-bold cursor-pointer relative"
-            title="Hindek Admin Inquiries & Bookings Inbox"
-            id="navbar-admin-inbox-btn"
-          >
-            <Inbox className="w-3.5 h-3.5 text-[#B85C38]" />
-            <span className="hidden 2xl:inline">Inbox</span>
-            {unreadCount > 0 && (
-              <span className="inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-extrabold bg-[#B85C38] text-white rounded-full leading-none animate-pulse">
-                {unreadCount}
-              </span>
-            )}
-          </button>
+          {/* Admin Inbox Trigger with Live Badge (Only visible in Founder Mode) */}
+          {isAdminMode && (
+            <button
+              onClick={handleInboxClick}
+              className="p-2 rounded-xl bg-[#FAF6EE] border border-[#D49A3D]/40 text-[#1E3A2F] hover:bg-[#D49A3D]/20 transition-colors flex items-center gap-1.5 text-xs font-bold cursor-pointer relative"
+              title="Hindek Admin Inquiries & Bookings Inbox"
+              id="navbar-admin-inbox-btn"
+            >
+              <Inbox className="w-3.5 h-3.5 text-[#B85C38]" />
+              <span className="hidden 2xl:inline">Inbox</span>
+              {unreadCount > 0 && (
+                <span className="inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-extrabold bg-[#B85C38] text-white rounded-full leading-none animate-pulse">
+                  {unreadCount}
+                </span>
+              )}
+            </button>
+          )}
 
           {isAdminMode && (
             <button
@@ -618,21 +618,23 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Mobile CTAs */}
           <div className="pt-4 flex flex-col gap-2.5">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                handleInboxClick();
-              }}
-              className="w-full py-3 rounded-xl bg-[#FAF6EE] border border-[#D49A3D]/50 text-[#1E3A2F] font-bold text-center text-sm flex items-center justify-center gap-2 shadow-xs cursor-pointer"
-            >
-              <Inbox className="w-4 h-4 text-[#B85C38]" />
-              <span>Admin Inbox & Bookings</span>
-              {unreadCount > 0 && (
-                <span className="px-2 py-0.5 text-xs bg-[#B85C38] text-white rounded-full font-bold">
-                  {unreadCount} new
-                </span>
-              )}
-            </button>
+            {isAdminMode && (
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleInboxClick();
+                }}
+                className="w-full py-3 rounded-xl bg-[#FAF6EE] border border-[#D49A3D]/50 text-[#1E3A2F] font-bold text-center text-sm flex items-center justify-center gap-2 shadow-xs cursor-pointer"
+              >
+                <Inbox className="w-4 h-4 text-[#B85C38]" />
+                <span>Admin Inbox & Bookings</span>
+                {unreadCount > 0 && (
+                  <span className="px-2 py-0.5 text-xs bg-[#B85C38] text-white rounded-full font-bold">
+                    {unreadCount} new
+                  </span>
+                )}
+              </button>
+            )}
             {isAdminMode && (
               <button
                 onClick={() => {
