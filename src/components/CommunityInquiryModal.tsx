@@ -16,10 +16,12 @@ import {
   Globe,
   Users,
   Clock,
-  Sparkles
+  Sparkles,
+  Mail
 } from 'lucide-react';
 import { FOUNDER_INFO } from '../data/ethiopiaData';
 import { useInquiries } from '../context/InquiriesContext';
+import { sendAdminEmailNotification, PRIMARY_ADMIN_EMAIL, SECONDARY_ADMIN_EMAIL } from '../utils/adminEmailNotifier';
 
 export interface CommunityInquiryModalProps {
   isOpen: boolean;
@@ -101,6 +103,22 @@ export const CommunityInquiryModal: React.FC<CommunityInquiryModalProps> = ({
       type: isNgoOrGov ? 'ngo-guidance' : 'community-support'
     });
 
+    // Send direct email dispatch to founder's admin email
+    sendAdminEmailNotification({
+      type: isNgoOrGov ? 'ngo-guidance' : 'community-support',
+      title: `${category} - ${supportType}`,
+      senderName: fullName.trim(),
+      senderEmail: email.trim(),
+      senderPhone: phoneOrWhatsApp.trim(),
+      details: {
+        'Focus Area': category,
+        'Support Type': supportType,
+        'Organization': organization || 'Individual / Traveler',
+        'Timeline': preferredDates || 'Flexible'
+      },
+      notes: message
+    });
+
     setIsSubmitting(false);
     setSubmitted(true);
   };
@@ -160,24 +178,33 @@ export const CommunityInquiryModal: React.FC<CommunityInquiryModalProps> = ({
                   Request Received with Gratitude!
                 </h4>
                 <p className="text-xs sm:text-sm text-[#5C5247] leading-relaxed">
-                  Thank you, <strong>{fullName}</strong>. Hindek has been notified immediately. We are honored to coordinate transparent community support or guide your institutional requirements.
+                  Thank you, <strong>{fullName}</strong>. Your inquiry has been sent directly to Founder Hindek's email at <strong>{PRIMARY_ADMIN_EMAIL}</strong>. Hindek handles all communications through email and WhatsApp and will be honored to coordinate with you.
                 </p>
               </div>
 
-              {/* Instant WhatsApp Quick Link */}
+              {/* Direct Email & WhatsApp Quick Links */}
               <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E8E1D5] max-w-md mx-auto space-y-3">
                 <p className="text-xs text-[#6B6155]">
-                  Need faster coordination or arriving in Ethiopia soon? Message Hindek directly:
+                  Need faster coordination or arriving in Ethiopia soon? Connect with Hindek directly:
                 </p>
-                <a
-                  href={`https://wa.me/${adminWhatsapp || FOUNDER_INFO.whatsapp}?text=${whatsappMessage}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-colors"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>Open in WhatsApp ({FOUNDER_INFO.whatsappDisplay})</span>
-                </a>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <a
+                    href={`https://wa.me/${adminWhatsapp || FOUNDER_INFO.whatsapp}?text=${whatsappMessage}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 py-3 px-3 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md transition-colors"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>WhatsApp Hindek</span>
+                  </a>
+                  <a
+                    href={`mailto:${PRIMARY_ADMIN_EMAIL}?cc=${encodeURIComponent(SECONDARY_ADMIN_EMAIL)}&subject=${encodeURIComponent(`Community / NGO Inquiry: ${category}`)}&body=${encodeURIComponent(`Hello Hindek,\n\nI just submitted a community/liaison inquiry:\nName: ${fullName}\nCategory: ${category}\nType: ${supportType}\nOrganization: ${organization || 'N/A'}\nMessage: ${message}\n\nPlease reply to ${email} or WhatsApp ${phoneOrWhatsApp}. Ameseginalehu!`)}`}
+                    className="flex-1 py-3 px-3 rounded-xl bg-white border border-[#1E3A2F]/30 text-[#1E3A2F] hover:bg-[#FAF8F5] font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+                  >
+                    <Mail className="w-4 h-4 text-[#B85C38]" />
+                    <span>Email Hindek Directly</span>
+                  </a>
+                </div>
               </div>
 
               <button

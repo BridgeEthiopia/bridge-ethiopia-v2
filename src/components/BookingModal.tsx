@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { FOUNDER_INFO } from '../data/ethiopiaData';
 import { useInquiries } from '../context/InquiriesContext';
+import { sendAdminEmailNotification, PRIMARY_ADMIN_EMAIL, SECONDARY_ADMIN_EMAIL } from '../utils/adminEmailNotifier';
 
 export interface BookingModalProps {
   isOpen: boolean;
@@ -109,29 +110,21 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       type: 'booking',
     });
 
-    // Prepare email body for direct admin inbox notification
-    const activeAdminEmail = adminEmail || FOUNDER_INFO.email;
-    const subject = encodeURIComponent(`New Booking Request: ${formData.serviceOrEvent} - ${formData.name}`);
-    const body = encodeURIComponent(
-      `NEW BOOKING / EVENT REQUEST FOR BRIDGE ETHIOPIA\n` +
-      `--------------------------------------------------\n` +
-      `Client Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Phone / WhatsApp: ${formData.phoneOrWhatsApp}\n` +
-      `Preferred Date: ${formData.date}\n` +
-      `Number of Guests: ${formData.numberOfGuests}\n` +
-      `Service / Event Requested: ${formData.serviceOrEvent}\n` +
-      `Destination: ${formData.destination}\n` +
-      `Special Requests / Notes: ${formData.specialRequests || 'None provided'}\n\n` +
-      `* Note: Please review availability and contact client privately by email or WhatsApp to discuss details and pricing.`
-    );
-
-    // Trigger mail client as reliable fallback
-    const mailtoLink = `mailto:${activeAdminEmail}?subject=${subject}&body=${body}`;
-    const link = document.createElement('a');
-    link.href = mailtoLink;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
+    // Send admin notification via email dispatch
+    sendAdminEmailNotification({
+      type: 'booking',
+      title: `Booking: ${formData.serviceOrEvent}`,
+      senderName: formData.name,
+      senderEmail: formData.email,
+      senderPhone: formData.phoneOrWhatsApp,
+      details: {
+        'Service/Tour': formData.serviceOrEvent,
+        'Destination': formData.destination,
+        'Target Date': formData.date,
+        'Guests': formData.numberOfGuests,
+      },
+      notes: formData.specialRequests
+    });
   };
 
   const whatsappMessage = encodeURIComponent(
@@ -434,11 +427,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 Request Received! Ameseginalehu, {formData.name}!
               </h3>
               <p className="text-sm text-[#52483E] max-w-lg mx-auto leading-relaxed">
-                Your booking request for <strong>{formData.serviceOrEvent}</strong> has been sent directly to the 
-                Bridge Ethiopia admin inbox (<strong>{FOUNDER_INFO.email}</strong>). 
+                Your booking request for <strong>{formData.serviceOrEvent}</strong> has been sent directly to 
+                Founder Hindek via email (<strong>{PRIMARY_ADMIN_EMAIL}</strong>).
               </p>
               <p className="text-xs text-[#6B6155] max-w-md mx-auto">
-                Founder <strong>{FOUNDER_INFO.name}</strong> will review your request and contact you privately by email or WhatsApp to discuss availability, customized schedule, and pricing.
+                Founder <strong>{FOUNDER_INFO.name}</strong> will review your request directly in her email and contact you by email or WhatsApp to discuss availability, customized schedule, and pricing.
               </p>
             </div>
 
@@ -446,7 +439,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E8E1D5] max-w-md mx-auto text-left text-xs space-y-2 text-[#423B33]">
               <div className="font-bold text-[#1E3A2F] border-b border-[#E8E1D5] pb-1.5 flex items-center justify-between">
                 <span>Summary of Your Request</span>
-                <span className="text-[#34A853] font-semibold">✓ Pending Admin Review</span>
+                <span className="text-[#34A853] font-semibold">✓ Dispatched to Admin Email</span>
               </div>
               <div>• <strong>Service/Event:</strong> {formData.serviceOrEvent}</div>
               <div>• <strong>Destination:</strong> {formData.destination}</div>
@@ -472,11 +465,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </a>
 
               <a
-                href={`mailto:${FOUNDER_INFO.email}?subject=${encodeURIComponent(`Booking Request: ${formData.serviceOrEvent}`)}&body=${encodeURIComponent(`Hello Hindek,\n\nI have requested a booking for ${formData.serviceOrEvent} on ${formData.date} for ${formData.numberOfGuests} guests.\n\nThank you!`)}`}
-                className="px-5 py-3.5 rounded-xl bg-white border border-[#1E3A2F]/30 text-[#1E3A2F] hover:bg-[#FAF8F5] font-bold text-xs sm:text-sm flex items-center gap-2 transition-colors"
+                href={`mailto:${PRIMARY_ADMIN_EMAIL}?cc=${encodeURIComponent(SECONDARY_ADMIN_EMAIL)}&subject=${encodeURIComponent(`Booking Request: ${formData.serviceOrEvent} - ${formData.name}`)}&body=${encodeURIComponent(`Hello Hindek,\n\nI have submitted a booking inquiry on Bridge Ethiopia:\n\n• Name: ${formData.name}\n• Service: ${formData.serviceOrEvent}\n• Date: ${formData.date}\n• Guests: ${formData.numberOfGuests}\n• Phone: ${formData.phoneOrWhatsApp}\n• Email: ${formData.email}\n\nNotes: ${formData.specialRequests || 'None'}\n\nLooking forward to your reply!`)}`}
+                className="px-5 py-3.5 rounded-xl bg-white border border-[#1E3A2F]/30 text-[#1E3A2F] hover:bg-[#FAF8F5] font-bold text-xs sm:text-sm flex items-center gap-2 transition-colors shadow-xs"
               >
                 <Mail className="w-4 h-4 text-[#B85C38]" />
-                <span>Email Admin Directly</span>
+                <span>Email Hindek Directly</span>
               </a>
 
               <button

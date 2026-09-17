@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { FOUNDER_INFO } from '../data/ethiopiaData';
 import { useInquiries } from '../context/InquiriesContext';
+import { sendAdminEmailNotification, PRIMARY_ADMIN_EMAIL, SECONDARY_ADMIN_EMAIL } from '../utils/adminEmailNotifier';
 
 interface PlanTripModalProps {
   isOpen: boolean;
@@ -157,6 +158,23 @@ export const PlanMyTripModal: React.FC<PlanTripModalProps> = ({
       numberOfGuests: Number(formData.numberOfTravelers || 2),
       specialRequests: `Interests: ${(formData.interests || []).join(', ') || 'General'}. Budget: ${formData.budgetTier || 'Standard'}. Notes: ${formData.specialRequirements || 'None'}`,
       type: 'custom-trip',
+    });
+
+    // Send admin notification directly via email dispatch
+    sendAdminEmailNotification({
+      type: 'custom-trip',
+      title: `Custom Trip Plan for ${formData.fullName || 'Traveler'}`,
+      senderName: formData.fullName || 'Traveler',
+      senderEmail: formData.email || '',
+      senderPhone: formData.phoneOrWhatsApp,
+      details: {
+        'Travelers': `${formData.numberOfTravelers || 2} (${formData.travelerType || 'Travelers'})`,
+        'Dates': formData.travelDates || 'Flexible dates',
+        'Pace': formData.travelPace || 'Tailored',
+        'Destinations': (formData.selectedDestinations || []).join(', ') || 'Flexible',
+        'Budget Tier': formData.budgetTier || formData.budgetLevel || 'Standard'
+      },
+      notes: formData.specialRequirements
     });
   };
 
@@ -471,30 +489,41 @@ export const PlanMyTripModal: React.FC<PlanTripModalProps> = ({
                 Ameseginalehu! Thank You, {formData.fullName}!
               </h3>
               <p className="text-sm text-[#52483E] max-w-md mx-auto leading-relaxed">
-                Your travel inquiry has been sent directly to <strong>{FOUNDER_INFO.name}</strong>. 
-                We will review your preferences and contact you via WhatsApp and Email within 12 hours with your personalized Ethiopian travel plan.
+                Your travel plan inquiry has been sent directly to Founder <strong>{FOUNDER_INFO.name}</strong> at <strong>{PRIMARY_ADMIN_EMAIL}</strong>. 
+                Hindek manages all inquiries via email and WhatsApp, and will reply directly with your personalized Ethiopian travel plan.
               </p>
             </div>
 
             <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E8E1D5] max-w-md mx-auto text-left text-xs space-y-1.5">
-              <div className="font-semibold text-[#1E3A2F]">Trip Summary:</div>
+              <div className="font-semibold text-[#1E3A2F] border-b border-[#E8E1D5] pb-1 flex items-center justify-between">
+                <span>Trip Request Summary</span>
+                <span className="text-[#34A853] font-bold">✓ Dispatched to Admin Email</span>
+              </div>
               <div>• Travelers: {formData.numberOfTravelers} guest(s) ({formData.travelerType})</div>
               <div>• Destinations: {formData.selectedDestinations?.join(', ')}</div>
-              <div>• Budget: {formData.budgetLevel}</div>
-              <div>• Phone/WhatsApp: {formData.phoneOrWhatsApp}</div>
+              <div>• Budget: {formData.budgetLevel || formData.budgetTier || 'Standard'}</div>
+              <div>• Contact: {formData.phoneOrWhatsApp} ({formData.email})</div>
             </div>
 
             <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
               <a
                 href={`https://wa.me/${FOUNDER_INFO.whatsapp}?text=${encodeURIComponent(
-                  `Hello Hindek! I just submitted a trip request for ${formData.fullName} (${formData.numberOfTravelers} travelers).`
+                  `Hello Hindek! I just submitted a custom trip request on Bridge Ethiopia for ${formData.fullName} (${formData.numberOfTravelers} travelers). Looking forward to your reply!`
                 )}`}
                 target="_blank"
                 rel="noreferrer"
-                className="px-6 py-3 rounded-xl bg-[#25D366] text-white font-bold text-xs flex items-center gap-2"
+                className="px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs flex items-center gap-2 shadow-md transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>Message Hindek on WhatsApp Now</span>
+                <span>Message Hindek on WhatsApp</span>
+              </a>
+
+              <a
+                href={`mailto:${PRIMARY_ADMIN_EMAIL}?cc=${encodeURIComponent(SECONDARY_ADMIN_EMAIL)}&subject=${encodeURIComponent(`Custom Trip Request: ${formData.fullName}`)}&body=${encodeURIComponent(`Hello Hindek,\n\nI just submitted my custom trip request for ${formData.numberOfTravelers} travelers.\nDestinations: ${(formData.selectedDestinations || []).join(', ')}\nTravel Dates: ${formData.travelDates || 'Flexible'}\nBudget: ${formData.budgetLevel || 'Standard'}\n\nPlease email me back at ${formData.email} or WhatsApp at ${formData.phoneOrWhatsApp}.\n\nThank you!`)}`}
+                className="px-5 py-3 rounded-xl bg-white border border-[#1E3A2F]/30 text-[#1E3A2F] hover:bg-[#FAF8F5] font-bold text-xs flex items-center gap-2 transition-colors shadow-xs"
+              >
+                <Mail className="w-4 h-4 text-[#B85C38]" />
+                <span>Email Hindek Directly</span>
               </a>
 
               <button
@@ -502,7 +531,7 @@ export const PlanMyTripModal: React.FC<PlanTripModalProps> = ({
                   setSubmitted(false);
                   onClose();
                 }}
-                className="px-6 py-3 rounded-xl bg-[#FAF8F5] border border-[#E8E1D5] text-[#1E3A2F] font-bold text-xs"
+                className="px-5 py-3 rounded-xl bg-[#FAF8F5] border border-[#E8E1D5] text-[#1E3A2F] font-bold text-xs hover:bg-[#E8E1D5] transition-colors"
               >
                 Back to Site
               </button>

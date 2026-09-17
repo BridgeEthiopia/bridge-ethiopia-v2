@@ -24,13 +24,11 @@ import { CommunityInquiryModal } from './components/CommunityInquiryModal';
 import { FounderPhotoUploadModal } from './components/FounderPhotoUploadModal';
 import { FounderPinModal } from './components/FounderPinModal';
 import { PhotoGuideModal } from './components/PhotoGuideModal';
-import { AdminInboxModal } from './components/AdminInboxModal';
-import { RealtimeNotificationToast } from './components/RealtimeNotificationToast';
 import { FounderPhotoProvider, useFounderPhoto } from './context/FounderPhotoContext';
 import { LanguageProvider } from './context/LanguageContext';
-import { InquiriesProvider, useInquiries } from './context/InquiriesContext';
+import { InquiriesProvider } from './context/InquiriesContext';
 import { Destination, Tour } from './types';
-import { MessageCircle, Camera, Sparkles, Inbox } from 'lucide-react';
+import { MessageCircle, Camera } from 'lucide-react';
 import { FOUNDER_INFO } from './data/ethiopiaData';
 
 function AppContent() {
@@ -54,7 +52,6 @@ function AppContent() {
   };
   
   const { openUploadModal, isAdminMode } = useFounderPhoto();
-  const { openInbox, unreadCount } = useInquiries();
 
   const handleNavigate = (sectionId: string) => {
     const el = document.getElementById(sectionId);
@@ -86,9 +83,6 @@ function AppContent() {
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#2E2822] font-sans antialiased selection:bg-[#D49A3D]/30 selection:text-[#1E3A2F]">
       
-      {/* Real-time Notification Banner / Audio Chime Toast */}
-      <RealtimeNotificationToast />
-
       {/* Top Navbar */}
       <Navbar
         onNavigate={handleNavigate}
@@ -96,7 +90,6 @@ function AppContent() {
         onOpenPlanTrip={() => setIsPlanTripOpen(true)}
         onOpenAiAssistant={() => handleNavigate('travel-assistance-section')}
         onOpenAdmin={() => openUploadModal()}
-        onOpenInbox={() => openInbox()}
       />
 
       {/* Main Content Flow */}
@@ -275,9 +268,6 @@ function AppContent() {
           openUploadModal();
         }}
       />
-
-      {/* Admin Booking Inquiries & Messages Modal */}
-      <AdminInboxModal />
 
     </div>
   );

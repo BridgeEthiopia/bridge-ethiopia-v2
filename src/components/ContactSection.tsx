@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FOUNDER_INFO } from '../data/ethiopiaData';
 import { useFounderPhoto } from '../context/FounderPhotoContext';
 import { useInquiries } from '../context/InquiriesContext';
+import { sendAdminEmailNotification, PRIMARY_ADMIN_EMAIL, SECONDARY_ADMIN_EMAIL } from '../utils/adminEmailNotifier';
 import { 
   Phone, 
   Mail, 
@@ -39,6 +40,19 @@ export const ContactSection: React.FC = () => {
       serviceOrEvent: `Contact Message: ${formData.subject}`,
       specialRequests: formData.message,
       type: 'inquiry',
+    });
+
+    // Send direct email dispatch to founder's admin email
+    sendAdminEmailNotification({
+      type: 'contact',
+      title: `Contact Inquiry: ${formData.subject}`,
+      senderName: formData.name,
+      senderEmail: formData.email,
+      senderPhone: formData.phoneOrWhatsApp,
+      details: {
+        'Topic/Subject': formData.subject,
+      },
+      notes: formData.message
     });
   };
 
@@ -299,17 +313,39 @@ export const ContactSection: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-bold font-serif text-[#1E3A2F]">Message Sent Successfully!</h3>
                   <p className="text-xs sm:text-sm text-[#52483E] max-w-sm mx-auto leading-relaxed">
-                    Thank you, {formData.name}. Hindek will respond to your email ({formData.email}) shortly.
+                    Thank you, <strong>{formData.name}</strong>. Your message has been sent directly to Founder Hindek's email at <strong>{PRIMARY_ADMIN_EMAIL}</strong>. Hindek handles all inquiries through email and WhatsApp and will reply to <strong>{formData.email}</strong> shortly.
                   </p>
-                  <button
-                    onClick={() => {
-                      setSent(false);
-                      setFormData({ name: '', email: '', phoneOrWhatsApp: '', subject: 'General Inquiry', message: '' });
-                    }}
-                    className="px-6 py-2.5 rounded-xl bg-white border border-[#E8E1D5] text-xs font-bold text-[#1E3A2F]"
-                  >
-                    Send Another Note
-                  </button>
+                  
+                  <div className="pt-2 flex flex-wrap items-center justify-center gap-2.5">
+                    <a
+                      href={`mailto:${PRIMARY_ADMIN_EMAIL}?cc=${encodeURIComponent(SECONDARY_ADMIN_EMAIL)}&subject=${encodeURIComponent(`Inquiry: ${formData.subject} - ${formData.name}`)}&body=${encodeURIComponent(`Hello Hindek,\n\n${formData.message}\n\nFrom: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phoneOrWhatsApp || 'Not provided'}`)}`}
+                      className="px-4 py-2.5 rounded-xl bg-white border border-[#1E3A2F]/30 text-[#1E3A2F] hover:bg-[#FAF8F5] text-xs font-bold flex items-center gap-1.5 transition-colors"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-[#B85C38]" />
+                      <span>Email Hindek Directly</span>
+                    </a>
+                    <a
+                      href={`https://wa.me/${FOUNDER_INFO.whatsapp}?text=${encodeURIComponent(`Hello Hindek! I just sent a contact message on Bridge Ethiopia regarding "${formData.subject}".`)}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold flex items-center gap-1.5 transition-colors"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" />
+                      <span>Message WhatsApp</span>
+                    </a>
+                  </div>
+
+                  <div className="pt-2">
+                    <button
+                      onClick={() => {
+                        setSent(false);
+                        setFormData({ name: '', email: '', phoneOrWhatsApp: '', subject: 'General Inquiry / Trip Advice', message: '' });
+                      }}
+                      className="px-5 py-2 rounded-xl bg-[#FAF8F5] border border-[#E8E1D5] text-xs font-bold text-[#5C5247] hover:text-[#1E3A2F]"
+                    >
+                      Send Another Note
+                    </button>
+                  </div>
                 </div>
               )}
 

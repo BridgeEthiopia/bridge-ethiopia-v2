@@ -21,6 +21,7 @@ import { COFFEE_PACKAGES } from '../data/coffeePackagesData';
 import { FOUNDER_INFO } from '../data/ethiopiaData';
 import { useInquiries } from '../context/InquiriesContext';
 import { AuthenticImage } from './AuthenticImage';
+import { sendAdminEmailNotification, PRIMARY_ADMIN_EMAIL, SECONDARY_ADMIN_EMAIL } from '../utils/adminEmailNotifier';
 
 interface CoffeeOrderModalProps {
   isOpen: boolean;
@@ -114,6 +115,24 @@ export const CoffeeOrderModal: React.FC<CoffeeOrderModalProps> = ({
       type: 'booking'
     });
 
+    // Send direct email dispatch to founder Hindek
+    sendAdminEmailNotification({
+      type: 'coffee-order',
+      title: `Coffee Order: ${quantity}x ${pkg.title}`,
+      senderName: customerName,
+      senderEmail: customerEmail || 'Not provided',
+      senderPhone: customerPhone,
+      details: {
+        'Package': `${pkg.title} (${pkg.weight})`,
+        'Quantity': `${quantity}`,
+        'Grind': selectedGrind,
+        'Delivery Option': deliveryOptionLabels[deliveryOption] || deliveryOption,
+        'Delivery Address': deliveryAddress || 'Addis Ababa pickup/hotel',
+        'Total Price': `$${totalUSD} USD / ${totalETB} ETB`
+      },
+      notes: specialNotes
+    });
+
     setSubmitted(true);
   };
 
@@ -159,7 +178,7 @@ export const CoffeeOrderModal: React.FC<CoffeeOrderModalProps> = ({
               </h4>
               <p className="text-sm text-[#5C5247] max-w-md mx-auto">
                 Thank you, <span className="font-bold">{customerName}</span>. Your order for{' '}
-                <span className="font-bold">{quantity}x {pkg.title}</span> has been routed directly to Hindek.
+                <span className="font-bold">{quantity}x {pkg.title}</span> has been dispatched directly to Founder Hindek's email (<strong>{PRIMARY_ADMIN_EMAIL}</strong>).
               </p>
             </div>
 
@@ -183,17 +202,26 @@ export const CoffeeOrderModal: React.FC<CoffeeOrderModalProps> = ({
               </div>
             </div>
 
-            {/* WhatsApp Direct Confirmation Button */}
+            {/* Direct WhatsApp & Email Buttons */}
             <div className="space-y-3 max-w-md mx-auto">
-              <a
-                href={`https://wa.me/${FOUNDER_INFO.whatsapp}?text=${buildWhatsAppMessage()}`}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-colors"
-              >
-                <MessageCircle className="w-5 h-5" />
-                <span>Confirm Order via WhatsApp Instantly</span>
-              </a>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <a
+                  href={`https://wa.me/${FOUNDER_INFO.whatsapp}?text=${buildWhatsAppMessage()}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1 py-3 px-3 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>WhatsApp Hindek</span>
+                </a>
+                <a
+                  href={`mailto:${PRIMARY_ADMIN_EMAIL}?cc=${encodeURIComponent(SECONDARY_ADMIN_EMAIL)}&subject=${encodeURIComponent(`Coffee Order: ${quantity}x ${pkg.title} - ${customerName}`)}&body=${encodeURIComponent(`Hello Hindek,\n\nI just submitted an order for ${quantity}x ${pkg.title} (${selectedGrind}).\nDelivery Option: ${deliveryOptionLabels[deliveryOption]}\nDelivery Address: ${deliveryAddress || 'Central Addis Ababa'}\nTotal: $${totalUSD} USD / ${totalETB} ETB\n\nContact: ${customerPhone} (${customerEmail || 'No email'})\nNotes: ${specialNotes || 'None'}\n\nAmeseginalehu!`)}`}
+                  className="flex-1 py-3 px-3 rounded-xl bg-white border border-[#1E3A2F]/30 text-[#1E3A2F] hover:bg-[#FAF8F5] font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+                >
+                  <Mail className="w-4 h-4 text-[#B85C38]" />
+                  <span>Email Hindek Directly</span>
+                </a>
+              </div>
               <button
                 type="button"
                 onClick={onClose}
