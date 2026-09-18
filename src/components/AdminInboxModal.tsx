@@ -173,7 +173,7 @@ export const AdminInboxModal: React.FC = () => {
                     required
                     value={emailVal}
                     onChange={(e) => setEmailVal(e.target.value)}
-                    placeholder="Hindeku25@gmail.com"
+                    placeholder="hindek.ethiopia@gmail.com"
                     className="w-full px-4 py-2.5 rounded-xl border border-[#E8E1D5] bg-[#FAF8F5] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#1E3A2F]"
                   />
                 </div>

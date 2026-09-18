@@ -15,6 +15,7 @@ export interface DestinationChronicle {
   sacredTraditions: string;
   livingEcosystem: string;
   travelerAdvisory: string;
+  advisoryAndProtocol?: string;
 }
 
 export interface Destination {

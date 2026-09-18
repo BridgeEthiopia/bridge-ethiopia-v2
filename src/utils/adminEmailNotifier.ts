@@ -10,7 +10,7 @@ export interface AdminNotificationPayload {
   notes?: string;
 }
 
-export const PRIMARY_ADMIN_EMAIL = 'Hindeku25@gmail.com';
+export const PRIMARY_ADMIN_EMAIL = 'hindek.ethiopia@gmail.com';
 export const SECONDARY_ADMIN_EMAIL = 'bridgeethiopiatravel@gmail.com';
 
 /**

@@ -5,7 +5,6 @@ import wenchiImg from '../assets/images/wenchi_lake_landscape_1787813595736.jpg'
 import baleImg from '../assets/images/bale_mountains_plateau_1787813728945.jpg';
 import sofOmarImg from '../assets/images/sof_omar_cave_interior_1787813611338.jpg';
 import lalibelaImg from '../assets/images/lalibela_st_george_church_1787813645261.jpg';
-import simienImg from '../assets/images/simien_mountains_view_1787813660687.jpg';
 import gondarImg from '../assets/images/gondar_royal_castle_1787813713556.jpg';
 import omoImg from '../assets/images/omo_valley_landscape_1787813759031.jpg';
 import hararImg from '../assets/images/harar_walled_city_1787813697672.jpg';
@@ -37,13 +36,12 @@ import tourOmoImg from '../assets/images/tour-omo-valley-cultural-odyssey.jpg';
 import tourHararImg from '../assets/images/tour-harar-walled-city-coffee-trail.jpg';
 
 // Image aliases and fallbacks for gallery and circuit tours
-const gallerySimienImg = simienImg;
 const galleryGondarImg = gondarImg;
 const tourDanakilImg = danakilImg;
 const tourAxumImg = lalibelaImg; // Majestic northern historic stone heritage
 const destAxumZionImg = lalibelaImg;
-const tourGheraltaImg = simienImg; // Majestic highland sandstone and peaks
-const destGheraltaTigrayImg = simienImg;
+const tourGheraltaImg = lalibelaImg;
+const destGheraltaTigrayImg = lalibelaImg;
 const injeraImg = injeraTeffImg;
 
 export const FOUNDER_INFO = {
@@ -51,7 +49,7 @@ export const FOUNDER_INFO = {
   title: 'Founder, General Manager & Cultural Experience Host',
   tagline: 'Founder, Manager & Lead Local Host at Bridge Ethiopia',
   location: 'Addis Ababa, Ethiopia',
-  email: 'Hindeku25@gmail.com',
+  email: 'hindek.ethiopia@gmail.com',
   secondaryEmail: 'bridgeethiopiatravel@gmail.com',
   phone: '+251 91 221 3888',
   whatsapp: '251912213888',
@@ -143,8 +141,9 @@ export const DESTINATIONS_DATA: Destination[] = [
   },
   {
     id: 'wenchi-crater-lake',
-    name: 'Wenchi Crater Lake',
+    name: 'Wonchi Crater Lake (Wenchi Caldera)',
     oromoName: 'Haroo Wonchii',
+    amharicName: 'ወንጪ እሳተ ገሞራ ሐይቅ',
     region: 'oromia',
     regionLabel: 'Oromia Highlands',
     heroImage: wenchiImg,
@@ -286,39 +285,66 @@ export const DESTINATIONS_DATA: Destination[] = [
   {
     id: 'simien-mountains',
     name: 'Simien Mountains National Park',
-    amharicName: 'ስሜን ተራሮች',
+    amharicName: 'ስሜን ተራሮች ብሔራዊ ፓርክ',
     region: 'northern-ethiopia',
-    regionLabel: 'Northern Highlands',
-    heroImage: simienImg,
-    gallery: [
-      simienImg,
-      gallerySimienImg
-    ],
-    tagline: 'The Chess Pieces of the Gods: Dramatic Gorges & Endemic Gelada Baboons',
-    description: 'A UNESCO World Heritage natural park characterized by massive escarpments dropping over 1,500 meters into jagged ravines. Home to Ras Dejen (4,550m), charismatic vegetarian Gelada "bleeding-heart" baboons, and the endangered Walia Ibex.',
+    regionLabel: 'Northern Afro-Alpine Highlands',
+    heroImage: '',
+    gallery: [],
+    isChronicleOnly: true,
+    tagline: 'The Chess Pieces of the Gods: Jagged Afro-Alpine Precipices, Endemic Gelada Baboons & Ras Dejen Summit',
+    description: 'Inscribed among the very first UNESCO World Heritage natural sites in 1978, the Simien Mountains National Park is a prehistoric volcanic fortress of extraordinary global significance. Over millions of years of massive volcanic eruptions and subsequent deep tectonic erosion, nature sculpted an awe-inspiring afro-alpine landscape of jagged precipices, sheer cliffs plunging more than 1,500 meters into misty gorges, and soaring volcanic pinnacles famously described by British traveler Rosita Forbes as "The Chess Pieces of the Gods." The park encompasses Ras Dejen (4,550m), the highest peak in Ethiopia and fourth highest in Africa, and shelters three of the planet’s rarest endemic mammal species: the charismatic vegetarian Gelada "bleeding-heart" baboon, the endangered Walia Ibex, and the Ethiopian Wolf.',
     whyVisit: [
-      'Sit peacefully among gentle, friendly troops of wild Gelada Baboons',
-      'Witness vertical 1,000-meter precipices at Imet Gogo viewpoint',
-      'Spot the magnificent Walia Ibex and Lammergeier (Bearded Vulture) soaring on thermals',
-      'Trek to Ras Dejen, the highest point in Ethiopia'
+      'Sit peacefully within arm’s length of wild, gentle Gelada Baboons grazing harmoniously across afro-alpine meadows',
+      'Stand upon the edge of the world at Imet Gogo viewpoint (3,926m), gazing across 1,000-meter sheer vertical abysses',
+      'Spot the rare, magnificent Walia Ibex leaping along near-vertical basalt crags at Chennek and Mount Bwahit',
+      'Witness Jinbar Waterfall plunge over 500 meters into the mysterious depths of the Geech Abyss',
+      'Trek to Ras Dejen (4,550m), the dramatic, snow-dusted roof of the African continent',
+      'Camp beneath luminous, unpolluted starry skies framed by towering Giant Lobelia (Lobelia rhynchopetalum)'
     ],
     thingsToDo: [
-      'Trekking from Sankaber to Geech and Chennek escarpments',
-      'Stand at Jinbar Waterfall lookout dropping into an abyss',
-      'Camp under crystal clear starry afro-alpine night skies',
-      'Summit Mount Bwahit (4,430m) or Ras Dejen (4,550m)'
+      'Multi-day afro-alpine ridge trekking from Sankaber through Geech to Chennek and the Bwahit Pass',
+      'Observe social communication, grooming, and vocalizations among wild Gelada baboon family troops',
+      'Photograph sunrise and sunset cloud inversions from Imet Gogo and Kedadit viewpoints',
+      'Search the crags of Chennek for the endangered Walia Ibex and roosting Lammergeier bearded vultures',
+      'Warm up around fireside hearths in stone community huts while sipping hot spiced tea and mountain coffee',
+      'Summit Mount Bwahit (4,430m) or Ras Dejen (4,550m) accompanied by licensed local park scouts and mules'
     ],
-    keyAttractions: ['Imet Gogo Viewpoint', 'Jinbar Waterfall', 'Chennek Camp & Bwahit Pass', 'Sankaber Escarpment', 'Ras Dejen Peak'],
-    cultureAndHeritage: 'Ancient mountain communities maintain high-altitude barley farming, stone villages, and unique Amhara folklore in the roof of Africa.',
-    localFoodHighlights: ['Hearty Barley Porridge (Kolo & Genfo)', 'Highland Potato and Carrot Wats', 'Hot Spiced Chai and Coffee by the Campfire'],
-    bestTimeToVisit: 'October to April for dry trails, lush wildflower carpets, and clear valley panoramas.',
-    scheduleType: 'Customizable Private Itinerary',
-    travelTips: ['Trekking requires an official park scout and local guide', 'Pack serious high-altitude cold weather gear for sub-zero nights'],
+    keyAttractions: [
+      'Imet Gogo 360-Degree Panoramic Viewpoint (3,926m)',
+      'Jinbar Waterfall & Geech Abyss (500m Drop)',
+      'Chennek Afro-Alpine Escarpment & Walia Ibex Sanctuary',
+      'Ras Dejen Summit (4,550m – Roof of Ethiopia)',
+      'Sankaber Ridge & Buyit Ras Escarpment',
+      'Giant Lobelia Afro-Alpine Forest at Geech Plateau'
+    ],
+    cultureAndHeritage: 'For thousands of years, hardy Amhara and Agaw highland pastoralists have cultivated ancient heritage barley, raised sheep, and built round stone homes thatched with wild grass atop the roof of Africa. Local folklore reveres the majestic mountain peaks as the sacred dwelling place of divine guardians (Ayana), preserving a profound spiritual harmony between human communities, grazing wildlife, and the rugged alpine terrain.',
+    localFoodHighlights: [
+      'Hearty Highland Barley Genfo (Porridge) with Spiced Herb Butter (Niter Kibbeh)',
+      'Campfire-Roasted Barley Kolo with Wild Highland Herbs',
+      'Steaming Shiro Tegamino and Hot Potato-Carrot Stews after High-Altitude Treks',
+      'Fresh Roasted Highland Coffee brewed over Charcoal Embers in Mountain Camps'
+    ],
+    bestTimeToVisit: 'October to April for clear sunny skies, dry trekking trails, vibrant wildflower blooms, and sweeping valley panoramas.',
+    suggestedDuration: '3 - 8 Days',
+    scheduleType: 'Multi-Day Trekking Expedition or Scenic Day Excursion',
+    travelTips: [
+      'Trekking in the national park strictly requires an official armed scout and licensed local guide hired through the Park Headquarters at Debark',
+      'Bring high-quality thermal layers, windbreaker, and a warm sleeping bag rated for -5°C to -10°C; night temperatures frequently drop below freezing',
+      'Acclimatize gradually in Gondar (2,133m) and Sankaber (3,250m) before ascending to higher camps at Geech (3,600m) and Chennek (3,620m)',
+      'Stay hydrated with 3–4 liters of water daily to prevent acute mountain sickness (AMS)'
+    ],
     coordinates: { lat: 13.2500, lng: 38.3667 },
-    elevation: 'Up to 4,550 m',
-    nearbyLodging: ['Escarpment Eco-Lodges (at 3,260m)', 'Luxury Cliffside Stays', 'Wilderness Camps (Geech, Chennek)'],
+    elevation: '1,900 m to 4,550 m (6,230 to 14,930 ft)',
+    nearbyLodging: ['Simien Highland Escarpment Eco-Lodge (Buyit Ras)', 'Limalimo Luxury Eco-Lodge (Debark)', 'Wilderness Campsites (Sankaber, Geech, Chennek)'],
     availableTourIds: ['simien-trekking-adventure', 'northern-ethiopia-grand-circuit'],
     featured: true,
+    chronicle: {
+      historicalOrigins: 'The dramatic topography of the Simien Mountains was forged between 40 and 75 million years ago by immense volcanic basalt eruptions that blanketed the northern Ethiopian plateau in lava flows thousands of meters thick. Subsequent uplift, tectonic fractures, and millions of years of ferocious glacial and water erosion carved deep valleys and isolated jagged basalt plateaus, creating what 1920s explorer Rosita Forbes famously christened "The Chess Pieces of the Gods." Human presence in the Simien highlands dates back millennia: ancient hunting-and-gathering populations gradually gave rise to specialized high-altitude Amhara and Agaw agrarian communities that cultivated endemic grains like teff and highland barley. Recognizing its exceptional natural beauty, extraordinary geological formations, and crucial habitat for threatened species, UNESCO inscribed the Simien Mountains National Park as one of the world’s very first World Heritage Sites in 1978.',
+      architecturalMastery: 'The architecture of the Simien Mountains is purely that of monumental nature and human adaptation. Massive basalt cliffs plunge sheer for more than 1,500 meters into jagged gorges, while dramatic finger-like volcanic spires and isolated volcanic plugs rise like medieval cathedrals against the sky. Jinbar Waterfall plunges uninterrupted over 500 meters down a vertical rock amphitheater into the subterranean abyss of the Geech canyon. Human settlement across this formidable terrain reflects remarkable stone-masonry adaptation: traditional high-altitude highland villages (such as Geech and Gidir Got) feature thick circular or rectangular stone houses (Tukuls) constructed without mortar from local basalt slabs, insulated with barley straw and thatched with native grass to withstand howling winds and sub-zero nighttime frosts.',
+      sacredTraditions: 'To the indigenous highlanders, the towering peaks of the Simien are alive with spiritual presence. Remote mountain caves and precipitous crags have long served as secluded sanctuaries for Orthodox Christian hermits (Bahtawiyan), who retreat from worldly vanity to spend decades in prayer, fasting, and contemplation in the clouds. Mountain passes like Bwahit and Imet Gogo are woven with oral legends of ancestral spirits and saintly blessings that protect livestock from highland storms and predators. Hospitality is sacred in these harsh heights: no traveler passes a stone homestead without being offered hot roasted barley (Kolo), warm tea, or a bowl of sustaining Genfo.',
+      livingEcosystem: 'The Simien Mountains constitute one of Africa’s most vital afro-alpine biodiversity hotspots, characterized by extreme endemism. Above 3,000 meters, the landscape transitions into afro-alpine moorlands populated by strange Giant Lobelia (Lobelia rhynchopetalum) that grow up to 6 meters tall, red hot pokers (Kniphofia), and sprawling carpets of golden everlasting flowers (Helichrysum). The park is the exclusive global refuge of the Walia Ibex (Capra walie), a magnificent wild mountain goat with large sweeping horns that maneuvers with gravity-defying agility along sheer cliff faces. Troops of up to 400 Gelada baboons (Theropithecus gelada)—the world’s only grass-eating primate, recognizable by the crimson hourglass patch on their chests—graze peacefully on the open plateaus. Overhead, the rare Lammergeier (bearded vulture) with its three-meter wingspan drops bones onto rocks from high altitudes to feed on marrow, accompanied by Verreaux’s eagles and augur buzzards.',
+      travelerAdvisory: 'The Simien Mountains National Park is entered via the gateway town of Debark (located 100 km north of Gondar). All trekkers are required by park regulations to register at the park headquarters in Debark and travel in the company of a licensed community scout. Because elevations range from 3,250m at Sankaber to 4,550m at Ras Dejen, adequate acclimatization is imperative: travelers should spend at least one night in Gondar or Debark before embarking on high-altitude hikes. Temperatures fluctuate drastically—from warm, sun-drenched daytime highs of 20–24°C to bone-chilling sub-zero lows (-5°C) at night. Pack layered thermal clothing, windproof and waterproof outer jackets, sturdy ankle-support trekking boots, high-SPF sun protection, and a headlamp.'
+    }
   },
   {
     id: 'gondar',
@@ -776,6 +802,427 @@ export const DESTINATIONS_DATA: Destination[] = [
       livingEcosystem: 'Jimma lies within the fertile southwestern volcanic highlands, surrounded by mist-draped indigenous rainforests, emerald green rolling hills, and rich volcanic loam soils. This region is the genetic homeland of wild Coffea arabica: under the forest canopy, heirloom coffee trees flourish in natural harmony with towering Hagenia abyssinica and fig trees, providing a pristine sanctuary for colobus monkeys, hornbills, and exotic butterflies. The region is also Ethiopia’s premier center for agricultural research and forest conservation.',
       travelerAdvisory: 'Jimma is easily reached by daily domestic flights into Jimma Aba Segud Airport (JIM) or by a scenic 5 to 6-hour paved highway drive from Addis Ababa through the Gibe River gorge. The Palace of King Abba Jifar at Jiren is located roughly 7 kilometers northeast of Jimma town; local guides at the site provide knowledgeable tours of the royal chambers and artifacts. The weather is comfortably temperate year-round, though rain gear is recommended between June and September. Do not miss tasting single-origin Jimma coffee freshly roasted on-site.'
     }
+  },
+  {
+    id: 'bishoftu-crater-lakes',
+    name: 'Bishoftu Crater Lakes (Debre Zeyit)',
+    oromoName: 'Haroo Bishooftuu fi Haroo Horaa',
+    amharicName: 'ቢሾፍቱ ፍንዳታ ሐይቆች (ደብረ ዘይት)',
+    region: 'oromia',
+    regionLabel: 'Oromia • Great Rift Valley',
+    heroImage: wenchiImg,
+    gallery: [wenchiImg, irreechaImg],
+    tagline: 'Constellation of Volcanic Crater Lakes, Lakeside Resorts & Sacred Grounds of the National Irreecha Festival',
+    description: 'Located only 45 km southeast of Addis Ababa in the lush East Shewa Zone of Oromia, Bishoftu is a famed resort town nestled among a cluster of picturesque volcanic crater lakes including Lake Babogaya, Lake Bishoftu, Lake Kuriftu, Lake Hora Arsadi, and Lake Chalalaka. Lake Hora is the sacred spiritual venue of the annual Irreecha Thanksgiving Festival, where millions of Oromo people gather in magnificent traditional white attire to thank Waaqaa (God) for peace, fertility, and the autumn harvest. Bishoftu offers tranquil lakeside boat trips, birdwatching, kayaking, swimming, and luxury wellness resorts.',
+    whyVisit: [
+      'Experience Lake Hora Arsadi, the sacred heartland of the nationwide Irreecha Thanksgiving Festival',
+      'Discover five distinct volcanic crater lakes, each with its own microclimate, emerald waters, and bird life',
+      'Enjoy relaxing watersports, kayaking, paddle boating, and lakeside nature walks around Lake Babogaya and Lake Kuriftu',
+      'World-class birdwatching at Lake Chalalaka, a seasonal feeding stop for tens of thousands of migratory flamingos and pelicans',
+      'Ideal weekend retreat with premium wellness spas, organic lakeside dining, and thermal pools only 45 minutes from the capital'
+    ],
+    thingsToDo: [
+      'Take a tranquil sunset wooden boat ride or kayak across the mirror-calm waters of Lake Babogaya',
+      'Visit Lake Hora Arsadi to learn about ancient Oromo Gadaa spiritual traditions and the sacred Irreecha ritual grounds',
+      'Spot aquatic birds, kingfishers, African fish eagles, and marabou storks along the crater rim cliffs',
+      'Unwind at premier lakeside eco-resorts featuring indigenous spa therapies and hot stone massages',
+      'Sample fresh Rift Valley tilapia, sizzling beef tibs, and locally brewed Buna Qalaa at lakeside pavilions'
+    ],
+    keyAttractions: [
+      'Lake Hora Arsadi (Sacred Irreecha Thanksgiving Grounds)',
+      'Lake Babogaya (Picturesque Resort & Kayaking Lake)',
+      'Lake Bishoftu (Deep Emerald Volcanic Crater)',
+      'Lake Kuriftu (Luxury Spa & Water Park Haven)',
+      'Lake Chalalaka (Migratory Bird Sanctuary & Seasonal Flamingo Haven)',
+      'Mount Yerer & Mount Zuqualla Panoramic Trails'
+    ],
+    cultureAndHeritage: 'Bishoftu is an indispensable cultural capital of the Oromo nation. Every autumn at the end of the rainy season, Lake Hora hosts the great Irreecha Birraa celebration, one of Africa’s largest peaceful cultural gatherings, embodying gratitude, harmony with nature, and human brotherhood.',
+    localFoodHighlights: [
+      'Freshly Grilled Lake Tilapia with Lemon & Garlic Chili Butter',
+      'Traditional Oromo Marqaa with Niter Kibbeh (Spiced Butter)',
+      'Sizzling Shekla Tibs served with Hot Clay Fire and Fresh Injera',
+      'Ceremonial Oromo Buna Qalaa (Pan-fried Coffee in Purified Butter)'
+    ],
+    bestTimeToVisit: 'Year-round destination. September–October is especially vibrant during the world-famous Irreecha celebrations.',
+    suggestedDuration: '1 - 2 Days',
+    scheduleType: 'Day Trip or Weekend Resort Getaway',
+    travelTips: [
+      'Connected to Addis Ababa by the modern Addis–Adama Expressway; accessible in 40–50 minutes',
+      'Reserve lakeside resort bungalows well in advance if visiting during the late September / early October Irreecha festival',
+      'Bring binoculars for birding around Lake Babogaya and Chalalaka'
+    ],
+    coordinates: { lat: 8.7523, lng: 38.9785 },
+    elevation: '1,920 m (6,300 ft)',
+    nearbyLodging: ['Kuriftu Resort & Spa Bishoftu', 'Babogaya Lake View Resort', 'Asham Africa Luxury Hotel'],
+    availableTourIds: ['addis-city-essence'],
+    featured: true
+  },
+  {
+    id: 'boye-lake-jimma',
+    name: 'Boye Lake & Wetland Bird Sanctuary – Jimma',
+    oromoName: 'Haroo Boyyee fi Dhoqqee Jimmaa',
+    amharicName: 'የቦዬ ሐይቅ እና ረግረጋማ የወፍ መሸሸጊያ - ጅማ',
+    region: 'oromia',
+    regionLabel: 'Oromia • Southwestern Wetlands',
+    heroImage: kafaImg,
+    gallery: [kafaImg, wenchiImg],
+    tagline: 'Tranquil Freshwater Wetland, Migratory Waterfowl Haven & Lush Papyrus Nature Walks on the Outskirts of Jimma',
+    description: 'Located on the southern threshold of Jimma city in Southwestern Oromia, Boye Lake is an expansive freshwater wetland and lake ecosystem framed by rolling green volcanic hills, dense papyrus reeds, and towering acacia groves. Fed by gentle mountain tributaries flowing toward the Gilgel Gibe basin, the lake is celebrated as one of Southwest Ethiopia’s premier birdwatching refuges, hosting over 120 recorded resident and migratory avian species. Resident pods of hippopotamus graze in the quiet inlets, while local fishermen glide across the calm waters in handcrafted papyrus canoes.',
+    whyVisit: [
+      'Observe over 100 bird species including African pygmy geese, sacred ibises, wattled cranes, and malachite kingfishers',
+      'Enjoy peaceful eco-walks along lakeside trails framed by lush indigenous papyrus reeds and blooming water lilies',
+      'Spot resident hippopotamus pods basking along the quiet marsh edges during early morning and late afternoon hours',
+      'Experience the calm, untouched natural side of Jimma away from the bustle of the central coffee markets',
+      'Combine easily with a visit to the nearby King Abba Jifar Palace and Jimma specialty coffee estates'
+    ],
+    thingsToDo: [
+      'Guided sunrise birdwatching walking safari with regional ornithology experts',
+      'Observe local papyrus reed harvesting and traditional fishing techniques',
+      'Nature photography along the scenic green wetland shoreline with views of the Jiren hills',
+      'Picnic under shady canopy trees enjoying freshly brewed Jimma single-origin coffee',
+      'Learn about wetland conservation and community water stewardship programs'
+    ],
+    keyAttractions: [
+      'Boye Wetland Bird Observation Points',
+      'Papyrus & Water Lily Protected Habitats',
+      'Hippo Observation Inlets',
+      'Boye Dam & Gilgel Gibe Tributary Confluence',
+      'Scenic Foothill Walking Trails toward Jiren'
+    ],
+    cultureAndHeritage: 'Boye Lake has sustained Jimma communities for generations through sustainable fishing, reed weaving, and agriculture. Local elders preserve folklore regarding the sacred waters and the communal responsibility to protect the wetland wildlife.',
+    localFoodHighlights: [
+      'Fresh Roasted Jimma Forest Coffee with Kolo',
+      'Warm Caccabsaa with Clarified Herb Butter',
+      'Local Farm-Fresh Dairy & Organic Honey'
+    ],
+    bestTimeToVisit: 'October through April when clear sunny mornings provide ideal lighting for birdwatching and photography.',
+    suggestedDuration: 'Half Day to 1 Day',
+    scheduleType: 'Nature & Birding Excursion',
+    travelTips: [
+      'Bring telephoto lenses and binoculars for photographing shy wetland waterfowl',
+      'Wear waterproof boots if exploring muddy shoreline tracks during the wet season',
+      'Early morning (6:30 AM – 9:00 AM) is prime time for bird activity and hippo sightings'
+    ],
+    coordinates: { lat: 7.6489, lng: 36.8523 },
+    elevation: '1,720 m (5,640 ft)',
+    nearbyLodging: ['Central Jimma Hotels', 'Coffee Estate Boutique Lodges'],
+    availableTourIds: ['jimma-abba-jifar-royal-coffee-trail'],
+    featured: false
+  },
+  {
+    id: 'fincha-habera-waterfall',
+    name: 'Fincha Habera Waterfall – Bale Mountains',
+    oromoName: "Fincha'a Habaaraa - Gaarreen Baalee",
+    amharicName: 'የፊንጫ ሀበራ ፏፏቴ - ባሌ ተራሮች',
+    region: 'oromia',
+    regionLabel: 'Oromia • Bale Mountains National Park',
+    heroImage: baleImg,
+    gallery: [baleImg, wenchiImg],
+    tagline: 'Spectacular Natural Basalt Cascade on the Web River, Surrounded by Afro-Alpine Heathlands and Mountain Wildlife',
+    description: 'Tucked deep in the northern afro-alpine foothills of the Bale Mountains National Park near Dinsho and the Gaysay Valley, Fincha Habera Waterfall is one of the most majestic natural cascades in Ethiopia. Here, the crystalline, cold waters of the Web River plunge dramatically over geometric columns of dark volcanic basalt into a foaming canyon pool below. Framed by giant heather (Erica arborea), golden Helichrysum everlastings, and wild thyme, the waterfall creates a cool misty micro-oasis where endemic Mountain Nyala, Menelik’s Bushbuck, and soaring Augur Buzzards are frequently seen grazing in complete tranquility.',
+    whyVisit: [
+      'Witness the breathtaking plunge of the Web River over raw geometric volcanic basalt cliffs',
+      'Hike through pristine afro-alpine valleys adorned with wild mountain wildflowers and fragrant thyme',
+      'Spot the magnificent endemic Mountain Nyala and Menelik’s Bushbuck grazing on the waterfall rim',
+      'Experience the pristine peace and thundering natural sound of Bale’s most scenic mountain cascade',
+      'An accessible, rewarding trekking destination for both day visitors and multi-day wilderness expeditions'
+    ],
+    thingsToDo: [
+      'Scenic day trek from Dinsho park headquarters along the Web River gorge to the waterfall pool',
+      'Wildlife photography capturing Mountain Nyala silhouetted against the roaring white cascade',
+      'Picnic on the grassy volcanic promontory overlooking the Web River valley',
+      'Horseback trekking with local Oromo guides across the Gaysay afro-alpine grasslands',
+      'Birdwatching for high-altitude endemics including the Blue-winged Goose and Rouget’s Rail'
+    ],
+    keyAttractions: [
+      'Fincha Habera Basalt Falls & Plunge Pool',
+      'Web River Canyon & Natural Stone Archways',
+      'Gaysay Valley Wildlife Sanctuary',
+      'Dinsho Ancient Juniper-Hagenia Forest',
+      'Scenic Afro-Alpine Horse Trails'
+    ],
+    cultureAndHeritage: 'For the Oromo pastoralists of the Bale highlands, the pure streams of the Web River and Fincha Habera are considered blessed waters flowing from the sacred mountain heights of Waaqaa, sustaining lush grazing pastures for livestock across centuries.',
+    localFoodHighlights: [
+      'Highland Barley Marqaa with Spiced Butter (Niter Kibbeh)',
+      'Fresh Organic Bale Mountain Forest Honey',
+      'Warm Caccabsaa & Spiced Wild Herb Tea around the Campfire'
+    ],
+    bestTimeToVisit: 'October through February for crisp sunny days, blooming alpine flowers, and excellent trail conditions.',
+    suggestedDuration: '1 Day (or part of 3–5 day Bale trek)',
+    scheduleType: 'Alpine Hiking & Wildlife Excursion',
+    travelTips: [
+      'Pack warm windproof and waterproof layers; mountain weather can shift quickly',
+      'Hire a licensed community scout and horse handler at Dinsho Park Headquarters',
+      'Wear sturdy waterproof trekking boots for rocky and occasionally muddy riverbank paths'
+    ],
+    coordinates: { lat: 7.1256, lng: 39.7891 },
+    elevation: '3,100 m (10,170 ft)',
+    nearbyLodging: ['Bale Mountain Lodge', 'Dinsho Park Lodge & Camping Ground', 'Goba & Robe Hotels'],
+    availableTourIds: ['bale-mountains-expedition'],
+    featured: true
+  },
+  {
+    id: 'melka-kunture',
+    name: 'Melka Kunture Archaeological Site (UNESCO)',
+    oromoName: 'Iddoo Qorannoo Arkiyooloojii Malkaa Kunturee',
+    amharicName: 'መልካ ቁንጡሬ ቅድመ-ታሪክ የአርኪኦሎጂ ስፍራ (ዩኔስኮ)',
+    region: 'oromia',
+    regionLabel: 'Oromia • Upper Awash Valley',
+    heroImage: addisImg,
+    gallery: [addisImg, wenchiImg],
+    tagline: 'UNESCO World Heritage Prehistoric Stone Age Site Dating Back 2 Million Years Along the Scenic Awash River',
+    description: 'Inscribed as a UNESCO World Heritage Site in 2024, Melka Kunture is one of the premier prehistoric and palaeolithic archaeological complexes on Earth. Situated in the upper Awash River valley of Oromia approximately 50 km south of Addis Ababa, this extraordinary open-air museum preserves continuous layers of early human evolution spanning almost two million years. Visitors can examine in-situ Oldowan pebble tools, Acheulean handaxes, fossilized bones of extinct giant fauna (elephants, hippos, and equids), and fossil hominid footprints, backed by four well-curated thematic museum pavilions explaining human origins, toolmaking, and ancient environments.',
+    whyVisit: [
+      'Explore one of the newest UNESCO World Heritage Sites in Africa, newly recognized in 2024',
+      'Walk alongside actual archaeological excavations displaying 1.7-million-year-old stone handaxes in-situ',
+      'Discover fossilized remains of giant prehistoric African mammals and ancient hominid trackways',
+      'Tour four specialized educational museum wings detailing Oldowan, Acheulean, Middle Stone Age, and Late Stone Age periods',
+      'Enjoy scenic riverside walking along the Awash River framed by acacia trees, basalt formations, and singing birds'
+    ],
+    thingsToDo: [
+      'Guided tour of open-air archaeological trenches with Italian and Ethiopian research guides',
+      'Examine volcanic tuff stratigraphy and obsidian stone-tool workshops',
+      'Visit the nearby Balchit obsidian outcrop, where early humans quarried volcanic glass for tools',
+      'Birdwatching and nature photography along the forested Awash River banks',
+      'Combine on an enriching day-tour with the nearby Tiya UNESCO Stele field and Adadi Mariam rock-hewn church'
+    ],
+    keyAttractions: [
+      'Melka Kunture In-Situ Open-Air Excavation Trenches',
+      'Four Thematic Archaeological Museums (Palaeontology, Archaeology, Geology & Prehistory)',
+      'Balchit Prehistoric Obsidian Quarry',
+      'Awash River Gorge & Riverine Walking Trails',
+      'Simbiro III Middle Pleistocene Hominid Footprint Site'
+    ],
+    cultureAndHeritage: 'Melka Kunture represents the dawn of human intellect, cooperative tool-making, and environmental adaptation. It stands alongside Olduvai Gorge and Hadar as proof of Ethiopia and East Africa as the true Cradle of Humankind.',
+    localFoodHighlights: [
+      'Fresh Roasted Highland Coffee with Rue (Tena Adam)',
+      'Warm Injera with Shiro Tegamino and Fresh Greens',
+      'Local Oromo Chechebsa with Wild Honey'
+    ],
+    bestTimeToVisit: 'October through May during dry sunny weather, making outdoor excavation visits pleasant and easy.',
+    suggestedDuration: 'Half Day to Full Day',
+    scheduleType: 'Archaeological & Educational Day Trip',
+    travelTips: [
+      'Only 1 hour drive south of Addis Ababa along the paved Butajira highway; ideal easy day trip',
+      'Combine with the UNESCO megalithic gravestones of Tiya (20 km further south) for a complete heritage circuit',
+      'Hire an on-site local guide at the museum ticket office for deep historical and geological context'
+    ],
+    coordinates: { lat: 8.7042, lng: 38.6014 },
+    elevation: '2,010 m (6,590 ft)',
+    nearbyLodging: ['Boutique Lodges near Tiya', 'Addis Ababa City Hotels (1 hr drive)'],
+    availableTourIds: ['addis-city-essence'],
+    featured: false
+  },
+  {
+    id: 'anole-monument',
+    name: 'Anole Cultural & Historical Monument – Arsi',
+    oromoName: 'Siidaa Seenaa fi Aadaa Aanoolee - Arsii',
+    amharicName: 'የአኖሌ ታሪካዊ እና ባህላዊ መታሰቢያ - አርሲ',
+    region: 'oromia',
+    regionLabel: 'Oromia • Arsi Zone Heritage',
+    heroImage: irreechaImg,
+    gallery: [irreechaImg, wenchiImg],
+    tagline: 'Monumental Historical Memorial, Cultural Museum & Resilience Center Commemorating Arsi Oromo Heritage',
+    description: 'Situated in Hetosa woreda in the fertile Arsi Zone of Oromia near the town of Asella, the Anole Monument is an iconic cultural memorial and museum complex established to commemorate the heroic resistance, historical memory, and enduring dignity of the Arsi Oromo people. The central landmark is a colossal bronze statue of a raised hand emerging from the earth—symbolizing unity, unbroken resilience, and human dignity. The surrounding park features an ethnographic museum exhibiting traditional Arsi Oromo attire, carved wooden artifacts, ancestral Gadaa ceremonial regalia, and historical archives.',
+    whyVisit: [
+      'Honor and understand the profound historical struggles and cultural resilience of the Oromo nation',
+      'View the iconic, evocative raised-hand bronze monument standing prominently against the backdrop of Mount Chilalo',
+      'Tour the on-site ethnographic museum preserving authentic Arsi traditional costumes, beaded leatherwork, and weaponry',
+      'Learn about the Oromo Gadaa democratic system and the cultural heritage of the Arsi clan lineages',
+      'Experience the warm hospitality, equestrian culture, and picturesque mountain scenery of the Arsi highlands'
+    ],
+    thingsToDo: [
+      'Guided historical tour of the monument grounds, memorial wall, and cultural exhibition gallery',
+      'Photograph the monumental sculpture with sweeping views of the surrounding wheat fields and hills',
+      'Participate in a traditional Arsi coffee blessing ceremony (Buna Qalaa)',
+      'Watch traditional Arsi horse riding displays and master leather-craft demonstrations',
+      'Visit nearby Asella town and the scenic volcanic slopes of Mount Chilalo'
+    ],
+    keyAttractions: [
+      'The Iconic Bronze Raised-Hand Memorial Monument',
+      'Anole Historical & Ethnographic Museum',
+      'Arsi Oromo Cultural Heritage Exhibition Hall',
+      'Memorial Peace Gardens & Reflection Walkways',
+      'Mount Chilalo Highland Scenic Views'
+    ],
+    cultureAndHeritage: 'Anole is a deeply revered site of memory, reconciliation, and cultural affirmation for millions of Oromo people. It serves as an educational center where elders pass down oral histories, poems, and the peaceful democratic ideals of the Gadaa system.',
+    localFoodHighlights: [
+      'Arsi Buna Qalaa (Sacred pan-cooked coffee in herbal butter)',
+      'Rich Arsi Marqaa with Pure Highland Cow Butter',
+      'Warm Qita Firfir with Fresh Herbs and Chili',
+      'Highland Barley Kolo and Fresh Yogurt'
+    ],
+    bestTimeToVisit: 'October through April when the Arsi highlands are golden with wheat harvests under bright sunny skies.',
+    suggestedDuration: '1 Day',
+    scheduleType: 'Historical & Cultural Pilgrimage',
+    travelTips: [
+      'Located approximately 160 km southeast of Addis Ababa via the expressway and Asella highway (2.5 to 3 hours drive)',
+      'Respect local cultural customs and ask questions of the knowledgeable resident museum curators',
+      'Bring a warm sweater; the Arsi highlands can experience cool breezes even in sunny months'
+    ],
+    coordinates: { lat: 8.0125, lng: 39.1412 },
+    elevation: '2,420 m (7,940 ft)',
+    nearbyLodging: ['Asella Central Tourist Hotels', 'Lake Langano Eco-Resorts (1 hr drive)'],
+    availableTourIds: ['oromia-highlights-safari'],
+    featured: false
+  },
+  {
+    id: 'lephis-waterfall',
+    name: 'Lephis Waterfall & Eco-Tourism Forest',
+    oromoName: "Fincha'a Laphisii fi Bosona Arsii Nageellee",
+    amharicName: 'የለጲስ ፏፏቴ እና የተፈጥሮ ደን - አርሲ ነገሌ',
+    region: 'oromia',
+    regionLabel: 'Oromia • Great Rift Valley Forests',
+    heroImage: baleImg,
+    gallery: [baleImg, wenchiImg],
+    tagline: 'Spectacular 30-Meter Hidden Forest Cascade, Colobus Monkey Sanctuary & Community Horseback Eco-Trails',
+    description: 'Hidden within the dense, pristine indigenous montane forest near Arsi Negele and the eastern shores of Lake Langano in Oromia, Lephis Waterfall is a stunning 30-meter natural cascade tumbling over moss-covered volcanic crags into a crystal-clear mountain pool. The site is a celebrated community-based eco-tourism success story, managed entirely by local Oromo villagers. Guided by friendly local scouts, visitors ride mountain horses or hike through ancient Hagenia and Podocarpus canopies alive with black-and-white colobus monkeys, colorful mountain birds, and wild honey hives.',
+    whyVisit: [
+      'Hike or ride docile mountain horses through virgin indigenous cloud forest along crystalline streams',
+      'Witness the breathtaking 30-meter Lephis Waterfall hidden in a natural amphitheater of emerald ferns and mosses',
+      'Spot acrobatic Black-and-White Colobus monkeys leaping through the dense forest canopy overhead',
+      'Support community-based eco-tourism that directly empowers local forest conservation and rural schools',
+      'Shop for exquisite, eco-friendly handicrafts handmade from bamboo and wild grass by the women of Lephis Village'
+    ],
+    thingsToDo: [
+      'Guided horseback trek through scenic forest glades and mountain rivers to the waterfall gorge',
+      'Birdwatching for forest endemics including the White-cheeked Turaco and Abyssinian Woodpecker',
+      'Visit the Lephis Women’s Artisan Cooperative to learn traditional bamboo carving and basket weaving',
+      'Taste fresh forest honey harvested sustainably from traditional woven beehives',
+      'Combine with lakeside swimming, birding, and water sports at nearby Lake Langano'
+    ],
+    keyAttractions: [
+      'Lephis 30-Meter Forest Waterfall & Misty Pool',
+      'Virgin Lephis Indigenous Forest & Colobus Haven',
+      'Community Horseback Riding Trails',
+      'Lephis Women’s Bamboo & Grass Handicraft Center',
+      'Mount Fike Panoramic Valley Lookout'
+    ],
+    cultureAndHeritage: 'The community of Lephis decided collectively to protect their ancestral virgin forest from deforestation by creating an award-winning eco-tourism enterprise. Village guides share rich traditional knowledge of medicinal plants, forest stewardship, and Oromo hospitality.',
+    localFoodHighlights: [
+      'Pure Lephis Forest Wild Honey with Fresh Bread',
+      'Traditional Oromo Highland Marqaa with Spiced Butter',
+      'Fresh Roasted Highland Coffee brewed over Charcoal'
+    ],
+    bestTimeToVisit: 'October through May for dry hiking trails, blooming forest orchids, and abundant monkey sightings.',
+    suggestedDuration: '1 Day (Ideal Day Trip from Lake Langano)',
+    scheduleType: 'Community Eco-Trek & Horseback Adventure',
+    travelTips: [
+      'Located only 20 km from Lake Langano resorts; an easy 40-minute drive on gravel access road',
+      'Opt for the horseback trek—horses are calm, well-trained, and local horse handlers are attentive and friendly',
+      'Bring cash in Ethiopian Birr to support the women’s artisan cooperative directly'
+    ],
+    coordinates: { lat: 7.3421, lng: 38.7102 },
+    elevation: '2,200 m (7,220 ft)',
+    nearbyLodging: ['Bishangari Eco-Lodge Lake Langano', 'Sabana Beach Resort Langano', 'Hara Langano Eco-Lodge'],
+    availableTourIds: ['oromia-highlights-safari'],
+    featured: false
+  },
+  {
+    id: 'gera-forest',
+    name: 'Gera Wild Coffee Cloud Forest – Jimma',
+    oromoName: 'Bosona Bunee Uumamaa Geeraa - Jimmaa',
+    amharicName: 'የጌራ የዱር ቡና ደን - ጅማ',
+    region: 'oromia',
+    regionLabel: 'Oromia • Wild Arabica Biosphere',
+    heroImage: kafaImg,
+    gallery: [kafaImg, wenchiImg],
+    tagline: 'UNESCO-Recognized Ancient Cloud Forest, Primeval Habitat of Wild Coffea Arabica & Canopy Wildlife Haven',
+    description: 'Nestled in the lush, mist-shrouded highlands of the Gera woreda in the Jimma Zone of Southwestern Oromia, Gera Forest is one of the planet’s most biologically critical virgin ecosystems. Recognized as a core biodiversity sanctuary of the Yayu/Kafa biosphere landscape, this ancient cloud forest is the ancestral birthplace of Coffea arabica, where heirloom coffee bushes grow naturally in the shaded understory beneath towering 40-meter Podocarpus, Cordia, and Albizia trees. Draped in mosses and wild orchids, Gera is alive with forest primates, hornbills, civets, and rare medicinal plants.',
+    whyVisit: [
+      'Journey to the primeval genetic homeland of wild Arabica coffee, untouched and thriving under natural forest canopy',
+      'Experience true shade-grown organic wild coffee harvested by community forest cooperatives using ancestral methods',
+      'Hike through breathtaking cloud forest trails draped in Spanish moss, wild orchids, and towering indigenous hardwoods',
+      'Spot wildlife including Colobus monkeys, Anubis baboons, giant forest hogs, and over 150 species of forest birds',
+      'Learn how participatory forest management empowers local Oromo farmers to protect virgin wilderness through coffee stewardship'
+    ],
+    thingsToDo: [
+      'Take a guided botanical and wild coffee trekking excursion through deep virgin cloud forest',
+      'Visit local coffee harvesting cooperatives to observe cherry picking, natural drying, and sorting',
+      'Taste rare single-origin wild Gera coffee freshly roasted in a forest-clearing ceremony with elders',
+      'Birdwatching for rare canopy species including the Blue-breasted Bee-eater and Yellow-fronted Parrot',
+      'Learn traditional beekeeping with tree-hung log hives that produce exquisite floral forest honey'
+    ],
+    keyAttractions: [
+      'Wild Coffea Arabica Primeval Canopy Habitat',
+      'Gera Ancient Forest Research Reserve',
+      'Participatory Forest Coffee Cooperative Stations',
+      'Virgin River Cascades & Highland Stream Crossings',
+      'Giant Podocarpus & Albizia Indigenous Groves'
+    ],
+    cultureAndHeritage: 'For centuries, the people of Gera have lived in sacred symbiotic harmony with their forest. They adhere to traditional Oromo conservation ethics (Safuu) that forbid cutting down shade trees or polluting mountain springs, preserving the earth’s most vital coffee genetic reservoir for all humanity.',
+    localFoodHighlights: [
+      'Single-Origin Wild Gera Canopy Arabica Coffee',
+      'Rare White Forest Honey harvested from Wild Log Hives',
+      'Caccabsaa with Clarified Herb Butter and Freshly Picked Spices',
+      'Tender Oromo Goat Stew with Forest Cardamom (Korarima)'
+    ],
+    bestTimeToVisit: 'October through February during the vibrant wild coffee harvesting season when the forest is laden with crimson cherries.',
+    suggestedDuration: '1 - 2 Days (Excursion from Jimma)',
+    scheduleType: 'Wild Coffee & Rainforest Eco-Trek',
+    travelTips: [
+      'Located approximately 75 km west of Jimma town; accessed via scenic paved and gravel roads through rolling tea and coffee hills',
+      'Bring sturdy hiking boots with good grip and lightweight rain jacket for afternoon mist',
+      'Buy roasted or green wild forest coffee directly from the local farmers’ cooperative union'
+    ],
+    coordinates: { lat: 7.7842, lng: 36.3125 },
+    elevation: '1,900 m – 2,400 m (6,230 – 7,870 ft)',
+    nearbyLodging: ['Eco-Lodge in Agaro / Gera', 'Jimma Central Tourist Hotels (1.5 hr drive)'],
+    availableTourIds: ['jimma-abba-jifar-royal-coffee-trail'],
+    featured: false
+  },
+  {
+    id: 'adwa-victory-memorial-museum',
+    name: 'Adwa Victory Memorial Museum – Addis Ababa & Oromia Heritage',
+    oromoName: 'Muuziyeemii Yaadannoo Injifannoo Adwaa',
+    amharicName: 'የአድዋ ድል መታሰቢያ ሙዚየም',
+    region: 'addis-ababa',
+    regionLabel: 'Addis Ababa • Pan-African Freedom Landmark',
+    heroImage: addisImg,
+    gallery: [addisImg, wenchiImg],
+    tagline: 'Monumental National Museum & Memorial Commemorating the Historic 1896 Victory over Colonial Aggression and Pan-African Pride',
+    description: 'Inaugurated as a monumental national landmark in the historic heart of Addis Ababa at Piassa, the Adwa Victory Memorial Museum commemorates the historic Battle of Adwa on March 1, 1896. At Adwa, united Ethiopian patriot armies drawn from every corner of the nation—including the legendary Oromo cavalry, Tigrayan sharpshooters, Amhara regiments, and forces from the south and east—decisively defeated an invading European colonial army. The architectural masterpiece houses cutting-edge interactive multimedia galleries, panoramic battle dioramas, authentic 19th-century royal and warrior weaponry, personal letters, and towering memorial statues of Emperor Menelik II, Empress Taytu Betul, and brave generals who defended Ethiopian freedom.',
+    whyVisit: [
+      'Stand inside Africa’s newest and grandest architectural memorial dedicated to Black sovereignty and freedom',
+      'Experience immersive multimedia galleries recounting the military strategy, unity, and diplomacy of the 1896 Battle of Adwa',
+      'Honor the crucial contributions of all Ethiopian nations and nationalities, including the decisive role of the heroic Oromo cavalry',
+      'Examine historic battle regalia, royal swords, captured artillery, battlefield drums, and authentic archival documents',
+      'Marvel at the monumental amphitheater, expansive public plaza, memorial colonnades, and panoramic views across Piassa and Entoto'
+    ],
+    thingsToDo: [
+      'Guided historical exploration of the 11 specialized exhibition galleries and the central Memorial Hall of Heroes',
+      'Watch interactive cinematic reconstructions of the strategic maneuvers that turned the tide of battle at Adwa',
+      'Photograph the monumental statues of Emperor Menelik II, Empress Taytu Betul, and the brave regional commanders',
+      'Stroll the elevated public memorial terraces offering sweeping 360-degree vistas over central Addis Ababa',
+      'Visit the museum bookshop and cultural cafe for historical literature and single-origin Ethiopian coffee'
+    ],
+    keyAttractions: [
+      'The Grand Adwa Memorial Hall & Eternal Flame',
+      'Pan-African Freedom & Anti-Colonial Victory Exhibitions',
+      'Historic 19th-Century Royal Weaponry & Cavalry Armor Gallery',
+      'Empress Taytu Betul & Women Patriots Memorial Wing',
+      'Adwa Monumental Sculptures & Panoramic Piassa Plaza',
+      'The 2,000-Seat State-of-the-Art Cultural Amphitheater'
+    ],
+    cultureAndHeritage: 'The Victory of Adwa is widely celebrated as the definitive catalyst of modern Pan-African pride, having proven that an African nation could defeat a well-armed colonial power. Its yellow, green, and red colors inspired independence movements across Africa, the Caribbean, and the global Black diaspora.',
+    localFoodHighlights: [
+      'Traditional Addis Ababa Doro Wat with Farm-Fresh Eggs and Injera',
+      'Freshly Sizzled Shekla Beef Tibs with Rosemary & Awaze',
+      'Ceremonial Ethiopian Coffee Ceremony with Frankincense and Popcorn'
+    ],
+    bestTimeToVisit: 'Open daily year-round. Visiting around Adwa Victory Day on March 1st offers spectacular parades, concerts, and cultural pageantry.',
+    suggestedDuration: '2 - 3 Hours',
+    scheduleType: 'City Heritage & Memorial Tour',
+    travelTips: [
+      'Located in central Piassa, directly accessible by light rail, taxi, and walking from Churchill Avenue',
+      'Audio guides and professional multilingual historical curators are available at the entrance reception',
+      'Combine with nearby St. George Cathedral and the National Museum of Ethiopia for a complete historical day'
+    ],
+    coordinates: { lat: 9.0354, lng: 38.7512 },
+    elevation: '2,355 m (7,725 ft)',
+    nearbyLodging: ['Sheraton Addis Luxury Collection', 'Hyatt Regency Addis Ababa', 'Historic Taitu Hotel Piassa'],
+    availableTourIds: ['addis-city-essence'],
+    featured: true
   },
 ];
 
@@ -1551,8 +1998,8 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
     type: 'Eco-Lodge',
     location: 'Buyit Ras, Simien Mountains National Park',
     region: 'northern-ethiopia',
-    image: simienImg,
-    gallery: [simienImg],
+    image: baleImg,
+    gallery: [baleImg],
     description: 'Spectacular mountain eco-lodge perched at 3,260 meters elevation inside the national park. Features traditional Tukuls with underfloor solar heating and panoramic escarpment vistas.',
     amenities: ['Underfloor Solar Heating', 'Highest Fireside Lounge in Africa', 'Escarpment View Terraces', 'Guided Treks & Park Logistics'],
     priceRange: 'Upscale Eco ($$$)',
@@ -1729,11 +2176,11 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'gal-2',
-    title: 'Simien Mountains Escarpment',
+    title: 'Wenchi Crater Lake Alpine Caldera',
     category: 'Nature',
-    imageUrl: gallerySimienImg,
-    location: 'Simien Mountains National Park',
-    caption: 'Dramatic 1,500-meter drop-offs across the afro-alpine roof of Africa.'
+    imageUrl: wenchiImg,
+    location: 'Wenchi, Oromia',
+    caption: 'Breathtaking alpine volcanic crater lake surrounded by natural hot springs, waterfall trails, and verdant farmland.'
   },
   {
     id: 'gal-3',

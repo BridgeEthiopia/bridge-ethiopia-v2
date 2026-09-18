@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShieldCheck, Lock, Unlock, KeyRound, X, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { useCustomPhotoContext } from '../context/CustomPhotoContext';
+import { FOUNDER_INFO } from '../data/ethiopiaData';
 
 export const FounderPinModal: React.FC = () => {
   const { isPinModalOpen, closePinModal, verifyPin, isAdminMode, logoutFounder, openUploadModal } = useCustomPhotoContext();
@@ -105,7 +106,7 @@ export const FounderPinModal: React.FC = () => {
           </p>
           <div className="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/30 border border-white/10 text-[11px] text-[#D49A3D] font-medium">
             <ShieldCheck className="w-3.5 h-3.5 text-[#34A853]" />
-            <span>Hindeku25@gmail.com</span>
+            <span>{FOUNDER_INFO.email}</span>
           </div>
         </div>
 

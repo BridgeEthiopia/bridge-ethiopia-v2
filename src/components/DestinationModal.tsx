@@ -251,7 +251,7 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
                     <span>Traveler Advisory, Cultural Protocol & Practical Guidance</span>
                   </h4>
                   <p className="text-xs sm:text-sm text-[#5C5247] leading-relaxed">
-                    {destination.chronicle.advisoryAndProtocol}
+                    {destination.chronicle.advisoryAndProtocol || destination.chronicle.travelerAdvisory}
                   </p>
                 </div>
               </div>

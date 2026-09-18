@@ -86,10 +86,6 @@ const defaultFounderPhotos: FounderPhotos = {
 
 // Automatic bidirectional alias links to prevent photo mismatches between sections and cards
 const PHOTO_KEY_ALIASES: Record<string, string[]> = {
-  coffeeAvatar: ['tour-hindek-grandpa-coffee-ceremony', 'founder_coffee'],
-  'tour-hindek-grandpa-coffee-ceremony': ['coffeeAvatar', 'founder_coffee'],
-  founder_coffee: ['coffeeAvatar', 'tour-hindek-grandpa-coffee-ceremony'],
-
   kitchenAvatar: ['tour-hindek-kitchen-cooking-experience', 'founder_kitchen'],
   'tour-hindek-kitchen-cooking-experience': ['kitchenAvatar', 'founder_kitchen'],
   founder_kitchen: ['kitchenAvatar', 'tour-hindek-kitchen-cooking-experience'],
