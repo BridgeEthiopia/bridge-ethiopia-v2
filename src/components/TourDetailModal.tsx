@@ -12,7 +12,8 @@ import {
   MessageCircle, 
   ChevronRight, 
   Calendar,
-  Compass
+  Compass,
+  BookOpen
 } from 'lucide-react';
 import { FOUNDER_INFO } from '../data/ethiopiaData';
 
@@ -43,46 +44,88 @@ export const TourDetailModal: React.FC<TourDetailProps> = ({
           <X className="w-5 h-5" />
         </button>
 
-        {/* Hero Image Banner */}
-        <div className="relative h-64 sm:h-80 w-full overflow-hidden bg-slate-900">
-          <AuthenticImage
-            src={tour.image}
-            alt={tour.title}
-            subjectName={tour.title}
-            photoKey={`tour-${tour.id}`}
-            photoCategory="tour"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
-          
-          <div className="absolute top-5 left-5">
-            <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-xs font-bold uppercase tracking-wider">
-              {tour.category}
-            </span>
-          </div>
-
-          <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <div className="flex items-center gap-1.5 text-xs text-[#E5AC4D]">
-                <Star className="w-4 h-4 fill-[#E5AC4D]" />
-                <span className="font-bold">{tour.rating}</span>
-                <span className="text-white/80">({tour.reviewsCount} verified traveler reviews)</span>
+        {/* Hero Banner: Chronicle-Only vs Authentic Photo */}
+        {tour.isChronicleOnly ? (
+          <div className="relative p-6 sm:p-10 bg-gradient-to-br from-[#1E3A2F] via-[#162D24] to-[#0D1A14] text-white border-b-2 border-[#D49A3D]/40">
+            <div className="space-y-4 max-w-2xl">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-xs font-extrabold uppercase tracking-wider">
+                  {tour.category}
+                </span>
+                <span className="px-3 py-1 rounded-full bg-white/10 text-white border border-white/20 text-xs font-semibold flex items-center gap-1.5">
+                  <BookOpen className="w-3.5 h-3.5 text-[#D49A3D]" />
+                  <span>Historical Chronicle Itinerary • Text-First Documentation</span>
+                </span>
               </div>
-              <button
-                type="button"
-                onClick={() => setIsReviewModalOpen(true)}
-                className="px-3 py-1 rounded-lg bg-black/50 hover:bg-black/70 border border-white/30 text-white text-xs font-bold flex items-center gap-1.5 backdrop-blur-xs transition-colors cursor-pointer"
-                title="Rate this tour or leave your review"
-              >
-                <Star className="w-3 h-3 text-[#D49A3D] fill-[#D49A3D]" />
-                <span>Rate & Review Tour</span>
-              </button>
+
+              <h2 className="text-2xl sm:text-3xl font-extrabold font-serif text-white tracking-tight">
+                {tour.title}
+              </h2>
+
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
+                <div className="flex items-center gap-1.5 text-xs text-[#E5AC4D]">
+                  <Star className="w-4 h-4 fill-[#E5AC4D]" />
+                  <span className="font-bold">{tour.rating}</span>
+                  <span className="text-white/80">({tour.reviewsCount} verified reviews)</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsReviewModalOpen(true)}
+                  className="px-3 py-1 rounded-lg bg-black/40 hover:bg-black/60 border border-white/30 text-white text-xs font-bold flex items-center gap-1.5 backdrop-blur-xs transition-colors cursor-pointer"
+                  title="Rate this tour or leave your review"
+                >
+                  <Star className="w-3 h-3 text-[#D49A3D] fill-[#D49A3D]" />
+                  <span>Rate & Review Tour</span>
+                </button>
+              </div>
+
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-black/30 border border-white/10 text-xs text-[#E8E1D5]">
+                <Sparkles className="w-3.5 h-3.5 text-[#D49A3D]" />
+                <span>Text Chronicle Itinerary • Preserving Pure Historical Narrative Without Photos</span>
+              </div>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold font-serif text-white">
-              {tour.title}
-            </h2>
           </div>
-        </div>
+        ) : (
+          <div className="relative h-64 sm:h-80 w-full overflow-hidden bg-slate-900">
+            <AuthenticImage
+              src={tour.image}
+              alt={tour.title}
+              subjectName={tour.title}
+              photoKey={`tour-${tour.id}`}
+              photoCategory="tour"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
+            
+            <div className="absolute top-5 left-5">
+              <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-xs font-bold uppercase tracking-wider">
+                {tour.category}
+              </span>
+            </div>
+
+            <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-1.5 text-xs text-[#E5AC4D]">
+                  <Star className="w-4 h-4 fill-[#E5AC4D]" />
+                  <span className="font-bold">{tour.rating}</span>
+                  <span className="text-white/80">({tour.reviewsCount} verified traveler reviews)</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsReviewModalOpen(true)}
+                  className="px-3 py-1 rounded-lg bg-black/50 hover:bg-black/70 border border-white/30 text-white text-xs font-bold flex items-center gap-1.5 backdrop-blur-xs transition-colors cursor-pointer"
+                  title="Rate this tour or leave your review"
+                >
+                  <Star className="w-3 h-3 text-[#D49A3D] fill-[#D49A3D]" />
+                  <span>Rate & Review Tour</span>
+                </button>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold font-serif text-white">
+                {tour.title}
+              </h2>
+            </div>
+          </div>
+        )}
 
         {/* Modal Body */}
         <div className="p-6 sm:p-8 space-y-6">

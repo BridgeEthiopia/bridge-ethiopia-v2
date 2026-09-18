@@ -156,11 +156,23 @@ export const ExploreEthiopiaSection: React.FC<ExploreProps> = ({
                   </div>
 
                   <div className="space-y-1.5 pt-4">
-                    {dest.amharicName && (
-                      <span className="text-[11px] text-[#D49A3D] font-medium tracking-wide block">
-                        {dest.amharicName}
-                      </span>
-                    )}
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      {dest.oromoName && (
+                        <span className="text-[11px] text-[#D49A3D] font-medium tracking-wide">
+                          {dest.oromoName}
+                        </span>
+                      )}
+                      {dest.amharicName && (
+                        <span className="text-[11px] text-[#E5AC4D] font-medium tracking-wide">
+                          {dest.amharicName}
+                        </span>
+                      )}
+                      {dest.tigrinyaName && (
+                        <span className="text-[11px] text-[#D49A3D] font-medium tracking-wide">
+                          {dest.tigrinyaName}
+                        </span>
+                      )}
+                    </div>
                     <h3 className="text-xl font-bold font-serif text-white group-hover:text-[#F4BE5E] transition-colors leading-snug">
                       {dest.name}
                     </h3>

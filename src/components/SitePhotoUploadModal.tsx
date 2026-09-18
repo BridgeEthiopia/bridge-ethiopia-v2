@@ -123,7 +123,7 @@ export const SitePhotoUploadModal: React.FC = () => {
       current: getCustomPhoto('hero_featured_destination', heroMountainShowcaseImg),
       defaultSrc: heroMountainShowcaseImg,
     },
-    ...DESTINATIONS_DATA.map(d => ({
+    ...DESTINATIONS_DATA.filter(d => !d.isChronicleOnly).map(d => ({
       key: `dest-${d.id}`,
       title: d.name,
       subtitle: d.regionLabel || d.tagline,
@@ -197,7 +197,7 @@ export const SitePhotoUploadModal: React.FC = () => {
     defaultSrc: h.image,
   }));
 
-  const tourItems = TOURS_DATA.map(t => ({
+  const tourItems = TOURS_DATA.filter(t => !t.isChronicleOnly).map(t => ({
     key: `tour-${t.id}`,
     title: t.title,
     subtitle: `${t.category} • ${t.region}`,

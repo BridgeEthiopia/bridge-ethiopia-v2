@@ -58,6 +58,11 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
                   <BookOpen className="w-3.5 h-3.5 text-[#D49A3D]" />
                   <span>Historical Chronicle • Text-First Documentation</span>
                 </span>
+                {destination.oromoName && (
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/15 text-white/90 text-xs font-medium">
+                    {destination.oromoName}
+                  </span>
+                )}
                 {destination.amharicName && (
                   <span className="px-2.5 py-0.5 rounded-full bg-white/15 text-white/90 text-xs font-medium">
                     {destination.amharicName}
