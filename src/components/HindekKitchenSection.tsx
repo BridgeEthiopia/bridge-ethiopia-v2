@@ -29,6 +29,7 @@ import dishDoroWatImg from '../assets/images/kitchen-dish-doro-wat.jpg';
 import dishTibsImg from '../assets/images/shekla_tibs_sizzling_1787813805251.jpg';
 import dishKitfoImg from '../assets/images/food-kitfo.jpg';
 import dishShiroImg from '../assets/images/kitchen-dish-shiro-tegamino.jpg';
+import tourKitchenCookingImg from '../assets/images/tour-hindek-kitchen-cooking-experience.jpg';
 
 interface HindekKitchenProps {
   onBookClass: (title: string) => void;
@@ -227,11 +228,11 @@ export const HindekKitchenSection: React.FC<HindekKitchenProps> = ({
           <div className="lg:col-span-5 space-y-4">
             <div className="relative rounded-2xl overflow-hidden aspect-4/3 shadow-md border-2 border-white bg-[#1E3A2F] group">
               <AuthenticImage
-                src={photos.kitchenAvatar}
+                src={tourKitchenCookingImg}
                 alt="Hindek Kitchen cooking class experience"
                 subjectName="Hindek Kitchen Cooking Experience"
-                photoKey="kitchenAvatar"
-                photoCategory="founder"
+                photoKey="tour-hindek-kitchen-cooking-experience"
+                photoCategory="tour"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
@@ -249,7 +250,13 @@ export const HindekKitchenSection: React.FC<HindekKitchenProps> = ({
               {isAdminMode && (
                 <button
                   type="button"
-                  onClick={() => openUploadModal('kitchenAvatar')}
+                  onClick={() => openUploadModal({
+                    key: 'tour-hindek-kitchen-cooking-experience',
+                    title: 'Hindek Kitchen: Traditional Cooking & Market Class',
+                    category: 'tour',
+                    currentSrc: tourKitchenCookingImg,
+                    aspectRatio: 'landscape'
+                  })}
                   className="absolute top-3 right-3 z-10 px-3 py-1.5 rounded-full bg-black/75 hover:bg-black text-white text-[11px] font-bold flex items-center gap-1.5 backdrop-blur-sm border border-white/20 shadow-md cursor-pointer transition-all"
                   title="Update or upload Hindek Kitchen photos"
                 >

@@ -118,9 +118,9 @@ export const HindekCoffeeSection: React.FC<HindekCoffeeProps> = ({
               <AuthenticImage
                 src={coffeeCeremonyImg}
                 alt="Traditional Ethiopian Coffee Ceremony in Jebena"
-                subjectName="Traditional Ethiopian Coffee Ceremony"
-                photoKey="coffeeAvatar"
-                photoCategory="founder"
+                subjectName="Hindek Grandpa Coffee Experience: 3-Stage Ceremony"
+                photoKey="tour-hindek-grandpa-coffee-ceremony"
+                photoCategory="tour"
                 className="w-full h-full object-cover img-zoom"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
@@ -129,10 +129,11 @@ export const HindekCoffeeSection: React.FC<HindekCoffeeProps> = ({
                 <button
                   type="button"
                   onClick={() => openUploadModal({
-                    key: 'coffeeAvatar',
-                    title: 'Hindek Grandpa Coffee Ceremony',
-                    category: 'founder',
-                    aspectRatio: 'portrait'
+                    key: 'tour-hindek-grandpa-coffee-ceremony',
+                    title: 'Hindek Grandpa Coffee Experience: 3-Stage Ceremony',
+                    category: 'tour',
+                    currentSrc: coffeeCeremonyImg,
+                    aspectRatio: 'landscape'
                   })}
                   className="absolute top-4 right-4 z-10 px-3 py-1.5 rounded-xl bg-black/70 hover:bg-black/90 text-white text-xs font-bold flex items-center gap-1.5 backdrop-blur-xs border border-white/20 transition-all cursor-pointer shadow-md"
                 >

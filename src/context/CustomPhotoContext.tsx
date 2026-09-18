@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState, useEffect, useRef, ReactNode } from 'react';
 import defaultSquare from '../assets/images/hindek_real_photo_square.jpg';
 import defaultPortrait from '../assets/images/hindek_real_photo_portrait.jpg';
+import defaultCoffeeCeremony from '../assets/images/ethiopian_coffee_ceremony_1787813852379.jpg';
+import defaultKitchenCooking from '../assets/images/tour-hindek-kitchen-cooking-experience.jpg';
 import { 
   idbGet, 
   idbSet, 
@@ -76,10 +78,25 @@ const IDB_KEY_CUSTOM_MAP = 'custom_photos_map_store_v7';
 const defaultFounderPhotos: FounderPhotos = {
   portrait: defaultPortrait,
   heroAvatar: defaultSquare,
-  kitchenAvatar: defaultSquare,
-  coffeeAvatar: defaultSquare,
+  kitchenAvatar: defaultKitchenCooking,
+  coffeeAvatar: defaultCoffeeCeremony,
   contactAvatar: defaultSquare,
   actionPhoto: defaultPortrait,
+};
+
+// Automatic bidirectional alias links to prevent photo mismatches between sections and cards
+const PHOTO_KEY_ALIASES: Record<string, string[]> = {
+  coffeeAvatar: ['tour-hindek-grandpa-coffee-ceremony', 'founder_coffee'],
+  'tour-hindek-grandpa-coffee-ceremony': ['coffeeAvatar', 'founder_coffee'],
+  founder_coffee: ['coffeeAvatar', 'tour-hindek-grandpa-coffee-ceremony'],
+
+  kitchenAvatar: ['tour-hindek-kitchen-cooking-experience', 'founder_kitchen'],
+  'tour-hindek-kitchen-cooking-experience': ['kitchenAvatar', 'founder_kitchen'],
+  founder_kitchen: ['kitchenAvatar', 'tour-hindek-kitchen-cooking-experience'],
+
+  hero_featured_destination: ['dest_bale', 'dest-bale-mountains'],
+  dest_bale: ['hero_featured_destination', 'dest-bale-mountains'],
+  'dest-bale-mountains': ['hero_featured_destination', 'dest_bale'],
 };
 
 const CustomPhotoContext = createContext<CustomPhotoContextType | undefined>(undefined);
@@ -436,6 +453,22 @@ export const CustomPhotoProvider: React.FC<{ children: ReactNode }> = ({ childre
       } catch {}
       return updated;
     });
+
+    // Also mirror to customPhotos map and its aliases so tours and modals stay identical
+    setCustomPhotos((prev) => {
+      const updated = { ...prev, [key]: dataUrlOrPath };
+      const aliases = PHOTO_KEY_ALIASES[key];
+      if (aliases) {
+        aliases.forEach((alias) => {
+          updated[alias] = dataUrlOrPath;
+        });
+      }
+      idbSet(IDB_KEY_CUSTOM_MAP, updated).catch(() => {});
+      try {
+        safeLocalStorageSet(STORAGE_KEY_CUSTOM_MAP, JSON.stringify(updated));
+      } catch {}
+      return updated;
+    });
   };
 
   const updateAllPhotos = (dataUrlOrPath: string) => {
@@ -466,6 +499,21 @@ export const CustomPhotoProvider: React.FC<{ children: ReactNode }> = ({ childre
         ...prev,
         [key]: dataUrl,
       };
+      // Synchronize all alias keys so the same experience always displays the same photo
+      const aliases = PHOTO_KEY_ALIASES[key];
+      if (aliases) {
+        aliases.forEach((alias) => {
+          updated[alias] = dataUrl;
+        });
+      }
+      // Also sync founder photos if linked
+      if (key === 'coffeeAvatar' || aliases?.includes('coffeeAvatar')) {
+        setPhotos(p => ({ ...p, coffeeAvatar: dataUrl }));
+      }
+      if (key === 'kitchenAvatar' || aliases?.includes('kitchenAvatar')) {
+        setPhotos(p => ({ ...p, kitchenAvatar: dataUrl }));
+      }
+
       // Direct immediate persistence
       idbSet(IDB_KEY_CUSTOM_MAP, updated).catch(() => {});
       try {
@@ -479,6 +527,12 @@ export const CustomPhotoProvider: React.FC<{ children: ReactNode }> = ({ childre
     setCustomPhotos((prev) => {
       const next = { ...prev };
       delete next[key];
+      const aliases = PHOTO_KEY_ALIASES[key];
+      if (aliases) {
+        aliases.forEach((alias) => {
+          delete next[alias];
+        });
+      }
       idbSet(IDB_KEY_CUSTOM_MAP, next).catch(() => {});
       try {
         safeLocalStorageSet(STORAGE_KEY_CUSTOM_MAP, JSON.stringify(next));
@@ -489,15 +543,33 @@ export const CustomPhotoProvider: React.FC<{ children: ReactNode }> = ({ childre
 
   const getCustomPhoto = (key: string, fallback?: string): string => {
     if (customPhotos[key]) return customPhotos[key];
-    // Check if key is a founder key
+    const aliases = PHOTO_KEY_ALIASES[key];
+    if (aliases) {
+      for (const alias of aliases) {
+        if (customPhotos[alias]) return customPhotos[alias];
+      }
+    }
+    // Check if key or alias is a founder key
     if (key in photos) {
       return (photos as any)[key] || fallback || '';
+    }
+    if (aliases) {
+      for (const alias of aliases) {
+        if (alias in photos) return (photos as any)[alias] || fallback || '';
+      }
     }
     return fallback || '';
   };
 
   const hasCustomPhoto = (key: string): boolean => {
-    return Boolean(customPhotos[key]);
+    if (Boolean(customPhotos[key])) return true;
+    const aliases = PHOTO_KEY_ALIASES[key];
+    if (aliases) {
+      for (const alias of aliases) {
+        if (Boolean(customPhotos[alias])) return true;
+      }
+    }
+    return false;
   };
 
   const resetAllCustomPhotos = () => {

@@ -18,7 +18,7 @@ import { FOUNDER_INFO } from '../data/ethiopiaData';
 import { AuthenticImage } from './AuthenticImage';
 import { useCustomPhotoContext, compressImage } from '../context/CustomPhotoContext';
 import { useLanguage } from '../context/LanguageContext';
-import heroMountainShowcaseImg from '../assets/images/bale_harenna_forest_moss_1788010330829.jpg';
+import heroMountainShowcaseImg from '../assets/images/bale_mountains_peaks_1789693539082.jpg';
 import betGiyorgisHeroImg from '../assets/images/lalibela_st_george_church_1787813645261.jpg';
 
 interface HeroProps {
@@ -272,8 +272,8 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-4/5 group img-zoom-parent bg-slate-900">
                 <AuthenticImage
                   src={heroMountainShowcaseImg}
-                  alt="Authentic Ethiopia Mountain Cloud Forest and Heritage"
-                  subjectName="Bale Mountains Ancient Cloud Forest & Living Heritage"
+                  alt="Authentic Ethiopia Alpine Mountain Peaks and Living Heritage"
+                  subjectName="Bale Mountains Alpine Peaks & Living Heritage"
                   photoKey="hero_featured_destination"
                   photoCategory="destination"
                   className="w-full h-full object-cover img-zoom"

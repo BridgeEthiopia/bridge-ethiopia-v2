@@ -37,7 +37,7 @@ import {
   TOURS_DATA, 
   FOUNDER_INFO 
 } from '../data/ethiopiaData';
-import heroMountainShowcaseImg from '../assets/images/bale_harenna_forest_moss_1788010330829.jpg';
+import heroMountainShowcaseImg from '../assets/images/bale_mountains_peaks_1789693539082.jpg';
 import dishInjeraImg from '../assets/images/kitchen-dish-teff-injera.jpg';
 import dishDoroWatImg from '../assets/images/kitchen-dish-doro-wat.jpg';
 import dishTibsImg from '../assets/images/shekla_tibs_sizzling_1787813805251.jpg';
