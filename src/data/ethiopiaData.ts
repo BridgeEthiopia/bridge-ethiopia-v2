@@ -2,7 +2,8 @@ import { Destination, Tour, FoodDish, Festival, Accommodation, BusinessListing, 
 
 import addisImg from '../assets/images/addis_ababa_skyline_1787813744000.jpg';
 import wenchiImg from '../assets/images/wenchi_lake_landscape_1787813595736.jpg';
-import baleImg from '../assets/images/bale_mountains_plateau_1787813728945.jpg';
+import baleImg from '../assets/images/bale_mountains_peaks_1789725617625.jpg';
+import baleSanettiImg from '../assets/images/bale_sanetti_lobelia_1789725630969.jpg';
 import sofOmarImg from '../assets/images/sof_omar_cave_interior_1787813611338.jpg';
 import lalibelaImg from '../assets/images/lalibela_st_george_church_1787813645261.jpg';
 import gondarImg from '../assets/images/gondar_royal_castle_1787813713556.jpg';
@@ -183,6 +184,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     heroImage: baleImg,
     gallery: [
       baleImg,
+      baleSanettiImg,
       tourBaleImg
     ],
     tagline: 'Roof of Africa: Home to the Rare Ethiopian Wolf and Harenna Cloud Forest',
@@ -1028,8 +1030,9 @@ export const DESTINATIONS_DATA: Destination[] = [
     amharicName: 'የአኖሌ ታሪካዊ እና ባህላዊ መታሰቢያ - አርሲ',
     region: 'oromia',
     regionLabel: 'Oromia • Arsi Zone Heritage',
-    heroImage: irreechaImg,
-    gallery: [irreechaImg, wenchiImg],
+    heroImage: '',
+    gallery: [],
+    isChronicleOnly: true,
     tagline: 'Monumental Historical Memorial, Cultural Museum & Resilience Center Commemorating Arsi Oromo Heritage',
     description: 'Situated in Hetosa woreda in the fertile Arsi Zone of Oromia near the town of Asella, the Anole Monument is an iconic cultural memorial and museum complex established to commemorate the heroic resistance, historical memory, and enduring dignity of the Arsi Oromo people. The central landmark is a colossal bronze statue of a raised hand emerging from the earth—symbolizing unity, unbroken resilience, and human dignity. The surrounding park features an ethnographic museum exhibiting traditional Arsi Oromo attire, carved wooden artifacts, ancestral Gadaa ceremonial regalia, and historical archives.',
     whyVisit: [
@@ -1041,7 +1044,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     ],
     thingsToDo: [
       'Guided historical tour of the monument grounds, memorial wall, and cultural exhibition gallery',
-      'Photograph the monumental sculpture with sweeping views of the surrounding wheat fields and hills',
+      'Reflect at the monumental sculpture with sweeping views of the surrounding wheat fields and Mount Chilalo',
       'Participate in a traditional Arsi coffee blessing ceremony (Buna Qalaa)',
       'Watch traditional Arsi horse riding displays and master leather-craft demonstrations',
       'Visit nearby Asella town and the scenic volcanic slopes of Mount Chilalo'
@@ -1072,7 +1075,14 @@ export const DESTINATIONS_DATA: Destination[] = [
     elevation: '2,420 m (7,940 ft)',
     nearbyLodging: ['Asella Central Tourist Hotels', 'Lake Langano Eco-Resorts (1 hr drive)'],
     availableTourIds: ['oromia-highlights-safari'],
-    featured: false
+    featured: false,
+    chronicle: {
+      historicalOrigins: 'The Anole Cultural and Historical Memorial in Hetosa woreda, Arsi Zone of Oromia, stands as one of the most poignant and revered monuments of memory and resilience in the Horn of Africa. Established to honor the memory of the Arsi Oromo who defended their land, cultural sovereignty, and freedom during the late 19th-century expansion of Emperor Menelik II, Anole is both a solemn tribute to ancestral sacrifice and a beacon of cultural renewal. The central monument—a towering bronze sculpture of a raised hand reaching upward toward the sky—embodies unbroken dignity, collective resilience, and the triumph of the human spirit over historical adversity.',
+      architecturalMastery: 'Set against the dramatic silhouette of Mount Chilalo, the Anole Memorial Complex spans a meticulously planned open-air cultural campus. The centerpiece is the monumental bronze hand emerging resolutely from the earth, designed by master Ethiopian sculptors to represent memory and reconciliation. Flanking the central plaza are stone memorial avenues, reflection gardens planted with native highland trees, and the multi-gallery Anole Ethnographic Museum. The museum houses rare historic collections including traditional hand-embroidered Arsi leather garments (Qolo), beadwork, ancestral spears, carved wooden household vessels (Waanbura), and commemorative plaques recounting oral genealogies.',
+      sacredTraditions: 'Anole is a living hub for the preservation and celebration of Oromo intangible heritage. Elders and cultural leaders regularly convene here for traditional blessing ceremonies (Kadhaa fi Eebba), invoking peace, fertility, and community harmony under the values of the Gadaa democratic system. Visitors to the site can witness and take part in the sacred ritual of Buna Qalaa—the ceremonial roasting of whole coffee berries in fragrant spiced herbal butter—served in carved wooden bowls with heartfelt blessings for travelers, visitors, and families.',
+      livingEcosystem: 'Perched at an elevation of 2,420 meters in the fertile rolling highlands of the Arsi plateau, Anole is surrounded by panoramic agricultural vistas of golden wheat, barley, and teff fields. In the near distance rises Mount Chilalo (4,036 m), an extinct volcano swathed in afro-alpine heaths and juniper groves. Arsi is internationally famous as the heartland of Ethiopia’s legendary distance runners and equestrian culture, and visitors frequently see skilled local riders galloping gracefully across the open highland plains on decorated horses.',
+      travelerAdvisory: 'Anole is located approximately 160 kilometers southeast of Addis Ababa near the historic town of Asella. The journey takes 2.5 to 3 hours along the modern expressway to Adama and onward via the scenic paved highway winding through Arsi’s fertile volcanic farmland. Visitors are warmly welcomed by resident curators who provide deeply moving and informative guided tours in English, Afaan Oromoo, and Amharic. A visit here is ideally combined with an overnight stay at the nearby Rift Valley lakes (Lake Langano or Lake Ziway) or an alpine hiking excursion on Mount Chilalo.'
+    }
   },
   {
     id: 'lephis-waterfall',
