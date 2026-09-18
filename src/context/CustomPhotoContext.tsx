@@ -93,6 +93,15 @@ const PHOTO_KEY_ALIASES: Record<string, string[]> = {
   hero_featured_destination: ['dest_bale', 'dest-bale-mountains'],
   dest_bale: ['hero_featured_destination', 'dest-bale-mountains'],
   'dest-bale-mountains': ['hero_featured_destination', 'dest_bale'],
+
+  'fest-irreecha': ['fest_irreecha', 'irreecha', 'irreechaa'],
+  fest_irreecha: ['fest-irreecha', 'irreecha', 'irreechaa'],
+  irreecha: ['fest-irreecha', 'fest_irreecha', 'irreechaa'],
+  irreechaa: ['fest-irreecha', 'fest_irreecha', 'irreecha'],
+
+  'fest-meskel': ['fest_meskel', 'meskel'],
+  fest_meskel: ['fest-meskel', 'meskel'],
+  meskel: ['fest-meskel', 'fest_meskel'],
 };
 
 const CustomPhotoContext = createContext<CustomPhotoContextType | undefined>(undefined);

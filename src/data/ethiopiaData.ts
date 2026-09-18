@@ -13,7 +13,7 @@ import kafaImg from '../assets/images/kafa_coffee_rainforest_1787813627212.jpg';
 import sheklaTibsImg from '../assets/images/shekla_tibs_sizzling_1787813805251.jpg';
 import marqaaImg from '../assets/images/marqaa_oromo_porridge_1787813823518.jpg';
 import coffeeCeremonyImg from '../assets/images/ethiopian_coffee_ceremony_1787813852379.jpg';
-import irreechaImg from '../assets/images/irreecha_festival_oromo_1787813876028.jpg';
+import irreechaImg from '../assets/images/irreecha_gathering_authentic.jpg';
 import enkutatashImg from '../assets/images/enkutatash_new_year_1787813894569.jpg';
 import meskelImg from '../assets/images/meskel_demera_fire_1787814613769.jpg';
 import kulubiImg from '../assets/images/kulubi_pilgrimage_1787814627497.jpg';
