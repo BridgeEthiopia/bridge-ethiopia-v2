@@ -964,14 +964,15 @@ export const DESTINATIONS_DATA: Destination[] = [
   {
     id: 'melka-kunture',
     name: 'Melka Kunture Archaeological Site (UNESCO)',
-    oromoName: 'Iddoo Qorannoo Arkiyooloojii Malkaa Kunturee',
+    oromoName: 'Iddoo Qorannoo Arkiyooloojii Malkaa Qunxuree',
     amharicName: 'መልካ ቁንጡሬ ቅድመ-ታሪክ የአርኪኦሎጂ ስፍራ (ዩኔስኮ)',
     region: 'oromia',
     regionLabel: 'Oromia • Upper Awash Valley',
-    heroImage: addisImg,
-    gallery: [addisImg, wenchiImg],
+    heroImage: '',
+    gallery: [],
+    isChronicleOnly: true,
     tagline: 'UNESCO World Heritage Prehistoric Stone Age Site Dating Back 2 Million Years Along the Scenic Awash River',
-    description: 'Inscribed as a UNESCO World Heritage Site in 2024, Melka Kunture is one of the premier prehistoric and palaeolithic archaeological complexes on Earth. Situated in the upper Awash River valley of Oromia approximately 50 km south of Addis Ababa, this extraordinary open-air museum preserves continuous layers of early human evolution spanning almost two million years. Visitors can examine in-situ Oldowan pebble tools, Acheulean handaxes, fossilized bones of extinct giant fauna (elephants, hippos, and equids), and fossil hominid footprints, backed by four well-curated thematic museum pavilions explaining human origins, toolmaking, and ancient environments.',
+    description: 'Inscribed as a UNESCO World Heritage Site in 2024, Melka Kunture (Malkaa Qunxuree) is one of the premier prehistoric and palaeolithic archaeological complexes on Earth. Situated in the upper Awash River valley of Oromia approximately 50 km south of Addis Ababa, this extraordinary open-air museum preserves continuous layers of early human evolution spanning almost two million years. Visitors can examine in-situ Oldowan pebble tools, Acheulean handaxes, fossilized bones of extinct giant fauna (elephants, hippos, and equids), and fossil hominid footprints, backed by four well-curated thematic museum pavilions explaining human origins, toolmaking, and ancient environments.',
     whyVisit: [
       'Explore one of the newest UNESCO World Heritage Sites in Africa, newly recognized in 2024',
       'Walk alongside actual archaeological excavations displaying 1.7-million-year-old stone handaxes in-situ',
@@ -1011,7 +1012,14 @@ export const DESTINATIONS_DATA: Destination[] = [
     elevation: '2,010 m (6,590 ft)',
     nearbyLodging: ['Boutique Lodges near Tiya', 'Addis Ababa City Hotels (1 hr drive)'],
     availableTourIds: ['addis-city-essence'],
-    featured: false
+    featured: false,
+    chronicle: {
+      historicalOrigins: 'Inscribed as a UNESCO World Heritage Site in 2024 under the official designation "Melka Kunture and Balchit: Archaeological and Palaeontological Sites in the Highland Area of Ethiopia," this prehistoric complex is one of the most consequential windows into human evolution on Earth. First identified in 1963 by French archaeologist Gérard Bailloud and excavated continuously for over six decades by distinguished French, Italian, and Ethiopian research missions, the site preserves continuous geological strata dating between 2.0 million and 12,000 years ago. In these stratified volcanic sediments along the ancient paleo-Awash River, generations of early hominins—from Homo habilis and Homo erectus to archaic and anatomically modern Homo sapiens—lived, gathered, hunted, and fashioned stone tools.',
+      architecturalMastery: 'Rather than modern buildings, the architectural wonder of Melka Kunture lies in its preserved excavation trenches, where early human living floors are showcased in-situ beneath protective earthen-toned pavilions. At trenches like Gomboré I (1.7 million years old) and Garba I (Acheulean), visitors view thousands of meticulously exposed basalt cleavers, handaxes, hammerstones, and spheroids exactly as they were discarded alongside the butchered bones of extinct giant elephants (Elephas recki), hippopotamuses, and horned giraffids. The site also encompasses the Balchit volcanic obsidian quarry, where pre-humans extracted glistening black volcanic glass to craft ultra-sharp blades and scraper tools.',
+      sacredTraditions: 'To the indigenous Oromo communities dwelling along the upper reaches of the Awash River, the river crossing at Malkaa Qunxuree has long been recognized as a place of historical vitality and natural abundance. The Awash River itself occupies an esteemed place in Oromo culture and spiritual cosmology, celebrated in oral songs as the life-giving artery of the highlands. Community elders have maintained traditions of honoring the waters and surrounding fertile land through prayers of gratitude and peace (Buna Nagaa), respecting the ancient riverbanks that have nurtured life across countless generations.',
+      livingEcosystem: 'Melka Kunture is situated at an elevation of approximately 2,010 meters in a pleasant highland savannah river valley. The meandering Awash River supports a thriving riparian ecosystem of indigenous acacia woodlands, fig trees, and lush riverbank reeds. Over 80 bird species frequent the site, including the endemic Blue-winged Goose, Black-headed Siskin, and Abyssinian Longclaw, as well as resident vervet monkeys. The stratigraphy exposed along the canyon walls offers a natural geological textbook, showcasing layers of volcanic tuff and river gravels deposited by ancient eruptions of Mount Zuqualla and other Rift Valley volcanoes.',
+      travelerAdvisory: 'Melka Kunture is conveniently located only 50 kilometers south of Addis Ababa along the smooth, paved highway toward Butajira, making it an effortless and enriching half-day or full-day excursion from the capital. The on-site complex includes four open-air museum pavilions dedicated to Prehistory, Paleontology, Geology, and Human Evolution. Engaging a licensed on-site guide at the ticket office is strongly recommended to appreciate the significance of the geological strata and tool types. Wear comfortable walking shoes, a broad-brimmed sun hat, and bring water for strolling between trenches and river trails. The visit is ideally paired with the nearby Tiya UNESCO carved megaliths and the 13th-century rock-hewn church of Adadi Mariam.'
+    }
   },
   {
     id: 'anole-monument',
