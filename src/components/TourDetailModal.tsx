@@ -13,7 +13,8 @@ import {
   ChevronRight, 
   Calendar,
   Compass,
-  BookOpen
+  BookOpen,
+  ShieldCheck
 } from 'lucide-react';
 import { FOUNDER_INFO } from '../data/ethiopiaData';
 
@@ -150,6 +151,92 @@ export const TourDetailModal: React.FC<TourDetailProps> = ({
           <p className="text-xs sm:text-sm text-[#52483E] leading-relaxed">
             {tour.shortDescription}
           </p>
+
+          {/* Deep Cultural & Historical Chronicle (When tour is chronicle-first or has documentation) */}
+          {tour.chronicle && (
+            <div className="space-y-4 pt-2">
+              <div className="flex items-center gap-2 pb-2 border-b border-[#E8E1D5]">
+                <BookOpen className="w-5 h-5 text-[#D49A3D]" />
+                <h3 className="text-base font-bold text-[#1E3A2F] font-serif">
+                  Comprehensive Cultural & Historical Chronicle
+                </h3>
+              </div>
+
+              <div className="space-y-4">
+                {tour.chronicle.historicalOrigins && (
+                  <div className="space-y-1.5 p-4 rounded-2xl bg-[#FAF8F5] border border-[#E8E1D5]">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#1E3A2F] flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#1E3A2F]" />
+                      <span>Historical Origins & Ancestral Lineage</span>
+                    </h4>
+                    <p className="text-xs sm:text-sm text-[#423B33] leading-relaxed">
+                      {tour.chronicle.historicalOrigins}
+                    </p>
+                  </div>
+                )}
+
+                {tour.chronicle.ceremonialPhilosophy && (
+                  <div className="space-y-1.5 p-4 rounded-2xl bg-white border border-[#E8E1D5]">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#1E3A2F] flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#D49A3D]" />
+                      <span>The Three Sacred Stages & Ceremonial Philosophy (Abol • Tona • Baraka)</span>
+                    </h4>
+                    <p className="text-xs sm:text-sm text-[#423B33] leading-relaxed">
+                      {tour.chronicle.ceremonialPhilosophy}
+                    </p>
+                  </div>
+                )}
+
+                {tour.chronicle.sacredTraditions && (
+                  <div className="space-y-1.5 p-4 rounded-2xl bg-white border border-[#E8E1D5]">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#1E3A2F] flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#B85C38]" />
+                      <span>Sacred Traditions, Incense Blessings & Hearth Etiquette</span>
+                    </h4>
+                    <p className="text-xs sm:text-sm text-[#423B33] leading-relaxed">
+                      {tour.chronicle.sacredTraditions}
+                    </p>
+                  </div>
+                )}
+
+                {tour.chronicle.ritualInstruments && (
+                  <div className="space-y-1.5 p-4 rounded-2xl bg-white border border-[#E8E1D5]">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#1E3A2F] flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#2E7D32]" />
+                      <span>Artisanal Instruments of the Ritual (Jebena, Mukecha, Rekebot)</span>
+                    </h4>
+                    <p className="text-xs sm:text-sm text-[#423B33] leading-relaxed">
+                      {tour.chronicle.ritualInstruments}
+                    </p>
+                  </div>
+                )}
+
+                {tour.chronicle.livingEcosystem && (
+                  <div className="space-y-1.5 p-4 rounded-2xl bg-white border border-[#E8E1D5]">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#1E3A2F] flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#D49A3D]" />
+                      <span>Forest Canopy Origin & Direct Farmer Cooperatives</span>
+                    </h4>
+                    <p className="text-xs sm:text-sm text-[#423B33] leading-relaxed">
+                      {tour.chronicle.livingEcosystem}
+                    </p>
+                  </div>
+                )}
+
+                {tour.chronicle.travelerAdvisory && (
+                  <div className="space-y-1.5 p-4 rounded-2xl bg-[#FFF9F2] border border-[#F3DFC6]">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#B85C38] flex items-center gap-2">
+                      <ShieldCheck className="w-4 h-4 text-[#B85C38]" />
+                      <span>Cultural Etiquette & Practical Guest Advisory</span>
+                    </h4>
+                    <p className="text-xs sm:text-sm text-[#5C5247] leading-relaxed">
+                      {tour.chronicle.travelerAdvisory}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* Itinerary Steps */}
           <div className="space-y-3">

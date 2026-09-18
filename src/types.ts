@@ -76,6 +76,14 @@ export interface Tour {
   reviewsCount: number;
   featured?: boolean;
   isChronicleOnly?: boolean;
+  chronicle?: {
+    historicalOrigins?: string;
+    ceremonialPhilosophy?: string;
+    sacredTraditions?: string;
+    ritualInstruments?: string;
+    livingEcosystem?: string;
+    travelerAdvisory?: string;
+  };
 }
 
 export interface FoodDish {
