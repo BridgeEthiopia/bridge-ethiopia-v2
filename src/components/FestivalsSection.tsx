@@ -637,7 +637,9 @@ export const FestivalsSection: React.FC<FestivalsProps> = ({
                     </div>
 
                     <div className="space-y-2">
-                      <div className="text-sm font-serif text-[#E5AC4D] font-bold">ጥምቀት • Ethiopian Epiphany</div>
+                      {selectedFestival.nativeName && (
+                        <div className="text-sm font-serif text-[#E5AC4D] font-bold">{selectedFestival.nativeName}</div>
+                      )}
                       <h3 className="text-2xl sm:text-3xl font-bold font-serif text-white leading-tight">
                         {selectedFestival.name}
                       </h3>
@@ -650,17 +652,17 @@ export const FestivalsSection: React.FC<FestivalsProps> = ({
                     <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 space-y-2 text-xs text-[#FAF6EE]/90 leading-relaxed">
                       <div className="font-bold text-[#E5AC4D] uppercase text-[11px] tracking-wider flex items-center gap-1.5">
                         <Sparkles className="w-3.5 h-3.5" />
-                        <span>Spiritual Chronicle & Mystery</span>
+                        <span>Spiritual Chronicle & Heritage</span>
                       </div>
                       <p>
-                        Timkat commemorates the baptism of Jesus Christ in the River Jordan by John the Baptist. On Ketera eve, holy Tabot replicas of the Ark of the Covenant leave church sanctuaries under velvet canopies to bless the waters.
+                        {selectedFestival.history}
                       </p>
                     </div>
 
                     <div className="space-y-2 text-xs text-[#FAF6EE]/85">
                       <div className="font-bold text-white uppercase text-[11px] tracking-wider">The Living Tradition:</div>
                       <p className="leading-relaxed">
-                        Throughout the night, clergy chant sacred Ge’ez hymns. At dawn, blessed holy water is sprinkled over hundreds of thousands dressed in dazzling white Netelas, renewing their baptismal vows in profound collective spiritual joy.
+                        {selectedFestival.culturalMeaning}
                       </p>
                     </div>
                   </div>

@@ -9,7 +9,7 @@ import lalibelaImg from '../assets/images/lalibela_st_george_church_178781364526
 import gondarImg from '../assets/images/gondar_royal_castle_1787813713556.jpg';
 import omoImg from '../assets/images/omo_valley_landscape_1787813759031.jpg';
 import hararImg from '../assets/images/harar_walled_city_1787813697672.jpg';
-import danakilImg from '../assets/images/danakil_dallol_springs_1787813682387.jpg';
+import danakilImg from '../assets/images/dest-danakil-depression.jpg';
 import kafaImg from '../assets/images/kafa_coffee_rainforest_1787813627212.jpg';
 import sheklaTibsImg from '../assets/images/shekla_tibs_sizzling_1787813805251.jpg';
 import marqaaImg from '../assets/images/marqaa_oromo_porridge_1787813823518.jpg';
@@ -35,14 +35,8 @@ import tourBaleImg from '../assets/images/tour-bale-mountains-expedition.jpg';
 import tourLalibelaImg from '../assets/images/tour-lalibela-historic-route.jpg';
 import tourOmoImg from '../assets/images/tour-omo-valley-cultural-odyssey.jpg';
 import tourHararImg from '../assets/images/tour-harar-walled-city-coffee-trail.jpg';
+import tourDanakilImg from '../assets/images/danakil_dallol_springs_1787813682387.jpg';
 
-// Image aliases and fallbacks for gallery and circuit tours
-const galleryGondarImg = gondarImg;
-const tourDanakilImg = danakilImg;
-const tourAxumImg = lalibelaImg; // Majestic northern historic stone heritage
-const destAxumZionImg = lalibelaImg;
-const tourGheraltaImg = lalibelaImg;
-const destGheraltaTigrayImg = lalibelaImg;
 const injeraImg = injeraTeffImg;
 
 export const FOUNDER_INFO = {
@@ -109,10 +103,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     region: 'addis-ababa',
     regionLabel: 'Capital & Cultural Heart',
     heroImage: addisImg,
-    gallery: [
-      addisImg,
-      tourAddisImg
-    ],
+    gallery: [],
     tagline: 'The Diplomatic Capital of Africa & Gateway to Ancient History',
     description: 'Addis Ababa (meaning "New Flower") is a vibrant metropolis nestled in the foothills of Mount Entoto at 2,400 meters elevation. It bridges traditional Ethiopian culture with modern pan-African diplomacy.',
     whyVisit: [
@@ -148,7 +139,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     region: 'oromia',
     regionLabel: 'Oromia Highlands',
     heroImage: wenchiImg,
-    gallery: [wenchiImg],
+    gallery: [],
     tagline: 'Paradise Alpine Crater Lake with Island Monasteries and Hot Springs',
     description: 'Located in the Oromia region approximately 155 km west of Addis Ababa, Wenchi is an extinct volcanic caldera featuring a crystal-clear crater lake, lush valleys, waterfalls, hot mineral springs, and hospitable Oromo highland farming communities.',
     whyVisit: [
@@ -183,9 +174,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     regionLabel: 'Oromia Wilderness',
     heroImage: baleImg,
     gallery: [
-      baleImg,
-      baleSanettiImg,
-      tourBaleImg
+      baleSanettiImg
     ],
     tagline: 'Roof of Africa: Home to the Rare Ethiopian Wolf and Harenna Cloud Forest',
     description: 'Bale Mountains is a UNESCO World Heritage site comprising afro-alpine moorlands on the Sanetti Plateau and the mystical, moss-draped Harenna Cloud Forest. It is the premier habitat for the world’s rarest canid: the Ethiopian Red Wolf (Ky Kebero).',
@@ -220,7 +209,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     region: 'oromia',
     regionLabel: 'Oromia Wonder',
     heroImage: sofOmarImg,
-    gallery: [sofOmarImg],
+    gallery: [],
     tagline: 'Africa’s Longest Underground Cave Network & Spiritual Sanctuary',
     description: 'Carved over millennia by the subterranean Weyib River through limestone cliffs, Sof Omar spans 15.1 kilometers of interconnected underground chambers, arched pillars, and dramatic vaulted caverns revered both geologically and spiritually.',
     whyVisit: [
@@ -254,10 +243,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     region: 'northern-ethiopia',
     regionLabel: 'Northern Heritage',
     heroImage: lalibelaImg,
-    gallery: [
-      lalibelaImg,
-      tourLalibelaImg
-    ],
+    gallery: [],
     tagline: 'The Eighth Wonder of the World: 11 Monolithic Churches Carved from Solid Rock',
     description: 'Lalibela is an awe-inspiring 12th-century sacred pilgrimage city carved entirely out of pink volcanic tuff by King Gebre Mesqel Lalibela to serve as a "New Jerusalem" in the rugged highlands of Wollo.',
     whyVisit: [
@@ -401,9 +387,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     region: 'southern-ethiopia',
     regionLabel: 'Southern Cultures',
     heroImage: omoImg,
-    gallery: [
-      omoImg
-    ],
+    gallery: [],
     tagline: 'Living Cultural Heritage & Traditional Communities along the Omo River',
     description: 'A UNESCO World Heritage cultural landscape home to over eight distinct indigenous ethnic groups including the Hamer, Mursi, Karo, Dassanech, and Nyangatom. Renowned for rich body art, age-grade ceremonies, and pastoralist traditions.',
     whyVisit: [
@@ -437,10 +421,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     region: 'southern-ethiopia',
     regionLabel: 'Southern Rift Valley & Lakes',
     heroImage: arbaMinchImg,
-    gallery: [
-      arbaMinchImg,
-      omoImg
-    ],
+    gallery: [],
     tagline: 'Forty Springs, Lake Chamo Crocodile Safari & Dorze Bamboo Mountain Villages',
     description: 'Nestled between Lake Abaya and Lake Chamo in the Great Rift Valley, Arba Minch is the scenic hub of Southern Ethiopia. Take a boat safari to see giant Nile crocodiles and hippos, explore Nechisar National Park plains, and ascend the misty Chencha highlands to experience the towering bamboo beehive houses and Enset (false banana / Kocho) bread traditions of the Dorze master weavers.',
     whyVisit: [
@@ -522,10 +503,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     region: 'eastern-ethiopia',
     regionLabel: 'Eastern Crossroads',
     heroImage: hararImg,
-    gallery: [
-      hararImg,
-      tourHararImg
-    ],
+    gallery: [],
     tagline: 'The 4th Holiest City in Islam with 82 Mosques and Famous Hyena Men',
     description: 'Harar Jugol is a fortified 16th-century historic walled city in eastern Ethiopia featuring 368 narrow cobbled alleyways, colorful traditional Harari living rooms (Gegar), vibrant spice markets, and the ancient nightly ritual of feeding wild spotted hyenas.',
     whyVisit: [
@@ -558,10 +536,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     region: 'afar-danakil',
     regionLabel: 'Afar Geothermal Marvel',
     heroImage: danakilImg,
-    gallery: [
-      danakilImg,
-      tourDanakilImg
-    ],
+    gallery: [],
     tagline: 'An Alien Planet on Earth: Fluorescent Sulfur Springs, Salt Flats & Erta Ale Volcano',
     description: 'The Danakil Depression sits 125 meters below sea level at the junction of three tectonic plates. It features surreal neon-yellow Dallol hydrothermal acid springs, endless blinding-white salt flats mined by Afar camel caravans, and the active Erta Ale lava lake.',
     whyVisit: [
@@ -594,7 +569,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     region: 'kafa-southwest',
     regionLabel: 'Southwestern Rainforests',
     heroImage: kafaImg,
-    gallery: [kafaImg],
+    gallery: [],
     tagline: 'Where Coffee was First Discovered: Ancient Rainforests & Wild Arabica Genetics',
     description: 'The ancient kingdom of Kafa is the legendary birthplace of Coffea Arabica where the goat herder Kaldi first discovered coffee. A UNESCO Biosphere Reserve of pristine cloud forests, waterfalls, wild coffee trees, and organic forest honey.',
     whyVisit: [
@@ -812,8 +787,9 @@ export const DESTINATIONS_DATA: Destination[] = [
     amharicName: 'ቢሾፍቱ ፍንዳታ ሐይቆች (ደብረ ዘይት)',
     region: 'oromia',
     regionLabel: 'Oromia • Great Rift Valley',
-    heroImage: wenchiImg,
-    gallery: [wenchiImg, irreechaImg],
+    heroImage: '',
+    gallery: [],
+    isChronicleOnly: true,
     tagline: 'Constellation of Volcanic Crater Lakes, Lakeside Resorts & Sacred Grounds of the National Irreecha Festival',
     description: 'Located only 45 km southeast of Addis Ababa in the lush East Shewa Zone of Oromia, Bishoftu is a famed resort town nestled among a cluster of picturesque volcanic crater lakes including Lake Babogaya, Lake Bishoftu, Lake Kuriftu, Lake Hora Arsadi, and Lake Chalalaka. Lake Hora is the sacred spiritual venue of the annual Irreecha Thanksgiving Festival, where millions of Oromo people gather in magnificent traditional white attire to thank Waaqaa (God) for peace, fertility, and the autumn harvest. Bishoftu offers tranquil lakeside boat trips, birdwatching, kayaking, swimming, and luxury wellness resorts.',
     whyVisit: [
@@ -857,7 +833,14 @@ export const DESTINATIONS_DATA: Destination[] = [
     elevation: '1,920 m (6,300 ft)',
     nearbyLodging: ['Kuriftu Resort & Spa Bishoftu', 'Babogaya Lake View Resort', 'Asham Africa Luxury Hotel'],
     availableTourIds: ['addis-city-essence'],
-    featured: true
+    featured: true,
+    chronicle: {
+      historicalOrigins: 'Bishoftu (traditionally known in Afaan Oromoo as Haroo Bishooftuu, meaning "The Blessed Waters") is an ancient volcanic landscape in the East Shewa Zone of Oromia, situated on the western shoulder of the Great East African Rift Valley. For countless generations, the indigenous Tulama Oromo pastoralists and farmers revered these emerald crater lakes as sacred gifts of Waaqaa (God), sustaining herds, fertile farmland, and vital communal peace gatherings. Following the construction of the Franco-Ethiopian railway in the early 20th century, Bishoftu developed into a premier highland retreat while faithfully maintaining its sacred spiritual centrality as the permanent home of the national Irreecha Thanksgiving festival.',
+      architecturalMastery: 'The geographic architecture of Bishoftu is a breathtaking natural volcanic masterpiece comprising a constellation of five distinct crater lakes—Lake Bishoftu, Lake Hora Arsadi, Lake Babogaya, Lake Kuriftu, and Lake Kilole—alongside the seasonal wetland of Lake Chalalaka. Formed through explosive hydro-volcanic eruptions over millennia, each crater boasts sheer basaltic amphitheater rims descending to deep mineral-rich emerald waters. Over recent decades, low-impact eco-lodges and wellness sanctuaries built with indigenous volcanic stone, bamboo, and thatched canopies have been sensitively integrated into the crater rims, offering panoramic vistas while preserving lake ecology.',
+      sacredTraditions: 'Bishoftu is the sacred spiritual heartbeat of the Oromo nation. Every autumn at the conclusion of the rainy season (Birraa), Lake Hora Arsadi hosts the grand Irreecha Birraa celebration—one of the largest and most peaceful indigenous gatherings in Africa. Millions of pilgrims converge from across Oromia and the global diaspora dressed in dazzling traditional white handwoven garments (Wandaboo and Qollo). Holding fresh green sedge grass (Coqorsa) and yellow Adey Abeba wildflowers, elders and youths gather at the water’s edge to perform Kadhaa fi Eebba (solemn prayers of thanksgiving to Waaqaa for life, fertility, peace, and abundance).',
+      livingEcosystem: 'Sitting at an altitude of 1,920 meters, Bishoftu enjoys an idyllic perpetual spring climate. The volcanic lakes create distinct aquatic microclimates: Lake Chalalaka serves as an internationally recognized seasonal feeding station for tens of thousands of migratory Greater and Lesser Flamingos, White Pelicans, and African Fish Eagles. The crater slopes support lush acacia woodlands, fig trees, and flowering shrubs, providing a rich haven for malachite kingfishers, weavers, and vibrant butterflies.',
+      travelerAdvisory: 'Bishoftu is situated just 45 kilometers southeast of Addis Ababa and is conveniently reached in 40 to 50 minutes via the modern multi-lane Addis–Adama Expressway. It is a year-round destination ideal for day trips, watersports, and weekend wellness retreats. Visitors wishing to experience the historic Irreecha celebration should plan for late September or early October, booking accommodations several months in advance. Certified local community guides provide respectful, insightful interpretations of the sacred Irreecha grounds and crater rim walking trails.'
+    }
   },
   {
     id: 'boye-lake-jimma',
@@ -866,8 +849,9 @@ export const DESTINATIONS_DATA: Destination[] = [
     amharicName: 'የቦዬ ሐይቅ እና ረግረጋማ የወፍ መሸሸጊያ - ጅማ',
     region: 'oromia',
     regionLabel: 'Oromia • Southwestern Wetlands',
-    heroImage: kafaImg,
-    gallery: [kafaImg, wenchiImg],
+    heroImage: '',
+    gallery: [],
+    isChronicleOnly: true,
     tagline: 'Tranquil Freshwater Wetland, Migratory Waterfowl Haven & Lush Papyrus Nature Walks on the Outskirts of Jimma',
     description: 'Located on the southern threshold of Jimma city in Southwestern Oromia, Boye Lake is an expansive freshwater wetland and lake ecosystem framed by rolling green volcanic hills, dense papyrus reeds, and towering acacia groves. Fed by gentle mountain tributaries flowing toward the Gilgel Gibe basin, the lake is celebrated as one of Southwest Ethiopia’s premier birdwatching refuges, hosting over 120 recorded resident and migratory avian species. Resident pods of hippopotamus graze in the quiet inlets, while local fishermen glide across the calm waters in handcrafted papyrus canoes.',
     whyVisit: [
@@ -909,7 +893,14 @@ export const DESTINATIONS_DATA: Destination[] = [
     elevation: '1,720 m (5,640 ft)',
     nearbyLodging: ['Central Jimma Hotels', 'Coffee Estate Boutique Lodges'],
     availableTourIds: ['jimma-abba-jifar-royal-coffee-trail'],
-    featured: false
+    featured: false,
+    chronicle: {
+      historicalOrigins: 'Boye Lake (Haroo Boyyee) is a historic freshwater wetland and lake sanctuary located along the southern approach to Jimma in southwestern Oromia. During the 18th and 19th centuries, under the Kingdom of Jimma and the visionary rule of King Abba Jifar I and King Abba Jifar II, the fertile Boye basin served as an essential lifeline, providing pristine irrigation water, grazing meadows for royal cavalry horses, and abundant freshwater fish for the thriving royal capital.',
+      architecturalMastery: 'The wetland represents a sophisticated natural hydrological basin formed at the confluence of gentle mountain streams draining the volcanic Jiren hills into the Gilgel Gibe river system. Local communities have practiced sustainable papyrus reed engineering for centuries, crafting lightweight buoyant canoes (Bidiruu) and handwoven fish traps from indigenous Cyperus papyrus reeds that line the quiet inlets without disrupting the fragile wetland silt balance.',
+      sacredTraditions: 'Local Oromo communities surrounding Boye Lake preserve ancestral conservation ethics known as Safuu—the traditional moral boundary that dictates sacred respect and restraint toward water bodies, nesting waterfowl, and infant animals. The lakeside shores remain a tranquil communal gathering place where neighborhood elders perform peaceful blessings over morning Buna Qalaa (coffee beans pan-fried in clarified spiced butter) before casting traditional fishing nets.',
+      livingEcosystem: 'Boye Lake is celebrated as southwestern Ethiopia’s most accessible and diverse avian haven, recording over 120 resident and migratory bird species. The dense papyrus marshes and blooming white and blue water lilies shelter African pygmy geese, sacred ibises, black crakes, African jacanas, wattled cranes, and dazzling malachite kingfishers. In the deeper, peaceful channels of the lake, resident pods of hippopotamus surface during the cool hours of early morning and twilight.',
+      travelerAdvisory: 'Boye Lake is located just 5 kilometers from central Jimma town, easily accessible within 10 to 15 minutes by taxi or private vehicle along the paved road toward Seka. Early morning hours between 6:30 AM and 9:00 AM provide the most rewarding conditions for birdwatching and observing hippo families. Bringing telephoto lenses and binoculars is strongly recommended. The excursion pairs seamlessly with visits to the Palace of King Abba Jifar and nearby specialty coffee washing stations.'
+    }
   },
   {
     id: 'fincha-habera-waterfall',
@@ -918,8 +909,9 @@ export const DESTINATIONS_DATA: Destination[] = [
     amharicName: 'የፊንጫ ሀበራ ፏፏቴ - ባሌ ተራሮች',
     region: 'oromia',
     regionLabel: 'Oromia • Bale Mountains National Park',
-    heroImage: baleImg,
-    gallery: [baleImg, wenchiImg],
+    heroImage: '',
+    gallery: [],
+    isChronicleOnly: true,
     tagline: 'Spectacular Natural Basalt Cascade on the Web River, Surrounded by Afro-Alpine Heathlands and Mountain Wildlife',
     description: 'Tucked deep in the northern afro-alpine foothills of the Bale Mountains National Park near Dinsho and the Gaysay Valley, Fincha Habera Waterfall is one of the most majestic natural cascades in Ethiopia. Here, the crystalline, cold waters of the Web River plunge dramatically over geometric columns of dark volcanic basalt into a foaming canyon pool below. Framed by giant heather (Erica arborea), golden Helichrysum everlastings, and wild thyme, the waterfall creates a cool misty micro-oasis where endemic Mountain Nyala, Menelik’s Bushbuck, and soaring Augur Buzzards are frequently seen grazing in complete tranquility.',
     whyVisit: [
@@ -961,7 +953,14 @@ export const DESTINATIONS_DATA: Destination[] = [
     elevation: '3,100 m (10,170 ft)',
     nearbyLodging: ['Bale Mountain Lodge', 'Dinsho Park Lodge & Camping Ground', 'Goba & Robe Hotels'],
     availableTourIds: ['bale-mountains-expedition'],
-    featured: true
+    featured: true,
+    chronicle: {
+      historicalOrigins: 'Fincha Habera Waterfall (Fincha\'a Habaaraa) is an iconic natural cataract tucked inside the northern afro-alpine escarpments of Bale Mountains National Park. Formed along the upper course of the Web River near the historic settlement of Dinsho, this cascade has been revered for centuries by indigenous Bale and Arsi Oromo pastoralists as blessed, life-giving glacial meltwaters cascading from the high mountain peaks of Waaqaa.',
+      architecturalMastery: 'Geologically sculpted during the Pleistocene epoch when volcanic activity and glacial runoff shaped the Bale massif, Fincha Habera cascades precipitously over sheer geometric colonnades of dark volcanic basalt. The turbulent Web River funnels through a narrow rock portal before thundering down into a deep, misty amphitheater pool below, throwing up permanent cooling spray that nourishes vibrant emerald mosses, lichens, and alpine ferns across the black canyon walls.',
+      sacredTraditions: 'The surrounding Gaysay grasslands and Web Valley have sustained pastoralist transhumance traditions for centuries. Local Oromo horsemen maintain renowned equestrian heritage, navigating the rocky volcanic tracks with effortless grace. Passing herdsmen frequently offer traditional pastoralist blessings at the river crossings, honoring the purity of the high mountain streams that sustain both highland cattle and the park\'s endemic wildlife.',
+      livingEcosystem: 'Perched at an elevation of 3,100 meters, the microclimate around Fincha Habera is a sanctuary of afro-alpine biodiversity. The canyon rims are carpeted in aromatic wild thyme (Micromeria), golden Helichrysum everlastings, and giant heather (Erica arborea). This protected habitat is world-famous for sightings of the magnificent Mountain Nyala (an endemic spiral-horned antelope), Menelik\'s Bushbuck, Ethiopian wolves hunting rodent prey on nearby ridges, and high-altitude birds such as the Blue-winged Goose and Rouget\'s Rail.',
+      travelerAdvisory: 'Fincha Habera is conveniently reached via a scenic 2.5 to 3-hour round-trip trek or guided horseback ride departing from the Bale Mountains National Park headquarters at Dinsho. Visitors should dress in warm, windproof, breathable layers and wear sturdy waterproof hiking boots, as highland weather can shift rapidly. Hiring an authorized community guide and local horse handler from Dinsho ensures a safe, enriching cultural experience while directly supporting local community livelihoods.'
+    }
   },
   {
     id: 'melka-kunture',
@@ -1091,8 +1090,9 @@ export const DESTINATIONS_DATA: Destination[] = [
     amharicName: 'የለጲስ ፏፏቴ እና የተፈጥሮ ደን - አርሲ ነገሌ',
     region: 'oromia',
     regionLabel: 'Oromia • Great Rift Valley Forests',
-    heroImage: baleImg,
-    gallery: [baleImg, wenchiImg],
+    heroImage: '',
+    gallery: [],
+    isChronicleOnly: true,
     tagline: 'Spectacular 30-Meter Hidden Forest Cascade, Colobus Monkey Sanctuary & Community Horseback Eco-Trails',
     description: 'Hidden within the dense, pristine indigenous montane forest near Arsi Negele and the eastern shores of Lake Langano in Oromia, Lephis Waterfall is a stunning 30-meter natural cascade tumbling over moss-covered volcanic crags into a crystal-clear mountain pool. The site is a celebrated community-based eco-tourism success story, managed entirely by local Oromo villagers. Guided by friendly local scouts, visitors ride mountain horses or hike through ancient Hagenia and Podocarpus canopies alive with black-and-white colobus monkeys, colorful mountain birds, and wild honey hives.',
     whyVisit: [
@@ -1134,7 +1134,14 @@ export const DESTINATIONS_DATA: Destination[] = [
     elevation: '2,200 m (7,220 ft)',
     nearbyLodging: ['Bishangari Eco-Lodge Lake Langano', 'Sabana Beach Resort Langano', 'Hara Langano Eco-Lodge'],
     availableTourIds: ['oromia-highlights-safari'],
-    featured: false
+    featured: false,
+    chronicle: {
+      historicalOrigins: 'Lephis Waterfall (Fincha\'a Laphisii) and its surrounding montane forest near Arsi Negele in Oromia represent one of East Africa\'s most inspiring models of community-driven environmental conservation. In response to regional deforestation pressures, the local Oromo community of Lephis united in the early 2000s to declare their ancestral virgin cloud forest a community-protected eco-tourism reserve, proving that local empowerment and indigenous stewardship can triumphantly safeguard irreplaceable wilderness.',
+      architecturalMastery: 'The centerpiece of the forest is a stunning 30-meter natural waterfall that plunges dramatically through a narrow fissure of volcanic rock into a moss-rimmed natural plunge basin. The surrounding eco-tourism infrastructure—including wooden trail bridges, mountain viewing platforms, and the Lephis Women’s Artisan Center—was thoughtfully constructed entirely from renewable local bamboo, thatch, and fallen timber, preserving the primeval aesthetic of the forest.',
+      sacredTraditions: 'The Lephis community maintains deep spiritual and practical ties to their ancestral forest. Elders pass down oral lore concerning indigenous medicinal flora and the sacred ethics of tree preservation. Local beekeepers construct traditional cylindrical hives woven from bamboo and straw, suspended high in the forest canopy to produce world-renowned, organic white multi-floral forest honey. Visitors are welcomed with customary Oromo warmth and traditional wood-fire coffee ceremonies.',
+      livingEcosystem: 'The Lephis forest represents a pristine tract of moist evergreen montane cloud forest dominated by ancient Podocarpus falcatus and Hagenia abyssinica hardwoods, some reaching heights of over 40 meters. Draped in wild orchids and trailing mosses, this dense canopy is a thriving sanctuary for acrobatic Black-and-White Colobus monkeys, Anubis baboons, elusive mountain leopards, and over 150 bird species including the endemic White-cheeked Turaco and Abyssinian Woodpecker.',
+      travelerAdvisory: 'Lephis is located just 20 kilometers east of Lake Langano resorts (approximately a 40-minute drive via a scenic gravel road through Arsi Negele). Visitors can hike or embark on a guided horseback tour with gentle, sure-footed mountain horses led by village scouts. Visitors are encouraged to bring Ethiopian Birr in cash to purchase exquisite hand-carved bamboo tableware, woven baskets, and pure forest honey directly from the women’s artisan cooperative.'
+    }
   },
   {
     id: 'gera-forest',
@@ -1143,8 +1150,9 @@ export const DESTINATIONS_DATA: Destination[] = [
     amharicName: 'የጌራ የዱር ቡና ደን - ጅማ',
     region: 'oromia',
     regionLabel: 'Oromia • Wild Arabica Biosphere',
-    heroImage: kafaImg,
-    gallery: [kafaImg, wenchiImg],
+    heroImage: '',
+    gallery: [],
+    isChronicleOnly: true,
     tagline: 'UNESCO-Recognized Ancient Cloud Forest, Primeval Habitat of Wild Coffea Arabica & Canopy Wildlife Haven',
     description: 'Nestled in the lush, mist-shrouded highlands of the Gera woreda in the Jimma Zone of Southwestern Oromia, Gera Forest is one of the planet’s most biologically critical virgin ecosystems. Recognized as a core biodiversity sanctuary of the Yayu/Kafa biosphere landscape, this ancient cloud forest is the ancestral birthplace of Coffea arabica, where heirloom coffee bushes grow naturally in the shaded understory beneath towering 40-meter Podocarpus, Cordia, and Albizia trees. Draped in mosses and wild orchids, Gera is alive with forest primates, hornbills, civets, and rare medicinal plants.',
     whyVisit: [
@@ -1187,7 +1195,14 @@ export const DESTINATIONS_DATA: Destination[] = [
     elevation: '1,900 m – 2,400 m (6,230 – 7,870 ft)',
     nearbyLodging: ['Eco-Lodge in Agaro / Gera', 'Jimma Central Tourist Hotels (1.5 hr drive)'],
     availableTourIds: ['jimma-abba-jifar-royal-coffee-trail'],
-    featured: false
+    featured: false,
+    chronicle: {
+      historicalOrigins: 'Gera Wild Coffee Cloud Forest (Bosona Bunee Uumamaa Geeraa) in the Jimma Zone of southwestern Oromia is universally recognized as one of planet Earth’s most precious genetic storehouses. Nestled within the UNESCO-designated biosphere landscape, Gera is the evolutionary birthplace of wild Coffea arabica. For millennia before coffee became a global commodity, indigenous Oromo communities gathered wild coffee berries in this primeval jungle, consuming them prepared in herbal butter (Buna Qalaa) as an energizing, sacred communal food.',
+      architecturalMastery: 'The architectural majesty of Gera is engineered purely by nature: an intact, multi-tiered primeval rainforest where colossal 40-meter emergent trees—notably Podocarpus, Albizia, and Cordia africana—form an unbroken green cathedral ceiling. Beneath this dense canopy, wild heirloom Arabica coffee shrubs flourish naturally in the humid, shaded understory alongside wild ginger, cardamom (Korarima), and climbing epiphytic ferns, sustained by rich volcanic humus and perennial mist.',
+      sacredTraditions: 'For generations, the people of Gera have lived by the guiding philosophy of Safuu—an ancient Oromo cultural code of moral equilibrium that strictly prohibits the destruction of virgin forest shade trees or the despoilment of river headwaters. Today, forest-dwelling communities practice Participatory Forest Management (PFM), legally guarding the forest against logging while sustainably hand-harvesting precious wild shade-grown forest coffee berries at the peak of ripeness.',
+      livingEcosystem: 'Gera hosts an astounding concentration of afro-montane biodiversity. The continuous forest canopy provides sanctuary for troops of Guereza colobus monkeys, blue monkeys, forest hogs, African civets, and leopards. The avian diversity is extraordinary, featuring rare forest specialists such as the Blue-breasted Bee-eater, Yellow-fronted Parrot, and Crowned Eagle, alongside hundreds of butterflies and medicinal plants found nowhere else.',
+      travelerAdvisory: 'Gera is situated approximately 75 kilometers west of Jimma city, reached in about 1.5 to 2 hours via a scenic paved highway through Agaro and picturesque rolling tea and coffee plantations. The prime season to visit is between October and February, when the forest understory glows with bright red coffee cherries ready for harvest. Visitors should pack sturdy waterproof hiking boots with deep traction, lightweight rain gear, and a warm fleece for cool misty mountain mornings.'
+    }
   },
   {
     id: 'adwa-victory-memorial-museum',
@@ -1196,8 +1211,9 @@ export const DESTINATIONS_DATA: Destination[] = [
     amharicName: 'የአድዋ ድል መታሰቢያ ሙዚየም',
     region: 'addis-ababa',
     regionLabel: 'Addis Ababa • Pan-African Freedom Landmark',
-    heroImage: addisImg,
-    gallery: [addisImg, wenchiImg],
+    heroImage: '',
+    gallery: [],
+    isChronicleOnly: true,
     tagline: 'Monumental National Museum & Memorial Commemorating the Historic 1896 Victory over Colonial Aggression and Pan-African Pride',
     description: 'Inaugurated as a monumental national landmark in the historic heart of Addis Ababa at Piassa, the Adwa Victory Memorial Museum commemorates the historic Battle of Adwa on March 1, 1896. At Adwa, united Ethiopian patriot armies drawn from every corner of the nation—including the legendary Oromo cavalry, Tigrayan sharpshooters, Amhara regiments, and forces from the south and east—decisively defeated an invading European colonial army. The architectural masterpiece houses cutting-edge interactive multimedia galleries, panoramic battle dioramas, authentic 19th-century royal and warrior weaponry, personal letters, and towering memorial statues of Emperor Menelik II, Empress Taytu Betul, and brave generals who defended Ethiopian freedom.',
     whyVisit: [
@@ -1240,7 +1256,14 @@ export const DESTINATIONS_DATA: Destination[] = [
     elevation: '2,355 m (7,725 ft)',
     nearbyLodging: ['Sheraton Addis Luxury Collection', 'Hyatt Regency Addis Ababa', 'Historic Taitu Hotel Piassa'],
     availableTourIds: ['addis-city-essence'],
-    featured: true
+    featured: true,
+    chronicle: {
+      historicalOrigins: 'The Adwa Victory Memorial Museum (Muuziyeemii Yaadannoo Injifannoo Adwaa) in Addis Ababa stands as a grand national and continental monument honoring the historic Battle of Adwa fought on March 1, 1896. On the rugged mountainous terrain of northern Ethiopia, a united force of Ethiopian patriots drawn from every region and community—including the legendary Oromo cavalry whose tactical brilliance routed colonial lines, Tigrayan marksmen, Amhara regiments, and southern forces—decisively defeated an invading European colonial army. The victory shattered the myth of European colonial invincibility and permanently established Ethiopia as an unvanquished beacon of Black freedom and Pan-African sovereignty.',
+      architecturalMastery: 'Inaugurated in the historic heart of Addis Ababa at Piassa, the memorial is an architectural masterpiece covering several hectares of monumental civic space. The design integrates traditional Ethiopian stone engineering with bold contemporary monumentalism, featuring 11 specialized thematic exhibition wings, the soaring Memorial Hall of Heroes crowned by an eternal flame, grand stone colonnades, outdoor sculpture plazas, and monumental statues of Emperor Menelik II, Empress Taytu Betul, and heroic commanders like Ras Mekonnen and Fitawrari Gebeyehu.',
+      sacredTraditions: 'The museum serves as a sacred national sanctuary for memory, reconciliation, and ancestral honor. Every year on March 1st (Adwa Victory Day), the complex becomes the vibrant epicentre of national celebrations, attended by national elders, traditional horsemen adorned in lion-mane headdresses and embroidered velvet robes, artists, poets, and dignitaries from across Africa and the global diaspora celebrating Pan-African unity and liberty.',
+      livingEcosystem: 'Perched upon the elevated central ridge of Piassa at an altitude of 2,355 meters, the open-air terraces and memorial amphitheater offer commanding 360-degree panoramic vistas across Addis Ababa, encompassing the heritage rooftops of Piassa, Churchill Avenue, and the forested crest of Mount Entoto. The expansive public promenades are landscaped with indigenous highland flora, olive trees, and tranquil water features designed for quiet contemplation.',
+      travelerAdvisory: 'Located in the historic Piassa district of central Addis Ababa, the museum is easily accessible by light rail, taxi, and walking from major central hotels. The museum is open daily year-round. Professional multilingual curators provide insightful, deeply moving guided tours in English, Afaan Oromoo, and Amharic. Visitors should budget 2 to 3 hours to thoroughly absorb the comprehensive multimedia archives, historic weaponry, and art galleries.'
+    }
   },
 ];
 
@@ -1282,7 +1305,7 @@ export const TOURS_DATA: Tour[] = [
     groupSize: 'Private & Small Groups (2 - 8 Guests)',
     difficulty: 'Easy',
     priceFromUSD: 0,
-    image: doroWatImg,
+    image: tourCookingImg,
     shortDescription: 'Hindek Kitchen is a cultural cooking class and hands-on experience, NOT a restaurant. Step into an authentic traditional Ethiopian kitchen where visitors learn to cook, bake 100% Teff Injera on the clay mitad, prepare traditional dishes, eat what they helped prepare around the Mesob, and experience genuine Ethiopian hospitality.',
     itinerarySummary: [
       'Warm welcome and introduction to Ethiopian ingredients, spices (Berbere, Korarima), and traditional cookware',
@@ -1352,7 +1375,8 @@ export const TOURS_DATA: Tour[] = [
     groupSize: '2 - 8 Guests',
     difficulty: 'Moderate',
     priceFromUSD: 130,
-    image: wenchiImg,
+    image: '',
+    isChronicleOnly: true,
     shortDescription: 'Journey west from Addis Ababa to the dramatic volcanic caldera of Wenchi. Horseback ride down lush alpine slopes, take a wooden canoe to the 15th-century island monastery, and soak by natural hot springs.',
     itinerarySummary: [
       'Scenic drive through the rolling green Oromia highlands and Ambo farmland',
@@ -1428,7 +1452,8 @@ export const TOURS_DATA: Tour[] = [
     groupSize: '2 - 8 Guests',
     difficulty: 'Easy',
     priceFromUSD: 540,
-    image: arbaMinchImg,
+    image: '',
+    isChronicleOnly: true,
     shortDescription: 'Explore the lush Great Rift Valley lakes of Southern Ethiopia: boat safari among giant Lake Chamo crocodiles, Nechisar plains, and immersive mountain cultural stay with Dorze bamboo weavers.',
     itinerarySummary: [
       'Stage 1: Flight or scenic drive from Addis to Arba Minch; afternoon Forty Springs groundwater forest walk & sunset dinner over Lake Abaya',
@@ -1798,7 +1823,7 @@ export const FESTIVALS_DATA: Festival[] = [
     dateOrSeason: 'January 7',
     nextDate: 'January 7, 2027',
     primaryLocations: ['Lalibela Rock-Hewn Churches', 'Addis Ababa'],
-    image: lalibelaImg,
+    image: '',
     history: 'Celebrates the Nativity of Jesus Christ according to the Julian/Ethiopian Calendar after the 43-day Advent fasting period (Tsome Nebiyat).',
     culturalMeaning: 'Lalibela becomes a living sea of white-robed pilgrims who gather overnight on the cliffs above Bet Maryam and Bet Giyorgis chanting ancient Ge’ez hymns with brass sistra.',
     visitorExperience: [
@@ -1820,7 +1845,7 @@ export const FESTIVALS_DATA: Festival[] = [
     dateOrSeason: 'April / May (Calculated by Orthodox Easter cycle)',
     nextDate: 'May 2, 2027',
     primaryLocations: ['Lalibela', 'Axum Tsion', 'Addis Ababa Cathedral'],
-    image: lalibelaImg,
+    image: '',
     history: 'Following the rigorous 55-day Great Lent (Hudadi) of vegan fasting, Fasika culminates in joyous midnight resurrection liturgies across all Ethiopian churches.',
     culturalMeaning: 'Worshipers dressed in pristine white garments hold beeswax candles inside churchyards until 3:00 AM, when priests proclaim "Kristos Tenestwal" (Christ is Risen). Families break the fast together with feasts at sunrise.',
     visitorExperience: [
@@ -1884,7 +1909,7 @@ export const FESTIVALS_DATA: Festival[] = [
     dateOrSeason: 'Late August (August 22–26)',
     nextDate: 'August 22, 2026',
     primaryLocations: ['Mekele, Lalibela, Sekota, Raya, and Northern regions'],
-    image: lalibelaImg,
+    image: '',
     history: 'A vibrant cultural festival celebrating the freedom, beauty, and sisterhood of young women and girls in Northern Ethiopia.',
     culturalMeaning: 'Young women dress in elaborate pleated dresses (Tilfi), intricate cornrow hairstyles (Shuruba), silver jewelry, and tie fresh fragrant Ashenda grass around their waists, dancing and singing with small hand drums.',
     visitorExperience: [
@@ -1905,7 +1930,7 @@ export const FESTIVALS_DATA: Festival[] = [
     dateOrSeason: 'Determined by Sidama astronomers (Ayanto) in June/July',
     nextDate: 'July 2026',
     primaryLocations: ['Hawassa (Gudumale Square) / Sidama Region'],
-    image: arbaMinchImg,
+    image: '',
     history: 'UNESCO Intangible Cultural Heritage of Humanity (inscribed in 2015). An ancient New Year celebration handed down through generations by the Sidama people.',
     culturalMeaning: 'Promotes unity, social harmony, conflict resolution, and the sharing of the traditional dish Qoqiyyo and milk. Elders convene assemblies to reconcile disputes.',
     visitorExperience: [
@@ -1926,7 +1951,7 @@ export const FESTIVALS_DATA: Festival[] = [
     dateOrSeason: 'Lunar Hijri Calendar (Shawwal & Dhu al-Hijjah)',
     nextDate: 'Eid al-Adha & Eid al-Fitr',
     primaryLocations: ['Harar Jugol (Walled City)', 'Al-Nejashi Mosque (Wukro)'],
-    image: hararImg,
+    image: '',
     history: 'Ethiopia is home to the First Hijra in Islamic history and Harar is revered as the 4th holiest city in Islam with 82 historic mosques.',
     culturalMeaning: 'Communal prayers fill the historic public courtyards of Harar followed by traditional hospitality, sharing of halwa sweets, and night chants in ancient Harari and Afar dialects.',
     visitorExperience: [
@@ -1948,8 +1973,8 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
     type: 'Resort',
     location: 'Central Addis Ababa',
     region: 'addis-ababa',
-    image: addisImg,
-    gallery: [addisImg],
+    image: '',
+    gallery: [],
     description: 'Ethiopia’s landmark luxury sanctuary nestled in lush private hilltop gardens with heated outdoor pools, fine dining, spa, and supreme security.',
     amenities: ['Heated Pool with underwater music', 'Multiple gourmet restaurants', 'Full Spa & Wellness Center', 'High-speed Wi-Fi', 'Airport Limousine Service', '24/7 Concierge'],
     priceRange: 'Luxury ($$$$)',
@@ -1965,8 +1990,8 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
     type: 'Resort',
     location: 'Lake Kuriftu, Bishoftu (Oromia)',
     region: 'oromia',
-    image: wenchiImg,
-    gallery: [wenchiImg],
+    image: '',
+    gallery: [],
     description: 'Lakeside eco-resort crafted from natural stone and wood just 45 minutes from Addis Ababa. Boasts private cabanas, lakeview infinity pool, luxury spa, and boat excursions.',
     amenities: ['Lakeside Infinity Pool', 'Swedish & Traditional Massage Spa', 'Water Sports & Kayaking', 'Lakeview Dining Restaurant', 'Organic Gardens'],
     priceRange: 'Upscale ($$$)',
@@ -1982,8 +2007,8 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
     type: 'Eco-Lodge',
     location: 'Harenna Forest, Bale Mountains (Oromia)',
     region: 'oromia',
-    image: baleImg,
-    gallery: [baleImg],
+    image: '',
+    gallery: [],
     description: 'An internationally acclaimed boutique eco-lodge nestled inside the remote Harenna Cloud Forest. Off-grid micro-hydro power, panoramic mountain views, and direct access to rare wildlife.',
     amenities: ['Private Wood-Burning Stoves', 'Panoramic Cloud Forest Balconies', 'Expert Wildlife Trackers', 'Gourmet Organic Dining', 'Solar & Hydro-powered'],
     priceRange: 'Luxury Eco ($$$$)',
@@ -1999,8 +2024,8 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
     type: 'Eco-Lodge',
     location: 'Lalibela Mountain Ridge',
     region: 'northern-ethiopia',
-    image: lalibelaImg,
-    gallery: [lalibelaImg],
+    image: '',
+    gallery: [],
     description: 'Stunning cliffside retreat offering breathtaking sunset panoramas across the Lalibela valleys, decorated with modern Ethiopian motifs and handwoven textiles.',
     amenities: ['Panoramic Valley Balconies with Daybeds', 'Rooftop Bar & Restaurant', 'Free Airport Shuttle', 'Fast Wi-Fi', 'Solar Heated Water'],
     priceRange: 'Comfortable Mid-Range ($$)',
@@ -2016,8 +2041,8 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
     type: 'Eco-Lodge',
     location: 'Buyit Ras, Simien Mountains National Park',
     region: 'northern-ethiopia',
-    image: baleImg,
-    gallery: [baleImg],
+    image: '',
+    gallery: [],
     description: 'Spectacular mountain eco-lodge perched at 3,260 meters elevation inside the national park. Features traditional Tukuls with underfloor solar heating and panoramic escarpment vistas.',
     amenities: ['Underfloor Solar Heating', 'Highest Fireside Lounge in Africa', 'Escarpment View Terraces', 'Guided Treks & Park Logistics'],
     priceRange: 'Upscale Eco ($$$)',
@@ -2033,8 +2058,8 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
     type: 'Guesthouse',
     location: 'Inside Harar Jugol Walled City',
     region: 'eastern-ethiopia',
-    image: hararImg,
-    gallery: [hararImg],
+    image: '',
+    gallery: [],
     description: 'An authentic restored traditional Harari house (Gegar) with vibrant niche walls (Taqet), Persian rugs, and peaceful interior courtyard inside the historic walls.',
     amenities: ['Authentic Harari Living Experience', 'Home-cooked Harari Breakfast', 'Walking distance to all 5 City Gates', 'Cultural Tour Hosting'],
     priceRange: 'Authentic Budget-Mid ($$)',
@@ -2050,8 +2075,8 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
     type: 'Eco-Lodge',
     location: 'Cliffside Overlooking Lake Chamo & Lake Abaya, Arba Minch (Southern)',
     region: 'southern-ethiopia',
-    image: arbaMinchImg,
-    gallery: [arbaMinchImg, omoImg],
+    image: '',
+    gallery: [],
     description: 'Perched atop the scenic ridge between Lake Abaya and Lake Chamo with 360-degree panoramic views of Nechisar National Park and the "Bridge of God". Handcrafted bamboo tukuls inspired by local Dorze architecture with outdoor pool and sunset terrace.',
     amenities: ['Panoramic Rift Valley Infinity Pool', 'Authentic Dorze-style Bamboo Bungalows', 'Sunset Terrace Restaurant', 'Private Boat Safari Booking Logistics', 'Free Wi-Fi & Airport Shuttle'],
     priceRange: 'Upscale Eco ($$$)',
@@ -2076,7 +2101,7 @@ export const BUSINESSES_DATA: BusinessListing[] = [
     whatsapp: '+251912213888',
     email: 'Hindek.ethiopia@gmail.com',
     openingHours: 'Daily: 09:00 AM – 09:00 PM (By reservation)',
-    image: doroWatImg,
+    image: '',
     packageType: 'Featured Advertisement',
     status: 'active',
     isVerified: true,
@@ -2094,7 +2119,7 @@ export const BUSINESSES_DATA: BusinessListing[] = [
     phone: '+251 11 111 2781',
     whatsapp: '+251912213888',
     openingHours: 'Mon - Sat: 07:00 AM – 08:30 PM',
-    image: coffeeCeremonyImg,
+    image: '',
     packageType: 'Premium Listing',
     status: 'active',
     isVerified: true,
@@ -2111,7 +2136,7 @@ export const BUSINESSES_DATA: BusinessListing[] = [
     phone: '+251 922 456 789',
     whatsapp: '+251912213888',
     openingHours: '24/7 Logistics Support',
-    image: tourBaleImg,
+    image: '',
     packageType: 'Featured Advertisement',
     status: 'active',
     isVerified: true,
@@ -2183,104 +2208,7 @@ export const REVIEWS_DATA: Review[] = [
   }
 ];
 
-export const GALLERY_ITEMS: GalleryItem[] = [
-  {
-    id: 'gal-1',
-    title: 'Bet Giyorgis Monolithic Cross Church',
-    category: 'Northern Ethiopia',
-    imageUrl: tourLalibelaImg,
-    location: 'Lalibela, Wollo',
-    caption: 'The 12th-century monolithic rock-hewn church of Saint George carved from solid pink volcanic tuff.'
-  },
-  {
-    id: 'gal-2',
-    title: 'Wenchi Crater Lake Alpine Caldera',
-    category: 'Nature',
-    imageUrl: wenchiImg,
-    location: 'Wenchi, Oromia',
-    caption: 'Breathtaking alpine volcanic crater lake surrounded by natural hot springs, waterfall trails, and verdant farmland.'
-  },
-  {
-    id: 'gal-3',
-    title: 'Traditional Ethiopian Coffee Ceremony in Jebena',
-    category: 'Coffee',
-    imageUrl: coffeeCeremonyImg,
-    location: 'Hindek Grandpa Coffee Experience, Addis Ababa',
-    caption: 'The clay Jebena brewing freshly roasted Arabica beans over glowing embers.'
-  },
-  {
-    id: 'gal-4',
-    title: 'Authentic Doro Wat & Teff Injera Feast',
-    category: 'Food',
-    imageUrl: doroWatImg,
-    location: 'Hindek Kitchen, Addis Ababa',
-    caption: 'Slow-cooked celebration Doro Wat with hard-boiled eggs and 100% Teff Injera.'
-  },
-  {
-    id: 'gal-5',
-    title: 'Imperial Stone Castle Complex',
-    category: 'Historical Sites',
-    imageUrl: galleryGondarImg,
-    location: 'Northern Historic Circuit',
-    caption: 'The 17th-century stone palaces and castles of Emperor Fasilides.'
-  },
-  {
-    id: 'gal-6',
-    title: 'Irreecha Cultural Thanksgiving Celebration',
-    category: 'Festivals',
-    imageUrl: irreechaImg,
-    location: 'Lake Hora & Addis Ababa',
-    caption: 'Gathering with fresh Coqorsa grass and Adey Abeba flowers to give thanks for peace, harvest, and life.'
-  },
-  {
-    id: 'gal-7',
-    title: 'Endangered Ethiopian Wolf on Sanetti Plateau',
-    category: 'Wildlife',
-    imageUrl: tourBaleImg,
-    location: 'Bale Mountains National Park',
-    caption: 'The rare Ky Kebero hunting on the high afro-alpine plateau.'
-  },
-  {
-    id: 'gal-8',
-    title: 'Dallol Hydrothermal Formations',
-    category: 'Nature',
-    imageUrl: tourDanakilImg,
-    location: 'Danakil Depression, Afar',
-    caption: 'Surreal mineral formations and neon geothermal springs.'
-  },
-  {
-    id: 'gal-9',
-    title: 'Harar Jugol Fortified City Walls',
-    category: 'Historical Sites',
-    imageUrl: tourHararImg,
-    location: 'Harar',
-    caption: 'The 16th-century historic stone walls surrounding the ancient city.'
-  },
-  {
-    id: 'gal-10',
-    title: 'Ancient Hilltop Terraced Village (UNESCO)',
-    category: 'Southern Ethiopia',
-    imageUrl: konsoImg,
-    location: 'Southern Terraced Highlands',
-    caption: 'Ancient walled stone settlements and dense thatched huts nestled into green agricultural terraces.'
-  },
-  {
-    id: 'gal-11',
-    title: 'Lower Omo Valley Traditional Dance at Sunset',
-    category: 'Southern Ethiopia',
-    imageUrl: omoImg,
-    location: 'Lower Omo Valley, Southern Ethiopia',
-    caption: 'Vibrant cultural community celebration and dance at golden sunset.'
-  },
-  {
-    id: 'gal-12',
-    title: 'Kafa Wild Coffee Cloud Rainforest (UNESCO Biosphere)',
-    category: 'Coffee',
-    imageUrl: kafaImg,
-    location: 'Kafa Biosphere Reserve, Southwestern Ethiopia',
-    caption: 'Sunlight filtering through the ancient misty cloud forest where Coffea Arabica originated wild in the shade of mossy giant trees.'
-  }
-];
+export const GALLERY_ITEMS: GalleryItem[] = [];
 
 export const TRAVEL_TIPS_TOPICS = [
   {

@@ -91,7 +91,7 @@ export const ToursSection: React.FC<ToursProps> = ({
             >
               {/* Tour Image */}
               <div>
-                {tour.isChronicleOnly ? (
+                {tour.isChronicleOnly || !tour.image ? (
                   <div className="relative min-h-[14rem] w-full p-5 sm:p-6 bg-gradient-to-br from-[#1E3A2F] via-[#162C23] to-[#0F1E18] text-white flex flex-col justify-between border-b border-[#D49A3D]/30">
                     <div className="flex items-center justify-between gap-2">
                       <span className="px-3 py-1 rounded-full bg-[#D49A3D] text-[#1E3A2F] text-[11px] font-bold">

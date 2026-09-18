@@ -83,14 +83,25 @@ export const AccommodationsSection: React.FC<AccommodationProps> = ({
             >
               <div>
                 <div className="relative h-56 w-full overflow-hidden bg-slate-900">
-                  <AuthenticImage
-                    src={stay.image}
-                    alt={stay.name}
-                    subjectName={stay.name}
-                    photoKey={`hotel-${stay.id}`}
-                    photoCategory="hotel"
-                    className="w-full h-full object-cover img-zoom"
-                  />
+                  {stay.image ? (
+                    <AuthenticImage
+                      src={stay.image}
+                      alt={stay.name}
+                      subjectName={stay.name}
+                      photoKey={`hotel-${stay.id}`}
+                      photoCategory="hotel"
+                      className="w-full h-full object-cover img-zoom"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-[#1E3A2F] via-[#244637] to-[#11241C] flex flex-col items-center justify-center p-6 text-center border-b border-[#D49A3D]/30">
+                      <div className="w-12 h-12 rounded-2xl bg-[#D49A3D]/20 border border-[#D49A3D]/40 flex items-center justify-center mb-3">
+                        <Building className="w-6 h-6 text-[#F4BE5E]" />
+                      </div>
+                      <span className="text-[11px] uppercase tracking-wider text-[#D49A3D] font-bold">
+                        Verified Sanctuary • Written Chronicle
+                      </span>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
                   
                   <div className="absolute top-3.5 left-3.5">
