@@ -186,7 +186,7 @@ export const ExploreEthiopiaSection: React.FC<ExploreProps> = ({
                       <Sparkles className="w-3 h-3" />
                       In-Depth Written Record
                     </span>
-                    <span className="text-white/70 text-[10px]">No Photo • Pure History</span>
+                    <span className="text-[#F4BE5E] text-[10px] font-semibold">Heritage Chronicle Archive</span>
                   </div>
                 </div>
               ) : (

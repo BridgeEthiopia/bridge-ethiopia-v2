@@ -102,6 +102,11 @@ const PHOTO_KEY_ALIASES: Record<string, string[]> = {
   'fest-meskel': ['fest_meskel', 'meskel'],
   fest_meskel: ['fest-meskel', 'meskel'],
   meskel: ['fest-meskel', 'fest_meskel'],
+
+  'dest-sof-omar-cave': ['dest_sof_omar', 'sof-omar-cave', 'sof_omar'],
+  dest_sof_omar: ['dest-sof-omar-cave', 'sof-omar-cave', 'sof_omar'],
+  'sof-omar-cave': ['dest-sof-omar-cave', 'dest_sof_omar', 'sof_omar'],
+  sof_omar: ['dest-sof-omar-cave', 'dest_sof_omar', 'sof-omar-cave'],
 };
 
 const CustomPhotoContext = createContext<CustomPhotoContextType | undefined>(undefined);

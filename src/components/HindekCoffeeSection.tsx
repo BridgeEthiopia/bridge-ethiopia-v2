@@ -129,8 +129,8 @@ export const HindekCoffeeSection: React.FC<HindekCoffeeProps> = ({
                     <span className="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#D49A3D] uppercase block">
                       Authentic Oral Heritage • Write-Only Chronicle
                     </span>
-                    <span className="text-xs text-[#D9D0C1]/80 font-serif italic">
-                      No photo display — Preserved through ancestral words
+                    <span className="text-xs text-[#E5AC4D] font-serif italic">
+                      Living oral tradition — Preserved through ancestral storytelling
                     </span>
                   </div>
                 </div>

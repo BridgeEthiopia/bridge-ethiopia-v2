@@ -234,7 +234,7 @@ export const DESTINATIONS_DATA: Destination[] = [
     elevation: '1,300 m',
     nearbyLodging: ['Boutique Lodging in Robe and Goba', 'Designated Park Eco-Camps'],
     availableTourIds: ['bale-mountains-expedition', 'oromia-highlights-safari'],
-    featured: false,
+    featured: true,
   },
   {
     id: 'lalibela',
