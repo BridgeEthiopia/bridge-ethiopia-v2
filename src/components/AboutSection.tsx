@@ -269,7 +269,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                       'Traditional coffee experiences',
                       'Travel and local assistance',
                       'Connecting visitors with trusted local services',
-                      'Small group & private custom itineraries'
+                      'Small group & private tailored journeys'
                     ].map((serviceItem, sIdx) => (
                       <div key={sIdx} className="p-2.5 rounded-xl bg-white border border-[#E8E1D5] flex items-center gap-2">
                         <CheckCircle className="w-3.5 h-3.5 text-[#34A853] flex-shrink-0" />

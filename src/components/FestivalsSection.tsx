@@ -570,7 +570,7 @@ export const FestivalsSection: React.FC<FestivalsProps> = ({
               <div className="space-y-1.5 text-center sm:text-left max-w-xl">
                 <div className="text-xs font-bold uppercase tracking-wider text-[#D49A3D] flex items-center justify-center sm:justify-start gap-1.5">
                   <Sparkles className="w-3.5 h-3.5" />
-                  <span>Custom Tailored Festival Itineraries</span>
+                  <span>Tailored Festival Experiences</span>
                 </div>
                 <h4 className="text-xl sm:text-2xl font-serif font-bold text-white">
                   Want to Experience Meskel, Timkat & Irreecha with Hindek?

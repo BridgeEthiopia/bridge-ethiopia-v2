@@ -596,7 +596,7 @@ export const HindekKitchenSection: React.FC<HindekKitchenProps> = ({
                 onClick={onOpenPlanTrip}
                 className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all flex items-center gap-2 cursor-pointer backdrop-blur-xs"
               >
-                <span>Include in Custom Itinerary</span>
+                <span>Include in Your Trip</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

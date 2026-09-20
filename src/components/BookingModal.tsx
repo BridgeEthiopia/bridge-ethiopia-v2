@@ -74,7 +74,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     'Airport Meet & Greet + Private 4WD Land Cruiser Transport',
     'NGO / Delegation / Field Research Support Logistics',
     'Curated Lodge & Accommodation Reservation Assistance',
-    'Fully Tailored Custom Itinerary'
+    'Fully Tailored Private Journey'
   ];
 
   const destinationOptions = [

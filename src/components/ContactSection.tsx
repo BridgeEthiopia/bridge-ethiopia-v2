@@ -264,7 +264,7 @@ export const ContactSection: React.FC = () => {
                         <option value="General Inquiry">General Travel Question</option>
                         <option value="Hindek Kitchen Class">Hindek Kitchen Cooking Class</option>
                         <option value="Hindek Coffee Experience">Hindek Grandpa Coffee Ceremony</option>
-                        <option value="Custom Tour Request">Custom Tour / Itinerary</option>
+                        <option value="Custom Tour Request">Private Tailored Tour</option>
                         <option value="Airport Transfer & SIM">Airport Transfer & Local SIM</option>
                         <option value="Business / NGO Travel">Business / NGO Travel Assistance</option>
                       </select>

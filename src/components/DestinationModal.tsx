@@ -142,10 +142,10 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
           {/* Quick Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-4 rounded-2xl bg-[#FAF8F5] border border-[#E8E1D5] text-xs sm:text-sm">
             <div className="flex items-center gap-2.5">
-              <Sparkles className="w-4 h-4 text-[#B85C38]" />
+              <MapPin className="w-4 h-4 text-[#B85C38]" />
               <div>
-                <span className="text-[#8C7E6D] text-[11px] block">Schedule Type</span>
-                <span className="font-semibold text-[#1E3A2F]">Customizable Itinerary</span>
+                <span className="text-[#8C7E6D] text-[11px] block">Region</span>
+                <span className="font-semibold text-[#1E3A2F]">{destination.regionLabel}</span>
               </div>
             </div>
 
@@ -410,7 +410,7 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
                 }}
                 className="px-4 py-2.5 rounded-xl bg-[#FAF8F5] border border-[#1E3A2F]/30 text-[#1E3A2F] font-bold text-xs hover:bg-[#E8E1D5] transition-colors"
               >
-                Customize Trip
+                Plan Trip
               </button>
 
               <button

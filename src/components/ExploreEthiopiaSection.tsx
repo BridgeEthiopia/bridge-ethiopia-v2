@@ -208,12 +208,6 @@ export const ExploreEthiopiaSection: React.FC<ExploreProps> = ({
                     </span>
                   </div>
 
-                  {/* Badge */}
-                  <div className="absolute top-3.5 right-3.5 bg-black/60 backdrop-blur-xs text-white px-2.5 py-1 rounded-lg text-[11px] flex items-center gap-1 font-medium">
-                    <Sparkles className="w-3 h-3 text-[#D49A3D]" />
-                    <span>Custom Itinerary</span>
-                  </div>
-
                   {/* Title Overlay */}
                   <div className="absolute bottom-3.5 left-4 right-4 text-white">
                     <h3 className="text-xl font-bold font-serif group-hover:text-[#F4BE5E] transition-colors drop-shadow-sm">

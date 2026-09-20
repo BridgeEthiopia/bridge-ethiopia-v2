@@ -59,7 +59,7 @@ export const ToursSection: React.FC<ToursProps> = ({
           </h2>
 
           <p className="text-sm sm:text-base text-[#5C5247] leading-relaxed">
-            Private, family, group, and custom-tailored itineraries led by licensed local guides 
+            Private, family, group, and tailored guided journeys led by licensed local guides 
             with authentic cultural sensitivity and transparent pricing.
           </p>
         </div>
@@ -214,11 +214,11 @@ export const ToursSection: React.FC<ToursProps> = ({
               Tailored For You
             </span>
             <h3 className="text-2xl sm:text-3xl font-bold text-[#1E3A2F] font-serif">
-              Want a 100% Personalized Itinerary?
+              Want a 100% Personalized Journey?
             </h3>
             <p className="text-xs sm:text-sm text-[#5C5247] max-w-xl">
               Tell us your desired destinations, pace, food preferences, and travel dates. 
-              Founder Hindek will create a custom itinerary for you or your group.
+              Founder Hindek will craft a tailor-made private experience for you or your group.
             </p>
           </div>
 
