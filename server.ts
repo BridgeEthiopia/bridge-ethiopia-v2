@@ -334,8 +334,9 @@ async function startServer() {
     }
   });
 
-  // Vite middleware for development
-  if (process.env.NODE_ENV !== 'production') {
+  // Vite middleware for development (with fallback to pre-built dist)
+  const hasSource = fs.existsSync(path.join(process.cwd(), 'src', 'main.tsx'));
+  if (process.env.NODE_ENV !== 'production' && hasSource) {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
