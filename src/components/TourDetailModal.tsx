@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Tour } from '../types';
 import { AuthenticImage } from './AuthenticImage';
 import { WriteReviewModal } from './WriteReviewModal';
+import { ErrorBoundary } from './ErrorBoundary';
 import { 
   X, 
   Users, 
@@ -318,11 +319,15 @@ export const TourDetailModal: React.FC<TourDetailProps> = ({
         </div>
       </div>
 
-      <WriteReviewModal
-        isOpen={isReviewModalOpen}
-        onClose={() => setIsReviewModalOpen(false)}
-        defaultExperience={tour.title}
-      />
+      {isReviewModalOpen && (
+        <ErrorBoundary>
+          <WriteReviewModal
+            isOpen={isReviewModalOpen}
+            onClose={() => setIsReviewModalOpen(false)}
+            defaultExperience={tour.title}
+          />
+        </ErrorBoundary>
+      )}
     </div>
   );
 };

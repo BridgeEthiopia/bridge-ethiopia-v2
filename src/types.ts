@@ -182,6 +182,9 @@ export interface PlanTripRequest {
   hotelPreference: 'Eco-Lodges & Nature' | 'Boutique & Heritage Guesthouses' | '4/5-Star City Stays' | '4/5-Star City Hotels' | 'Local Guesthouses' | 'Mix of styles';
   transportationNeeds: 'Private 4WD Land Cruiser with Driver' | 'Minibus for group' | 'Domestic flights + local transfers' | 'Airport pickup only' | 'Need recommendations';
   specialRequests: string;
+  preferredRegions?: string[];
+  budgetTier?: string;
+  specialRequirements?: string;
   createdAt: string;
 }
 

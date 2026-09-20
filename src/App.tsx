@@ -24,6 +24,7 @@ import { CommunityInquiryModal } from './components/CommunityInquiryModal';
 import { FounderPhotoUploadModal } from './components/FounderPhotoUploadModal';
 import { FounderPinModal } from './components/FounderPinModal';
 import { PhotoGuideModal } from './components/PhotoGuideModal';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { FounderPhotoProvider, useFounderPhoto } from './context/FounderPhotoContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { InquiriesProvider } from './context/InquiriesContext';
@@ -42,12 +43,12 @@ function AppContent() {
   
   // Community Giving & NGO / Government Guidance Modal State
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
-  const [communityTopic, setCommunityTopic] = useState<'community-support' | 'ngo-guidance'>('community-support');
+  const [communityTopic, setCommunityTopic] = useState<'schools' | 'health' | 'orphanage' | 'government' | 'ngo' | 'general'>('general');
   const [communityServiceName, setCommunityServiceName] = useState('');
 
-  const handleOpenCommunityInquiry = (topic: 'community-support' | 'ngo-guidance', serviceName: string) => {
+  const handleOpenCommunityInquiry = (topic: 'schools' | 'health' | 'orphanage' | 'government' | 'ngo' | 'general', serviceName?: string) => {
     setCommunityTopic(topic);
-    setCommunityServiceName(serviceName);
+    setCommunityServiceName(serviceName || '');
     setIsCommunityModalOpen(true);
   };
   
@@ -151,7 +152,7 @@ function AppContent() {
 
         {/* 9. Community Giving & International NGO / Government Guidance */}
         <CommunitySupportSection
-          onOpenInquiry={handleOpenCommunityInquiry}
+          onOpenSupportModal={handleOpenCommunityInquiry}
         />
 
         {/* 10. Curated Hotels & Lodges */}
@@ -275,12 +276,14 @@ function AppContent() {
 
 export default function App() {
   return (
-    <LanguageProvider>
-      <FounderPhotoProvider>
-        <InquiriesProvider>
-          <AppContent />
-        </InquiriesProvider>
-      </FounderPhotoProvider>
-    </LanguageProvider>
+    <ErrorBoundary>
+      <LanguageProvider>
+        <FounderPhotoProvider>
+          <InquiriesProvider>
+            <AppContent />
+          </InquiriesProvider>
+        </FounderPhotoProvider>
+      </LanguageProvider>
+    </ErrorBoundary>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Star, Quote, CheckCircle, ShieldCheck, MessageSquarePlus, ThumbsUp, Sparkles, Filter } from 'lucide-react';
 import { getSavedTravelerReviews, syncServerReviews } from '../data/travelerReviewsData';
 import { WriteReviewModal } from './WriteReviewModal';
+import { ErrorBoundary } from './ErrorBoundary';
 import { Review } from '../types';
 
 export const ReviewsSection: React.FC = () => {
@@ -278,7 +279,9 @@ export const ReviewsSection: React.FC = () => {
                     <div>
                       <div className="text-xs sm:text-sm font-bold text-[#1E3A2F] flex items-center gap-1">
                         <span>{rev.authorName}</span>
-                        <ShieldCheck className="w-3.5 h-3.5 text-[#34A853]" title="Verified Traveler" />
+                        <span title="Verified Traveler">
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#34A853]" />
+                        </span>
                       </div>
                       <div className="text-[11px] text-[#8C7E6D]">{rev.authorCountry}</div>
                     </div>
@@ -336,11 +339,15 @@ export const ReviewsSection: React.FC = () => {
       </div>
 
       {/* Write Review Modal */}
-      <WriteReviewModal
-        isOpen={isWriteModalOpen}
-        onClose={() => setIsWriteModalOpen(false)}
-        onReviewSubmitted={handleReviewSubmitted}
-      />
+      {isWriteModalOpen && (
+        <ErrorBoundary>
+          <WriteReviewModal
+            isOpen={isWriteModalOpen}
+            onClose={() => setIsWriteModalOpen(false)}
+            onReviewSubmitted={handleReviewSubmitted}
+          />
+        </ErrorBoundary>
+      )}
     </section>
   );
 };

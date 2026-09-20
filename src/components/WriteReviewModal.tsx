@@ -10,8 +10,11 @@ interface WriteReviewModalProps {
   defaultExperience?: string;
 }
 
-export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
-  isOpen,
+const WriteReviewModalContent: React.FC<{
+  onClose: () => void;
+  onReviewSubmitted?: (newReview: Review) => void;
+  defaultExperience?: string;
+}> = ({
   onClose,
   onReviewSubmitted,
   defaultExperience = 'Hindek Kitchen & Cultural Tour'
@@ -26,8 +29,6 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
-  if (!isOpen) return null;
-
   const quickExperiences = [
     'Hindek Kitchen & Cooking Class',
     'Hindek Grandpa Coffee Ceremony',
@@ -36,7 +37,7 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
     'Lalibela Rock Churches Expedition',
     'Danakil Depression & Erta Ale',
     'Meskel, Timkat & Irreecha Festivals',
-    'Custom Private Guided Journey'
+    'Tailored Private Guided Journey'
   ];
 
   const getStarRatingLabel = (val: number) => {
@@ -306,5 +307,21 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
 
       </div>
     </div>
+  );
+};
+
+export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
+  isOpen,
+  onClose,
+  onReviewSubmitted,
+  defaultExperience
+}) => {
+  if (!isOpen) return null;
+  return (
+    <WriteReviewModalContent
+      onClose={onClose}
+      onReviewSubmitted={onReviewSubmitted}
+      defaultExperience={defaultExperience}
+    />
   );
 };
