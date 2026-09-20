@@ -32,7 +32,7 @@ async function startServer() {
   app.post('/api/notify-admin', (req, res) => {
     try {
       const { type, title, senderName, senderEmail, senderPhone, details, notes, recipientEmail } = req.body;
-      const targetEmail = recipientEmail || 'Hindeku25@gmail.com';
+      const targetEmail = recipientEmail || 'hindek.ethiopia@gmail.com';
       console.log(`[Admin Email Dispatch] Notification routed to ${targetEmail}: "${title}" from ${senderName} (${senderEmail}, ${senderPhone || 'no phone'})`);
       
       return res.json({ 

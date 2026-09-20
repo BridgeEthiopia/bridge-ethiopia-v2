@@ -178,6 +178,22 @@ export const ContactSection: React.FC = () => {
                   </div>
                 </a>
 
+                {/* Official Website */}
+                <a
+                  href="https://www.bridge-ethiopia.com.et"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-[#E8E1D5] hover:border-[#1E3A2F] transition-colors group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#1E3A2F]/10 flex items-center justify-center text-[#1E3A2F] group-hover:bg-[#1E3A2F] group-hover:text-white transition-colors flex-shrink-0">
+                    <Globe className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] text-[#8C7E6D] block">Official Domain</span>
+                    <span className="font-bold text-[#1E3A2F] group-hover:text-[#D49A3D] transition-colors font-mono text-xs sm:text-sm">www.bridge-ethiopia.com.et</span>
+                  </div>
+                </a>
+
                 {/* Location */}
                 <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-[#E8E1D5]">
                   <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] flex items-center justify-center text-[#1E3A2F] flex-shrink-0">

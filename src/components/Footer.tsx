@@ -26,7 +26,8 @@ import {
   Share2,
   Check,
   Download,
-  FileText
+  FileText,
+  Globe
 } from 'lucide-react';
 
 interface FooterProps {
@@ -56,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   const handleShare = async () => {
-    const shareUrl = typeof window !== 'undefined' ? (window.location.origin || window.location.href) : 'https://bridge-ethiopia.com';
+    const shareUrl = typeof window !== 'undefined' ? (window.location.origin || window.location.href) : 'https://www.bridge-ethiopia.com.et';
     const shareData = {
       title: 'Bridge Ethiopia | Authentic Cultural Tours & Local Guiding',
       text: 'Discover authentic Ethiopia with Hindek: private cultural tours, Hindek Kitchen cooking classes, traditional Grandpa coffee ceremonies, and curated expeditions.',
@@ -452,6 +453,16 @@ export const Footer: React.FC<FooterProps> = ({
               >
                 <Mail className="w-3.5 h-3.5 text-[#D49A3D] flex-shrink-0" />
                 <span>{FOUNDER_INFO.email}</span>
+              </a>
+
+              <a
+                href="https://www.bridge-ethiopia.com.et"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:text-[#D49A3D] transition-colors"
+              >
+                <Globe className="w-3.5 h-3.5 text-[#D49A3D] flex-shrink-0" />
+                <span className="truncate">www.bridge-ethiopia.com.et</span>
               </a>
 
               <div className="flex items-start gap-1.5 text-[#8C7E6D] text-[11px] pt-0.5">
