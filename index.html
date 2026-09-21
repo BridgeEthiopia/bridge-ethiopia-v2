@@ -220,6 +220,247 @@
   <body class="bg-[#FAF8F5] text-[#24201D] font-sans antialiased selection:bg-[#E0A96D] selection:text-white">
     <div id="root"></div>
 
+    
+    <!-- INQUIRY_SYSTEM_START -->
+    <!-- Plan Your Journey / Quick Trip Inquiry Section -->
+    <section id="plan-trip" class="py-20 bg-[#FAF8F5] border-t border-[#EFECE6] relative overflow-hidden">
+      <!-- Decorative Background Glow -->
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-[#D49A3D]/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-[#1E3A2F]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1E3A2F]/10 text-[#1E3A2F] text-xs font-bold uppercase tracking-widest mb-3">
+            <span>✨</span> Tailor-Made Itinerary & Direct Booking
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1E3A2F] font-serif tracking-tight">
+            Plan Your Journey with Hindek
+          </h2>
+          <p class="text-sm sm:text-base text-gray-600 mt-2 leading-relaxed">
+            Tell us about your dream trip to Ethiopia. Receive a personalized itinerary, fair local pricing, and complete guidance directly from your local certified host.
+          </p>
+        </div>
+
+        <!-- Inquiry Form Card -->
+        <div class="bg-white border border-[#EFECE6] rounded-3xl p-6 sm:p-10 shadow-xl">
+          <form id="trip-inquiry-form" onsubmit="handleTripInquiry(event)" class="space-y-6">
+            
+            <!-- Step 1: Select Experience -->
+            <div>
+              <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-2">
+                1. What would you love to experience? *
+              </label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" id="experience-selector-grid">
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-gray-200 hover:border-[#1E3A2F] cursor-pointer transition has-checked:border-[#1E3A2F] has-checked:bg-[#1E3A2F]/5">
+                  <input type="radio" name="inq-experience" value="Hindek Kitchen & Grandpa Coffee" checked class="text-[#1E3A2F] focus:ring-[#1E3A2F]" />
+                  <div>
+                    <div class="text-xs font-bold text-gray-900">Hindek Kitchen Cooking</div>
+                    <div class="text-[11px] text-gray-500">Injera baking & coffee rituals</div>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-gray-200 hover:border-[#1E3A2F] cursor-pointer transition has-checked:border-[#1E3A2F] has-checked:bg-[#1E3A2F]/5">
+                  <input type="radio" name="inq-experience" value="Tigray & Axum Historic Route" class="text-[#1E3A2F] focus:ring-[#1E3A2F]" />
+                  <div>
+                    <div class="text-xs font-bold text-gray-900">Tigray & Axum Route</div>
+                    <div class="text-[11px] text-gray-500">Rock churches & Ark history</div>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-gray-200 hover:border-[#1E3A2F] cursor-pointer transition has-checked:border-[#1E3A2F] has-checked:bg-[#1E3A2F]/5">
+                  <input type="radio" name="inq-experience" value="Bale Mountains Wildlife Trek" class="text-[#1E3A2F] focus:ring-[#1E3A2F]" />
+                  <div>
+                    <div class="text-xs font-bold text-gray-900">Bale Mountains Wildlife</div>
+                    <div class="text-[11px] text-gray-500">Ethiopian wolves & Afro-alpine</div>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-gray-200 hover:border-[#1E3A2F] cursor-pointer transition has-checked:border-[#1E3A2F] has-checked:bg-[#1E3A2F]/5">
+                  <input type="radio" name="inq-experience" value="Lalibela Rock-Hewn Sanctuaries" class="text-[#1E3A2F] focus:ring-[#1E3A2F]" />
+                  <div>
+                    <div class="text-xs font-bold text-gray-900">Lalibela Sanctuaries</div>
+                    <div class="text-[11px] text-gray-500">UNESCO monolithic marvels</div>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-gray-200 hover:border-[#1E3A2F] cursor-pointer transition has-checked:border-[#1E3A2F] has-checked:bg-[#1E3A2F]/5">
+                  <input type="radio" name="inq-experience" value="Omo Valley & Southern Cultures" class="text-[#1E3A2F] focus:ring-[#1E3A2F]" />
+                  <div>
+                    <div class="text-xs font-bold text-gray-900">Southern Cultures & Rift</div>
+                    <div class="text-[11px] text-gray-500">Arba Minch & tribal heritage</div>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-gray-200 hover:border-[#1E3A2F] cursor-pointer transition has-checked:border-[#1E3A2F] has-checked:bg-[#1E3A2F]/5">
+                  <input type="radio" name="inq-experience" value="Complete Tailor-Made Grand Tour" class="text-[#1E3A2F] focus:ring-[#1E3A2F]" />
+                  <div>
+                    <div class="text-xs font-bold text-gray-900">Grand Tailor-Made Tour</div>
+                    <div class="text-[11px] text-gray-500">Custom multi-region journey</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 2: Trip Logistics -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-1">
+                  2. Approximate Travel Month / Dates *
+                </label>
+                <select id="inq-arrival" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-hidden focus:border-[#1E3A2F] focus:ring-2 focus:ring-[#1E3A2F]/10 text-sm bg-white font-medium">
+                  <option value="Next 30 Days (Immediate Trip)">Next 30 Days (Immediate Trip)</option>
+                  <option value="October - November 2026 (Ideal Autumn Weather)" selected>October - November 2026 (Ideal Autumn Weather)</option>
+                  <option value="December 2026 - January 2027 (Timkat Festival Season)">December 2026 - January 2027 (Timkat Festival Season)</option>
+                  <option value="February - April 2027 (Spring Highlands)">February - April 2027 (Spring Highlands)</option>
+                  <option value="Summer 2027 or Later (Flexible Dates)">Summer 2027 or Later (Flexible Dates)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-1">
+                  Group Size *
+                </label>
+                <select id="inq-group-size" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-hidden focus:border-[#1E3A2F] focus:ring-2 focus:ring-[#1E3A2F]/10 text-sm bg-white font-medium">
+                  <option value="Solo Traveler">Solo Traveler</option>
+                  <option value="Couple (2 Travelers)" selected>Couple (2 Travelers)</option>
+                  <option value="Small Group (3 - 5 Travelers)">Small Group (3 - 5 Travelers)</option>
+                  <option value="Family with Children">Family with Children</option>
+                  <option value="Private Group (6+ Travelers)">Private Group (6+ Travelers)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Step 3: Traveler Contact Info -->
+            <div>
+              <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-1">
+                3. Your Contact Details *
+              </label>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <input type="text" id="inq-name" required placeholder="Your Full Name *" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-hidden focus:border-[#1E3A2F] focus:ring-2 focus:ring-[#1E3A2F]/10 text-sm" />
+                </div>
+                <div>
+                  <input type="email" id="inq-email" placeholder="Your Email Address" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-hidden focus:border-[#1E3A2F] focus:ring-2 focus:ring-[#1E3A2F]/10 text-sm" />
+                </div>
+                <div>
+                  <input type="tel" id="inq-phone" placeholder="WhatsApp / Phone (+Country code)" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-hidden focus:border-[#1E3A2F] focus:ring-2 focus:ring-[#1E3A2F]/10 text-sm" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Optional Special Wishes / Notes -->
+            <div>
+              <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-1">
+                Special Requests or Dietary Preferences (Optional)
+              </label>
+              <textarea id="inq-notes" rows="2" placeholder="e.g. Vegetarian/fasting foods, photography focus, senior-friendly pacing, specific church visits..." class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-hidden focus:border-[#1E3A2F] focus:ring-2 focus:ring-[#1E3A2F]/10 text-sm"></textarea>
+            </div>
+
+            <div id="inquiry-status-msg" class="hidden text-xs py-2 px-3 rounded-lg font-medium"></div>
+
+            <!-- Actions -->
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="flex items-center gap-2 text-xs text-gray-500">
+                <span class="text-emerald-600 font-bold">✓</span> Direct reply within a few hours from Hindek
+              </div>
+              <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+                <button type="button" onclick="sendInquiryViaWhatsApp()" class="flex-1 sm:flex-none px-6 py-3.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs sm:text-sm rounded-full shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2">
+                  <span>💬</span> Inquire via WhatsApp
+                </button>
+                <button type="submit" id="submit-inquiry-btn" class="flex-1 sm:flex-none px-7 py-3.5 bg-[#1E3A2F] hover:bg-[#2A4D3F] text-white font-bold text-xs sm:text-sm rounded-full shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2">
+                  <span>📨</span> Submit Inquiry
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function getInquiryFormData() {
+        const expEl = document.querySelector(input[name=inq-experience]:checked);
+        const experience = expEl ? expEl.value : "Custom Journey";
+        const arrivalTime = document.getElementById("inq-arrival").value;
+        const groupSize = document.getElementById("inq-group-size").value;
+        const travelerName = document.getElementById("inq-name").value.trim();
+        const email = document.getElementById("inq-email").value.trim();
+        const phoneOrWhatsapp = document.getElementById("inq-phone").value.trim();
+        const notes = document.getElementById("inq-notes").value.trim();
+        return { experience, arrivalTime, groupSize, travelerName, email, phoneOrWhatsapp, notes };
+      }
+
+      function sendInquiryViaWhatsApp() {
+        const data = getInquiryFormData();
+        if (!data.travelerName) {
+          alert("Please enter your name first!");
+          document.getElementById("inq-name").focus();
+          return;
+        }
+
+        const msg = 
+          "Hello Hindek! I would like to inquire about a journey with Bridge Ethiopia:\n\n" +
+          "• Traveler: " + data.travelerName + "\n" +
+          "• Experience: " + data.experience + "\n" +
+          "• Dates / Month: " + data.arrivalTime + "\n" +
+          "• Group Size: " + data.groupSize + "\n" +
+          (data.email ? "• Email: " + data.email + "\n" : "") +
+          (data.phoneOrWhatsapp ? "• Phone: " + data.phoneOrWhatsapp + "\n" : "") +
+          (data.notes ? "• Notes: " + data.notes + "\n" : "") +
+          "\nLooking forward to your itinerary and quote!";
+
+        // Save inquiry silently first
+        fetch("/api/inquiries", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        }).catch(e => console.error(e));
+
+        const whatsappUrl = "https://wa.me/251912213888?text=" + encodeURIComponent(msg);
+        window.open(whatsappUrl, "_blank");
+      }
+
+      async function handleTripInquiry(e) {
+        e.preventDefault();
+        const btn = document.getElementById("submit-inquiry-btn");
+        const status = document.getElementById("inquiry-status-msg");
+        const data = getInquiryFormData();
+
+        if (!data.travelerName || (!data.email && !data.phoneOrWhatsapp)) {
+          status.className = "text-xs py-2 px-3 rounded-lg font-medium bg-red-50 text-red-700 border border-red-200 block";
+          status.textContent = "Please provide your name and at least one contact method (email or phone).";
+          return;
+        }
+
+        btn.disabled = true;
+        btn.innerHTML = "<span>Submitting...</span>";
+
+        try {
+          const res = await fetch("/api/inquiries", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+          });
+          const result = await res.json();
+          if (res.ok && result.success) {
+            status.className = "text-xs py-3 px-4 rounded-xl font-medium bg-emerald-50 text-emerald-800 border border-emerald-200 block";
+            status.innerHTML = "<strong>Thank you, " + data.travelerName + "!</strong> Your trip request has been received. Hindek will review your dates and reach out shortly with a tailored itinerary.";
+            document.getElementById("trip-inquiry-form").reset();
+          } else {
+            throw new Error(result.error || "Failed to submit inquiry");
+          }
+        } catch (err) {
+          status.className = "text-xs py-2 px-3 rounded-lg font-medium bg-red-50 text-red-700 border border-red-200 block";
+          status.textContent = err.message || "Failed to submit inquiry. Please message Hindek directly on WhatsApp.";
+        } finally {
+          btn.disabled = false;
+          btn.innerHTML = "<span>📨 Submit Inquiry</span>";
+        }
+      }
+    </script>
+    <!-- INQUIRY_SYSTEM_END -->
+
     <!-- REVIEW_SYSTEM_START -->
     <!-- Authentic Traveler Reviews & Testimonials Section -->
     <section id="traveler-reviews" class="py-20 bg-white border-t border-[#EFECE6] relative overflow-hidden">

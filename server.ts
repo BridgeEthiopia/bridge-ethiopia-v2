@@ -71,6 +71,62 @@ async function startServer() {
   // ==========================================
 
   // Get all visitor reviews
+  
+  // ==========================================
+  // TRIP INQUIRIES ENDPOINT
+  // Saves traveler trip requests & inquiries
+  // ==========================================
+  const inquiriesFile = path.join(publicDir, "inquiries-data.json");
+  app.get("/api/inquiries", (req, res) => {
+    try {
+      if (fs.existsSync(inquiriesFile)) {
+        return res.json({ success: true, inquiries: JSON.parse(fs.readFileSync(inquiriesFile, "utf-8")) });
+      }
+    } catch (e) {
+      console.error("Error reading inquiries:", e);
+    }
+    res.json({ success: true, inquiries: [] });
+  });
+
+  app.post("/api/inquiries", (req, res) => {
+    try {
+      const { travelerName, email, phoneOrWhatsapp, experience, arrivalTime, groupSize, notes } = req.body;
+      if (!travelerName || (!email && !phoneOrWhatsapp)) {
+        return res.status(400).json({ error: "Name and at least one contact method (email or phone) are required." });
+      }
+      const newInquiry = {
+        id: "inq-" + Date.now() + "-" + Math.random().toString(36).substring(2, 6),
+        travelerName: String(travelerName).trim().slice(0, 100),
+        email: email ? String(email).trim().slice(0, 120) : "",
+        phoneOrWhatsapp: phoneOrWhatsapp ? String(phoneOrWhatsapp).trim().slice(0, 50) : "",
+        experience: experience || "Custom Private Expedition",
+        arrivalTime: arrivalTime || "Upcoming Months",
+        groupSize: groupSize || "2 Travelers",
+        notes: notes ? String(notes).trim().slice(0, 1500) : "",
+        createdAt: new Date().toISOString()
+      };
+
+      let inquiries = [];
+      if (fs.existsSync(inquiriesFile)) {
+        try {
+          inquiries = JSON.parse(fs.readFileSync(inquiriesFile, "utf-8"));
+          if (!Array.isArray(inquiries)) inquiries = [];
+        } catch {
+          inquiries = [];
+        }
+      }
+      const updated = [newInquiry, ...inquiries];
+      fs.writeFileSync(inquiriesFile, JSON.stringify(updated, null, 2), "utf-8");
+      if (fs.existsSync(distDir)) {
+        fs.writeFileSync(path.join(distDir, "inquiries-data.json"), JSON.stringify(updated, null, 2), "utf-8");
+      }
+      return res.json({ success: true, inquiry: newInquiry });
+    } catch (err) {
+      console.error("Failed to save inquiry:", err);
+      return res.status(500).json({ error: "Could not record inquiry." });
+    }
+  });
+
   app.get('/api/reviews', (req, res) => {
     try {
       if (fs.existsSync(reviewsFile)) {
