@@ -127,6 +127,61 @@ async function startServer() {
     }
   });
 
+  
+  // ==========================================
+  // VOLUNTEER CULTURAL & LANGUAGE PREPARATION ENDPOINTS
+  // ==========================================
+  const volunteerFile = path.join(publicDir, "volunteer-applications.json");
+  app.get("/api/volunteers", (req, res) => {
+    try {
+      if (fs.existsSync(volunteerFile)) {
+        return res.json({ success: true, applications: JSON.parse(fs.readFileSync(volunteerFile, "utf-8")) });
+      }
+    } catch (e) {
+      console.error("Error reading volunteer applications:", e);
+    }
+    res.json({ success: true, applications: [] });
+  });
+
+  app.post("/api/volunteers", (req, res) => {
+    try {
+      const { volunteerName, email, phoneOrWhatsapp, countryOfOrigin, programInterest, duration, background } = req.body;
+      if (!volunteerName || !email) {
+        return res.status(400).json({ error: "Name and email are required." });
+      }
+      const newApp = {
+        id: "vol-" + Date.now() + "-" + Math.random().toString(36).substring(2, 6),
+        volunteerName: String(volunteerName).trim().slice(0, 100),
+        email: String(email).trim().slice(0, 120),
+        phoneOrWhatsapp: phoneOrWhatsapp ? String(phoneOrWhatsapp).trim().slice(0, 50) : "",
+        countryOfOrigin: countryOfOrigin ? String(countryOfOrigin).trim().slice(0, 80) : "International",
+        programInterest: programInterest || "Amharic & General Highland Culture",
+        duration: duration || "3-Day Intensive Orientation",
+        background: background ? String(background).trim().slice(0, 1000) : "",
+        createdAt: new Date().toISOString()
+      };
+
+      let list = [];
+      if (fs.existsSync(volunteerFile)) {
+        try {
+          list = JSON.parse(fs.readFileSync(volunteerFile, "utf-8"));
+          if (!Array.isArray(list)) list = [];
+        } catch {
+          list = [];
+        }
+      }
+      const updated = [newApp, ...list];
+      fs.writeFileSync(volunteerFile, JSON.stringify(updated, null, 2), "utf-8");
+      if (fs.existsSync(distDir)) {
+        fs.writeFileSync(path.join(distDir, "volunteer-applications.json"), JSON.stringify(updated, null, 2), "utf-8");
+      }
+      return res.json({ success: true, application: newApp });
+    } catch (err) {
+      console.error("Failed to save volunteer application:", err);
+      return res.status(500).json({ error: "Could not submit application." });
+    }
+  });
+
   app.get('/api/reviews', (req, res) => {
     try {
       if (fs.existsSync(reviewsFile)) {
