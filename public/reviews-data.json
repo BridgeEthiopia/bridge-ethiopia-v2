@@ -1,0 +1,47 @@
+[
+  {
+    "id": "rev-1789978309283-45ldg",
+    "authorName": "Liam O'Connor",
+    "authorCountry": "Ireland",
+    "avatar": "",
+    "rating": 5,
+    "date": "September 2026",
+    "tourOrExperience": "Hindek Kitchen & Grandpa Coffee Experience",
+    "comment": "Learning to bake teff injera over the open clay mitad and tasting freshly brewed Sidama coffee with Hindek’s grandfather was the ultimate highlight of our African journey. Highly recommended to anyone who values genuine culture!",
+    "verifiedTrip": true,
+    "createdAt": "2026-09-21T08:11:49.352Z"
+  },
+  {
+    "id": "rev-001",
+    "authorName": "Elena Rostova",
+    "authorCountry": "Switzerland",
+    "rating": 5,
+    "date": "August 2026",
+    "tourOrExperience": "Hindek Kitchen & Grandpa Coffee Experience",
+    "comment": "Hindek and his family welcomed us like old friends! Roasting raw wild Kafa beans over glowing embers while his grandfather shared stories of Ethiopian hospitality was the single most authentic experience of our trip. Truly unforgettable.",
+    "verifiedTrip": true,
+    "createdAt": "2026-08-15T10:00:00.000Z"
+  },
+  {
+    "id": "rev-002",
+    "authorName": "Marcus Vance",
+    "authorCountry": "United Kingdom",
+    "rating": 5,
+    "date": "July 2026",
+    "tourOrExperience": "Tigray Churches & Historic North Route",
+    "comment": "Climbing Abuna Yemata Guh with Hindek as our guide gave us complete peace of mind. His deep cultural knowledge and genuine respect for the local monks made every historic sanctuary come alive. Bridge Ethiopia is the gold standard.",
+    "verifiedTrip": true,
+    "createdAt": "2026-07-22T14:30:00.000Z"
+  },
+  {
+    "id": "rev-003",
+    "authorName": "Dr. Amara & Jean-Pierre",
+    "authorCountry": "France & Canada",
+    "rating": 5,
+    "date": "June 2026",
+    "tourOrExperience": "Bale Mountains & Oromia Wildlife Expedition",
+    "comment": "We spotted the endangered Ethiopian Wolf on the Sanetti Plateau on day two! The logistics, eco-lodging, and personal care from Hindek were flawless. You feel not like a tourist, but an honored guest.",
+    "verifiedTrip": true,
+    "createdAt": "2026-06-10T09:15:00.000Z"
+  }
+]

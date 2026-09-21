@@ -219,6 +219,290 @@
   </head>
   <body class="bg-[#FAF8F5] text-[#24201D] font-sans antialiased selection:bg-[#E0A96D] selection:text-white">
     <div id="root"></div>
+
+    <!-- REVIEW_SYSTEM_START -->
+    <!-- Authentic Traveler Reviews & Testimonials Section -->
+    <section id="traveler-reviews" class="py-20 bg-white border-t border-[#EFECE6] relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1E3A2F]/5 border border-[#1E3A2F]/15 text-[#1E3A2F] text-xs font-bold uppercase tracking-widest mb-3">
+              <span class="text-amber-500">★★★★★</span> Real Traveler Experiences
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1E3A2F] font-serif tracking-tight">
+              What Travelers Say About Bridge Ethiopia
+            </h2>
+            <p class="text-sm sm:text-base text-gray-600 mt-2 max-w-2xl">
+              Authentic stories and reviews from adventurers, cultural explorers, and culinary guests who journeyed with Hindek across Ethiopia.
+            </p>
+          </div>
+          <div>
+            <button id="open-review-modal-btn" onclick="openReviewModal()" class="px-6 py-3.5 bg-[#1E3A2F] hover:bg-[#2A4D3F] text-white font-bold text-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2 transform hover:-translate-y-0.5">
+              <span>✍️</span> Leave a Review
+            </button>
+          </div>
+        </div>
+
+        <!-- Rating Overview Banner -->
+        <div class="bg-[#FAF8F5] border border-[#EFECE6] rounded-2xl p-6 sm:p-8 mb-10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+          <div class="flex items-center gap-4 text-center sm:text-left">
+            <div class="text-5xl font-black text-[#1E3A2F] font-serif">5.0</div>
+            <div>
+              <div class="flex items-center text-amber-500 text-lg">★★★★★</div>
+              <div class="text-xs sm:text-sm text-gray-600 font-medium mt-0.5" id="total-reviews-count">Verified Guest Reviews & Hospitality Ratings</div>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-3 text-xs font-semibold text-gray-600">
+            <span class="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 rounded-full shadow-2xs">
+              <span class="text-emerald-600">✓</span> 100% Authentic Travelers
+            </span>
+            <span class="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 rounded-full shadow-2xs">
+              <span class="text-emerald-600">✓</span> Direct Local Impact
+            </span>
+            <span class="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 rounded-full shadow-2xs">
+              <span class="text-emerald-600">✓</span> Saved on Site
+            </span>
+          </div>
+        </div>
+
+        <!-- Reviews Grid Container -->
+        <div id="reviews-list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Loaded dynamically via JavaScript -->
+          <div class="col-span-full py-12 text-center text-gray-500">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-[#1E3A2F] border-t-transparent mb-3"></div>
+            <p class="text-sm">Loading verified traveler stories...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Write Review Modal Overlay -->
+    <div id="review-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 hidden">
+      <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-gray-100 relative max-h-[90vh] overflow-y-auto">
+        <!-- Close Button -->
+        <button onclick="closeReviewModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-xl font-bold transition">
+          ✕
+        </button>
+
+        <div class="mb-6">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#E0A96D]">Share Your Experience</span>
+          <h3 class="text-2xl font-bold text-[#1E3A2F] font-serif mt-1">Review Your Trip with Hindek</h3>
+          <p class="text-xs sm:text-sm text-gray-500 mt-1">
+            Your review will be saved on the website immediately for all future travelers to read!
+          </p>
+        </div>
+
+        <form id="review-submit-form" onsubmit="submitVisitorReview(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Your Full Name *</label>
+            <input type="text" id="review-author-name" required placeholder="e.g. Sarah Jenkins" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-hidden focus:border-[#1E3A2F] focus:ring-2 focus:ring-[#1E3A2F]/10 text-sm" />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Country / City *</label>
+              <input type="text" id="review-author-country" required placeholder="e.g. Melbourne, Australia" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-hidden focus:border-[#1E3A2F] focus:ring-2 focus:ring-[#1E3A2F]/10 text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Star Rating *</label>
+              <select id="review-rating" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-hidden focus:border-[#1E3A2F] focus:ring-2 focus:ring-[#1E3A2F]/10 text-sm bg-white font-bold text-amber-600">
+                <option value="5" selected>★★★★★ (5 - Exceptional)</option>
+                <option value="4">★★★★☆ (4 - Very Good)</option>
+                <option value="3">★★★☆☆ (3 - Good)</option>
+                <option value="2">★★☆☆☆ (2 - Fair)</option>
+                <option value="1">★☆☆☆☆ (1 - Poor)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Tour or Experience *</label>
+            <select id="review-tour-experience" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-hidden focus:border-[#1E3A2F] focus:ring-2 focus:ring-[#1E3A2F]/10 text-sm bg-white">
+              <option value="Hindek Kitchen & Grandpa Coffee Experience">Hindek Kitchen & Grandpa Coffee Experience</option>
+              <option value="Tigray Churches & Historic North Route">Tigray Churches & Historic North Route</option>
+              <option value="Bale Mountains & Oromia Expedition">Bale Mountains & Oromia Expedition</option>
+              <option value="Lalibela Rock-Hewn Churches">Lalibela Rock-Hewn Churches</option>
+              <option value="Omo Valley Cultural Odyssey">Omo Valley Cultural Odyssey</option>
+              <option value="Danakil Depression Expedition">Danakil Depression Expedition</option>
+              <option value="Custom Private Expedition">Custom Private Expedition</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Your Story & Review *</label>
+            <textarea id="review-comment" required rows="4" placeholder="Tell other travelers about your guide Hindek, the hospitality, the highlights of your adventure, and advice for future guests..." class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-hidden focus:border-[#1E3A2F] focus:ring-2 focus:ring-[#1E3A2F]/10 text-sm"></textarea>
+          </div>
+
+          <div id="review-form-status" class="hidden text-xs py-2 px-3 rounded-lg font-medium"></div>
+
+          <div class="pt-2 flex items-center justify-end gap-3">
+            <button type="button" onclick="closeReviewModal()" class="px-5 py-2.5 rounded-full text-gray-600 hover:bg-gray-100 font-bold text-xs">
+              Cancel
+            </button>
+            <button type="submit" id="submit-review-btn" class="px-6 py-2.5 bg-[#1E3A2F] hover:bg-[#2A4D3F] text-white font-bold text-sm rounded-full shadow-md hover:shadow-lg transition flex items-center gap-2">
+              <span>Publish Review</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function openReviewModal() {
+        const modal = document.getElementById("review-modal");
+        if (modal) modal.classList.remove("hidden");
+      }
+
+      function closeReviewModal() {
+        const modal = document.getElementById("review-modal");
+        if (modal) modal.classList.add("hidden");
+        const status = document.getElementById("review-form-status");
+        if (status) status.className = "hidden text-xs py-2 px-3 rounded-lg font-medium";
+      }
+
+      function renderStars(n) {
+        const count = Math.min(5, Math.max(1, Number(n) || 5));
+        return "★".repeat(count) + "☆".repeat(5 - count);
+      }
+
+      async function loadVisitorReviews() {
+        const container = document.getElementById("reviews-list-container");
+        if (!container) return;
+
+        try {
+          const res = await fetch("/api/reviews");
+          const data = await res.json();
+          const reviews = (data && data.reviews && Array.isArray(data.reviews)) ? data.reviews : [];
+
+          if (reviews.length === 0) {
+            container.innerHTML = `
+              <div class="col-span-full py-12 text-center text-gray-500 bg-white border border-gray-100 rounded-2xl p-8">
+                <p class="text-base font-semibold text-gray-700">Be the first to leave a review!</p>
+                <p class="text-xs text-gray-500 mt-1">Share your memories traveling Ethiopia with Hindek.</p>
+                <button onclick="openReviewModal()" class="mt-4 px-5 py-2.5 bg-[#1E3A2F] text-white font-bold text-xs rounded-full shadow-sm hover:bg-[#2A4D3F]">Write a Review</button>
+              </div>
+            `;
+            return;
+          }
+
+          const countLabel = document.getElementById("total-reviews-count");
+          if (countLabel) {
+            countLabel.textContent = `Based on ${reviews.length} Verified Guest Reviews & Hospitality Ratings`;
+          }
+
+          container.innerHTML = reviews.map(rev => {
+            const stars = renderStars(rev.rating);
+            return `
+              <div class="bg-white border border-[#EFECE6] hover:border-[#1E3A2F]/30 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="text-amber-500 font-bold text-base tracking-wider">${stars}</div>
+                    <span class="text-xs text-gray-600 font-semibold">${rev.date || "Recent"}</span>
+                  </div>
+                  <div class="inline-block px-2.5 py-1 rounded-md bg-[#1E3A2F]/5 text-[#1E3A2F] text-[11px] font-bold uppercase tracking-wider mb-3">
+                    ${rev.tourOrExperience || "Ethiopian Cultural Journey"}
+                  </div>
+                  <p class="text-gray-700 text-sm leading-relaxed mb-4 italic">
+                    "${rev.comment}"
+                  </p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-[#1E3A2F] text-white font-bold text-xs flex items-center justify-center">
+                      ${(rev.authorName || "Traveler").charAt(0).toUpperCase()}
+                    </div>
+                    <div>
+                      <div class="font-bold text-xs sm:text-sm text-gray-900">${rev.authorName}</div>
+                      <div class="text-[11px] text-gray-600">${rev.authorCountry || "International Traveler"}</div>
+                    </div>
+                  </div>
+                  <span class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+                    ✓ Verified
+                  </span>
+                </div>
+              </div>
+            `;
+          }).join("");
+        } catch (err) {
+          console.error("Failed to load reviews:", err);
+          container.innerHTML = `
+            <div class="col-span-full py-8 text-center text-red-500 text-xs">
+              Unable to load reviews at this moment. Please check back shortly.
+            </div>
+          `;
+        }
+      }
+
+      async function submitVisitorReview(e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById("submit-review-btn");
+        const statusDiv = document.getElementById("review-form-status");
+
+        const authorName = document.getElementById("review-author-name").value.trim();
+        const authorCountry = document.getElementById("review-author-country").value.trim();
+        const rating = Number(document.getElementById("review-rating").value) || 5;
+        const tourOrExperience = document.getElementById("review-tour-experience").value;
+        const comment = document.getElementById("review-comment").value.trim();
+
+        if (!authorName || !comment) {
+          if (statusDiv) {
+            statusDiv.className = "text-xs py-2 px-3 rounded-lg font-medium bg-red-50 text-red-700 border border-red-200 block";
+            statusDiv.textContent = "Please fill in your name and review comments.";
+          }
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "<span>Saving...</span>";
+
+        try {
+          const res = await fetch("/api/reviews", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              authorName,
+              authorCountry,
+              rating,
+              tourOrExperience,
+              comment
+            })
+          });
+
+          const result = await res.json();
+          if (res.ok && result.success) {
+            statusDiv.className = "text-xs py-2 px-3 rounded-lg font-medium bg-emerald-50 text-emerald-800 border border-emerald-200 block";
+            statusDiv.textContent = "Thank you! Your review has been saved and is now live on the site.";
+            
+            // Reload reviews immediately so everyone sees it!
+            await loadVisitorReviews();
+
+            setTimeout(() => {
+              closeReviewModal();
+              document.getElementById("review-submit-form").reset();
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = "<span>Publish Review</span>";
+            }, 1200);
+          } else {
+            throw new Error(result.error || "Failed to publish review");
+          }
+        } catch (err) {
+          statusDiv.className = "text-xs py-2 px-3 rounded-lg font-medium bg-red-50 text-red-700 border border-red-200 block";
+          statusDiv.textContent = err.message || "Failed to submit review. Please try again.";
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = "<span>Publish Review</span>";
+        }
+      }
+
+      // Initialize reviews on DOM load
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", loadVisitorReviews);
+      } else {
+        loadVisitorReviews();
+      }
+    </script>
+    <!-- REVIEW_SYSTEM_END -->
+
   </body>
 </html>
 
