@@ -445,6 +445,10 @@ async function startServer() {
     }
   });
 
+  // Serve static assets
+  app.use('/assets', express.static(path.join(process.cwd(), 'assets')));
+  app.use(express.static(publicDir));
+
   // Vite middleware for development (with fallback to pre-built dist)
   const hasSource = fs.existsSync(path.join(process.cwd(), 'src', 'main.tsx'));
   if (process.env.NODE_ENV !== 'production' && hasSource) {
@@ -454,9 +458,20 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    app.use(express.static(distDir));
+    if (fs.existsSync(distDir)) {
+      app.use(express.static(distDir));
+    }
+    app.use(express.static(process.cwd()));
     app.get('*', (req, res) => {
-      res.sendFile(path.join(distDir, 'index.html'));
+      const distIndex = path.join(distDir, 'index.html');
+      const rootIndex = path.join(process.cwd(), 'index.html');
+      if (fs.existsSync(distIndex)) {
+        return res.sendFile(distIndex);
+      }
+      if (fs.existsSync(rootIndex)) {
+        return res.sendFile(rootIndex);
+      }
+      res.status(404).send('Not Found');
     });
   }
 
