@@ -59,6 +59,23 @@ async function startServer() {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
   });
 
+  // Founder Login Authentication Endpoint
+  app.post('/api/founder/login', (req, res) => {
+    try {
+      const { pin } = req.body;
+      if (!pin || String(pin).trim() !== FOUNDER_PIN) {
+        return res.status(401).json({ success: false, error: 'Incorrect PIN. Please try again.' });
+      }
+      return res.json({ 
+        success: true, 
+        message: 'Welcome back, Hindek!', 
+        founder: { name: 'Hindek', role: 'Founder & Certified Guide' } 
+      });
+    } catch (err: any) {
+      return res.status(500).json({ success: false, error: err.message || 'Server error' });
+    }
+  });
+
   // Admin Notification
   app.post('/api/notify-admin', (req, res) => {
     try {
@@ -122,6 +139,26 @@ async function startServer() {
     }
   });
 
+  app.delete('/api/inquiries/:id', (req, res) => {
+    try {
+      const pin = req.headers['x-founder-pin'] || req.query.pin || (req.body && req.body.pin);
+      if (pin && String(pin).trim() !== FOUNDER_PIN) {
+        return res.status(401).json({ error: 'Unauthorized. Incorrect PIN.' });
+      }
+      const { id } = req.params;
+      if (fs.existsSync(inquiriesFile)) {
+        let inquiries = JSON.parse(fs.readFileSync(inquiriesFile, 'utf-8'));
+        if (Array.isArray(inquiries)) {
+          inquiries = inquiries.filter((inq: any) => inq.id !== id);
+          fs.writeFileSync(inquiriesFile, JSON.stringify(inquiries, null, 2), 'utf-8');
+        }
+      }
+      return res.json({ success: true, message: 'Inquiry deleted.' });
+    } catch (err: any) {
+      return res.status(500).json({ error: err.message || 'Failed to delete inquiry.' });
+    }
+  });
+
   // ==========================================
   // VOLUNTEER CULTURAL & LANGUAGE PREPARATION ENDPOINTS
   // (Afaan Oromoo & Amharic Only)
@@ -170,6 +207,26 @@ async function startServer() {
     } catch (err) {
       console.error('Failed to save volunteer application:', err);
       return res.status(500).json({ error: 'Could not submit application.' });
+    }
+  });
+
+  app.delete('/api/volunteers/:id', (req, res) => {
+    try {
+      const pin = req.headers['x-founder-pin'] || req.query.pin || (req.body && req.body.pin);
+      if (pin && String(pin).trim() !== FOUNDER_PIN) {
+        return res.status(401).json({ error: 'Unauthorized. Incorrect PIN.' });
+      }
+      const { id } = req.params;
+      if (fs.existsSync(volunteerFile)) {
+        let list = JSON.parse(fs.readFileSync(volunteerFile, 'utf-8'));
+        if (Array.isArray(list)) {
+          list = list.filter((app: any) => app.id !== id);
+          fs.writeFileSync(volunteerFile, JSON.stringify(list, null, 2), 'utf-8');
+        }
+      }
+      return res.json({ success: true, message: 'Volunteer application deleted.' });
+    } catch (err: any) {
+      return res.status(500).json({ error: err.message || 'Failed to delete application.' });
     }
   });
 
@@ -226,6 +283,26 @@ async function startServer() {
     } catch (err: any) {
       console.error('Failed to save visitor review:', err);
       return res.status(500).json({ error: 'Could not save review.' });
+    }
+  });
+
+  app.delete('/api/reviews/:id', (req, res) => {
+    try {
+      const pin = req.headers['x-founder-pin'] || req.query.pin || (req.body && req.body.pin);
+      if (pin && String(pin).trim() !== FOUNDER_PIN) {
+        return res.status(401).json({ error: 'Unauthorized. Incorrect PIN.' });
+      }
+      const { id } = req.params;
+      if (fs.existsSync(reviewsFile)) {
+        let list = JSON.parse(fs.readFileSync(reviewsFile, 'utf-8'));
+        if (Array.isArray(list)) {
+          list = list.filter((rev: any) => rev.id !== id);
+          fs.writeFileSync(reviewsFile, JSON.stringify(list, null, 2), 'utf-8');
+        }
+      }
+      return res.json({ success: true, message: 'Review deleted.' });
+    } catch (err: any) {
+      return res.status(500).json({ error: err.message || 'Failed to delete review.' });
     }
   });
 

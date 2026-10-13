@@ -76,17 +76,11 @@
     <!-- Navigation Header -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EFECE6] transition-all shadow-xs">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-        <a href="#" class="flex items-center gap-3 group">
-          <div class="w-11 h-11 rounded-2xl bg-[#1E3A2F] text-[#D49A3D] flex items-center justify-center font-serif text-2xl font-bold shadow-md group-hover:scale-105 transition">
-            B
+        <a href="#" class="group">
+          <div class="font-serif font-extrabold text-xl sm:text-2xl text-[#1E3A2F] tracking-tight">
+            BRIDGE ETHIOPIA
           </div>
-          <div>
-            <div class="font-serif font-extrabold text-xl sm:text-2xl text-[#1E3A2F] tracking-tight flex items-center gap-1.5">
-              BRIDGE ETHIOPIA
-              <span class="text-xs px-2 py-0.5 rounded-full bg-[#D49A3D]/15 text-[#9A6B1A] font-sans font-bold">Local Host</span>
-            </div>
-            <div class="text-[11px] text-gray-500 tracking-wider uppercase font-semibold">Tigray • Oromia • Southern Ethiopia • Historic Route</div>
-          </div>
+          <div class="text-[11px] text-gray-500 tracking-wider uppercase font-semibold">Tigray • Oromia • Southern Ethiopia • Historic Route</div>
         </a>
 
         <!-- Desktop Navigation -->
@@ -316,10 +310,7 @@
           <div class="bg-gradient-to-br from-[#1E3A2F] to-[#12241D] text-white rounded-3xl p-8 flex flex-col justify-between shadow-xl relative overflow-hidden">
             <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-[#D49A3D]/20 rounded-full blur-2xl"></div>
             <div>
-              <span class="px-3 py-1 rounded-full bg-[#D49A3D]/20 text-[#D49A3D] text-xs font-bold uppercase tracking-wider">
-                Founder Signature
-              </span>
-              <h3 class="text-2xl font-serif font-bold text-white mt-4 mb-3">
+              <h3 class="text-2xl font-serif font-bold text-white mb-3">
                 Hindek Kitchen & Grandpa Coffee Ceremony
               </h3>
               <p class="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6">
@@ -720,10 +711,7 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           
           <div class="space-y-4 md:col-span-2">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-[#D49A3D] text-[#1E3A2F] flex items-center justify-center font-serif text-xl font-bold">
-                B
-              </div>
+            <div>
               <span class="font-serif font-bold text-xl text-white tracking-tight">BRIDGE ETHIOPIA</span>
             </div>
             <p class="text-xs text-gray-400 leading-relaxed max-w-md">
@@ -759,7 +747,7 @@
 
         <div class="pt-8 border-t border-gray-800 text-center text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            © 2026 Bridge Ethiopia. All rights reserved. Founded & Hosted by Hindek.
+            © 2026 Bridge Ethiopia. All rights reserved. Hosted by Hindek.
           </div>
           <div class="text-gray-400">
             Authentic Travel • Pure Culture • Fair Community Tourism
@@ -1085,6 +1073,16 @@
           submitBtn.disabled = false;
           submitBtn.textContent = "Publish Review";
         }
+      }
+
+      function escapeHtml(text) {
+        if (!text) return "";
+        return String(text)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
       }
 
       // Initialize on load
