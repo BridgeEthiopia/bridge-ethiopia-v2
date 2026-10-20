@@ -20,6 +20,7 @@ async function startServer() {
   const volunteerFile = path.join(publicDir, 'volunteer-applications.json');
   const videoManifestFile = path.join(publicDir, 'video-manifest.json');
   const featuredVideoFile = path.join(publicDir, 'featured-video.json');
+  const FOUNDER_PIN = process.env.FOUNDER_PIN || '2519';
 
   // Ensure public & video upload directories exist
   if (!fs.existsSync(publicDir)) {
@@ -123,6 +124,10 @@ async function startServer() {
 
   app.delete('/api/inquiries/:id', (req, res) => {
     try {
+      const pin = req.headers['x-founder-pin'] || req.query.pin || (req.body && req.body.pin);
+      if (pin && String(pin).trim() !== FOUNDER_PIN) {
+        return res.status(401).json({ error: 'Unauthorized. Incorrect PIN.' });
+      }
       const { id } = req.params;
       if (fs.existsSync(inquiriesFile)) {
         let inquiries = JSON.parse(fs.readFileSync(inquiriesFile, 'utf-8'));
@@ -190,6 +195,10 @@ async function startServer() {
 
   app.delete('/api/volunteers/:id', (req, res) => {
     try {
+      const pin = req.headers['x-founder-pin'] || req.query.pin || (req.body && req.body.pin);
+      if (pin && String(pin).trim() !== FOUNDER_PIN) {
+        return res.status(401).json({ error: 'Unauthorized. Incorrect PIN.' });
+      }
       const { id } = req.params;
       if (fs.existsSync(volunteerFile)) {
         let list = JSON.parse(fs.readFileSync(volunteerFile, 'utf-8'));
@@ -262,6 +271,10 @@ async function startServer() {
 
   app.delete('/api/reviews/:id', (req, res) => {
     try {
+      const pin = req.headers['x-founder-pin'] || req.query.pin || (req.body && req.body.pin);
+      if (pin && String(pin).trim() !== FOUNDER_PIN) {
+        return res.status(401).json({ error: 'Unauthorized. Incorrect PIN.' });
+      }
       const { id } = req.params;
       if (fs.existsSync(reviewsFile)) {
         let list = JSON.parse(fs.readFileSync(reviewsFile, 'utf-8'));
@@ -341,6 +354,11 @@ async function startServer() {
 
   app.post('/api/videos', (req, res) => {
     try {
+      const pin = req.headers['x-founder-pin'] || req.body.founderPin;
+      if (pin && String(pin).trim() !== FOUNDER_PIN) {
+        return res.status(401).json({ error: 'Incorrect PIN. Only founder Hindek can modify videos.' });
+      }
+
       const { title, youtubeUrl, description, category } = req.body;
       if (!title || !youtubeUrl) {
         return res.status(400).json({ error: 'Title and video URL are required.' });
@@ -386,6 +404,14 @@ async function startServer() {
   // Direct video file upload endpoint (MP4, MOV, WebM from phone/computer)
   app.post('/api/upload-video', upload.single('video'), (req, res) => {
     try {
+      const pin = req.headers['x-founder-pin'] || req.body.founderPin;
+      if (pin && String(pin).trim() !== FOUNDER_PIN) {
+        if (req.file && fs.existsSync(req.file.path)) {
+          fs.unlinkSync(req.file.path);
+        }
+        return res.status(401).json({ error: 'Incorrect PIN. Only founder Hindek can upload videos.' });
+      }
+
       if (!req.file) {
         return res.status(400).json({ error: 'Please select a video file to upload.' });
       }
@@ -428,6 +454,10 @@ async function startServer() {
   // Delete video endpoint
   app.delete('/api/videos/:id', (req, res) => {
     try {
+      const pin = req.headers['x-founder-pin'] || req.query.pin || (req.body && req.body.founderPin);
+      if (pin && String(pin).trim() !== FOUNDER_PIN) {
+        return res.status(401).json({ error: 'Unauthorized.' });
+      }
       const { id } = req.params;
       if (!fs.existsSync(videoManifestFile)) {
         return res.json({ success: true });
