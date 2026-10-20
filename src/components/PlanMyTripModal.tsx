@@ -195,17 +195,60 @@ export const PlanMyTripModal: React.FC<PlanTripModalProps> = ({
           <div className="p-6 sm:p-10 space-y-8">
             
             {/* Header */}
-            <div className="space-y-2 border-b border-[#E8E1D5] pb-5">
-              <span className="px-3 py-1 rounded-full bg-[#B85C38]/10 text-[#B85C38] text-xs font-bold uppercase tracking-wider">
-                Tailored Travel Planning
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#1E3A2F]">
-                Plan My Ethiopian Journey
-              </h2>
-              <p className="text-xs sm:text-sm text-[#6B6155] leading-relaxed">
-                Provide your travel preferences below. Founder <strong>{FOUNDER_INFO.name}</strong> will 
-                design a personalized day-by-day itinerary with verified local guides and honest pricing.
-              </p>
+            <div className="space-y-4 border-b border-[#E8E1D5] pb-5">
+              <div className="space-y-2">
+                <span className="px-3 py-1 rounded-full bg-[#B85C38]/10 text-[#B85C38] text-xs font-bold uppercase tracking-wider">
+                  Tailored Travel Planning
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#1E3A2F]">
+                  Plan My Ethiopian Journey
+                </h2>
+                <p className="text-xs sm:text-sm text-[#6B6155] leading-relaxed">
+                  Provide your travel preferences below. Founder <strong>{FOUNDER_INFO.name}</strong> will 
+                  design a personalized day-by-day itinerary with verified local guides and honest pricing.
+                </p>
+              </div>
+
+              {/* Direct Phone & WhatsApp Booking Card with Owner's Phone Number */}
+              <div className="p-4 rounded-2xl bg-gradient-to-r from-[#FAF6EE] to-[#F3ECE0] border-2 border-[#D49A3D]/40 space-y-3 shadow-xs">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#25D366] animate-pulse" />
+                    <span className="text-xs font-bold text-[#1E3A2F] uppercase tracking-wider">
+                      Prefer to Discuss Your Journey by Phone or WhatsApp?
+                    </span>
+                  </div>
+                  <span className="text-[11px] font-semibold text-[#8C7E6D]">
+                    Direct Founder Line
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <a
+                    href={`tel:${FOUNDER_INFO.phone}`}
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#1E3A2F] hover:bg-[#152B23] text-white text-xs sm:text-sm font-bold transition-all shadow-xs group"
+                  >
+                    <Phone className="w-4 h-4 text-[#D49A3D] group-hover:scale-110 transition-transform flex-shrink-0" />
+                    <span>Call: <strong className="text-[#D49A3D] tracking-wide">{FOUNDER_INFO.phone}</strong></span>
+                  </a>
+
+                  <a
+                    href={`https://wa.me/${FOUNDER_INFO.whatsapp}?text=${encodeURIComponent(
+                      `Hello Hindek! I want to plan a custom trip with Bridge Ethiopia.`
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs sm:text-sm font-bold transition-all shadow-xs group"
+                  >
+                    <MessageCircle className="w-4 h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
+                    <span>WhatsApp: <strong className="tracking-wide">{FOUNDER_INFO.phone}</strong></span>
+                  </a>
+                </div>
+
+                <p className="text-[11px] text-[#5C5247] leading-relaxed">
+                  Call or WhatsApp <strong>{FOUNDER_INFO.name}</strong> directly at <strong>{FOUNDER_INFO.phone}</strong> for immediate route recommendations, or fill out the questionnaire below.
+                </p>
+              </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6 text-left">

@@ -11,8 +11,11 @@ import {
   Sparkles, 
   SlidersHorizontal,
   Calendar,
-  BookOpen
+  BookOpen,
+  Phone,
+  MessageCircle
 } from 'lucide-react';
+import { FOUNDER_INFO } from '../data/ethiopiaData';
 
 interface ToursProps {
   onSelectTour: (tour: Tour) => void;
@@ -220,6 +223,26 @@ export const ToursSection: React.FC<ToursProps> = ({
               Tell us your desired destinations, pace, food preferences, and travel dates. 
               Founder Hindek will craft a tailor-made private experience for you or your group.
             </p>
+            <div className="flex flex-wrap items-center gap-3 pt-1 text-xs text-[#1E3A2F] font-medium">
+              <span className="text-[#8C7E6D]">Instant Booking Line:</span>
+              <a
+                href={`tel:${FOUNDER_INFO.phone}`}
+                className="inline-flex items-center gap-1 font-bold text-[#1E3A2F] hover:text-[#B85C38] underline"
+              >
+                <Phone className="w-3.5 h-3.5 text-[#D49A3D]" />
+                <span>{FOUNDER_INFO.phone}</span>
+              </a>
+              <span className="text-[#D49A3D]">•</span>
+              <a
+                href={`https://wa.me/${FOUNDER_INFO.whatsapp}?text=${encodeURIComponent('Hello Hindek! I would like to discuss booking a custom tour.')}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 font-bold text-[#25D366] hover:text-[#1EBE5D]"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
           </div>
 
           <button

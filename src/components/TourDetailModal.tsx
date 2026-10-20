@@ -14,8 +14,9 @@ import {
   ChevronRight, 
   Calendar,
   Compass,
-  BookOpen,
-  ShieldCheck
+  ShieldCheck,
+  Phone,
+  BookOpen
 } from 'lucide-react';
 import { FOUNDER_INFO } from '../data/ethiopiaData';
 
@@ -292,17 +293,27 @@ export const TourDetailModal: React.FC<TourDetailProps> = ({
 
           {/* Footer CTAs */}
           <div className="pt-4 border-t border-[#E8E1D5] flex flex-col sm:flex-row items-center justify-between gap-3">
-            <a
-              href={`https://wa.me/${FOUNDER_INFO.whatsapp}?text=${encodeURIComponent(
-                `Hello Hindek! I am interested in booking: ${tour.title}`
-              )}`}
-              target="_blank"
-              rel="noreferrer"
-              className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-[#25D366] text-white font-bold text-xs flex items-center justify-center gap-1.5 hover:bg-[#1EBE5D] transition-colors"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span>WhatsApp Inquiries</span>
-            </a>
+            <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+              <a
+                href={`tel:${FOUNDER_INFO.phone}`}
+                className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-[#FAF6EE] hover:bg-[#F3ECE0] border border-[#D49A3D]/40 text-[#1E3A2F] font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-2xs"
+              >
+                <Phone className="w-4 h-4 text-[#D49A3D]" />
+                <span>Call {FOUNDER_INFO.phone}</span>
+              </a>
+
+              <a
+                href={`https://wa.me/${FOUNDER_INFO.whatsapp}?text=${encodeURIComponent(
+                  `Hello Hindek! I am interested in booking: ${tour.title}`
+                )}`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-[#25D366] text-white font-bold text-xs flex items-center justify-center gap-1.5 hover:bg-[#1EBE5D] transition-colors shadow-2xs"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
 
             <button
               onClick={() => {
@@ -311,7 +322,7 @@ export const TourDetailModal: React.FC<TourDetailProps> = ({
               }}
               className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#1E3A2F] hover:bg-[#152B23] text-white font-bold text-xs tracking-wide shadow-md transition-colors flex items-center justify-center gap-1.5"
             >
-              <span>Request Booking</span>
+              <span>Request Booking Form</span>
               <ChevronRight className="w-4 h-4 text-[#D49A3D]" />
             </button>
           </div>

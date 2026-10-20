@@ -172,52 +172,52 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 Connect directly with founder <strong>{FOUNDER_INFO.name}</strong>. Choose your preferred way to book or inquire:
               </p>
 
-              {/* 3 Quick Direct Booking Action Buttons */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
-                <a
-                  href={`https://wa.me/${FOUNDER_INFO.whatsapp}?text=${encodeURIComponent(
-                    `Hello Hindek! I want to book: ${formData.serviceOrEvent || 'a tour with Bridge Ethiopia'}.`
-                  )}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  id="modal-quick-whatsapp-btn"
-                  className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/30 text-[#1E3A2F] text-xs font-bold transition-all shadow-xs group"
-                >
-                  <MessageCircle className="w-4 h-4 text-[#25D366] group-hover:scale-110 transition-transform flex-shrink-0" />
-                  <div className="text-left">
-                    <span className="block text-[10px] text-[#25D366] uppercase font-extrabold leading-none">Fastest</span>
-                    <span className="font-bold">Book via WhatsApp</span>
+              {/* Highlight Direct Phone & WhatsApp Booking Card with Owner's Phone Number */}
+              <div className="p-4 rounded-2xl bg-gradient-to-r from-[#FAF6EE] to-[#F3ECE0] border-2 border-[#D49A3D]/40 space-y-3 shadow-xs">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#25D366] animate-pulse" />
+                    <span className="text-xs font-bold text-[#1E3A2F] uppercase tracking-wider">
+                      Direct Booking & Immediate Confirmation
+                    </span>
                   </div>
-                </a>
+                  <span className="text-[11px] font-semibold text-[#8C7E6D]">
+                    Available 7 Days a Week
+                  </span>
+                </div>
 
-                <a
-                  href={`tel:${FOUNDER_INFO.phone}`}
-                  id="modal-quick-phone-btn"
-                  className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-[#FAF6EE] hover:bg-[#F3ECE0] border border-[#D49A3D]/40 text-[#1E3A2F] text-xs font-bold transition-all shadow-xs group"
-                >
-                  <Phone className="w-4 h-4 text-[#D49A3D] group-hover:scale-110 transition-transform flex-shrink-0" />
-                  <div className="text-left">
-                    <span className="block text-[10px] text-[#D49A3D] uppercase font-extrabold leading-none">Direct Call</span>
-                    <span className="font-bold">{FOUNDER_INFO.phone}</span>
-                  </div>
-                </a>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <a
+                    href={`tel:${FOUNDER_INFO.phone}`}
+                    id="modal-quick-phone-btn"
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#1E3A2F] hover:bg-[#152B23] text-white text-xs sm:text-sm font-bold transition-all shadow-xs group"
+                  >
+                    <Phone className="w-4 h-4 text-[#D49A3D] group-hover:scale-110 transition-transform flex-shrink-0" />
+                    <span>Call: <strong className="text-[#D49A3D] tracking-wide">{FOUNDER_INFO.phone}</strong></span>
+                  </a>
 
-                <a
-                  href={`mailto:${FOUNDER_INFO.email}?subject=${encodeURIComponent(`Booking Inquiry: ${formData.serviceOrEvent || 'Tour in Ethiopia'}`)}`}
-                  id="modal-quick-email-btn"
-                  className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-[#FAF8F5] hover:bg-[#E8E1D5] border border-[#E8E1D5] text-[#1E3A2F] text-xs font-bold transition-all shadow-xs group"
-                >
-                  <Mail className="w-4 h-4 text-[#B85C38] group-hover:scale-110 transition-transform flex-shrink-0" />
-                  <div className="text-left">
-                    <span className="block text-[10px] text-[#8C7E6D] uppercase font-extrabold leading-none">Email</span>
-                    <span className="font-bold truncate">{FOUNDER_INFO.email}</span>
-                  </div>
-                </a>
+                  <a
+                    href={`https://wa.me/${FOUNDER_INFO.whatsapp}?text=${encodeURIComponent(
+                      `Hello Hindek! I want to book: ${formData.serviceOrEvent || 'a tour with Bridge Ethiopia'}.`
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    id="modal-quick-whatsapp-btn"
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs sm:text-sm font-bold transition-all shadow-xs group"
+                  >
+                    <MessageCircle className="w-4 h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
+                    <span>WhatsApp: <strong className="tracking-wide">{FOUNDER_INFO.phone}</strong></span>
+                  </a>
+                </div>
+
+                <p className="text-[11px] text-[#5C5247] leading-relaxed">
+                  Call or WhatsApp Founder <strong>{FOUNDER_INFO.name}</strong> at <strong>{FOUNDER_INFO.phone}</strong> for instant reservation &amp; personalized advice, or submit the form below.
+                </p>
               </div>
 
-              <div className="flex items-center gap-3 pt-2 text-[11px] text-[#8C7E6D]">
+              <div className="flex items-center gap-3 pt-1 text-[11px] text-[#8C7E6D]">
                 <div className="h-px bg-[#E8E1D5] flex-1" />
-                <span>or customize and submit the form below</span>
+                <span>or submit your request details online</span>
                 <div className="h-px bg-[#E8E1D5] flex-1" />
               </div>
             </div>
