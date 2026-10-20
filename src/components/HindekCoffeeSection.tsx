@@ -29,6 +29,7 @@ import { useCustomPhotoContext } from '../context/CustomPhotoContext';
 import { COFFEE_PACKAGES, HINDEK_COFFEE_TAGLINE, CUSTOM_ORDERS_INFO } from '../data/coffeePackagesData';
 import { CoffeePackage } from '../types';
 import { CoffeeOrderModal } from './CoffeeOrderModal';
+import jebenaCoffeeImg from '../assets/images/tour-hindek-grandpa-coffee-ceremony.jpg';
 
 interface HindekCoffeeProps {
   onBookCeremony: (title: string) => void;
@@ -113,74 +114,49 @@ export const HindekCoffeeSection: React.FC<HindekCoffeeProps> = ({
         {/* Visual Hero & Highlight Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
-          {/* Left Column: Ancestral Hearth Text-Only Chronicle (No Photo) */}
-          <div className="lg:col-span-5 relative">
-            <div className="rounded-3xl p-6 sm:p-8 bg-gradient-to-b from-[#132A21] via-[#0E2019] to-[#0A1813] border-2 border-[#D49A3D]/40 shadow-2xl space-y-5 text-white relative overflow-hidden">
-              {/* Background Ethiopian subtle geometric watermark */}
-              <div className="absolute top-0 right-0 w-48 h-48 bg-[#D49A3D]/5 rounded-full blur-2xl pointer-events-none" />
-
-              {/* Header Badge */}
-              <div className="flex items-center justify-between gap-2 border-b border-[#D49A3D]/25 pb-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-[#D49A3D]/20 border border-[#D49A3D]/50 flex items-center justify-center text-[#D49A3D]">
-                    <BookOpen className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#D49A3D] uppercase block">
-                      Authentic Oral Heritage • Write-Only Chronicle
-                    </span>
-                    <span className="text-xs text-[#E5AC4D] font-serif italic">
-                      Living oral tradition — Preserved through ancestral storytelling
-                    </span>
-                  </div>
+          {/* Left Column: Authentic Jebena Ethiopian Coffee Ceremony Photo */}
+          <div className="lg:col-span-5 relative space-y-4">
+            <div className="rounded-3xl overflow-hidden border-2 border-[#D49A3D]/40 shadow-2xl relative group bg-[#132A21]">
+              <div className="relative h-72 sm:h-80 w-full overflow-hidden">
+                <img
+                  src={jebenaCoffeeImg}
+                  alt="Traditional Jebena Ethiopian Coffee Ceremony with clay pot, Sini cups, and fresh popcorn"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#132A21] via-black/20 to-black/30"></div>
+                
+                {/* Floating Badge */}
+                <div className="absolute top-4 left-4 bg-[#1E3A2F]/90 backdrop-blur-md text-[#D49A3D] px-3.5 py-1.5 rounded-full border border-[#D49A3D]/50 shadow-lg flex items-center gap-2 text-xs font-bold">
+                  <Flame className="w-3.5 h-3.5 text-[#D49A3D] animate-pulse" />
+                  <span>Traditional Clay Jebena Ceremony</span>
                 </div>
-                <Flame className="w-4 h-4 text-[#D49A3D] flex-shrink-0 animate-pulse" />
-              </div>
 
-              {/* Chronicle Title */}
-              <div className="space-y-1">
-                <h4 className="text-xl sm:text-2xl font-bold font-serif text-[#F5E6D3] leading-snug">
-                  The Living Hearth of Hindek Grandpa
-                </h4>
-                <p className="text-xs text-[#D49A3D] font-medium tracking-wide">
-                  « Buni Nagaadha • Coffee is Peace, Welcome & Covenant »
-                </p>
-              </div>
-
-              {/* Rich Written Text Narrative */}
-              <div className="space-y-3.5 text-xs sm:text-sm text-[#E6DEC9] leading-relaxed">
-                <p>
-                  In the highland homes of Oromia and rural Ethiopia, a family elder’s coffee hearth is never a 
-                  staged photo or commercial transaction. It is an open door where travelers, neighbors, and kin 
-                  find sanctuary on freshly strewn <span className="text-[#F5E6D3] font-semibold italic">Ketema</span> grass.
-                </p>
-                <div className="p-3.5 rounded-2xl bg-[#1A382C]/70 border border-[#D49A3D]/30 space-y-2">
-                  <div className="text-[11px] font-bold text-[#D49A3D] uppercase tracking-wider flex items-center gap-1.5">
-                    <ScrollText className="w-3.5 h-3.5" />
-                    <span>The Three Sacred Pourings of the Hearth</span>
-                  </div>
-                  <ul className="space-y-1.5 text-xs text-[#D9D0C1]">
-                    <li><strong className="text-white">1. Abol (አቦል):</strong> The first, bold infusion awakening the senses and greeting the traveler’s soul.</li>
-                    <li><strong className="text-white">2. Tona (ቶና):</strong> The second gentle brew deepening intimate conversation and storytelling.</li>
-                    <li><strong className="text-white">3. Baraka (በረካ):</strong> The third cup of grace, sealing the elder’s lifelong blessing of peace and safe passage.</li>
-                  </ul>
+                <div className="absolute bottom-3 left-4 right-4">
+                  <span className="text-white font-serif font-bold text-lg drop-shadow-md block">
+                    Clay Jebena &amp; Sacred Hearth
+                  </span>
+                  <span className="text-xs text-[#E5AC4D] font-serif italic drop-shadow">
+                    Freshly roasted coffee, frankincense aroma &amp; ceremonial grass
+                  </span>
                 </div>
-                <p className="text-xs text-[#C7BCAB] italic">
-                  “Natural charcoal embers, soothing Frankincense (Itan) smoke, freshly popped maize (Fendisha), and the gentle pouring of the hand-thrown clay Jebena without disturbing the settled grounds.”
-                </p>
               </div>
 
-              {/* Footer Blessing Quote */}
-              <div className="pt-3 border-t border-[#D49A3D]/20 flex items-center justify-between text-[11px] text-[#D49A3D]">
-                <span>Blessing of the Elders:</span>
-                <span className="font-serif italic text-white">« Buna hin dhabinaa, Nagaa hin dhabinaa »</span>
+              {/* Three Sacred Pourings Summary below photo */}
+              <div className="p-5 space-y-3 bg-gradient-to-b from-[#132A21] to-[#0A1813] border-t border-[#D49A3D]/25">
+                <div className="text-[11px] font-bold text-[#D49A3D] uppercase tracking-wider flex items-center gap-1.5">
+                  <ScrollText className="w-3.5 h-3.5" />
+                  <span>The Three Sacred Pourings of the Hearth</span>
+                </div>
+                <ul className="space-y-1.5 text-xs text-[#D9D0C1]">
+                  <li><strong className="text-white">1. Abol (አቦል):</strong> The first, bold infusion awakening the senses and greeting the traveler.</li>
+                  <li><strong className="text-white">2. Tona (ቶና):</strong> The second gentle brew deepening intimate conversation and storytelling.</li>
+                  <li><strong className="text-white">3. Baraka (በረካ):</strong> The third cup of grace, sealing the blessing of peace and safe passage.</li>
+                </ul>
+                <div className="pt-2 border-t border-[#D49A3D]/20 flex items-center justify-between text-[11px] text-[#D49A3D]">
+                  <span>Blessing of the Elders:</span>
+                  <span className="font-serif italic text-white">« Buna hin dhabinaa, Nagaa hin dhabinaa »</span>
+                </div>
               </div>
-            </div>
-
-            {/* Frankincense Aromatic Blessing Floating Badge */}
-            <div className="absolute -top-3 -left-3 bg-[#12241D] text-[#D49A3D] px-3.5 py-1.5 rounded-xl border border-[#D49A3D]/60 shadow-xl flex items-center gap-2">
-              <Flame className="w-3.5 h-3.5 text-[#D49A3D]" />
-              <span className="text-[11px] font-bold">100% Traditional Text Chronicle</span>
             </div>
           </div>
 

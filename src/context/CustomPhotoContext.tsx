@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useRef, ReactNode } from 'react';
 import defaultSquare from '../assets/images/hindek_real_photo_square.jpg';
 import defaultPortrait from '../assets/images/hindek_real_photo_portrait.jpg';
-import defaultCoffeeCeremony from '../assets/images/ethiopian_coffee_ceremony_1787813852379.jpg';
+import defaultCoffeeCeremony from '../assets/images/tour-hindek-grandpa-coffee-ceremony.jpg';
 import defaultKitchenCooking from '../assets/images/tour-hindek-kitchen-cooking-experience.jpg';
 import { 
   idbGet, 

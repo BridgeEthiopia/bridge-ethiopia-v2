@@ -35,7 +35,7 @@ import { FOUNDER_INFO } from './data/ethiopiaData';
 import lalibelaImg from './assets/images/lalibela_st_george_church_1787813645261.jpg';
 import danakilImg from './assets/images/danakil_dallol_springs_1787813682387.jpg';
 import kitchenImg from './assets/images/kitchen-dish-doro-wat.jpg';
-import coffeeImg from './assets/images/ethiopian_coffee_ceremony_1787813852379.jpg';
+import coffeeImg from './assets/images/tour-hindek-grandpa-coffee-ceremony.jpg';
 import festivalImg from './assets/images/meskel_demera_fire_1787814613769.jpg';
 import skylineImg from './assets/images/addis_ababa_skyline_1787813744000.jpg';
 import founderImg from './assets/images/hindek_real_photo_portrait.jpg';
