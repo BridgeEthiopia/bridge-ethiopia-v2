@@ -22,7 +22,6 @@ import { PlanMyTripModal } from './components/PlanMyTripModal';
 import { BookingModal } from './components/BookingModal';
 import { CommunityInquiryModal } from './components/CommunityInquiryModal';
 import { FounderPhotoUploadModal } from './components/FounderPhotoUploadModal';
-import { FounderPinModal } from './components/FounderPinModal';
 import { PhotoGuideModal } from './components/PhotoGuideModal';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { FounderPhotoProvider, useFounderPhoto } from './context/FounderPhotoContext';
@@ -256,9 +255,6 @@ function AppContent() {
 
       {/* Photo Manager Modal */}
       <FounderPhotoUploadModal />
-
-      {/* Founder PIN Security Authentication Modal */}
-      <FounderPinModal />
 
       {/* Photo Upload Guide Modal */}
       <PhotoGuideModal

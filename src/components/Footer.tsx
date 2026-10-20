@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Logo } from './Logo';
 import { FOUNDER_INFO } from '../data/ethiopiaData';
 import { useLanguage } from '../context/LanguageContext';
-import { useFounderPhoto } from '../context/FounderPhotoContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { TravelGuideModal } from './TravelGuideModal';
 import { 
@@ -44,7 +43,6 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenUploadModal,
 }) => {
   const { t } = useLanguage();
-  const { isAdminMode, openUploadModal, toggleAdminMode } = useFounderPhoto();
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -528,26 +526,6 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="bg-white/10 px-2 py-1 rounded-lg border border-white/15">
               <LanguageSwitcher variant="compact" />
             </div>
-
-            <button
-              type="button"
-              onClick={() => {
-                if (isAdminMode) {
-                  openUploadModal();
-                } else {
-                  toggleAdminMode();
-                }
-              }}
-              className={`text-[11px] px-2.5 py-1 rounded-lg border transition-colors flex items-center gap-1.5 cursor-pointer ${
-                isAdminMode
-                  ? 'bg-[#D49A3D] text-[#1E3A2F] border-[#D49A3D] font-bold shadow-sm'
-                  : 'text-[#D9D0C1]/80 hover:text-white border-white/10 hover:border-white/30'
-              }`}
-              title="Founder Portal: Manage website photos & export permanent bundle"
-            >
-              <Camera className="w-3 h-3 text-[#D49A3D]" />
-              <span>{isAdminMode ? '👑 Founder Admin' : 'Founder Login'}</span>
-            </button>
 
             {onOpenPhotoGuide && (
               <button
