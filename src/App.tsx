@@ -28,10 +28,97 @@ import { FounderPhotoProvider, useFounderPhoto } from './context/FounderPhotoCon
 import { LanguageProvider } from './context/LanguageContext';
 import { InquiriesProvider } from './context/InquiriesContext';
 import { Destination, Tour } from './types';
-import { MessageCircle, Camera } from 'lucide-react';
+import { MessageCircle, Camera, ArrowRight, ArrowLeft, Home, Layers, CheckCircle, Sparkles } from 'lucide-react';
 import { FOUNDER_INFO } from './data/ethiopiaData';
 
+// Authentic images for step overview cards
+import lalibelaImg from './assets/images/lalibela_st_george_church_1787813645261.jpg';
+import danakilImg from './assets/images/danakil_dallol_springs_1787813682387.jpg';
+import kitchenImg from './assets/images/kitchen-dish-doro-wat.jpg';
+import coffeeImg from './assets/images/ethiopian_coffee_ceremony_1787813852379.jpg';
+import festivalImg from './assets/images/meskel_demera_fire_1787814613769.jpg';
+import skylineImg from './assets/images/addis_ababa_skyline_1787813744000.jpg';
+import founderImg from './assets/images/hindek_real_photo_portrait.jpg';
+import dorzeImg from './assets/images/arba_minch_dorze_1787901932452.jpg';
+
+interface StepInfo {
+  step: number;
+  tabKey: string;
+  title: string;
+  badge: string;
+  description: string;
+  image: string;
+}
+
+const STEPS: StepInfo[] = [
+  {
+    step: 1,
+    tabKey: 'destinations',
+    title: 'Explore Destinations & Interactive Map',
+    badge: 'Destinations',
+    description: 'Bale Mountains, Lalibela rock churches, Danakil Depression, Oromia, Arba Minch & Harar.',
+    image: lalibelaImg,
+  },
+  {
+    step: 2,
+    tabKey: 'tours',
+    title: 'Curated Tours & Expeditions',
+    badge: 'Tours',
+    description: 'Personalized private expeditions with certified local experts across all regions of Ethiopia.',
+    image: danakilImg,
+  },
+  {
+    step: 3,
+    tabKey: 'hindek-kitchen',
+    title: 'Hindek Kitchen & Culinary Immersion',
+    badge: 'Culinary Masterclass',
+    description: 'Hands-on traditional Ethiopian cooking class, 100% teff injera making, and cultural feast.',
+    image: kitchenImg,
+  },
+  {
+    step: 4,
+    tabKey: 'coffee-experience',
+    title: 'Grandpa Sacred Coffee Ritual',
+    badge: 'Coffee Ceremony',
+    description: 'Traditional 3-cup Jebena brewing (Abol, Tona, Baraka), frankincense incense, and wild Kafa beans.',
+    image: coffeeImg,
+  },
+  {
+    step: 5,
+    tabKey: 'festivals',
+    title: 'Cultural Festivals & Heritage',
+    badge: 'Festivals',
+    description: 'Witness Timkat epiphany, Meskel Demera bonfires, Irreecha Thanksgiving, and holy pilgrimages.',
+    image: festivalImg,
+  },
+  {
+    step: 6,
+    tabKey: 'travel-assistance',
+    title: 'Local Travel Logistics & Support',
+    badge: 'Services & NGO',
+    description: 'Airport meet & greet, 4x4 transport, SIM cards, local translators, and community NGO liaison.',
+    image: skylineImg,
+  },
+  {
+    step: 7,
+    tabKey: 'about',
+    title: 'About Hindek & Bridge Ethiopia',
+    badge: 'Our Mission',
+    description: 'Meet Hindek, our licensed guides, our ethical tourism philosophy, and community impact.',
+    image: founderImg,
+  },
+  {
+    step: 8,
+    tabKey: 'reviews',
+    title: 'Traveler Reviews & Direct Booking',
+    badge: 'Reviews & Contact',
+    description: 'Read verified traveler experiences and send your custom trip inquiry directly to Hindek.',
+    image: dorzeImg,
+  },
+];
+
 function AppContent() {
+  const [activeTab, setActiveTab] = useState<string>('home');
   const [selectedDestination, setSelectedDestination] = useState<Destination | null>(null);
   const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
   const [isPlanTripOpen, setIsPlanTripOpen] = useState(false);
@@ -53,11 +140,82 @@ function AppContent() {
   
   const { openUploadModal, isAdminMode } = useFounderPhoto();
 
-  const handleNavigate = (sectionId: string) => {
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+  // Helper to map tabKey to step number (1-8)
+  const getStepNumber = (tab: string): number => {
+    switch (tab) {
+      case 'destinations':
+      case 'map':
+        return 1;
+      case 'tours':
+        return 2;
+      case 'hindek-kitchen':
+      case 'food-gallery':
+        return 3;
+      case 'coffee-experience':
+      case 'coffee-packages':
+        return 4;
+      case 'festivals':
+        return 5;
+      case 'travel-assistance':
+      case 'community-ngo':
+      case 'hotels':
+        return 6;
+      case 'about':
+        return 7;
+      case 'reviews':
+      case 'how-to-book':
+      case 'contact':
+        return 8;
+      default:
+        return 1;
     }
+  };
+
+  const currentStepNumber = getStepNumber(activeTab);
+
+  const goToStep = (stepNum: number) => {
+    const target = STEPS.find((s) => s.step === stepNum);
+    if (target) {
+      setActiveTab(target.tabKey);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleNavigate = (sectionId: string) => {
+    const idToTab: Record<string, string> = {
+      'hero-section': 'home',
+      'explore-ethiopia-section': 'destinations',
+      'interactive-ethiopia-map': 'destinations',
+      'tours-section': 'tours',
+      'hindek-kitchen-section': 'hindek-kitchen',
+      'hindek-coffee-section': 'coffee-experience',
+      'coffee-packages-section': 'coffee-experience',
+      'ethiopian-food-gallery-section': 'hindek-kitchen',
+      'ethiopian-festivals-section': 'festivals',
+      'travel-assistance-section': 'travel-assistance',
+      'community-ngo-section': 'travel-assistance',
+      'accommodations-section': 'travel-assistance',
+      'about-section': 'about',
+      'reviews-section': 'reviews',
+      'how-to-book-section': 'reviews',
+      'contact-section': 'contact'
+    };
+
+    const targetTab = idToTab[sectionId] || sectionId;
+    setActiveTab(targetTab);
+
+    setTimeout(() => {
+      if (sectionId === 'hero-section' || targetTab === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    }, 60);
   };
 
   const handleBookExperience = (experienceTitle: string, destinationName?: string) => {
@@ -80,11 +238,85 @@ function AppContent() {
     }
   };
 
+  // Step Navigation Bar for active step views
+  const renderStepNavControls = () => (
+    <div className="bg-[#1E3A2F] text-white py-3.5 px-4 shadow-md sticky top-16 z-30 border-y border-[#D49A3D]/30">
+      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-sm">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => {
+              setActiveTab('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-[#FAF8F5] transition-colors cursor-pointer text-xs sm:text-sm font-medium"
+          >
+            <Home className="w-4 h-4 text-[#D49A3D]" />
+            <span>Home</span>
+          </button>
+          <span className="text-white/40">/</span>
+          <span className="text-[#D49A3D] font-bold text-xs sm:text-sm">
+            Step {currentStepNumber} of 8: {STEPS[currentStepNumber - 1]?.title}
+          </span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          {currentStepNumber > 1 && (
+            <button
+              onClick={() => goToStep(currentStepNumber - 1)}
+              className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer text-xs sm:text-sm"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Previous</span>
+            </button>
+          )}
+
+          {currentStepNumber < 8 ? (
+            <button
+              onClick={() => goToStep(currentStepNumber + 1)}
+              className="flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-[#D49A3D] hover:bg-[#c28b34] text-[#1E3A2F] font-bold transition-colors cursor-pointer text-xs sm:text-sm shadow-sm"
+            >
+              <span>Next Step ({currentStepNumber + 1})</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                setActiveTab('home');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-[#D49A3D] hover:bg-[#c28b34] text-[#1E3A2F] font-bold transition-colors cursor-pointer text-xs sm:text-sm shadow-sm"
+            >
+              <span>Return to Home</span>
+              <Home className="w-3.5 h-3.5" />
+            </button>
+          )}
+
+          <button
+            onClick={() => {
+              setActiveTab('all');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/15 text-white/80 hover:text-white transition-colors cursor-pointer text-xs"
+            title="View all 8 steps on one page"
+          >
+            <Layers className="w-3.5 h-3.5" />
+            <span className="hidden md:inline">Show All</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#2E2822] font-sans antialiased selection:bg-[#D49A3D]/30 selection:text-[#1E3A2F]">
       
       {/* Top Navbar */}
       <Navbar
+        activeTab={activeTab}
+        setActiveTab={(tab) => {
+          setActiveTab(tab);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
         onNavigate={handleNavigate}
         onOpenBooking={handleBookExperience}
         onOpenPlanTrip={() => setIsPlanTripOpen(true)}
@@ -93,89 +325,230 @@ function AppContent() {
       />
 
       {/* Main Content Flow */}
-      <main>
-        {/* 1. Hero Section */}
-        <Hero
-          onExploreClick={() => handleNavigate('explore-ethiopia-section')}
-          onPlanTripClick={() => setIsPlanTripOpen(true)}
-          onBookExperienceClick={() => handleNavigate('hindek-kitchen-section')}
-          onContactClick={() => handleNavigate('contact-section')}
-          onSearchFilter={handleSearchFilter}
-        />
+      <main className="pt-20 lg:pt-24">
+        {/* Step-by-step navigation banner when a step is active */}
+        {activeTab !== 'home' && activeTab !== 'all' && renderStepNavControls()}
 
-        {/* 2. Explore Ethiopia & Destinations by Region */}
-        <ExploreEthiopiaSection
-          onSelectDestination={(dest) => setSelectedDestination(dest)}
-          onBookExperience={handleBookExperience}
-        />
+        {/* 1. HOME VIEW: Hero + Step-by-Step Selection Navigator */}
+        {activeTab === 'home' && (
+          <div>
+            {/* The Authentic Hero Section */}
+            <Hero
+              onExploreClick={() => handleNavigate('explore-ethiopia-section')}
+              onPlanTripClick={() => setIsPlanTripOpen(true)}
+              onBookExperienceClick={() => handleNavigate('hindek-kitchen-section')}
+              onContactClick={() => handleNavigate('contact-section')}
+              onSearchFilter={handleSearchFilter}
+            />
 
-        {/* 2b. Interactive Google Maps Platform Explorer */}
-        <EthiopianDestinationsMap
-          onSelectDestination={(dest) => setSelectedDestination(dest)}
-          onBookExperience={handleBookExperience}
-        />
+            {/* Step-by-Step Experience Guide: Only see next steps when clicked */}
+            <section id="step-by-step-guide" className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E3A2F]/10 text-[#1E3A2F] text-xs font-bold uppercase tracking-wider mb-3">
+                  <Sparkles className="w-3.5 h-3.5 text-[#D49A3D]" />
+                  <span>Arranged Step-by-Step</span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1E3A2F] mb-4">
+                  Explore Bridge Ethiopia One Step at a Time
+                </h2>
+                <p className="text-base text-[#6B6155] leading-relaxed">
+                  Choose any step below to explore. Each section opens with authentic photography, detailed itineraries, and direct booking options.
+                </p>
+              </div>
 
-        {/* 3. Popular Tours & Expeditions */}
-        <ToursSection
-          onSelectTour={(tour) => setSelectedTour(tour)}
-          onBookTour={handleBookExperience}
-          onPlanCustomTrip={() => setIsPlanTripOpen(true)}
-        />
+              {/* 8 Clean Step Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {STEPS.map((stepItem) => (
+                  <div
+                    key={stepItem.step}
+                    onClick={() => {
+                      setActiveTab(stepItem.tabKey);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="group bg-white rounded-2xl overflow-hidden border border-[#E8E1D5] hover:border-[#D49A3D] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer transform hover:-translate-y-1"
+                  >
+                    {/* Card Photo */}
+                    <div className="relative h-44 w-full overflow-hidden bg-[#E8E1D5]">
+                      <img
+                        src={stepItem.image}
+                        alt={stepItem.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                      
+                      {/* Step Number Badge */}
+                      <div className="absolute top-3 left-3 bg-[#1E3A2F] text-white px-3 py-1 rounded-full text-xs font-bold tracking-wide flex items-center gap-1 shadow-md">
+                        <span>Step {stepItem.step}</span>
+                      </div>
 
-        {/* 4. Hindek Kitchen (Signature Culinary & Cultural Experience) */}
-        <HindekKitchenSection
-          onBookClass={handleBookExperience}
-          onOpenPlanTrip={() => setIsPlanTripOpen(true)}
-        />
+                      {/* Category Tag */}
+                      <div className="absolute bottom-3 left-3 bg-[#D49A3D] text-[#1E3A2F] px-2.5 py-0.5 rounded-full text-[11px] font-bold shadow-sm">
+                        {stepItem.badge}
+                      </div>
+                    </div>
 
-        {/* 5. Hindek Grandpa Coffee Experience */}
-        <HindekCoffeeSection
-          onBookCeremony={handleBookExperience}
-        />
+                    {/* Card Content */}
+                    <div className="p-5 flex-1 flex flex-col justify-between">
+                      <div>
+                        <h3 className="font-serif font-bold text-lg text-[#1E3A2F] group-hover:text-[#B85C38] transition-colors mb-2 leading-snug">
+                          {stepItem.title}
+                        </h3>
+                        <p className="text-xs text-[#6B6155] line-clamp-3 leading-relaxed mb-4">
+                          {stepItem.description}
+                        </p>
+                      </div>
 
-        {/* 6. Ethiopian & Oromo Food Gallery */}
-        <FoodGallerySection
-          onBookFoodTour={handleBookExperience}
-        />
+                      <div className="pt-3 border-t border-[#F2EFE9] flex items-center justify-between text-xs font-bold text-[#1E3A2F] group-hover:text-[#D49A3D] transition-colors">
+                        <span>Click to View Step</span>
+                        <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-        {/* 7. Ethiopian Festivals & Celebrations */}
-        <FestivalsSection
-          onPlanTripForFestival={handleBookExperience}
-        />
+              {/* View All Option */}
+              <div className="mt-12 text-center">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveTab('all');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-[#E8E1D5] hover:border-[#1E3A2F] text-[#1E3A2F] text-sm font-semibold transition-all hover:shadow-md cursor-pointer"
+                >
+                  <Layers className="w-4 h-4 text-[#D49A3D]" />
+                  <span>Prefer to scroll? View all sections on one page</span>
+                </button>
+              </div>
+            </section>
+          </div>
+        )}
 
-        {/* 8. Local Travel Assistance (Airport, SIM, Transport, Translators, Govt Liaison) */}
-        <TravelAssistantSection
-          onContactSupport={handleBookExperience}
-          onOpenCommunityNgo={() => handleNavigate('community-ngo-section')}
-        />
+        {/* STEP 1: Destinations & Map */}
+        {(activeTab === 'destinations' || activeTab === 'map' || activeTab === 'all') && (
+          <div>
+            <ExploreEthiopiaSection
+              onSelectDestination={(dest) => setSelectedDestination(dest)}
+              onBookExperience={handleBookExperience}
+            />
+            <EthiopianDestinationsMap
+              onSelectDestination={(dest) => setSelectedDestination(dest)}
+              onBookExperience={handleBookExperience}
+            />
+          </div>
+        )}
 
-        {/* 9. Community Giving & International NGO / Government Guidance */}
-        <CommunitySupportSection
-          onOpenSupportModal={handleOpenCommunityInquiry}
-        />
+        {/* STEP 2: Popular Tours & Expeditions */}
+        {(activeTab === 'tours' || activeTab === 'all') && (
+          <ToursSection
+            onSelectTour={(tour) => setSelectedTour(tour)}
+            onBookTour={handleBookExperience}
+            onPlanCustomTrip={() => setIsPlanTripOpen(true)}
+          />
+        )}
 
-        {/* 10. Curated Hotels & Lodges */}
-        <AccommodationsSection
-          onInquireStay={handleBookExperience}
-        />
+        {/* STEP 3: Hindek Kitchen & Food Gallery */}
+        {(activeTab === 'hindek-kitchen' || activeTab === 'food-gallery' || activeTab === 'all') && (
+          <div>
+            <HindekKitchenSection
+              onBookClass={handleBookExperience}
+              onOpenPlanTrip={() => setIsPlanTripOpen(true)}
+            />
+            <FoodGallerySection
+              onBookFoodTour={handleBookExperience}
+            />
+          </div>
+        )}
 
-        {/* 10. About Hindek, Bridge Ethiopia & Community/NGO Support */}
-        <AboutSection
-          onOpenPlanTrip={() => setIsPlanTripOpen(true)}
-          onOpenContact={() => handleNavigate('contact-section')}
-        />
+        {/* STEP 4: Hindek Grandpa Coffee Experience */}
+        {(activeTab === 'coffee-experience' || activeTab === 'coffee-packages' || activeTab === 'all') && (
+          <HindekCoffeeSection
+            onBookCeremony={handleBookExperience}
+          />
+        )}
 
-        {/* 11. Traveler Reviews */}
-        <ReviewsSection />
+        {/* STEP 5: Ethiopian Festivals & Celebrations */}
+        {(activeTab === 'festivals' || activeTab === 'all') && (
+          <FestivalsSection
+            onPlanTripForFestival={handleBookExperience}
+          />
+        )}
 
-        {/* 12. How to Book */}
-        <HowToBookSection
-          onPlanTripClick={() => setIsPlanTripOpen(true)}
-          onExploreToursClick={() => handleNavigate('tours-section')}
-        />
+        {/* STEP 6: Travel Assistance, Community NGO & Accommodations */}
+        {(activeTab === 'travel-assistance' || activeTab === 'community-ngo' || activeTab === 'hotels' || activeTab === 'all') && (
+          <div>
+            <TravelAssistantSection
+              onContactSupport={handleBookExperience}
+              onOpenCommunityNgo={() => handleNavigate('community-ngo-section')}
+            />
+            <CommunitySupportSection
+              onOpenSupportModal={handleOpenCommunityInquiry}
+            />
+            <AccommodationsSection
+              onInquireStay={handleBookExperience}
+            />
+          </div>
+        )}
 
-        {/* 13. Contact Us */}
-        <ContactSection />
+        {/* STEP 7: About Hindek, Bridge Ethiopia & Mission */}
+        {(activeTab === 'about' || activeTab === 'all') && (
+          <AboutSection
+            onOpenPlanTrip={() => setIsPlanTripOpen(true)}
+            onOpenContact={() => handleNavigate('contact-section')}
+          />
+        )}
+
+        {/* STEP 8: Traveler Reviews, How to Book & Contact */}
+        {(activeTab === 'reviews' || activeTab === 'how-to-book' || activeTab === 'contact' || activeTab === 'all') && (
+          <div>
+            <ReviewsSection />
+            <HowToBookSection
+              onPlanTripClick={() => setIsPlanTripOpen(true)}
+              onExploreToursClick={() => handleNavigate('tours-section')}
+            />
+            <ContactSection />
+          </div>
+        )}
+
+        {/* Bottom step navigation bar when viewing a single step */}
+        {activeTab !== 'home' && activeTab !== 'all' && (
+          <div className="py-8 px-4 bg-white border-t border-[#E8E1D5] text-center">
+            <div className="max-w-md mx-auto flex items-center justify-center gap-3">
+              {currentStepNumber > 1 && (
+                <button
+                  onClick={() => goToStep(currentStepNumber - 1)}
+                  className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-[#E8E1D5] hover:bg-[#FAF8F5] text-sm font-semibold transition-colors cursor-pointer"
+                >
+                  <ArrowLeft className="w-4 h-4 text-[#D49A3D]" />
+                  <span>Previous Step</span>
+                </button>
+              )}
+
+              <button
+                onClick={() => {
+                  setActiveTab('home');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#1E3A2F] text-white text-sm font-semibold hover:bg-[#162B23] transition-colors cursor-pointer shadow-sm"
+              >
+                <Home className="w-4 h-4 text-[#D49A3D]" />
+                <span>Home Page</span>
+              </button>
+
+              {currentStepNumber < 8 && (
+                <button
+                  onClick={() => goToStep(currentStepNumber + 1)}
+                  className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#D49A3D] text-[#1E3A2F] text-sm font-bold hover:bg-[#c28b34] transition-colors cursor-pointer shadow-sm"
+                >
+                  <span>Next Step</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+          </div>
+        )}
       </main>
 
       {/* Footer */}
