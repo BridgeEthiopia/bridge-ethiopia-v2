@@ -255,7 +255,7 @@ function AppContent() {
           </button>
           <span className="text-white/40">/</span>
           <span className="text-[#D49A3D] font-bold text-xs sm:text-sm">
-            Step {currentStepNumber} of 8: {STEPS[currentStepNumber - 1]?.title}
+            {STEPS[currentStepNumber - 1]?.title}
           </span>
         </div>
 
@@ -275,7 +275,7 @@ function AppContent() {
               onClick={() => goToStep(currentStepNumber + 1)}
               className="flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-[#D49A3D] hover:bg-[#c28b34] text-[#1E3A2F] font-bold transition-colors cursor-pointer text-xs sm:text-sm shadow-sm"
             >
-              <span>Next Step ({currentStepNumber + 1})</span>
+              <span>Next</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           ) : (
@@ -297,7 +297,7 @@ function AppContent() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/15 text-white/80 hover:text-white transition-colors cursor-pointer text-xs"
-            title="View all 8 steps on one page"
+            title="View all sections on one page"
           >
             <Layers className="w-3.5 h-3.5" />
             <span className="hidden md:inline">Show All</span>
@@ -341,22 +341,22 @@ function AppContent() {
               onSearchFilter={handleSearchFilter}
             />
 
-            {/* Step-by-Step Experience Guide: Only see next steps when clicked */}
-            <section id="step-by-step-guide" className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            {/* Curated Experience Guide: Explored by Category */}
+            <section id="experiences-guide" className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
               <div className="text-center max-w-3xl mx-auto mb-12">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E3A2F]/10 text-[#1E3A2F] text-xs font-bold uppercase tracking-wider mb-3">
                   <Sparkles className="w-3.5 h-3.5 text-[#D49A3D]" />
-                  <span>Arranged Step-by-Step</span>
+                  <span>Curated Experiences</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1E3A2F] mb-4">
-                  Explore Bridge Ethiopia One Step at a Time
+                  Explore Bridge Ethiopia
                 </h2>
                 <p className="text-base text-[#6B6155] leading-relaxed">
-                  Choose any step below to explore. Each section opens with authentic photography, detailed itineraries, and direct booking options.
+                  Select any category below to explore. Each section opens with authentic photography, detailed itineraries, and direct booking options.
                 </p>
               </div>
 
-              {/* 8 Clean Step Cards */}
+              {/* 8 Clean Category Cards */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {STEPS.map((stepItem) => (
                   <div
@@ -377,11 +377,6 @@ function AppContent() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                       
-                      {/* Step Number Badge */}
-                      <div className="absolute top-3 left-3 bg-[#1E3A2F] text-white px-3 py-1 rounded-full text-xs font-bold tracking-wide flex items-center gap-1 shadow-md">
-                        <span>Step {stepItem.step}</span>
-                      </div>
-
                       {/* Category Tag */}
                       <div className="absolute bottom-3 left-3 bg-[#D49A3D] text-[#1E3A2F] px-2.5 py-0.5 rounded-full text-[11px] font-bold shadow-sm">
                         {stepItem.badge}
@@ -400,7 +395,7 @@ function AppContent() {
                       </div>
 
                       <div className="pt-3 border-t border-[#F2EFE9] flex items-center justify-between text-xs font-bold text-[#1E3A2F] group-hover:text-[#D49A3D] transition-colors">
-                        <span>Click to View Step</span>
+                        <span>Explore Now</span>
                         <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
@@ -522,7 +517,7 @@ function AppContent() {
                   className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-[#E8E1D5] hover:bg-[#FAF8F5] text-sm font-semibold transition-colors cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4 text-[#D49A3D]" />
-                  <span>Previous Step</span>
+                  <span>Previous</span>
                 </button>
               )}
 
@@ -534,7 +529,7 @@ function AppContent() {
                 className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#1E3A2F] text-white text-sm font-semibold hover:bg-[#162B23] transition-colors cursor-pointer shadow-sm"
               >
                 <Home className="w-4 h-4 text-[#D49A3D]" />
-                <span>Home Page</span>
+                <span>Home</span>
               </button>
 
               {currentStepNumber < 8 && (
@@ -542,7 +537,7 @@ function AppContent() {
                   onClick={() => goToStep(currentStepNumber + 1)}
                   className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#D49A3D] text-[#1E3A2F] text-sm font-bold hover:bg-[#c28b34] transition-colors cursor-pointer shadow-sm"
                 >
-                  <span>Next Step</span>
+                  <span>Next</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               )}
