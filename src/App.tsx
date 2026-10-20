@@ -248,13 +248,15 @@ function AppContent() {
               setActiveTab('home');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-[#FAF8F5] transition-colors cursor-pointer text-xs sm:text-sm font-medium"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#D49A3D] text-[#1E3A2F] hover:bg-[#c28b34] transition-all cursor-pointer text-xs sm:text-sm font-bold shadow-sm"
+            title="Return to Bridge Ethiopia Home Page"
           >
-            <Home className="w-4 h-4 text-[#D49A3D]" />
-            <span>Home</span>
+            <ArrowLeft className="w-3.5 h-3.5" />
+            <Home className="w-4 h-4" />
+            <span>Back to Home Page</span>
           </button>
           <span className="text-white/40">/</span>
-          <span className="text-[#D49A3D] font-bold text-xs sm:text-sm">
+          <span className="text-[#FAF8F5] font-semibold text-xs sm:text-sm">
             {STEPS[currentStepNumber - 1]?.title}
           </span>
         </div>
@@ -284,10 +286,11 @@ function AppContent() {
                 setActiveTab('home');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-[#D49A3D] hover:bg-[#c28b34] text-[#1E3A2F] font-bold transition-colors cursor-pointer text-xs sm:text-sm shadow-sm"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#D49A3D] hover:bg-[#c28b34] text-[#1E3A2F] font-bold transition-colors cursor-pointer text-xs sm:text-sm shadow-sm"
             >
-              <span>Return to Home</span>
+              <ArrowLeft className="w-3.5 h-3.5" />
               <Home className="w-3.5 h-3.5" />
+              <span>Back to Home Page</span>
             </button>
           )}
 
@@ -328,6 +331,26 @@ function AppContent() {
       <main className="pt-20 lg:pt-24">
         {/* Step-by-step navigation banner when a step is active */}
         {activeTab !== 'home' && activeTab !== 'all' && renderStepNavControls()}
+
+        {/* Navigation bar when Show All is active */}
+        {activeTab === 'all' && (
+          <div className="bg-[#1E3A2F] text-white py-3.5 px-4 shadow-md sticky top-16 z-30 border-y border-[#D49A3D]/30">
+            <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 text-sm">
+              <button
+                onClick={() => {
+                  setActiveTab('home');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#D49A3D] text-[#1E3A2F] hover:bg-[#c28b34] font-bold transition-all cursor-pointer text-xs sm:text-sm shadow-sm"
+              >
+                <ArrowLeft className="w-3.5 h-3.5" />
+                <Home className="w-4 h-4" />
+                <span>Back to Home Page</span>
+              </button>
+              <span className="text-xs text-[#FAF8F5]/80 font-medium">Viewing All Sections</span>
+            </div>
+          </div>
+        )}
 
         {/* 1. HOME VIEW: Hero + Step-by-Step Selection Navigator */}
         {activeTab === 'home' && (
@@ -507,11 +530,11 @@ function AppContent() {
           </div>
         )}
 
-        {/* Bottom step navigation bar when viewing a single step */}
-        {activeTab !== 'home' && activeTab !== 'all' && (
+        {/* Bottom step navigation bar when viewing a single step or all sections */}
+        {activeTab !== 'home' && (
           <div className="py-8 px-4 bg-white border-t border-[#E8E1D5] text-center">
-            <div className="max-w-md mx-auto flex items-center justify-center gap-3">
-              {currentStepNumber > 1 && (
+            <div className="max-w-md mx-auto flex flex-wrap items-center justify-center gap-3">
+              {activeTab !== 'all' && currentStepNumber > 1 && (
                 <button
                   onClick={() => goToStep(currentStepNumber - 1)}
                   className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-[#E8E1D5] hover:bg-[#FAF8F5] text-sm font-semibold transition-colors cursor-pointer"
@@ -526,13 +549,15 @@ function AppContent() {
                   setActiveTab('home');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#1E3A2F] text-white text-sm font-semibold hover:bg-[#162B23] transition-colors cursor-pointer shadow-sm"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#1E3A2F] text-white text-sm font-bold hover:bg-[#162B23] transition-all cursor-pointer shadow-md hover:scale-105"
+                title="Return to Bridge Ethiopia Home Page"
               >
+                <ArrowLeft className="w-4 h-4 text-[#D49A3D]" />
                 <Home className="w-4 h-4 text-[#D49A3D]" />
-                <span>Home</span>
+                <span>Back to Home Page</span>
               </button>
 
-              {currentStepNumber < 8 && (
+              {activeTab !== 'all' && currentStepNumber < 8 && (
                 <button
                   onClick={() => goToStep(currentStepNumber + 1)}
                   className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#D49A3D] text-[#1E3A2F] text-sm font-bold hover:bg-[#c28b34] transition-colors cursor-pointer shadow-sm"
@@ -588,6 +613,25 @@ function AppContent() {
         initialTopic={communityTopic}
         initialServiceName={communityServiceName}
       />
+
+      {/* Floating Back to Home Page Button (Visible whenever user is exploring any sub-page or section) */}
+      {activeTab !== 'home' && (
+        <button
+          type="button"
+          onClick={() => {
+            setActiveTab('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="fixed bottom-6 left-6 z-40 px-4 py-3 bg-[#1E3A2F] hover:bg-[#162B23] text-white rounded-full shadow-2xl flex items-center gap-2 font-bold text-xs sm:text-sm tracking-wide transition-all transform hover:scale-105 border-2 border-[#D49A3D] cursor-pointer group animate-in fade-in slide-in-from-bottom-2"
+          id="floating-back-to-home-btn"
+          title="Back to Home Page"
+          aria-label="Back to Home Page"
+        >
+          <ArrowLeft className="w-4 h-4 text-[#D49A3D] group-hover:-translate-x-1 transition-transform" />
+          <Home className="w-4 h-4 text-[#D49A3D]" />
+          <span>Back to Home Page</span>
+        </button>
+      )}
 
       {/* Persistent Floating Quick Action Buttons */}
       <div className="fixed bottom-6 right-6 z-40 flex flex-col sm:flex-row items-end sm:items-center gap-3">

@@ -19,7 +19,9 @@ import {
   ChevronDown,
   Camera,
   ShoppingBag,
-  HandHeart
+  HandHeart,
+  Home,
+  ArrowLeft
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -195,13 +197,15 @@ export const Navbar: React.FC<NavbarProps> = ({
         <nav className="hidden xl:flex items-center gap-1 2xl:gap-2 text-sm font-medium text-[#423B33]">
           <button
             onClick={() => handleNavClick('home')}
-            className={`px-3 py-1.5 rounded-lg transition-colors ${
+            className={`px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 ${
               activeTab === 'home'
                 ? 'text-[#1E3A2F] bg-[#1E3A2F]/10 font-bold'
-                : 'hover:text-[#1E3A2F] hover:bg-[#F2EFE9]'
+                : 'text-[#1E3A2F] bg-[#D49A3D]/20 hover:bg-[#D49A3D]/30 font-bold border border-[#D49A3D]/40'
             }`}
           >
-            {t('nav_home', 'Home')}
+            {activeTab !== 'home' && <ArrowLeft className="w-3.5 h-3.5 text-[#B85C38]" />}
+            <Home className="w-3.5 h-3.5 text-[#D49A3D]" />
+            <span>{activeTab === 'home' ? t('nav_home', 'Home') : 'Back to Home Page'}</span>
           </button>
 
           <button
@@ -453,11 +457,15 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex flex-col gap-1 pb-4 border-b border-[#E8E1D5]">
             <button
               onClick={() => handleNavClick('home')}
-              className={`text-left px-3 py-2.5 rounded-lg text-base font-semibold ${
-                activeTab === 'home' ? 'bg-[#1E3A2F] text-white' : 'text-[#2E2822]'
+              className={`text-left px-3 py-2.5 rounded-lg text-base font-semibold flex items-center gap-2 ${
+                activeTab === 'home'
+                  ? 'bg-[#1E3A2F] text-white'
+                  : 'bg-[#D49A3D]/20 text-[#1E3A2F] font-bold border border-[#D49A3D]/40'
               }`}
             >
-              {t('nav_home', 'Home')}
+              {activeTab !== 'home' && <ArrowLeft className="w-4 h-4 text-[#B85C38]" />}
+              <Home className="w-4 h-4 text-[#D49A3D]" />
+              <span>{activeTab === 'home' ? t('nav_home', 'Home') : 'Back to Home Page'}</span>
             </button>
             <button
               onClick={() => handleNavClick('destinations')}
