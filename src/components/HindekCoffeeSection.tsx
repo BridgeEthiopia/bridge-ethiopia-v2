@@ -42,7 +42,7 @@ export const HindekCoffeeSection: React.FC<HindekCoffeeProps> = ({
   const [selectedPackage, setSelectedPackage] = useState<CoffeePackage | null>(null);
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
   const [currency, setCurrency] = useState<'USD' | 'ETB'>('USD');
-  const [categoryFilter, setCategoryFilter] = useState<'all' | 'retail' | 'commercial' | 'wholesale'>('all');
+  const [categoryFilter, setCategoryFilter] = useState<'all' | 'specialty' | 'retail' | 'commercial' | 'wholesale'>('all');
 
   const steps = [
     {
@@ -366,7 +366,20 @@ export const HindekCoffeeSection: React.FC<HindekCoffeeProps> = ({
                     : 'bg-white/10 text-white/80 hover:text-white hover:bg-white/15'
                 }`}
               >
-                All Sizes ({COFFEE_PACKAGES.length})
+                All Coffees ({COFFEE_PACKAGES.length})
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setCategoryFilter('specialty')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                  categoryFilter === 'specialty'
+                    ? 'bg-[#E5AC4D] text-[#1E3A2F] shadow-sm font-extrabold ring-2 ring-[#D49A3D]'
+                    : 'bg-[#D49A3D]/25 text-[#F4BE5E] hover:text-white hover:bg-[#D49A3D]/35 border border-[#D49A3D]/50'
+                }`}
+              >
+                <Sparkles className="w-3.5 h-3.5 text-[#D49A3D]" />
+                <span>Specialty: Yirgacheffe &amp; Gololcha</span>
               </button>
 
               <button

@@ -11,6 +11,94 @@ export const CUSTOM_ORDERS_INFO = {
 };
 
 export const COFFEE_PACKAGES: CoffeePackage[] = [
+  // SPECIALTY 1: Yirgacheffe Single-Origin
+  {
+    id: 'pkg-yirgacheffe-specialty',
+    title: 'Specialty Yirgacheffe Heirloom (250g)',
+    weight: '250g',
+    roastType: 'Light-Medium Specialty Roast',
+    purpose: 'World-famous floral jasmine & bergamot citrus profile',
+    description: 'Direct from the birthplace of fine Arabica in Gedeo/Yirgacheffe (1,900m – 2,200m). Intoxicating floral jasmine fragrance, crisp bergamot citrus notes, and a silky, clean tea-like finish that defines Ethiopian specialty coffee.',
+    priceUSD: 14,
+    priceETB: 1600,
+    badge: 'Specialty Reserve • Yirgacheffe',
+    imageUrl: '/images/hindek-coffee-package.jpg',
+    photoKey: 'coffee-pkg-yirgacheffe-specialty',
+    tier: 'specialty',
+    grindOptions: [
+      'Whole Bean (Recommended for peak floral aroma)',
+      'Pourover / V60 / Chemex Grind',
+      'Medium Drip / Aeropress Grind',
+      'Traditional Jebena Grind',
+      'Espresso Grind'
+    ],
+    features: [
+      '100% Single-Origin Yirgacheffe Heirloom',
+      'Jasmine Blossom, Bergamot & Ripe Peach Notes',
+      'High-Altitude Grade 1 Micro-Lot (1,900m+)',
+      'Light-Medium Roast to Preserve Delicate Florals'
+    ],
+    inStock: true
+  },
+
+  // SPECIALTY 2: Gololcha Mountain Forest Single-Origin
+  {
+    id: 'pkg-gololcha-specialty',
+    title: 'Specialty Gololcha Highland Forest Coffee (250g)',
+    weight: '250g',
+    roastType: 'Medium-Dark Artisan Forest Roast',
+    purpose: 'Rare wild mountain forest coffee from Arsi/Bale Oromia',
+    description: 'Harvested from the dense wild mountain canopies of Gololcha in the Arsi/Bale highlands of Oromia (1,850m – 2,300m). Rich, complex, and deeply sweet with dark wild berry notes, spiced wine, and velvety dark chocolate undertones.',
+    priceUSD: 14,
+    priceETB: 1600,
+    badge: 'Rare Forest Origin • Gololcha Oromia',
+    imageUrl: '/images/hindek-coffee-package.jpg',
+    photoKey: 'coffee-pkg-gololcha-specialty',
+    tier: 'specialty',
+    grindOptions: [
+      'Whole Bean (Peak freshness)',
+      'Traditional Clay Jebena Grind',
+      'French Press / Cafetière Grind',
+      'Medium Filter Grind',
+      'Bold Espresso Grind'
+    ],
+    features: [
+      'Authentic Gololcha Mountain Forest Arabica',
+      'Wild Blackberry, Spiced Plum & Dark Cocoa',
+      'Sun-Dried Natural Forest Canopy Harvest',
+      'Deep Syrupy Body & Lingering Sweetness'
+    ],
+    inStock: true
+  },
+
+  // SPECIALTY 3: Yirgacheffe + Gololcha Duo
+  {
+    id: 'pkg-duo-yirgacheffe-gololcha',
+    title: 'Specialty Duo: Yirgacheffe & Gololcha Tasting Set (500g)',
+    weight: '500g (2 x 250g Pouches)',
+    roastType: 'Artisan Micro-Lot Pair (Floral + Forest)',
+    purpose: 'The ultimate Ethiopian specialty tasting journey',
+    description: 'Experience Ethiopia’s two most celebrated distinct terroirs side-by-side: the bright, floral jasmine of Yirgacheffe and the deep, wild berry cocoa complexity of Gololcha forest coffee. Includes two freshness-sealed 250g pouches.',
+    priceUSD: 26,
+    priceETB: 3000,
+    badge: 'Tasting Set • 2 Iconic Origins',
+    imageUrl: '/images/hindek-coffee-package.jpg',
+    photoKey: 'coffee-pkg-duo-specialty',
+    tier: 'specialty',
+    grindOptions: [
+      'Whole Bean Set (Recommended)',
+      'Traditional Jebena Set',
+      'Pourover & Filter Set'
+    ],
+    features: [
+      'Two Contrasting Terroirs: Gedeo & Arsi/Bale Oromia',
+      'Compare Floral High Notes vs Deep Forest Fruit',
+      'Two Fresh-Lock 250g Valve Pouches',
+      'Perfect Gift for True Coffee Connoisseurs'
+    ],
+    inStock: true
+  },
+
   // 1. 200g
   {
     id: 'pkg-200g-personal',

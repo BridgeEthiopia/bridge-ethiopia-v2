@@ -46,7 +46,7 @@ export const CoffeeOrderModal: React.FC<CoffeeOrderModalProps> = ({
   const [specialNotes, setSpecialNotes] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [currency, setCurrency] = useState<'USD' | 'ETB'>('USD');
-  const [modalFilter, setModalFilter] = useState<'all' | 'retail' | 'commercial' | 'wholesale'>('all');
+  const [modalFilter, setModalFilter] = useState<'all' | 'specialty' | 'retail' | 'commercial' | 'wholesale'>('all');
 
   useEffect(() => {
     if (initialPackage) {
@@ -245,7 +245,7 @@ export const CoffeeOrderModal: React.FC<CoffeeOrderModalProps> = ({
                   <button
                     type="button"
                     onClick={() => setModalFilter('all')}
-                    className={`px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                    className={`px-2 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                       modalFilter === 'all'
                         ? 'bg-[#1E3A2F] text-white'
                         : 'bg-[#EFE8DE] text-[#6B5E51] hover:bg-[#E2D8CC]'
@@ -255,8 +255,20 @@ export const CoffeeOrderModal: React.FC<CoffeeOrderModalProps> = ({
                   </button>
                   <button
                     type="button"
+                    onClick={() => setModalFilter('specialty')}
+                    className={`px-2 py-1 rounded-lg font-bold transition-all cursor-pointer flex items-center gap-1 ${
+                      modalFilter === 'specialty'
+                        ? 'bg-[#D49A3D] text-[#1E3A2F]'
+                        : 'bg-[#D49A3D]/20 text-[#8C5D17] hover:bg-[#D49A3D]/30'
+                    }`}
+                  >
+                    <Sparkles className="w-3 h-3 text-[#D49A3D]" />
+                    <span>Specialty</span>
+                  </button>
+                  <button
+                    type="button"
                     onClick={() => setModalFilter('retail')}
-                    className={`px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                    className={`px-2 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                       modalFilter === 'retail'
                         ? 'bg-[#1E3A2F] text-white'
                         : 'bg-[#EFE8DE] text-[#6B5E51] hover:bg-[#E2D8CC]'

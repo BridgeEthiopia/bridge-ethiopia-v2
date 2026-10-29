@@ -283,7 +283,7 @@ export interface CoffeePackage {
   features: string[];
   inStock: boolean;
   purpose?: string;
-  tier?: 'retail' | 'commercial' | 'wholesale';
+  tier?: 'retail' | 'commercial' | 'wholesale' | 'specialty';
   isWholesale?: boolean;
 }
 
