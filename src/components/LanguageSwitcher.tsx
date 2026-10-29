@@ -71,37 +71,59 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 rounded-2xl bg-white border border-[#E8E1D5] shadow-xl py-1.5 z-50 animate-in fade-in zoom-in-95 duration-150">
-          <div className="px-3 py-1.5 border-b border-[#F0EAE1] text-[11px] font-bold text-[#8C7E6D] uppercase tracking-wider">
-            {t('lbl_select_lang', 'Select Language')}
+        <div className="absolute right-0 mt-2 w-56 rounded-2xl bg-white border border-[#E8E1D5] shadow-2xl py-1.5 z-50 animate-in fade-in zoom-in-95 duration-150">
+          <div className="px-3 py-1.5 border-b border-[#F0EAE1] flex items-center justify-between">
+            <span className="text-[11px] font-bold text-[#8C7E6D] uppercase tracking-wider">
+              {t('lbl_select_lang', 'Select Language')}
+            </span>
+            <span className="text-[10px] bg-[#D49A3D]/20 text-[#1E3A2F] px-1.5 py-0.5 rounded-md font-semibold">
+              9 Languages
+            </span>
           </div>
-          {SUPPORTED_LANGUAGES.map((item) => {
-            const isSelected = language === item.code;
-            return (
-              <button
-                key={item.code}
-                type="button"
-                onClick={() => {
-                  setLanguage(item.code);
-                  setIsOpen(false);
-                }}
-                className={`w-full text-left px-3 py-2 flex items-center justify-between text-xs transition-colors ${
-                  isSelected
-                    ? 'bg-[#1E3A2F]/5 text-[#1E3A2F] font-bold'
-                    : 'text-[#4A4036] hover:bg-[#FAF6EE]'
-                }`}
-              >
-                <div className="flex items-center gap-2">
-                  <span className="text-base leading-none">{item.flag}</span>
-                  <div>
-                    <div className="font-semibold text-[#1E3A2F]">{item.nativeName}</div>
-                    <div className="text-[10px] text-[#8C7E6D]">{item.name}</div>
+
+          <div className="max-h-64 overflow-y-auto py-1">
+            {SUPPORTED_LANGUAGES.map((item) => {
+              const isSelected = language === item.code;
+              return (
+                <button
+                  key={item.code}
+                  type="button"
+                  onClick={() => {
+                    setLanguage(item.code);
+                    setIsOpen(false);
+                  }}
+                  className={`w-full text-left px-3 py-2 flex items-center justify-between text-xs transition-colors ${
+                    isSelected
+                      ? 'bg-[#1E3A2F]/10 text-[#1E3A2F] font-bold border-l-2 border-[#D49A3D]'
+                      : 'text-[#4A4036] hover:bg-[#FAF6EE]'
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-base leading-none">{item.flag}</span>
+                    <div>
+                      <div className="font-semibold text-[#1E3A2F] flex items-center gap-1.5">
+                        <span>{item.nativeName}</span>
+                        {item.code === 'fr' && (
+                          <span className="text-[9px] bg-[#0055A5]/10 text-[#0055A5] font-bold px-1 rounded">
+                            France
+                          </span>
+                        )}
+                      </div>
+                      <div className="text-[10px] text-[#8C7E6D]">{item.name}</div>
+                    </div>
                   </div>
-                </div>
-                {isSelected && <Check className="w-3.5 h-3.5 text-[#1E3A2F]" />}
-              </button>
-            );
-          })}
+                  {isSelected && <Check className="w-3.5 h-3.5 text-[#1E3A2F]" />}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="p-2 border-t border-[#F0EAE1] bg-[#FAF8F5] rounded-b-2xl">
+            <div className="text-[10px] text-[#7A7063] leading-relaxed flex items-center gap-1.5">
+              <Globe className="w-3 h-3 text-[#D49A3D] shrink-0" />
+              <span>Full website translates automatically in your language.</span>
+            </div>
+          </div>
         </div>
       )}
     </div>

@@ -19,6 +19,13 @@ export const SUPPORTED_LANGUAGES: LanguageOption[] = [
     flag: '🇬🇧',
   },
   {
+    code: 'fr',
+    name: 'French',
+    nativeName: 'Français',
+    shortLabel: 'FR',
+    flag: '🇫🇷',
+  },
+  {
     code: 'om',
     name: 'Afaan Oromoo',
     nativeName: 'Afaan Oromoo',
@@ -31,20 +38,6 @@ export const SUPPORTED_LANGUAGES: LanguageOption[] = [
     nativeName: 'አማርኛ',
     shortLabel: 'AM',
     flag: '🇪🇹',
-  },
-  {
-    code: 'ko',
-    name: 'Korean',
-    nativeName: '한국어',
-    shortLabel: 'KO',
-    flag: '🇰🇷',
-  },
-  {
-    code: 'fr',
-    name: 'French',
-    nativeName: 'Français',
-    shortLabel: 'FR',
-    flag: '🇫🇷',
   },
   {
     code: 'de',
@@ -1136,6 +1129,30 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     return 'en';
   });
 
+  const syncGoogleTranslate = (lang: string) => {
+    try {
+      if (typeof document === 'undefined') return;
+      const hostname = window.location.hostname;
+      if (lang === 'en') {
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=${hostname}; path=/;`;
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.bridge-ethiopia.com.et; path=/;';
+      } else {
+        document.cookie = `googtrans=/en/${lang}; path=/;`;
+        if (hostname.includes('bridge-ethiopia.com.et')) {
+          document.cookie = `googtrans=/en/${lang}; domain=.bridge-ethiopia.com.et; path=/;`;
+        }
+      }
+      const selectEl = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
+      if (selectEl) {
+        selectEl.value = lang;
+        selectEl.dispatchEvent(new Event('change'));
+      }
+    } catch {
+      // ignore
+    }
+  };
+
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     try {
@@ -1146,6 +1163,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
       } else {
         document.documentElement.dir = 'ltr';
       }
+      syncGoogleTranslate(lang);
     } catch {
       // ignore
     }

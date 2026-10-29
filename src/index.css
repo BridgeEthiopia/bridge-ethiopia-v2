@@ -38,7 +38,23 @@
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.img-zoom-parent:hover .img-zoom {
-  transform: scale(1.06);
+/* Google Translate frame cleanup */
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+#goog-gt-tt {
+  display: none !important;
 }
 
