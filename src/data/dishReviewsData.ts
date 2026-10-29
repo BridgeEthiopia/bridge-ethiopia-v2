@@ -59,7 +59,7 @@ export const INITIAL_DISH_REVIEWS: DishReview[] = [
   {
     id: 'rev-coffee-1',
     dishId: 'coffee-ceremony',
-    dishName: 'Milko Coffee Ceremony',
+    dishName: 'Hindek Grandpa Coffee Ritual',
     authorName: 'Amina Al-Mansoor',
     authorLocation: 'Dubai, UAE',
     rating: 5,

@@ -98,7 +98,7 @@ export const HindekCoffeeSection: React.FC<HindekCoffeeProps> = ({
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-serif text-white">
-            Milko Coffee Experience
+            Hindek Grandpa Coffee Ritual
           </h2>
 
           <p className="text-lg sm:text-xl text-[#F4BE5E] italic font-serif">
@@ -167,7 +167,7 @@ export const HindekCoffeeSection: React.FC<HindekCoffeeProps> = ({
                 Warm + Personal + Traditional + Authentic
               </h3>
               <p className="text-xs sm:text-sm text-[#D9D0C1] leading-relaxed">
-                Named in honor of Ethiopian elders and family traditions, the Milko Coffee Experience 
+                Named in honor of Hindek's grandfather and ancient Ethiopian family traditions, the Hindek Grandpa Coffee Ritual 
                 invites you to slow down, witness the transformation from raw green bean to aromatic cup, 
                 and take part in an ancient ritual that unites communities across Ethiopia.
               </p>
@@ -209,9 +209,9 @@ export const HindekCoffeeSection: React.FC<HindekCoffeeProps> = ({
             {/* Booking Actions */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <button
-                onClick={() => onBookCeremony('Milko Coffee Experience')}
+                onClick={() => onBookCeremony('Hindek Grandpa Coffee Ritual')}
                 className="px-6 py-3.5 rounded-xl bg-[#D49A3D] hover:bg-[#C28B30] text-[#1E3A2F] font-bold text-xs sm:text-sm tracking-wide shadow-lg transition-all flex items-center gap-2 cursor-pointer"
-                id="book-milko-coffee-btn"
+                id="book-grandpa-coffee-btn"
               >
                 <Coffee className="w-4 h-4" />
                 <span>Book Coffee Ceremony</span>
@@ -219,7 +219,7 @@ export const HindekCoffeeSection: React.FC<HindekCoffeeProps> = ({
 
               <a
                 href={`https://wa.me/${FOUNDER_INFO.whatsapp}?text=${encodeURIComponent(
-                  'Hello Hindek! I would like to join the Milko Coffee Experience.'
+                  'Hello Hindek! I would like to join the Hindek Grandpa Coffee Ritual.'
                 )}`}
                 target="_blank"
                 rel="noreferrer"

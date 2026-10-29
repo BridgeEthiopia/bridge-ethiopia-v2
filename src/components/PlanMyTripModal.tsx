@@ -39,7 +39,7 @@ const RATES = {
 };
 
 const COMMON_EXPENSES = [
-  { item: 'Milko Coffee Ceremony (3 Cups)', etb: '150 - 300 ETB', usd: '$1.20 - $2.40', eur: '€1.10 - €2.20' },
+  { item: 'Hindek Grandpa Coffee Ritual (3 Cups)', etb: '150 - 300 ETB', usd: '$1.20 - $2.40', eur: '€1.10 - €2.20' },
   { item: 'Authentic Injera Feast (Doro Wat / Kitfo)', etb: '450 - 900 ETB', usd: '$3.50 - $7.20', eur: '€3.30 - €6.70' },
   { item: 'Local Museum / Historical Entry', etb: '300 - 800 ETB', usd: '$2.50 - $6.50', eur: '€2.20 - €5.90' },
   { item: 'Full-Day Private City & Kitchen Tour', etb: '6,000 - 10,000 ETB', usd: '$50 - $80', eur: '€45 - €75' },

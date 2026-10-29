@@ -289,7 +289,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 <Coffee className="w-4 h-4 text-[#D49A3D]" />
                 <div>
-                  <div className="font-semibold text-sm">{t('nav_coffee', 'Milko Coffee Experience')}</div>
+                  <div className="font-semibold text-sm">{t('nav_coffee', 'Hindek Grandpa Coffee Ritual')}</div>
                   <div className="text-[11px] text-[#7A7063]">3-Cup Sacred Ceremony & Tradition</div>
                 </div>
               </button>
@@ -541,7 +541,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               }`}
             >
               <Coffee className="w-4 h-4 text-[#D49A3D]" />
-              {t('nav_coffee', 'Milko Coffee Experience')}
+              {t('nav_coffee', 'Hindek Grandpa Coffee Ritual')}
             </button>
             <button
               onClick={() => handleNavClick('coffee-packages')}

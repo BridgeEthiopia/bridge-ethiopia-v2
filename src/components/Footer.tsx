@@ -14,6 +14,7 @@ import {
   Sparkles, 
   Compass, 
   Coffee, 
+  ShoppingBag,
   Utensils,
   ArrowUp,
   Camera,
@@ -58,7 +59,7 @@ export const Footer: React.FC<FooterProps> = ({
     const shareUrl = typeof window !== 'undefined' ? (window.location.origin || window.location.href) : 'https://www.bridge-ethiopia.com.et';
     const shareData = {
       title: 'Bridge Ethiopia | Authentic Cultural Tours & Local Guiding',
-      text: 'Discover authentic Ethiopia with Hindek: private cultural tours, Hindek Kitchen cooking classes, traditional Milko coffee ceremonies, and curated expeditions.',
+      text: 'Discover authentic Ethiopia with Hindek: private cultural tours, Hindek Kitchen cooking classes, traditional Hindek Grandpa coffee rituals, Milko Coffee store, and curated expeditions.',
       url: shareUrl,
     };
 
@@ -328,7 +329,16 @@ export const Footer: React.FC<FooterProps> = ({
                   className="hover:text-white transition-colors text-left flex items-center gap-1.5"
                 >
                   <Coffee className="w-3.5 h-3.5 text-[#D49A3D]" />
-                  <span>Milko Coffee Ceremony</span>
+                  <span>Hindek Grandpa Coffee Ritual</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('coffee-packages-section')}
+                  className="hover:text-white transition-colors text-left flex items-center gap-1.5"
+                >
+                  <ShoppingBag className="w-3.5 h-3.5 text-[#E5AC4D]" />
+                  <span>Milko Coffee Store &amp; Packages</span>
                 </button>
               </li>
               <li>

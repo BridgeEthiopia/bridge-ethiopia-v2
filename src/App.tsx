@@ -81,7 +81,7 @@ const STEPS: StepInfo[] = [
   {
     step: 4,
     tabKey: 'coffee-experience',
-    title: 'Milko Sacred Coffee Ritual',
+    title: 'Hindek Grandpa Coffee Ritual',
     badge: 'Coffee Ceremony',
     description: 'Traditional 3-cup Jebena brewing (Abol, Tona, Baraka), frankincense incense, and wild Kafa beans.',
     image: coffeeImg,

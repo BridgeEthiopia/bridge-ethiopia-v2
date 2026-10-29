@@ -1326,7 +1326,7 @@ export const TOURS_DATA: Tour[] = [
   },
   {
     id: 'hindek-grandpa-coffee-ceremony',
-    title: 'Milko Coffee Experience: 3-Stage Ceremony',
+    title: 'Hindek Grandpa Coffee Ritual: 3-Stage Ceremony',
     category: 'Coffee Trail',
     region: 'addis-ababa',
     duration: 'Traditional 3-Round Ritual',

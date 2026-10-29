@@ -107,7 +107,7 @@ const TRANSLATIONS: Record<Language, Record<string, string>> = {
     hero_badge: 'Authentic Journeys Guided by Hindek',
     hero_title_main: 'BRIDGE ETHIOPIA',
     hero_tagline: 'Cultural Journeys, Living Heritage & Culinary Immersion',
-    hero_desc: 'Experience the authentic soul of Ethiopia through curated expeditions, private cultural cooking at Hindek Kitchen, traditional Milko coffee ceremonies, and breathtaking ancient landscapes.',
+    hero_desc: 'Experience the authentic soul of Ethiopia through curated expeditions, private cultural cooking at Hindek Kitchen, traditional Hindek Grandpa coffee rituals, Milko Coffee store, and breathtaking ancient landscapes.',
     hero_search_placeholder: 'Where do you want to explore? (e.g. Bale Mountains, Lalibela, Omo Valley, Addis Ababa)...',
     hero_search_btn: 'Discover',
     hero_all_regions: 'All Regions',
