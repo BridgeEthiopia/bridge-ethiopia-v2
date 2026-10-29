@@ -1,0 +1,46 @@
+[
+  {
+    "id": "vid-coffee",
+    "title": "The Sacred Ethiopian Coffee Ceremony",
+    "subtitle": "Addis Ababa with Grandpa & Hindek",
+    "category": "Ceremony & Rituals",
+    "duration": "3:45",
+    "youtubeId": "Y5e-4N15Ntc",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Y5e-4N15Ntc",
+    "thumbnail": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1200&auto=format&fit=crop",
+    "description": "Watch the roasting of fresh green Kafa beans over glowing olive wood charcoal, fragrant frankincense smoke, and the traditional three rounds of Jebena brewing."
+  },
+  {
+    "id": "vid-kitchen",
+    "title": "Hindek Kitchen: Traditional Teff Injera & Wat Masterclass",
+    "subtitle": "Live Cooking in Addis Ababa",
+    "category": "Culinary Heritage",
+    "duration": "5:20",
+    "youtubeId": "J2M28oXWkWg",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/J2M28oXWkWg",
+    "thumbnail": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop",
+    "description": "Follow Hindek as guests ferment pure gluten-free teff dough, pour circular spirals over the blazing clay mitad, and simmer traditional aromatic Berbere sauces."
+  },
+  {
+    "id": "vid-bale",
+    "title": "Expedition into Bale Mountains & Afro-Alpine Sanetti",
+    "subtitle": "Oromia Highlands & Wildlife Safari",
+    "category": "Wildlife & Trekking",
+    "duration": "4:15",
+    "youtubeId": "pP6hS1gQe8w",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/pP6hS1gQe8w",
+    "thumbnail": "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1200&auto=format&fit=crop",
+    "description": "Breathtaking cinematic vistas of the Afro-alpine Sanetti Plateau at 4,000m, ancient Harenna cloud forest moss, and tracking the rare endangered Ethiopian wolf."
+  },
+  {
+    "id": "vid-lalibela",
+    "title": "Lalibela: Monolithic Rock-Hewn Sanctuaries",
+    "subtitle": "12th Century Ancient Heritage",
+    "category": "Historic Route",
+    "duration": "4:50",
+    "youtubeId": "rK4qXqT2J-A",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/rK4qXqT2J-A",
+    "thumbnail": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1200&auto=format&fit=crop",
+    "description": "Journey into solid volcanic rock monoliths at Bet Giyorgis and listen to sacred Ge'ez liturgical chants echoing through subterranean tunnels."
+  }
+]
